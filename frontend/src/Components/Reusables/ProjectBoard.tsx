@@ -44,7 +44,6 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 				{/* ================= TV SCREEN (CUSTOM BORDERS) */}
 				<div className="projectBoard__sliderSecondBorder relative w-full h-full rounded-[1rem]">
 					{/* ===== CUSTOM BORDERS ===== */}
-
 					{/* ============================= TOP */}
 					<div className="absolute top-[-1rem] left-[-2rem] -translate-x-[1rem] w-[120%] md:w-[110%] h-[1rem] bg-black/80 backdrop-blur-sm md:bg-orange-500 rounded-full z-0"></div>
 
@@ -65,7 +64,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 							initial={{ opacity: 0, filter: "blur(6px)" }}
 							animate={{ opacity: 1, filter: "blur(0px)" }}
 							exit={{ opacity: 0, filter: "blur(6px)" }}
-							transition={{ duration: 0.4 }}
+							transition={{ duration: 0.8 }}
 						>
 							{visibleItems.map((project, index) => (
 								<motion.div
@@ -77,7 +76,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 									<div className="projectCard flex flex-col overflow-hidden h-full border border-[#dbcfff]">
 										{/* ================= TV IMAGES */}
 										<div className="w-full flex justify-between flex-1 px-4 py-2">
-											<div className="h-full md:border border-orange-500 rounded-md p-[0.1rem] h-[8rem] md:h-[13rem] lg:h-[14.5rem] md:shadow-[0_0_20px_rgba(255,165,0,0.7)]">
+											<div className="h-full p-[0.1rem] h-[9rem] md:h-[14rem] lg:h-[16rem]">
 												<img
 													src={project.images.mobile}
 													alt={project.title}
@@ -86,7 +85,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 											</div>
 
 											{project.images.tablet && (
-												<div className="h-full md:border border-orange-500 rounded-md p-[0.1rem] h-[8rem] md:h-[13rem] lg:h-[14.5rem] md:shadow-[0_0_20px_rgba(255,165,0,0.7)]">
+												<div className="h-full p-[0.1rem] h-[9rem] md:h-[14rem] lg:h-[16rem]">
 													<img
 														src={project.images.tablet}
 														alt={project.title}
@@ -96,7 +95,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 											)}
 
 											{project.images.desktop && (
-												<div className="hidden md:flex h-full border border-orange-500 rounded-md p-[0.1rem] md:h-[13rem] lg:h-[14.5rem] md:shadow-[0_0_20px_rgba(255,165,0,0.7)]">
+												<div className="hidden md:flex h-full p-[0.1rem] md:h-[14rem] lg:h-[16rem]">
 													<img
 														src={project.images.desktop}
 														alt={project.title}

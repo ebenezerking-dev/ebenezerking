@@ -6,34 +6,34 @@ import darkNight from "../Assets/backgroundImage/darkNight.webp";
 import PageLayout from "./Reusables/PageLayout";
 import ProjectBoard from "./Reusables/ProjectBoard";
 import { useState, useEffect } from "react";
-import taxlator_mobile from "../Assets/Projects/taxlator/taxlator_mobile.webp";
-import taxlator_tablet from "../Assets/Projects/taxlator/taxlator_tablet.webp";
-import taxlator_desktop from "../Assets/Projects/taxlator/taxlator_desktop.webp";
+import Mobile from "../Assets/Projects/taxlator/Mobile.webp";
+import Ipad from "../Assets/Projects/taxlator/iPad.webp";
+import Macbook from "../Assets/Projects/taxlator/Macbook.webp";
 
 const projects = [
 	{
 		images: {
-			mobile: taxlator_mobile,
-			tablet: taxlator_tablet,
-			desktop: taxlator_desktop,
+			mobile: Mobile,
+			tablet: Ipad,
+			desktop: Macbook,
 		},
 		title: "Taxlator",
 		description:
-			"A full-stack tax calculation app with real-time updates. so you can calculate your taxes in a flash.",
+			"A full-stack tax calculation app with real-time updates. so you can calculate your taxes instantly.",
 		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
 		live: "https://taxlator-v2.vercel.app/",
 		github: "https://github.com/ebenezerkingv2/taxlator-v2",
 	},
 	{
 		images: {
-			mobile: taxlator_mobile,
-			tablet: taxlator_tablet,
-			desktop: taxlator_desktop,
+			mobile: Mobile,
+			tablet: Ipad,
+			desktop: Macbook,
 		},
 		title: "Taxlator",
 		description:
-			"A full-stack e-commerce app with authentication, cart, and payment integration.",
-		tech: ["React", "Node.js", "MongoDB", "Tailwind"],
+			"A full-stack tax calculation app with real-time updates. so you can calculate your taxes in a flash.",
+		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
 		live: "https://taxlator-v2.vercel.app/",
 		github: "https://github.com/ebenezerkingv2/taxlator-v2",
 	},
