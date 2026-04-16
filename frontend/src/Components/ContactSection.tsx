@@ -33,7 +33,7 @@ const ContactSection = () => {
 
 		try {
 			const response = await fetch(
-				"https://portfolio-kingv2.onrender.com/api/contact",
+				`${import.meta.env.VITE_API_URL}/api/contact`,
 				{
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
