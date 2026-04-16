@@ -89,7 +89,7 @@ function Footer() {
 					</nav>
 					{/* =============== Copyright / date =============== */}
 					<div className="footer__date">
-						&copy; {date}. designed &amp; built by Ebenezer Tiewei
+						&copy; {date}. designed &amp; built by Ebenezer King
 					</div>
 				</div>
 			</div>
