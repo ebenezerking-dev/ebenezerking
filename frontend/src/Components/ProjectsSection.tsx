@@ -6,9 +6,10 @@ import darkNight from "../Assets/backgroundImage/darkNight.webp";
 import PageLayout from "./Reusables/PageLayout";
 import ProjectBoard from "./Reusables/ProjectBoard";
 import { useState, useEffect } from "react";
-import Mobile from "../Assets/Projects/taxlator/Mobile.webp";
-import Ipad from "../Assets/Projects/taxlator/iPad.webp";
-import Macbook from "../Assets/Projects/taxlator/Macbook.webp";
+import Mobile from "../Assets/Projects/taxlator/images/Mobile.webp";
+import Ipad from "../Assets/Projects/taxlator/images/iPad.webp";
+import Macbook from "../Assets/Projects/taxlator/images/Macbook.webp";
+import taxlator from "../Assets/Projects/taxlator/video/taxlator.mp4"
 
 const projects = [
 	{
@@ -21,6 +22,7 @@ const projects = [
 		description:
 			"A full-stack tax calculation app with real-time updates. so you can calculate your taxes instantly.",
 		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
+		video: taxlator,
 		live: "https://taxlatorv2.vercel.app/",
 		github: "https://github.com/ebenezerkingv2/taxlator_v2",
 	},
@@ -34,6 +36,7 @@ const projects = [
 		description:
 			"A full-stack tax calculation app with real-time updates. so you can calculate your taxes in a flash.",
 		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
+		video: taxlator,
 		live: "https://taxlatorv2.vercel.app/",
 		github: "https://github.com/ebenezerkingv2/taxlator_v2",
 	},
@@ -86,7 +89,7 @@ const ProjectsSection = () => {
 			</PageLayout>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
 			<div className="hidden md:block pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500/70 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]">
-				{/* Upward glow (realistic fade) */}
+				{/* ===================== UPWARD GLOW ===================== */}
 				<div className="absolute bottom-[4px] left-0 w-full h-[20px] bg-gradient-to-t from-orange-500/50 via-orange-500/20 to-transparent blur-[12px] opacity-80"></div>
 			</div>
 		</section>
