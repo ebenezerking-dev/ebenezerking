@@ -5,6 +5,7 @@
 import express from "express";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoute.js";
+import healthRoute from "./routes/healthRoute.js";
 
 const app = express();
 
@@ -35,8 +36,11 @@ app.use(cors(corsOptions));
 // ========================= MIDDLEWARE =========================
 app.use(express.json());
 
-// ========================= ROUTES =========================
+// =========================  CONTACT ROUTE =========================
 app.use("/api/contact", contactRoutes);
+
+// ========================= HEALTH ROUTE =========================
+app.use("/api/health", healthRoute);
 
 // ========================= TEST ROUTE =========================
 app.get("/", (req, res) => {
