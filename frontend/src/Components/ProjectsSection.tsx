@@ -23,7 +23,7 @@ const projects = [
 			"A full-stack tax calculation app with real-time updates. so you can calculate your taxes instantly.",
 		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
 		video: taxlator,
-		live: "https://taxlatorv2.vercel.app/",
+		live: "https://taxlator-v2.vercel.app/",
 		github: "https://github.com/ebenezerkingv2/taxlatorV2_frontend",
 	},
 	{
