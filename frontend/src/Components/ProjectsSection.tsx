@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import Mobile from "../Assets/Projects/taxlator/images/Mobile.webp";
 import Ipad from "../Assets/Projects/taxlator/images/iPad.webp";
 import Macbook from "../Assets/Projects/taxlator/images/Macbook.webp";
-import taxlator from "../Assets/Projects/taxlator/video/taxlator.mp4"
+import taxlator from "../Assets/Projects/taxlator/video/taxlator.mp4";
 
 const projects = [
 	{
@@ -24,7 +24,7 @@ const projects = [
 		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
 		video: taxlator,
 		live: "https://taxlatorv2.vercel.app/",
-		github: "https://github.com/ebenezerkingv2/taxlator_v2",
+		github: "https://github.com/ebenezerkingv2/taxlatorV2_frontend",
 	},
 	{
 		images: {
