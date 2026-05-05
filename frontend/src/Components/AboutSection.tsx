@@ -30,7 +30,7 @@ const AboutSection = () => {
 				}
 			>
 				{/* ============================== ABOUT CONTENT */}
-				<div className="aboutSection__paragraphs flex flex-1 flex-col justify-center gap-4 lg:gap-3 text-[1.2rem] w-full pb-[3rem]">
+				<div className="aboutSection__paragraphs flex flex-1 flex-col justify-center gap-4 lg:gap-3 text-[1.2rem] w-full pb-[3rem] text-[#dbcfff]/90">
 					<p className="w-fit bg-black/80 backdrop-blur-sm md:border md:border-orange-500 rounded-[1rem] md:rounded-[0.5rem] px-4 py-[0.2rem]">
 						I enjoy being a full-stack developer.
 					</p>
@@ -52,21 +52,26 @@ const AboutSection = () => {
 					</p>
 
 					<p className="w-fit bg-black/80 backdrop-blur-sm md:border md:border-orange-500 rounded-[1rem] md:rounded-[0.5rem] px-4 py-[0.2rem]">
-						<span className="font-bold text-orange-500">On the frontend,</span>{" "}
+						<span className="font-bold text-orange-500/90">
+							On the frontend,
+						</span>{" "}
 						I work with{" "}
-						<span className="font-bold text-orange-500">
+						<span className="font-bold text-orange-500/90">
 							React, TypeScript, Vite, and Tailwind CSS.
 						</span>
 					</p>
 
 					<p className="w-fit bg-black/80 backdrop-blur-sm md:border md:border-orange-500 rounded-[1rem] md:rounded-[0.5rem] px-4 py-[0.2rem]">
-						<span className="font-bold text-orange-500">On the backend,</span> I
-						build <span className="font-bold text-orange-500">APIs</span> using{" "}
-						<span className="font-bold text-orange-500">
+						<span className="font-bold text-orange-500/90">
+							On the backend,
+						</span>{" "}
+						I build <span className="font-bold text-orange-500/90">APIs</span>{" "}
+						using{" "}
+						<span className="font-bold text-orange-500/90">
 							Node.js and Express
 						</span>{" "}
 						and work with{" "}
-						<span className="font-bold text-orange-500">
+						<span className="font-bold text-orange-500/90">
 							MongoDB or SQL databases.
 						</span>
 					</p>

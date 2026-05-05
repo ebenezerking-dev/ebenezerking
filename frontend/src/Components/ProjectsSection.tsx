@@ -38,7 +38,7 @@ const projects = [
 		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
 		video: taxlator,
 		live: "https://taxlatorv2.vercel.app/",
-		github: "https://github.com/ebenezerkingv2/taxlator_v2",
+		github: "https://github.com/ebenezerkingv2/taxlatorV2_frontend",
 	},
 ];
 // =====================================

@@ -68,7 +68,7 @@ const ServicesSection = () => {
 	// =================================
 
 	return (
-		<section className="servicesSection relative min-h-screen w-full flex flex-col md:bg-black text-[#dbcfff] overflow-hidden">
+		<section className="servicesSection relative min-h-screen w-full flex flex-col md:bg-black text-[#dbcfff]/90 overflow-hidden">
 			{/* ============================== HERO IMAGE */}
 			<img
 				src={neonUmbrellaRainyNight}

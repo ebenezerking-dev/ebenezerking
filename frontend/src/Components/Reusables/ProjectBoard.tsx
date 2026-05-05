@@ -39,23 +39,23 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 	const visibleItems = items.slice(startIndex, startIndex + visibleCount);
 	const [activeProject, setActiveProject] = useState<Project | null>(null);
 	return (
-		<div className="projectBoard__parent flex flex-col items-center justify-center gap-4 w-full z-20 pb-[3rem]">
+		<div className="projectBoard__parent flex flex-col items-center justify-center gap-4 w-full z-20 pb-[3rem] text-md:[#dbcfff]/90">
 			{/* ================= TV FRAME (OUTER) */}
-			<div className="tvFrameOuterBorder relative w-full px-[1rem] pt-[1rem] pb-[3rem] overflow-hidden flex flex-col items-center justify-start border border-[#dbcfff] rounded-[1rem] flex-shrink-0">
+			<div className="tvFrameOuterBorder relative w-full px-[1rem] pt-[1rem] pb-[3rem] overflow-hidden flex flex-col items-center justify-start border border-orange-500 rounded-[1rem] flex-shrink-0">
 				{/* ================= TV SCREEN (INSIDE) */}
-				<div className="tvFrameInsideBorder relative w-full h-[40rem] md:h-[35rem] lg:h-[35rem] rounded-[1rem] bg-pink">
+				<div className="tvFrameInsideBorder relative w-full h-[40rem] md:h-[35rem] lg:h-[35rem] rounded-[1rem] bg-black">
 					{/* ===== CUSTOM BORDERS ===== */}
 					{/* ============================= TOP */}
-					<div className="absolute top-[-1rem] left-[-2rem] -translate-x-[1rem] w-[120%] md:w-[110%] h-[1rem] bg-black/80 backdrop-blur-sm md:bg-orange-500 rounded-full z-0"></div>
+					<div className="absolute top-[-1rem] left-[-2rem] -translate-x-[1rem] w-[120%] md:w-[110%] h-[1rem] bg-black/80 backdrop-blur-sm md:bg-black rounded-full z-0"></div>
 
 					{/* ======================== BOTTOM */}
-					<div className="absolute bottom-[-3rem] left-[-2rem] -translate-x-[1rem] w-[120%] md:w-[110%] h-[3rem] bg-black/80 backdrop-blur-sm md:bg-orange-500 rounded-full z-0"></div>
+					<div className="absolute bottom-[-3rem] left-[-2rem] -translate-x-[1rem] w-[120%] md:w-[110%] h-[3rem] bg-black/80 backdrop-blur-sm md:bg-black rounded-full z-0"></div>
 
 					{/* ============================= LEFT */}
-					<div className="absolute left-[-1rem] top-1/2 -translate-y-1/2 h-[110%] w-[1rem] bg-black/80 backdrop-blur-sm md:bg-orange-500 rounded-full z-0"></div>
+					<div className="absolute left-[-1rem] top-1/2 -translate-y-1/2 h-[110%] w-[1rem] bg-black/80 backdrop-blur-sm md:bg-black rounded-full z-0"></div>
 
 					{/* ============================= RIGHT */}
-					<div className="absolute right-[-1rem] top-1/2 -translate-y-1/2 h-[110%] w-[1rem] bg-black/80 backdrop-blur-sm md:bg-orange-500 rounded-full z-0"></div>
+					<div className="absolute right-[-1rem] top-1/2 -translate-y-1/2 h-[110%] w-[1rem] bg-black/80 backdrop-blur-sm md:bg-black rounded-full z-0"></div>
 
 					{/* ================= TV SCREEN CONTENT */}
 					<AnimatePresence mode="wait">
@@ -100,7 +100,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 										transition={{ type: "spring", stiffness: 300 }}
 									>
 										{/* ================= PROJECT CARD */}
-										<div className="projectCard flex flex-col overflow-hidden h-full border border-[#dbcfff]">
+										<div className="projectCard flex flex-col overflow-hidden h-full">
 											{/* ================= TV IMAGES */}
 											<div className="w-full flex justify-between flex-1 px-4 py-2">
 												{/* === MOBILE */}
@@ -139,7 +139,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 
 											{/* =========================== DETAILS */}
 											<div className="px-4 py-2 flex flex-col gap-[0.7rem] h-[18rem] md:h-[16rem] lg:h-[16rem]">
-												<div className="text-[1.25rem] font-bold text-orange-500 text-start bg-black/80 backdrop-blur-sm rounded-[0.5rem] md:shadow-[0_0_20px_rgba(255,165,0,0.7)]">
+												<div className="text-[1.25rem] font-bold text-orange-500 text-start bg-black/80 backdrop-blur-sm rounded-[0.5rem] md:shadow-[0_0_5px_rgba(255,165,0,0.7)]">
 													{/* =========== TITLE */}
 													<h4 className="border-l border-r border-orange-500 px-2 py-[0.2rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem]">
 														{project.title}
@@ -147,7 +147,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 												</div>
 
 												{/* =========== DESCRIPTION */}
-												<div className="text-[1.1rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem] line-clamp-3 md:line-clamp-2 h-[5.6rem] md:h-[4rem] lg:h-[4rem] md:shadow-[0_0_20px_rgba(255,165,0,0.7)]">
+												<div className="text-[1.1rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem] line-clamp-3 md:line-clamp-2 h-[5.6rem] md:h-[4rem] lg:h-[4rem] md:shadow-[0_0_5px_rgba(255,165,0,0.7)]">
 													<p className="border-l border-r border-orange-500 px-2 py-[0.2rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem]">
 														{project.description}
 													</p>
@@ -158,7 +158,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 													{project.tech.map((tech, idx) => (
 														<span
 															key={idx}
-															className="text-[0.9rem] border-l border-r border-orange-500 px-2 py-[0.2rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem] md:shadow-[0_0_20px_rgba(255,165,0,0.7)]"
+															className="text-[0.9rem] border-l border-r border-orange-500 px-2 py-[0.2rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem] md:shadow-[0_0_5px_rgba(255,165,0,0.7)]"
 														>
 															{tech}
 														</span>
@@ -210,20 +210,20 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 					</AnimatePresence>
 				</div>
 				{/* ================= FAKE TV BUTTONS */}
-				<div className="absolute bottom-[1rem] left-0 w-full px-4 flex justify-between items-center gap-8 mt-4 z-20">
-					<div className="w-3 h-3 bg-orange-500 md:bg-[#dbcfff] rounded-full"></div>
+				<div className="absolute bottom-[1rem] left-0 w-full px-4 flex justify-between items-center gap-8 mt-4 z-20 bg-black">
+					<div className="w-3 h-3 bg-orange-500 rounded-full"></div>
 
 					<div className="flex gap-2">
 						<div className="w-1 h-1 bg-orange-500 md:bg-[#dbcfff] rounded-full"></div>
-						<div className="w-1 h-1 bg-[#dbcfff] md:bg-[#450693] rounded-full"></div>
+						<div className="w-1 h-1 bg-[#dbcfff] md:bg-orange-500 rounded-full"></div>
 						<div className="w-1 h-1 bg-orange-500 md:bg-[#dbcfff] rounded-full"></div>
 					</div>
 
-					<div className="w-3 h-3 bg-orange-500 md:bg-[#dbcfff] rounded-full"></div>
+					<div className="w-3 h-3 bg-orange-500 rounded-full"></div>
 				</div>
 			</div>
 
-			{/* ================= CORD */}
+			{/* ================= STEPS */}
 			<div className="border border-orange-500 px-[1.5rem]"></div>
 			<div className="border border-orange-500 px-[1.5rem]"></div>
 
