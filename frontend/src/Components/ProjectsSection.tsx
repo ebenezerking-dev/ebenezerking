@@ -6,10 +6,13 @@ import darkNight from "../Assets/backgroundImage/darkNight.webp";
 import PageLayout from "./Reusables/PageLayout";
 import ProjectBoard from "./Reusables/ProjectBoard";
 import { useState, useEffect } from "react";
+
 import Mobile from "../Assets/Projects/taxlator/images/Mobile.webp";
 import Ipad from "../Assets/Projects/taxlator/images/iPad.webp";
 import Macbook from "../Assets/Projects/taxlator/images/Macbook.webp";
 import taxlator from "../Assets/Projects/taxlator/video/taxlator.mp4";
+
+import Incoming from "../Assets/Projects/Incoming.webp";
 
 const projects = [
 	{
@@ -28,17 +31,17 @@ const projects = [
 	},
 	{
 		images: {
-			mobile: Mobile,
-			tablet: Ipad,
-			desktop: Macbook,
+			mobile: Incoming,
+			tablet: Incoming,
+			desktop: Incoming,
 		},
-		title: "Taxlator",
+		title: "appiTicket",
 		description:
-			"A full-stack tax calculation app with real-time updates. so you can calculate your taxes in a flash.",
+			"A full-stack ticketing web app, where you can buy and sell tickets for events, concerts, parties etc.",
 		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
 		video: taxlator,
-		live: "https://taxlatorv2.vercel.app/",
-		github: "https://github.com/ebenezerkingv2/taxlatorV2_frontend",
+		live: "https://kingv2.vercel.app/",
+		github: "https://github.com/ebenezerkingv2/kingv2",
 	},
 ];
 // =====================================
