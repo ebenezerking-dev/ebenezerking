@@ -72,6 +72,8 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 										src={activeProject.video}
 										controls
 										autoPlay
+										loop
+										playsInline
 										className="absolute inset-0 w-full h-full object-contain"
 									/>
 
