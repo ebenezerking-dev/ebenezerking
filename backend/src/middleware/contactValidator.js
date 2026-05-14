@@ -1,7 +1,6 @@
 // =====================================
 // src/middleware/contactValidator.js
 // ===================================== CONTACT VALIDATOR - VALIDATES CONTACT FORM INPUTS
-
 export const validateContact = (req, res, next) => {
 	const { name, email, message } = req.body;
 
@@ -9,7 +8,7 @@ export const validateContact = (req, res, next) => {
 	if (!name || !email || !message) {
 		return res.status(400).json({
 			success: false,
-			error: "All fields are required",
+			message: "All fields are required",
 		});
 	}
 
@@ -19,7 +18,7 @@ export const validateContact = (req, res, next) => {
 	if (!emailRegex.test(email)) {
 		return res.status(400).json({
 			success: false,
-			error: "Invalid email",
+			message: "Invalid email",
 		});
 	}
 
@@ -27,7 +26,7 @@ export const validateContact = (req, res, next) => {
 	if (message.length < 10) {
 		return res.status(400).json({
 			success: false,
-			error: "Message is too short (minimum 10 characters)",
+			message: "Message is too short (minimum 10 characters)",
 		});
 	}
 
