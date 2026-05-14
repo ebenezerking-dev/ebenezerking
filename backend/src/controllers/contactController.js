@@ -1,7 +1,6 @@
 // =====================================
 // src/controllers/contactController.js
 // ===================================== CONTACT CONTROLLER - HANDLES CONTACT FORM SUBMISSIONS
-
 import { sendEmail } from "../services/emailService.js";
 
 // ========================= CONTACT FORM HANDLER =========================
@@ -29,7 +28,7 @@ export const sendContact = async (req, res) => {
 	if (message.length < 10) {
 		return res.status(400).json({
 			success: false,
-			error: "Message too short (minimum 10 characters)",
+			error: "Message is too short (minimum 10 characters)",
 		});
 	}
 

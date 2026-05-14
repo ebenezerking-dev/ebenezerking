@@ -27,7 +27,7 @@ export const validateContact = (req, res, next) => {
 	if (message.length < 10) {
 		return res.status(400).json({
 			success: false,
-			error: "Message too short",
+			error: "Message is too short (minimum 10 characters)",
 		});
 	}
 

@@ -1,7 +1,6 @@
 // =====================================
 // src/app.js
 // ===================================== APP SETUP
-
 import express from "express";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoute.js";

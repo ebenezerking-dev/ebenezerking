@@ -1,7 +1,6 @@
 // =====================================
 // src/Components/ContactSection.tsx
 // ===================================== CONTACT SECTION COMPONENT
-
 import nightTrain from "../Assets/backgroundImage/nightTrain.webp";
 import { useState } from "react";
 import PageLayout from "./Reusables/PageLayout";
@@ -41,15 +40,18 @@ const ContactSection = () => {
 				},
 			);
 
+			const data = await response.json();
+
 			if (response.ok) {
-				setStatusMessage("Message sent successfully!");
+				setStatusMessage(data.message);
 				setStatusType("success");
-				setFormData({ name: "", email: "", message: "" });
+				setFormData({
+					name: "",
+					email: "",
+					message: "",
+				});
 			} else {
-				const errorData = await response.json();
-				setStatusMessage(
-					errorData.message || "Failed to send message. Please try again.",
-				);
+				setStatusMessage(data.message);
 				setStatusType("error");
 			}
 		} catch (error) {
