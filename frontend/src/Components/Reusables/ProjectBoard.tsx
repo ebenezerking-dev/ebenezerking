@@ -42,8 +42,9 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 		<div className="projectBoard__parent flex flex-col items-center justify-center gap-4 w-full z-20 pb-[3rem] text-md:[#dbcfff]/90">
 			{/* ================= TV FRAME (OUTER) */}
 			<div className="tvFrameOuterBorder relative w-full px-[1rem] pt-[1rem] pb-[3rem] overflow-hidden flex flex-col items-center justify-start border border-orange-500 rounded-[1rem] flex-shrink-0">
-				{/* ================= TV SCREEN (INSIDE) */}
-				<div className="tvFrameInsideBorder relative w-full h-[40rem] md:h-[35rem] lg:h-[35rem] rounded-[1rem] bg-black">
+				{/* ================= TV SCREEN PARENT HEIGHT (INSIDE) */}
+				<div className="tvFrameInsideBorder relative w-full h-[35rem] md:h-[32rem] md:bg-gray-900">
+					{/* <div className="tvFrameInsideBorder relative w-full h-[45rem] md:h-[30rem] lg:h-[30rem]"> */}
 					{/* ===== CUSTOM BORDERS ===== */}
 					{/* ============================= TOP */}
 					<div className="absolute top-[-1rem] left-[-2rem] -translate-x-[1rem] w-[120%] md:w-[110%] h-[1rem] bg-black/80 backdrop-blur-sm md:bg-black rounded-full z-0"></div>
@@ -102,45 +103,46 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 										transition={{ type: "spring", stiffness: 300 }}
 									>
 										{/* ================= PROJECT CARD */}
-										<div className="projectCard flex flex-col overflow-hidden h-full">
+										<div className="projectCard flex flex-col justify-between overflow-hidden h-full w-full">
 											{/* ================= TV IMAGES */}
-											<div className="w-full flex justify-between flex-1 px-4 py-2">
+											<div className="w-full flex justify-center items-center h-[20rem] p-1 md:bg-orange-200">
 												{/* === MOBILE */}
-												{project.images.tablet && (
-													<div className="h-full p-[0.1rem] h-[9rem] md:h-[14rem] lg:h-[16rem]">
+												{project.images.mobile && (
+													<div className="w-[42.5%] md:[10%] h-full">
 														<img
 															src={project.images.mobile}
 															alt={project.title}
-															className="w-full h-full object-cover rounded-md"
+															className="w-full h-full object-contain"
 														/>
 													</div>
 												)}
 
 												{/* === TABLET */}
 												{project.images.tablet && (
-													<div className="h-full p-[0.1rem] h-[9rem] md:h-[14rem] lg:h-[16rem]">
+													<div className="w-[57.5%] md:[10%] h-full">
 														<img
 															src={project.images.tablet}
 															alt={project.title}
-															className="w-full h-full object-cover rounded-md"
+															className="w-full h-full object-contain"
 														/>
 													</div>
 												)}
 
 												{/* === DESKTOP */}
 												{project.images.desktop && (
-													<div className="hidden md:flex h-full p-[0.1rem] md:h-[14rem] lg:h-[16rem]">
+													<div className="hidden md:flex md:w-[80%] h-full">
 														<img
 															src={project.images.desktop}
 															alt={project.title}
-															className="w-full h-full object-cover rounded-md"
+															className="w-full h-full object-contain"
 														/>
 													</div>
 												)}
 											</div>
 
-											{/* =========================== DETAILS */}
-											<div className="px-4 py-2 flex flex-col gap-[0.7rem] h-[18rem] md:h-[16rem] lg:h-[16rem]">
+											{/* =========================== DETAILS SECTION*/}
+											<div className="flex flex-col justify-evenly px-1 h-[15rem] md:h-[12rem] md:bg-gray-900">
+												{/* <div className="flex flex-col gap-2 h-[18rem] md:h-[16rem] lg:h-[16rem]"> */}
 												<div className="text-[1.25rem] font-bold text-orange-500 text-start bg-black/80 backdrop-blur-sm rounded-[0.5rem] md:shadow-[0_0_5px_rgba(255,165,0,0.7)]">
 													{/* =========== TITLE */}
 													<h4 className="border-l border-r border-orange-500 px-2 py-[0.2rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem]">
@@ -149,14 +151,12 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 												</div>
 
 												{/* =========== DESCRIPTION */}
-												<div className="text-[1.1rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem] line-clamp-3 md:line-clamp-2 h-[5.6rem] md:h-[4rem] lg:h-[4rem] md:shadow-[0_0_5px_rgba(255,165,0,0.7)]">
-													<p className="border-l border-r border-orange-500 px-2 py-[0.2rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem]">
-														{project.description}
-													</p>
+												<div className="text-[1.1rem] bg-black/80 backdrop-blur-sm rounded-[0.5rem] md:shadow-[0_0_5px_rgba(255,165,0,0.7)] border-l border-r border-orange-500 px-2 py-[0.2rem] break-words">
+													<p>{project.description}</p>
 												</div>
 
 												{/* =========== TECHNOLOGIES */}
-												<div className="grid grid-rows-2 grid-flow-col gap-[0.5rem]">
+												<div className="flex flex-wrap gap-[0.5rem]">
 													{project.tech.map((tech, idx) => (
 														<span
 															key={idx}

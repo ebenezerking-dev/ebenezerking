@@ -12,7 +12,8 @@ import Ipad from "../Assets/Projects/taxlator/images/iPad.webp";
 import Macbook from "../Assets/Projects/taxlator/images/Macbook.webp";
 import taxlator from "../Assets/Projects/taxlator/video/taxlator.mp4";
 
-import Incoming from "../Assets/Projects/Incoming.webp";
+import IncomingImage from "../Assets/Projects/incoming/incoming.png";
+import IncomingVideo from "../Assets/Projects/incoming/incoming.mp4";
 
 const projects = [
 	{
@@ -23,23 +24,39 @@ const projects = [
 		},
 		title: "Taxlator",
 		description:
-			"A full-stack tax calculation app with real-time updates. so you can calculate your taxes instantly.",
-		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
+			"A tax calculator app with real-time updates and calculations.",
+		tech: [
+			"React",
+			"JavaScript",
+			"TypeScript",
+			"TailwindCSS",
+			"Express.js",
+			"Node.js",
+			"MongoDB",
+		],
 		video: taxlator,
 		live: "https://taxlator-v2.vercel.app/",
 		github: "https://github.com/ebenezerkingv2/taxlatorV2_frontend",
 	},
 	{
 		images: {
-			mobile: Incoming,
-			tablet: Incoming,
-			desktop: Incoming,
+			mobile: IncomingImage,
+			tablet: IncomingImage,
+			desktop: IncomingImage,
 		},
-		title: "appiTicket",
+		title: "velly",
 		description:
-			"A full-stack ticketing web app, where you can buy and sell tickets for events, concerts, parties etc.",
-		tech: ["React", "Tailwind", "TypeScript", "Node.js", "MongoDB"],
-		video: taxlator,
+			"An online fashion retail store for you to shop at the comfort of your home.",
+		tech: [
+			"React",
+			"JavaScript",
+			"TypeScript",
+			"TailwindCSS",
+			"Express.js",
+			"Node.js",
+			"PostgreSQL",
+		],
+		video: IncomingVideo,
 		live: "https://kingv2.vercel.app/",
 		github: "https://github.com/ebenezerkingv2/kingv2",
 	},
