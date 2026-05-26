@@ -1,10 +1,10 @@
 // =====================================
 // src/Components/Reusables/CardSlider.tsx
 // ===================================== CARD SLIDER COMPONENT
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// =====================================
 type CardSliderProps<T> = {
 	items: T[];
 	renderItem: (item: T, index: number) => React.ReactElement;
@@ -49,7 +49,6 @@ const CardSlider = <T,>({
 								className="w-full flex flex-col"
 								whileHover={{
 									scale: 1.05,
-									// boxShadow: "0px 12px 30px rgba(249,115,22,0.6)",
 								}}
 								transition={{ type: "spring", stiffness: 300 }}
 							>
@@ -60,11 +59,11 @@ const CardSlider = <T,>({
 				</AnimatePresence>
 			</div>
 
-			{/* ================= SHOW MORE BUTTON OUTSIDE */}
+			{/* ================= MORE BUTTON */}
 			{items.length > visibleCount && (
 				<button
 					onClick={handleNext}
-					className="cardSlider__button bg-orange-500 text-[#450693] font-bold hover:bg-[#dbcfff] hover:text-orange-500 py-2 px-6 rounded-[0.5rem] transition-colors duration-300 cursor-pointer"
+					className="cardSlider__button bg-red-500 text-black font-bold hover:bg-orange-500 py-2 px-6 rounded-[0.5rem] transition-colors duration-300 border border-orange-500 cursor-pointer"
 				>
 					More
 				</button>

@@ -2,7 +2,7 @@
 // src/Pages/LandingPage.tsx
 // ===================================== LANDING PAGE COMPONENT
 
-import HomeSection from "../Components/HomeSection";
+import HomeSection from "../Components/HeroSection";
 import AboutSection from "../Components/AboutSection";
 import ProjectsSection from "../Components/ProjectsSection";
 import ServicesSection from "../Components/ServicesSection";

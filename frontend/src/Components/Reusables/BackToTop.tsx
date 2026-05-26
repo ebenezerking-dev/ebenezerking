@@ -1,7 +1,6 @@
 // =====================================
-// src/Components/Reusables/BackToTop.jsx
+// src/Components/Reusables/BackToTop.tsx
 // =====================================
-
 import { useEffect, useRef, useState } from "react";
 import { RiArrowUpDoubleLine } from "react-icons/ri";
 

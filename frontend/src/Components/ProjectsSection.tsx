@@ -1,9 +1,6 @@
 // =====================================
 // src/Components/ProjectsSection.tsx
 // ===================================== PROJECTS SECTION COMPONENT
-
-import darkNight from "../Assets/backgroundImage/darkNight.webp";
-import PageLayout from "./Reusables/PageLayout";
 import ProjectBoard from "./Reusables/ProjectBoard";
 import { useState, useEffect } from "react";
 
@@ -14,6 +11,8 @@ import taxlator from "../Assets/Projects/taxlator/video/taxlator.mp4";
 
 import IncomingImage from "../Assets/Projects/incoming/incoming.png";
 import IncomingVideo from "../Assets/Projects/incoming/incoming.mp4";
+
+import SectionFrame from "./Reusables/SectionFrame";
 
 const projects = [
 	{
@@ -46,7 +45,7 @@ const projects = [
 		},
 		title: "velly",
 		description:
-			"An online fashion retail store for you to shop at the comfort of your home.",
+			"An online fashion retail store.",
 		tech: [
 			"React",
 			"JavaScript",
@@ -84,35 +83,29 @@ const ProjectsSection = () => {
 	// =====================================
 
 	return (
-		<section className="projectSection relative min-h-screen w-full flex flex-col md:bg-black text-[#dbcfff] overflow-hidden">
-			{/* ============================== HERO IMAGE */}
-			<img
-				src={darkNight}
-				alt="Background"
-				className="projectSection__mobile--backgroundImage md:hidden absolute inset-0 w-full h-full object-cover object-[center_30%]"
-			/>
+		<SectionFrame className="projectSection__parent relative h-auto w-full flex flex-col bg-[#181819] md:bg-[#22050c] overflow-hidden">
+			{/* ============================== SECTION WRAPPER */}
+			<div className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto px-4 pt-[2rem] pb-[4rem]">
+				{/* ============================== CONTENT HEADER */}
+				<div className="wrapper__header font-unna text-[1.1rem] text-start mb-[5rem]">
+					<h2 className="sr-only">Projects</h2>
 
-			{/* ============================== PAGE LAYOUT */}
-			<PageLayout
-				header={
-					<div className="projectSectionHeader__parent text-[1.1rem] text-[#dbcfff] text-center md:text-[1rem] w-fit mx-auto bg-black/80 backdrop-blur-sm md:bg-transparent md:backdrop-blur-0 p-[0.1rem] rounded md:text-start">
-						<h2 className="sr-only">Projects</h2>
-						<h3 className="projectSection__subHeader">
-							...pause to view some{" "}
-							<span className="text-orange-500">projects</span>
-						</h3>
-					</div>
-				}
-			>
-				{/* ============================== PROJECT BOARD */}
-				<ProjectBoard items={projects} visibleCount={visibleCount} />
-			</PageLayout>
-			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="hidden md:block pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500/70 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]">
-				{/* ===================== UPWARD GLOW ===================== */}
-				<div className="absolute bottom-[4px] left-0 w-full h-[20px] bg-gradient-to-t from-orange-500/50 via-orange-500/20 to-transparent blur-[12px] opacity-80"></div>
+					<h3 className="header">
+						<span className="text-[#dbcfff]">...</span>
+						pause to view some <span className="text-orange-500">projects</span>
+					</h3>
+				</div>
+
+				{/* ============================== CONTENT */}
+				<div className="content__paragraphs font-tinos flex flex-col justify-center gap-4 lg:gap-3 text-[1.3rem] w-full">
+					{/* ============================== PROJECT BOARD */}
+					<ProjectBoard items={projects} visibleCount={visibleCount} />
+				</div>
 			</div>
-		</section>
+
+			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500/70 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
+		</SectionFrame>
 	);
 };
 

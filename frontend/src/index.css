@@ -1,10 +1,14 @@
 /* ================================= */
+@import url("https://fonts.googleapis.com/css2?family=Finlandica+Headline:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* ================================= */
 @import "tailwindcss";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ================================= */
 @layer base {
 	* {
 		margin: 0;
@@ -15,12 +19,64 @@
 	}
 	html {
 		font-size: 16px;
+		scroll-behavior: smooth;
 	}
 	body {
-		@apply font-sans text-[#0a2540] bg-black;
-		width: 100vw;
+		font-family: "Finlandica Headline", sans-serif;
+		color: #f97316;
+		background: black;
+		width: 100%;
 		min-height: 100vh;
 		display: block;
+	}
+}
+
+/* ================================= */
+@layer components {
+	.nav-item {
+		@apply relative w-full py-[0.8rem] px-[0.5rem] text-center text-orange-500/70 transition;
+	}
+	.nav-item-hover {
+		@apply hover:text-orange-500 transition-colors duration-200;
+	}
+	.nav-item-active {
+		@apply text-orange-500;
+	}
+
+	/* ================================= */
+	.nav-divider {
+		@apply block pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2
+	w-[80%] h-[2px]
+	bg-gradient-to-r from-transparent via-orange-500/40 to-transparent
+	shadow-[0_0_6px_rgba(255,165,0,0.3)]
+	transition-all duration-300 ease-out
+	group-hover:via-orange-500/80
+	group-hover:shadow-[0_0_14px_rgba(255,165,0,0.8)];
+	}
+
+	.nav-item:hover {
+		transform: translateY(-1px);
+	}
+
+	/* ================================= */
+	.nav-link {
+		@apply block w-full font-medium tracking-wide capitalize;
+	}
+
+	/* ================================= */
+	.nav-list {
+		@apply w-full flex flex-col pt-[2rem] px-[1rem] list-none;
+	}
+
+	/* ================================= */
+	.font-finlandica {
+		font-family: "Finlandica Headline", sans-serif;
+	}
+	.font-unna {
+		font-family: "Unna", serif;
+	}
+	.font-tinos {
+		font-family: "Tinos", serif;
 	}
 }
 

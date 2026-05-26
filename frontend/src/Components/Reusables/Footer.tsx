@@ -30,19 +30,24 @@ function Footer() {
 			animate={footerMotion.animate}
 			exit={footerMotion.exit}
 			transition={footerTransition}
-			className="footer__parent relative bg-black md:bg-black text-orange-500 md:text-[#dbcfff] w-full min-h-[130px] text-[1.1rem] py-[1rem] px-[1rem] flex flex-col lg:px-[2rem]md:text-[1.2rem] lg:text-[1.1rem]"
+			className="footer__parent relative bg-black text-orange-500 w-full min-h-[130px] text-[1.1rem] py-[1rem] px-[1rem] flex flex-col lg:px-[2rem] md:text-[1.2rem] lg:text-[1.1rem]"
 		>
 			{/* ================ FOOTER CONTENTS ================ */}
 			<div className="relative z-20">
 				{/* =============== Contact Section =============== */}
 				<div className="footer__contact flex flex-col items-end">
-					<h6>Would you like to support my content?</h6>
-					<p className="flex flex-col items-end">Hire me or recommend me</p>
+					<h6>Get in touch!</h6>
+					<p className="flex flex-col items-end">Hire or recommend me</p>
 
-					<a href="https://wa.me/message/UHRWC3UBMMB2E1">
+					<a
+						href="https://wa.me/message/UHRWC3UBMMB2E1"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Whatsapp"
+					>
 						<FaWhatsappSquare
 							size={40}
-							className="mt-[0.4rem] text-orange-500 hover:bg-[#450693] hover:text-[#dbcfff]"
+							className="mt-[0.4rem] text-orange-500 hover:text-red-500"
 						/>
 					</a>
 				</div>
@@ -53,13 +58,13 @@ function Footer() {
 						<ul>
 							<li className="flex gap-2">
 								<a
-									href="https://x.com/dev_kingv2"
+									href="https://x.com/a_devlin"
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label="Twitter"
 								>
-									<span className="inline-flex items-center justify-center p-2 border border-transparent md:text-orange-500 hover:text-[#450693] hover:bg-[#dbcfff] rounded transition-all duration-300">
-										<RiTwitterXLine className="text-[1rem] lg:text-[1.3rem]" />
+									<span className="inline-flex items-center justify-center p-2 border border-transparent md:text-orange-500 hover:text-red-500 transition-all duration-300">
+										<RiTwitterXLine className="text-[1rem] lg:text-[1.5rem]" />
 									</span>
 								</a>
 
@@ -69,8 +74,8 @@ function Footer() {
 									rel="noopener noreferrer"
 									aria-label="LinkedIn"
 								>
-									<span className="inline-flex items-center justify-center p-2 border border-transparent md:text-orange-500 hover:text-[#450693] hover:bg-[#450693] hover:bg-[#dbcfff]  rounded transition-all duration-300">
-										<FaLinkedin className="text-[1rem] lg:text-[1.3rem]" />
+									<span className="inline-flex items-center justify-center p-2 border border-transparent md:text-orange-500 hover:text-red-500 transition-all duration-300">
+										<FaLinkedin className="text-[1rem] lg:text-[1.5rem]" />
 									</span>
 								</a>
 
@@ -80,8 +85,8 @@ function Footer() {
 									rel="noopener noreferrer"
 									aria-label="GitHub"
 								>
-									<span className="inline-flex items-center justify-center p-2 border border-transparent md:text-orange-500 hover:text-[#450693] hover:bg-[#450693] hover:bg-[#dbcfff]  rounded transition-all duration-300">
-										<FaGithub className="text-[1rem] lg:text-[1.3rem]" />
+									<span className="inline-flex items-center justify-center p-2 border border-transparent md:text-orange-500 hover:text-red-500 hover:text-red-500 transition-all duration-300">
+										<FaGithub className="text-[1rem] lg:text-[1.5rem]" />
 									</span>
 								</a>
 							</li>

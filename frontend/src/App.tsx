@@ -1,28 +1,49 @@
 // =====================================
 // src/App.tsx
-// ===================================== APP COMPONENT
+// =====================================
 
-import { Routes, Route } from "react-router-dom";
 import "./index.css";
-import Layout from "./Components/Layout";
-import LandingPage from "./Pages/LandingPage";
-import About from "./Pages/About";
-import Projects from "./Pages/Projects";
-import Services from "./Pages/Services";
-import Contact from "./Pages/Contact";
+
+import Navbar from "./Components/Reusables/Navbar";
+import Hero from "./Components/HeroSection";
+import About from "./Components/AboutSection";
+import Projects from "./Components/ProjectsSection";
+import Services from "./Components/ServicesSection";
+import Contact from "./Components/ContactSection";
+import Footer from "./Components/Reusables/Footer";
+
+import BackToTop from "./Components/Reusables/BackToTop";
 
 // =====================================
 function App() {
 	return (
-		<Routes>
-			<Route path="/" element={<Layout />}>
-				<Route index element={<LandingPage />} />
-				<Route path="about" element={<About />} />
-				<Route path="projects" element={<Projects />} />
-				<Route path="services" element={<Services />} />
-				<Route path="contact" element={<Contact />} />
-			</Route>
-		</Routes>
+		<>
+			<Navbar />
+
+			<section id="home">
+				<Hero />
+			</section>
+
+			<section id="about">
+				<About />
+			</section>
+
+			<section id="projects">
+				<Projects />
+			</section>
+
+			<section id="services">
+				<Services />
+			</section>
+
+			<section id="contact">
+				<Contact />
+			</section>
+
+			<BackToTop />
+
+			<Footer />
+		</>
 	);
 }
 

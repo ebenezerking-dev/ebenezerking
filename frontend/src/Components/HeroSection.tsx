@@ -1,0 +1,137 @@
+// =====================================
+// src/Components/HomeSection.tsx
+// ===================================== HOME SECTION COMPONENT
+import Kingv2 from "../Assets/profilePic/kingAnimePp.webp";
+import king from "../Assets/backgroundImage/kingAnimePortrait.webp";
+import amazingD from "../Assets/backgroundVideo/amazingD.mp4";
+import { PiArrowFatLineDownFill } from "react-icons/pi";
+import NavbarSpacer from "./Reusables/NavbarSpacer";
+import { motion } from "framer-motion";
+
+// =====================================
+const springZoom = {
+	initial: { opacity: 0, scale: 0.5 },
+	animate: { opacity: 1, scale: 1 },
+	transition: {
+		type: "spring" as const,
+		stiffness: 40,
+		damping: 15,
+	},
+};
+
+const HeroSection = () => {
+	return (
+		<section className="heroSection__parent w-full flex flex-col flex-grow">
+			<NavbarSpacer mobileOffset={15} mdOffset={-50} lgOffset={-40} />
+			<div className="heroSection__wrapper">
+				{/* ========================================================================== */}
+				{/* ============================== SMALL SCREENS */}
+				<div className="smallScreens relative md:hidden w-full h-screen overflow-hidden flex items-center justify-center">
+					{/* ============= HERO BACKGROUND IMAGE */}
+					<img
+						src={king}
+						alt="Background"
+						className="smallScreens__backgroundImage absolute inset-0 w-full h-full object-cover object-[center_80%] z-0"
+					/>
+					{/* ============= HERO CONTENT */}
+					<div className="smallScreens__content relative w-[90%] flex items-center justify-center text-center text-white bg-black/80 backdrop-blur-sm rounded-[1rem] overflow-hidden">
+						{/* ============= BACKGROUND VIDEO */}
+						<video
+							autoPlay
+							muted
+							loop
+							playsInline
+							className="absolute inset-0 w-full h-full object-cover object-[center_50%] z-0"
+						>
+							<source src={amazingD} type="video/mp4" />
+						</video>
+
+						{/* ============= DARK OVERLAY */}
+						<div className="absolute inset-0 bg-black/5 z-10" />
+
+						{/* ============= CONTENTS */}
+						<div className="relative z-20 flex flex-col items-center justify-center p-2">
+							<p className="text-[1.2rem] text-[#dbcfff] mb-2">
+								Nice to meet you!
+							</p>
+
+							<h1 className="text-[1.4rem] font-bold uppercase text-orange-500 border-t-2 border-b-2 border-orange-500 hover:text-[#dbcfff] transition duration-300 px-2">
+								<a
+									href="https://www.coursera.org/articles/full-stack-developer"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									I'm a full-stack Developer
+								</a>
+							</h1>
+
+							<span className="flex items-center gap-1 text-[#dbcfff] mt-4 animate-bounce">
+								<PiArrowFatLineDownFill className="text-[1.2rem] opacity-70" />
+								<PiArrowFatLineDownFill className="text-[1.2rem] opacity-70" />
+								<PiArrowFatLineDownFill className="text-[1.2rem] opacity-70" />
+							</span>
+						</div>
+					</div>
+				</div>
+
+				{/* ========================================================================== */}
+				{/* ============================== MEDIUM SCREENS */}
+				<div className="hidden md:flex relative overflow-hidden w-full pb-[3rem]">
+					{/* ============= MEDIUM AND LARGE SCREENS HERO CONTAINER */}
+					<div className="h-screen w-[90%] lg:w-[70%] pt-[6rem] mx-auto flex flex-col md:flex-row items-center justify-center gap-[4rem] lg:gap-[6rem]">
+						{/* ============= HERO BACKGROUND IMAGE */}
+						<video
+							autoPlay
+							muted
+							loop
+							playsInline
+							className="mediumScreenBackgroundVideo md:block absolute inset-0 w-full h-full object-cover md:object-[center_40%] lg:object-[center_30%]"
+						>
+							<source src={amazingD} type="video/mp4" />
+						</video>
+						<motion.div
+							className="flex-shrink-0"
+							initial={springZoom.initial}
+							animate={springZoom.animate}
+							transition={springZoom.transition}
+						>
+							{/* ============= HERO DEV IMAGE */}
+							<div className="w-full h-[280px] lg:h-[350px] overflow-hidden border-4 border-orange-500 rounded-full z-20 relative">
+								<img
+									src={Kingv2}
+									alt="King"
+									className="object-cover w-full h-full"
+								/>
+							</div>
+						</motion.div>
+
+						{/* ================= HERO CONTENT */}
+						<motion.div
+							className=" flex flex-col items-center md:items-start text-center md:text-left"
+							initial={{ opacity: 0, x: 200 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{
+								type: "spring",
+								stiffness: 50,
+								damping: 20,
+								delay: 0.5,
+							}}
+						>
+							<h1 className=" relative z-20 text-[2rem] font-bold uppercase text-orange-500 border-t-4 border-b-4 border-orange-500 hover:text-[#dbcfff] transition duration-300 px-2">
+								<a
+									href="https://www.coursera.org/articles/full-stack-developer"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									MERN Full-Stack Developer
+								</a>
+							</h1>
+						</motion.div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+};
+
+export default HeroSection;
