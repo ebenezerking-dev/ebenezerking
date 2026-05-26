@@ -55,7 +55,7 @@ const HeroSection = () => {
 								Nice to meet you!
 							</p>
 
-							<h1 className="text-[1.4rem] font-bold uppercase text-orange-500 border-t-2 border-b-2 border-orange-500 hover:text-[#dbcfff] transition duration-300 px-2">
+							<h1 className="text-[1.4rem] font-bold uppercase text-orange-500 border-t-2 border-b-2 border-orange-500 hover:text-red-500 transition duration-300 px-2">
 								<a
 									href="https://www.coursera.org/articles/full-stack-developer"
 									target="_blank"
