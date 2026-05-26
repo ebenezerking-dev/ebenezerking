@@ -4,6 +4,7 @@
 
 import "./index.css";
 
+import Layout from "./Components/Layout";
 import Navbar from "./Components/Reusables/Navbar";
 import Hero from "./Components/HeroSection";
 import About from "./Components/AboutSection";
@@ -17,7 +18,7 @@ import BackToTop from "./Components/Reusables/BackToTop";
 // =====================================
 function App() {
 	return (
-		<>
+		<Layout>
 			<Navbar />
 
 			<section id="home">
@@ -43,7 +44,7 @@ function App() {
 			<BackToTop />
 
 			<Footer />
-		</>
+		</Layout>
 	);
 }
 

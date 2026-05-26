@@ -1,14 +1,17 @@
 // =====================================
 // src/Components/Layout.tsx
 // ===================================== LAYOUT COMPONENT
-
-import { Outlet } from "react-router-dom";
 import Navbar from "./Reusables/Navbar";
 import Footer from "./Reusables/Footer";
 import BackToTop from "./Reusables/BackToTop";
 
 // =====================================
-function Layout() {
+interface LayoutProps {
+	children: React.ReactNode;
+}
+
+// =====================================
+function Layout({ children }: LayoutProps) {
 	return (
 		<div className="flex flex-col min-h-screen w-full relative">
 			{/* ============== HEADER ============== */}
@@ -18,7 +21,7 @@ function Layout() {
 
 			{/* ============== MAIN ============== */}
 			<main className="flex-grow flex flex-col w-full relative z-0">
-				<Outlet />
+				{children}
 			</main>
 
 			{/* ============== FOOTER ============== */}
