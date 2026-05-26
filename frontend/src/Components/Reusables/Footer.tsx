@@ -1,7 +1,6 @@
 // =====================================
 // src/Components/Reusables/Footer.jsx
 // ===================================== ANIMATION CONFIG
-
 import { motion } from "motion/react";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaLinkedin, FaGithub, FaWhatsappSquare } from "react-icons/fa";

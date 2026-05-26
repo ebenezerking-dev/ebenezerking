@@ -5,22 +5,17 @@
 import "./index.css";
 
 import Layout from "./Components/Layout";
-import Navbar from "./Components/Reusables/Navbar";
 import Hero from "./Components/HeroSection";
 import About from "./Components/AboutSection";
 import Projects from "./Components/ProjectsSection";
 import Services from "./Components/ServicesSection";
 import Contact from "./Components/ContactSection";
-import Footer from "./Components/Reusables/Footer";
 
-import BackToTop from "./Components/Reusables/BackToTop";
 
 // =====================================
 function App() {
 	return (
 		<Layout>
-			<Navbar />
-
 			<section id="home">
 				<Hero />
 			</section>
@@ -40,10 +35,6 @@ function App() {
 			<section id="contact">
 				<Contact />
 			</section>
-
-			<BackToTop />
-
-			<Footer />
 		</Layout>
 	);
 }
