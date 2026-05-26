@@ -117,7 +117,7 @@ const HeroSection = () => {
 								delay: 0.5,
 							}}
 						>
-							<h1 className=" relative z-20 text-[2rem] font-bold uppercase text-orange-500 border-t-4 border-b-4 border-orange-500 hover:text-[#dbcfff] transition duration-300 px-2">
+							<h1 className=" relative z-20 text-[2rem] font-bold uppercase text-orange-500 border-t-4 border-b-4 border-orange-500 hover:text-red-500 transition duration-300 px-2">
 								<a
 									href="https://www.coursera.org/articles/full-stack-developer"
 									target="_blank"
