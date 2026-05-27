@@ -14,7 +14,7 @@ const services = [
 	{
 		title: "Back-End Development",
 		description:
-			"Create secure, scalable APIs and server logic using Node.js, Express, and MongoDB.",
+			"Create secure, scalable APIs and server logic using Node.js, Express, MongoDB or PostgreSQL.",
 	},
 	{
 		title: "Full-Stack Solutions",
@@ -66,17 +66,19 @@ const ServicesSection = () => {
 	// =================================
 
 	return (
-		<SectionFrame className="serviceSection__parent relative h-auto w-full flex flex-col bg-[#181819] md:bg-[#22050c] overflow-hidden">
+		<SectionFrame className="serviceSection__parent relative h-auto w-full flex flex-col bg-[#262628] md:bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
-			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto px-4 pt-[2rem] pb-[4rem]">
+			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto px-4">
 				{/* ============================== CONTENT HEADER */}
-				<div className="wrapper__header font-unna text-[1.1rem] text-start mb-[5rem]">
+				<div className="wrapper__header font-unna text-[1.1rem] text-center mb-[5rem]">
 					<h2 className="sr-only servicesSection__header">Services</h2>
 
-					<h3 className="header">
-						<span className="text-[#dbcfff]">...</span>
-						how can I be of <span className="text-orange-500">service</span> to
-						you
+					<h3 className="header relative inline-block flex">
+						<span className="text-orange-500 font-bold uppercase">
+							services
+						</span>{" "}
+						i can offer you..
+						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-red-500 rounded-full"></span>
 					</h3>
 				</div>
 
@@ -85,7 +87,7 @@ const ServicesSection = () => {
 					items={services}
 					visibleCount={visibleCount}
 					renderItem={(service) => (
-						<div className="serviceCard h-full flex flex-col justify-start text-center lg:bg-[#22050c] px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border border-red-500">
+						<div className="serviceCard h-full flex flex-col justify-start text-center md:bg-[#22050c] px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border-2 border-red-500">
 							<h4 className="text-[1.25rem] font-bold text-orange-500 mb-2">
 								{service.title}
 							</h4>
@@ -97,7 +99,7 @@ const ServicesSection = () => {
 			</div>
 
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500/70 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
 		</SectionFrame>
 	);
 };

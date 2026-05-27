@@ -29,14 +29,14 @@ function Footer() {
 			animate={footerMotion.animate}
 			exit={footerMotion.exit}
 			transition={footerTransition}
-			className="footer__parent relative bg-black text-orange-500 w-full min-h-[130px] text-[1.1rem] py-[1rem] px-[1rem] flex flex-col lg:px-[2rem] md:text-[1.2rem] lg:text-[1.1rem]"
+			className="footer__parent relative bg-black w-full min-h-[130px] text-[1.1rem] py-[1rem] px-[1rem] flex flex-col lg:px-[2rem] md:text-[1.2rem] lg:text-[1.1rem]"
 		>
 			{/* ================ FOOTER CONTENTS ================ */}
 			<div className="relative z-20">
 				{/* =============== Contact Section =============== */}
 				<div className="footer__contact flex flex-col items-end">
-					<h6>Get in touch!</h6>
-					<p className="flex flex-col items-end">Hire or recommend me</p>
+					<h6 className="flex flex-col items-end">Hire or recommend me</h6>
+					<p>Get in touch!</p>
 
 					<a
 						href="https://wa.me/message/UHRWC3UBMMB2E1"
@@ -46,7 +46,7 @@ function Footer() {
 					>
 						<FaWhatsappSquare
 							size={40}
-							className="mt-[0.4rem] text-orange-500 hover:text-red-500"
+							className="mt-[0.4rem] hover:text-orange-500"
 						/>
 					</a>
 				</div>
@@ -62,8 +62,8 @@ function Footer() {
 									rel="noopener noreferrer"
 									aria-label="Twitter"
 								>
-									<span className="inline-flex items-center justify-center p-2 border border-transparent md:text-orange-500 hover:text-red-500 transition-all duration-300">
-										<RiTwitterXLine className="text-[1rem] lg:text-[1.5rem]" />
+									<span className="inline-flex items-center justify-center p-2 hover:text-orange-500 transition-all duration-300">
+										<RiTwitterXLine className="text-[1.5rem]" />
 									</span>
 								</a>
 
@@ -73,8 +73,8 @@ function Footer() {
 									rel="noopener noreferrer"
 									aria-label="LinkedIn"
 								>
-									<span className="inline-flex items-center justify-center p-2 border border-transparent md:text-orange-500 hover:text-red-500 transition-all duration-300">
-										<FaLinkedin className="text-[1rem] lg:text-[1.5rem]" />
+									<span className="inline-flex items-center justify-center p-2 hover:text-orange-500 transition-all duration-300">
+										<FaLinkedin className="text-[1.5rem]" />
 									</span>
 								</a>
 
@@ -84,8 +84,8 @@ function Footer() {
 									rel="noopener noreferrer"
 									aria-label="GitHub"
 								>
-									<span className="inline-flex items-center justify-center p-2 border border-transparent md:text-orange-500 hover:text-red-500 hover:text-red-500 transition-all duration-300">
-										<FaGithub className="text-[1rem] lg:text-[1.5rem]" />
+									<span className="inline-flex items-center justify-center p-2 hover:text-orange-500 transition-all duration-300">
+										<FaGithub className="text-[1.5rem]" />
 									</span>
 								</a>
 							</li>

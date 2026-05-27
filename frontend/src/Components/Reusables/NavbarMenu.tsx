@@ -26,7 +26,7 @@ export default function NavbarMenu({
 			/>
 			{/* ================= MENU */}
 			<div
-				className={`fixed left-0 w-full z-40 bg-black text-[1.1rem] text-orange-500 font-bold shadow-lg transition-all duration-300 ease-in-out ${
+				className={`fixed left-0 w-full z-40 bg-black text-[1.1rem] font-bold shadow-lg transition-all duration-300 ease-in-out ${
 					isOpen
 						? "translate-y-0 opacity-100 pointer-events-auto"
 						: "-translate-y-6 opacity-0 pointer-events-none"

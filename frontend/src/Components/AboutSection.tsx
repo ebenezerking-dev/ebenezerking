@@ -7,25 +7,42 @@ import SectionFrame from "./Reusables/SectionFrame";
 // =====================================
 const AboutSection = () => {
 	return (
-		<SectionFrame className="aboutSection__parent relative h-auto w-full flex flex-col bg-[#181819] md:bg-[#22050c] overflow-hidden">
+		<SectionFrame className="aboutSection__parent relative h-auto w-full flex flex-col bg-[#262628] md:bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
 			<div className="aboutSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto px-4 pt-[2rem] pb-[4rem]">
 				{/* ============================== CONTENT HEADER */}
-				<div className="wrapper__header font-unna text-[1.1rem] text-start mb-[5rem]">
-					<h2 className="sr-only">About Me</h2>
+				<div className="wrapper__header font-unna text-[1.1rem] text-center mb-[5rem]">
+					<h2 className="sr-only aboutSection__header">About Me</h2>
 
-					<h3 className="header">
-						<span className="text-[#dbcfff]">...</span>
-						About me <span className="text-orange-500">professionally</span>
+					<h3 className="header relative inline-block flex">
+						Call me Bob — because I like to{" "}
+						<span className="text-orange-500 font-bold uppercase">build.</span>
+						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-red-500 rounded-full"></span>
 					</h3>
 				</div>
 
 				{/* ============================== CONTENT */}
-				<div className="content__paragraphs font-tinos flex flex-col justify-center gap-4 lg:gap-3 text-[1.3rem] w-full">
+				<div className="content__paragraphs font-tinos flex flex-col justify-center gap-4 lg:gap-3 text-[1.5rem] md:text-[2rem] lg:text-[1.4rem] w-full md:bg-[#22050c] md:p-4 rounded-[0.5rem]">
+					<p>Hello! I'm King</p>
 					<p>
-						I turn ideas into modern digital experiences by combining thoughtful
-						design, clean code, and problem-solving to build products people
-						enjoy using.
+						A Software Developer,{" "}
+						<span className="uppercase font-bold text-orange-500 text-[1.8rem]">
+							i
+						</span>{" "}
+						think,{" "}
+						<span className="uppercase font-bold text-orange-500 text-[1.8rem]">
+							i
+						</span>{" "}
+						visualise,{" "}
+						<span className="uppercase font-bold text-orange-500 text-[1.8rem]">
+							i
+						</span>{" "}
+						code
+					</p>
+					<p>
+						I turn my ideas into modern digital experiences by combining
+						thoughtful design, clean code architecture, and problem-solving to
+						build products people enjoy using.
 					</p>
 
 					<p>
@@ -35,15 +52,15 @@ const AboutSection = () => {
 					</p>
 
 					<p>
-						I enjoy collaborating with teams, brainstorming creative solutions,
-						and bringing projects to life with attention to detail and user
-						experience.
+						I also strive well in a collaborative team setting, brainstorming
+						creative solutions, and bringing projects to life with attention to
+						detail and user experience.
 					</p>
 				</div>
 			</div>
 
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500/70 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
 		</SectionFrame>
 	);
 };

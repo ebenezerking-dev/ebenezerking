@@ -23,7 +23,7 @@
 	}
 	body {
 		font-family: "Finlandica Headline", sans-serif;
-		color: #f97316;
+		color: #00ff91;
 		background: black;
 		width: 100%;
 		min-height: 100vh;
@@ -34,13 +34,13 @@
 /* ================================= */
 @layer components {
 	.nav-item {
-		@apply relative w-full py-[0.8rem] px-[0.5rem] text-center text-orange-500/70 transition;
+		@apply relative w-full py-[0.8rem] px-[0.5rem] text-center transition;
 	}
 	.nav-item-hover {
-		@apply hover:text-orange-500 transition-colors duration-200;
+		@apply transition-colors duration-200;
 	}
 	.nav-item-active {
-		@apply text-orange-500;
+		@apply bg-orange-500;
 	}
 
 	/* ================================= */
@@ -50,7 +50,7 @@
 	bg-gradient-to-r from-transparent via-orange-500/40 to-transparent
 	shadow-[0_0_6px_rgba(255,165,0,0.3)]
 	transition-all duration-300 ease-out
-	group-hover:via-orange-500/80
+	group-hover:via-orange-500
 	group-hover:shadow-[0_0_14px_rgba(255,165,0,0.8)];
 	}
 

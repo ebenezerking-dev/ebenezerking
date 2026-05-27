@@ -63,7 +63,7 @@ const CardSlider = <T,>({
 			{items.length > visibleCount && (
 				<button
 					onClick={handleNext}
-					className="cardSlider__button bg-red-500 text-black font-bold hover:bg-orange-500 py-2 px-6 rounded-[0.5rem] transition-colors duration-300 border border-orange-500 cursor-pointer"
+					className="cardSlider__button bg-[#22050c] font-bold hover:bg-orange-500 py-2 px-6 rounded-[0.5rem] transition-colors duration-300 border-2 border-red-500 cursor-pointer"
 				>
 					More
 				</button>

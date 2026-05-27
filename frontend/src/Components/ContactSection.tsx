@@ -63,32 +63,37 @@ const ContactSection = () => {
 	};
 
 	return (
-		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-[#181819] md:bg-[#22050c] overflow-hidden">
+		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-[#262628] md:bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
 			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto px-4 pt-[2rem] pb-[4rem]">
 				{/* ============================== CONTENT HEADER */}
-				<div className="wrapper__header font-unna text-[1.1rem] text-start mb-[5rem]">
-					<h2 className="sr-only">About Me</h2>
-					<h3 className="contactSection__subHeader">
-						...here is my <span className="text-orange-500">contact</span>
+				<div className="wrapper__header font-unna text-[1.1rem] text-center mb-[5rem]">
+					<h2 className="sr-only contactSection__header">Contact Me</h2>
+
+					<h3 className="header relative inline-block font-bold">
+						Let's{" "}
+						<span className="text-orange-500 font-bold uppercase">connect</span>
+						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
 					</h3>
 				</div>
 
 				{/* ========================= CONTACT FORM ======================== */}
 				<div className="flex flex-1 flex-col justify-center items-center pb-[3rem]">
-					<div className="contactSection__form text-[#dbcfff] w-full lg:bg-[#22050c] px-4 py-[1rem] mx-auto">
+					<div className="contactSection__form md:text-[#22050c] w-full px-4 py-[1rem] mx-auto">
 						<form
 							className="w-full flex flex-col gap-4"
 							onSubmit={handleSubmit}
 						>
 							{/* =========================== NAME */}
 							<div className="nameParent">
-								<label className="block text-orange-500 mb-2">Name:</label>
+								<label className="block text-orange-500 font-bold mb-2">
+									Name:
+								</label>
 								<input
 									type="text"
 									name="name"
 									placeholder="Your Name"
-									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] text-[1.1rem] bg-transparent lg:bg-[#22050c]"
+									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] text-[1.1rem] bg-transparent"
 									value={formData.name}
 									onChange={handleChange}
 									required
@@ -97,12 +102,14 @@ const ContactSection = () => {
 
 							{/* =========================== EMAIL */}
 							<div className="emailParent">
-								<label className="block text-orange-500 mb-2">Email:</label>
+								<label className="block text-orange-500 font-bold mb-2">
+									Email:
+								</label>
 								<input
 									type="email"
 									name="email"
 									placeholder="Your Email"
-									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] text-[1.1rem] bg-transparent lg:bg-[#22050c]"
+									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] text-[1.1rem] bg-transparent"
 									value={formData.email}
 									onChange={handleChange}
 									required
@@ -111,12 +118,14 @@ const ContactSection = () => {
 
 							{/* =========================== MESSAGE */}
 							<div className="messageParent">
-								<label className="block text-orange-500 mb-2">Message:</label>
+								<label className="block text-orange-500 font-bold mb-2">
+									Message:
+								</label>
 								<textarea
 									name="message"
 									rows={5}
 									placeholder="Your Message"
-									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] text-[1.1rem] bg-transparent lg:bg-[#22050c]"
+									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] text-[1.1rem] bg-transparent"
 									value={formData.message}
 									onChange={handleChange}
 									required
@@ -127,7 +136,7 @@ const ContactSection = () => {
 							<button
 								type="submit"
 								disabled={isSending}
-								className="contactForm__submit bg-red-500 text-black font-bold hover:bg-orange-500 py-2 px-4 rounded-[0.5rem] transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+								className="contactForm__submit bg-[#22050c] text-[#00ff91] font-bold hover:bg-orange-500 py-2 px-4 border-2 border-red-500 rounded-[0.5rem] transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
 							>
 								{isSending ? "Sending..." : "Send Message"}
 							</button>
@@ -148,7 +157,7 @@ const ContactSection = () => {
 			</div>
 
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500/70 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
 		</SectionFrame>
 	);
 };

@@ -38,7 +38,7 @@ function Navbar() {
 				transition={navbarTransition}
 				className="navbar__parent fixed top-0 left-0 z-50 bg-black w-full text-[1.1rem] flex flex-col px-[1rem] py-[0.5rem]"
 			>
-				<div className="navbar__main relative text-orange-500 flex justify-between items-end">
+				<div className="navbar__main relative flex justify-between items-end">
 					<div>
 						<TimeDate className="timeDate text-[1rem]" />
 					</div>

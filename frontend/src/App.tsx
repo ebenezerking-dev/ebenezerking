@@ -1,7 +1,6 @@
 // =====================================
 // src/App.tsx
 // =====================================
-
 import "./index.css";
 
 import Layout from "./Components/Layout";
