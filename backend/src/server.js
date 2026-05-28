@@ -1,7 +1,6 @@
 // =====================================
 // src/server.js
 // ===================================== ENTRY POINT - SERVER SETUP
-
 import app from "./app.js";
 import connectDB from "./config/db.js";
 import { gracefulShutdown } from "./utils/gracefulShutdown.js";

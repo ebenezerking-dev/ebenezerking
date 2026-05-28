@@ -1,7 +1,6 @@
 // =====================================
 // src/config/env.js
 // ===================================== ENVIRONMENT VARIABLES WRAPPER
-
 import dotenv from "dotenv";
 
 dotenv.config();

@@ -1,7 +1,6 @@
 // =====================================
 // src/services/emailService.js
 // ===================================== EMAIL SERVICE USING SENDGRID
-
 import sgMail from "@sendgrid/mail";
 import env from "../config/env.js";
 

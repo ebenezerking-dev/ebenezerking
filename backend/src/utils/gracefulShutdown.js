@@ -1,7 +1,6 @@
 // ===========================
 // src/utils/gracefulShutdown.js
 // =========================== GRACEFUL SHUTDOWN UTILS - HANDLES CLEAN SERVER SHUTDOWN ON TERMINATION SIGNALS
-
 import mongoose from "mongoose";
 
 // ======================== GRACEFUL SHUTDOWN HANDLER =========================
