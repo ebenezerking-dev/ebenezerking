@@ -50,7 +50,7 @@ function Navbar() {
 								animate={{ rotate: isOpen ? 0 : 180 }}
 								transition={{ duration: 0.3 }}
 							>
-								{isOpen ? <FaTimes size={28} /> : <GiHamburgerMenu size={28} />}
+								{isOpen ? <FaTimes size={32} /> : <GiHamburgerMenu size={32} />}
 							</motion.div>
 						</button>
 					</div>

@@ -32,7 +32,7 @@ const CardSlider = <T,>({
 	return (
 		<div className="flex flex-1 flex-col justify-center pb-[3rem] items-center gap-4 z-20 w-full">
 			{/* ================= SLIDER "TV SCREEN" */}
-			<div className="relative w-full p-4 overflow-hidden flex items-center justify-center">
+			<div className="relative w-full overflow-hidden flex items-center justify-center">
 				{/* ==================== GRID CARDS */}
 				<AnimatePresence mode="wait">
 					<motion.div
@@ -48,7 +48,7 @@ const CardSlider = <T,>({
 								key={index}
 								className="w-full flex flex-col"
 								whileHover={{
-									scale: 1.05,
+									scale: 0.98,
 								}}
 								transition={{ type: "spring", stiffness: 300 }}
 							>

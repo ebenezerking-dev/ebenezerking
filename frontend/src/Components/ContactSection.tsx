@@ -65,7 +65,7 @@ const ContactSection = () => {
 	return (
 		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-[#262628] md:bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
-			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto px-4 pt-[2rem] pb-[4rem]">
+			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
 				<div className="wrapper__header font-unna text-[1.1rem] text-center mb-[5rem]">
 					<h2 className="sr-only contactSection__header">Contact Me</h2>
@@ -79,7 +79,7 @@ const ContactSection = () => {
 
 				{/* ========================= CONTACT FORM ======================== */}
 				<div className="flex flex-1 flex-col justify-center items-center pb-[3rem]">
-					<div className="contactSection__form md:text-[#22050c] w-full px-4 py-[1rem] mx-auto">
+					<div className="contactSection__form md:text-[#22050c] w-full py-[1rem] mx-auto">
 						<form
 							className="w-full flex flex-col gap-4"
 							onSubmit={handleSubmit}

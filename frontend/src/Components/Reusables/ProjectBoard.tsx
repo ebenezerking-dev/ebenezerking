@@ -50,7 +50,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 	return (
 		<div className="projectBoard__parent flex flex-col items-center justify-center gap-4 w-full z-20 md:font-bold lg:font-normal">
 			{/* ================= TV + PARENT FRAME */}
-			<div className="tvOuterFrame relative w-full px-[1rem] pt-[1rem] pb-[3rem] overflow-hidden flex flex-col items-center justify-start border-b-4 lg:border-2 border-red-500 rounded-[1rem] lg:bg-[#22050c] flex-shrink-0">
+			<div className="tvOuterFrame relative w-full pb-[3rem] overflow-hidden flex flex-col items-center justify-start border-b-4 lg:border-2 border-red-500 rounded-[1rem] lg:bg-[#22050c] flex-shrink-0">
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={startIndex}
@@ -64,7 +64,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 							<motion.div
 								key={index}
 								onClick={() => handleSelect(index)}
-								className={`flex flex-col h-full w-full cursor-pointer transition-all duration-300 lg:bg-red-900 ${
+								className={`flex flex-col h-full w-full transition-all duration-300 lg:bg-red-900 ${
 									index === selectedIndex
 										? "scale-[1.01] shadow-[0_0_5px_rgba(255,165,0,0.10)]"
 										: "opacity-80 scale-100"
@@ -136,7 +136,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 				<div className="remoteControls">
 					{/* LIVE / CODE BUTTONS */}
 					{activeProject && (
-						<div className="absolute bottom-[0.5rem] left-[1.5rem] flex gap-4">
+						<div className="absolute bottom-[0.5rem] left-[1rem] flex gap-4">
 							{activeProject.live && (
 								<a
 									href={activeProject.live}
@@ -170,7 +170,7 @@ const ProjectBoard = ({ items, visibleCount }: ProjectBoardProps) => {
 			{items.length > visibleCount && (
 				<button
 					onClick={handleNext}
-					className="bg-[#22050c] font-bold hover:bg-orange-500 py-2 px-6 rounded-[0.5rem] transition-colors duration-300 border-2 border-red-500 cursor-pointer"
+					className="projectBoard__button bg-[#22050c] font-bold hover:bg-orange-500 py-2 px-6 rounded-[0.5rem] transition-colors duration-300 border-2 border-red-500 cursor-pointer"
 				>
 					Next
 				</button>

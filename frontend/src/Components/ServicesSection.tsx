@@ -68,7 +68,7 @@ const ServicesSection = () => {
 	return (
 		<SectionFrame className="serviceSection__parent relative h-auto w-full flex flex-col bg-[#262628] md:bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
-			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto px-4">
+			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
 				<div className="wrapper__header font-unna text-[1.1rem] text-center mb-[5rem]">
 					<h2 className="sr-only servicesSection__header">Services</h2>
