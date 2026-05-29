@@ -23,26 +23,35 @@ const ContactSection = () => {
 		setFormData((prev) => ({ ...prev, [name]: value }));
 	};
 
+	// ================================== HANDLE SUBMIT
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+
+		console.log("🚀 FORM SUBMIT STARTED");
+		console.log("📦 Form Data:", formData);
+
 		setStatusMessage("");
 		setStatusType("");
 		setIsSending(true);
 
 		try {
-			const response = await fetch(
-				`${import.meta.env.VITE_API_URL}/api/contact`,
-				{
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify(formData),
-				},
-			);
+			const url = `${import.meta.env.VITE_API_URL}/api/contact`;
 
-			const data = await response.json();
+			const response = await fetch(url, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			});
+			const text = await response.text();
+			let data;
+			try {
+				data = JSON.parse(text);
+			} catch {
+				// ignore JSON parse error
+			}
 
 			if (response.ok) {
-				setStatusMessage(data.message);
+				setStatusMessage(data?.message || "Success");
 				setStatusType("success");
 				setFormData({
 					name: "",
@@ -50,11 +59,10 @@ const ContactSection = () => {
 					message: "",
 				});
 			} else {
-				setStatusMessage(data.message);
+				setStatusMessage(data?.message || "Server error");
 				setStatusType("error");
 			}
-		} catch (error) {
-			console.error("Error:", error);
+		} catch {
 			setStatusMessage("Something went wrong. Please try again.");
 			setStatusType("error");
 		} finally {
