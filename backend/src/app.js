@@ -18,12 +18,11 @@ const allowedOrigins = [
 const corsOptions = {
 	origin: function (origin, callback) {
 		if (!origin) return callback(null, true);
-
 		if (allowedOrigins.includes(origin)) {
 			return callback(null, true);
 		}
-
-		return callback(new Error("Not allowed by CORS"));
+		console.warn("Blocked by CORS:", origin);
+		return callback(null, false);
 	},
 	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 	allowedHeaders: ["Content-Type", "Authorization"],
@@ -44,6 +43,16 @@ app.use("/api/health", healthRoute);
 // ========================= TEST ROUTE =========================
 app.get("/", (req, res) => {
 	res.send("API is running...");
+});
+
+// ========================= --- =========================
+app.use((err, req, res, next) => {
+	console.error("Server Error:", err);
+
+	res.status(500).json({
+		success: false,
+		message: "Internal server error",
+	});
 });
 
 export default app;
