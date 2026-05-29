@@ -93,7 +93,7 @@ const ContactSection = () => {
 									type="text"
 									name="name"
 									placeholder="Your Name"
-									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] text-[1.1rem] bg-transparent"
+									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] font-unna font-bold text-[1.1rem] bg-transparent"
 									value={formData.name}
 									onChange={handleChange}
 									required
@@ -109,7 +109,7 @@ const ContactSection = () => {
 									type="email"
 									name="email"
 									placeholder="Your Email"
-									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] text-[1.1rem] bg-transparent"
+									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] font-unna font-bold text-[1.1rem] bg-transparent"
 									value={formData.email}
 									onChange={handleChange}
 									required
@@ -125,7 +125,7 @@ const ContactSection = () => {
 									name="message"
 									rows={5}
 									placeholder="Your Message"
-									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] text-[1.1rem] bg-transparent"
+									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] font-unna font-bold text-[1.1rem] bg-transparent"
 									value={formData.message}
 									onChange={handleChange}
 									required
@@ -144,7 +144,7 @@ const ContactSection = () => {
 							{/* =========================== MESSAGE STATUS */}
 							{statusMessage && (
 								<p
-									className={`pt-[1rem] text-center text-[1rem] font-semibold ${
+									className={`pt-[1rem] text-center text-[1rem] font-semibold font-unna ${
 										statusType === "success" ? "text-green-500" : "text-red-400"
 									}`}
 								>
