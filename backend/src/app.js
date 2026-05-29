@@ -1,6 +1,6 @@
 // =====================================
 // src/app.js
-// ===================================== APP SETUP (PRODUCTION SAFE)
+// ===================================== APP SETUP (PRODUCTION SAFE + DEBUG READY)
 import express from "express";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoute.js";
@@ -8,23 +8,35 @@ import healthRoute from "./routes/healthRoute.js";
 
 const app = express();
 
+// ===================================== REQUEST LOGGER (DEBUG ONLY)
+app.use((req, res, next) => {
+	const requestId = Math.random().toString(36).substring(2, 10);
+
+	req.requestId = requestId;
+
+	next();
+});
+
 // ===================================== CORS CONFIGURATION
 const allowedOrigins = [
 	"http://localhost:5173",
 	"http://localhost:5174",
+	"http://localhost:3000",
 	"https://kingv2.vercel.app",
 ];
 
 const corsOptions = {
-	origin: function (origin, callback) {
-		// Allow Postman / server-to-server
-		if (!origin) return callback(null, true);
+	origin: (origin, callback) => {
+		if (!origin) {
+			return callback(null, true);
+		}
 
 		if (allowedOrigins.includes(origin)) {
 			return callback(null, true);
 		}
 
-		// Don't hard-block (prevents browser ERR_CONNECTION_CLOSED)
+		console.warn("❌ CORS blocked:", origin);
+
 		return callback(null, true);
 	},
 	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -35,9 +47,10 @@ const corsOptions = {
 // ===================================== APPLY CORS
 app.use(cors(corsOptions));
 
-// ===================================== SAFE PREFLIGHT HANDLER (FIX FOR EXPRESS 5 CRASH)
+// ===================================== PRE-FLIGHT SAFETY (IMPORTANT)
 app.use((req, res, next) => {
 	if (req.method === "OPTIONS") {
+		console.log("🟡 Preflight handled");
 		return res.sendStatus(200);
 	}
 	next();
@@ -52,22 +65,29 @@ app.use("/api/health", healthRoute);
 
 // ===================================== ROOT ROUTE
 app.get("/", (req, res) => {
+	console.log("🏠 Root hit");
 	res.send("API is running...");
 });
 
-// ===================================== GLOBAL ERROR HANDLER
+// ===================================== ERROR HANDLER
 app.use((err, req, res, next) => {
+	console.error(`🔥 [${req.requestId}] ERROR:`, err.message);
+
 	res.status(500).json({
 		success: false,
 		message: "Internal server error",
+		requestId: req.requestId,
 	});
 });
 
 // ===================================== 404 HANDLER
 app.use((req, res) => {
+	console.warn(`⚠️ [${req.requestId}] Route not found: ${req.url}`);
+
 	res.status(404).json({
 		success: false,
 		message: "Route not found",
+		requestId: req.requestId,
 	});
 });
 

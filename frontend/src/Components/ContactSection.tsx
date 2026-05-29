@@ -26,30 +26,33 @@ const ContactSection = () => {
 	// ================================== HANDLE SUBMIT
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-
-		console.log("🚀 FORM SUBMIT STARTED");
-		console.log("📦 Form Data:", formData);
-
+		const requestId = Math.random().toString(36).substring(2, 10);
 		setStatusMessage("");
 		setStatusType("");
 		setIsSending(true);
-
 		try {
-			const url = `${import.meta.env.VITE_API_URL}/api/contact`;
-
+			const baseUrl = import.meta.env.VITE_LOCAL_API_URL;
+			const url = `${baseUrl}/api/contact`;
+			// ===================================== TIMEOUT HANDLING (IMPORTANT FOR RENDER)
+			const controller = new AbortController();
+			const timeout = setTimeout(() => {
+				console.warn(`⏱️ [${requestId}] Request timeout triggered`);
+				controller.abort();
+			}, 15000);
 			const response = await fetch(url, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(formData),
+				signal: controller.signal,
 			});
+			clearTimeout(timeout);
 			const text = await response.text();
 			let data;
 			try {
 				data = JSON.parse(text);
 			} catch {
-				// ignore JSON parse error
+				console.warn(`⚠️ [${requestId}] JSON parse failed`);
 			}
-
 			if (response.ok) {
 				setStatusMessage(data?.message || "Success");
 				setStatusType("success");
@@ -59,14 +62,19 @@ const ContactSection = () => {
 					message: "",
 				});
 			} else {
+				console.warn(`⚠️ [${requestId}] SERVER ERROR`);
 				setStatusMessage(data?.message || "Server error");
 				setStatusType("error");
 			}
-		} catch {
-			setStatusMessage("Something went wrong. Please try again.");
+		} catch (error: unknown) {
+			console.error("🔥 FETCH FAILED", error);
+
+			if (error instanceof Error) {
+				console.error("Message:", error.message);
+			}
+
+			setStatusMessage("Network error. Check connection.");
 			setStatusType("error");
-		} finally {
-			setIsSending(false);
 		}
 	};
 

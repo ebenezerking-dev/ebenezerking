@@ -4,7 +4,7 @@
 import nodemailer from "nodemailer";
 import env from "../config/env.js";
 
-// =====================================
+// ===================================== TRANSPORTER
 const transporter = nodemailer.createTransport({
 	host: "smtp.gmail.com",
 	port: 587,
@@ -15,14 +15,13 @@ const transporter = nodemailer.createTransport({
 	},
 });
 
-// =====================================
-// SAFE ESCAPE FUNCTION (PREVENT HTML INJECTION)
-const escapeHTML = (text) => text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+// ===================================== HTML ESCAPE (SECURITY)
+const escapeHTML = (text = "") =>
+	String(text).replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-// =====================================
-// EMAIL TEMPLATE (ADMIN NOTIFICATION)
+// ===================================== ADMIN TEMPLATE
 const adminTemplate = ({ name, email, message }) => `
-  <div style="font-family: Unna, Arial, sans-serif; color:#22050c; background:#f6f7fb; padding:20px; line-height: 1.5;">
+  <div style="font-family: Unna, Arial, sans-serif; color:#22050c; background:#f6f7fb; padding:20px; line-height:1.5;">
     <div style="max-width:600px;margin:auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.1);">
 
       <div style="background: linear-gradient(180deg, #22050c, #ABE0F0, #22050c);padding:20px;color:#fff;text-align:center;">
@@ -30,8 +29,8 @@ const adminTemplate = ({ name, email, message }) => `
       </div>
 
       <div style="padding:20px;">
-		<p><strong>Name:</strong> <strong>${name}</strong></p>
-		<p><strong>Email:</strong> <strong>${email}</strong></p>
+        <p><strong>Name:</strong> <strong>${name}</strong></p>
+        <p><strong>Email:</strong> <strong>${email}</strong></p>
 
         <hr />
 
@@ -45,13 +44,12 @@ const adminTemplate = ({ name, email, message }) => `
   </div>
 `;
 
-// =====================================
-// EMAIL TEMPLATE (AUTO REPLY TO USER)
+// ===================================== AUTO REPLY TEMPLATE
 const autoReplyTemplate = (name) => `
   <div style="font-family: Unna, Arial, sans-serif; color:#22050c; padding:20px; background:#f9fafb;">
     <div style="max-width:600px;margin:auto;background:#fff;border-radius:10px;padding:20px;box-shadow:0 10px 20px rgba(0,0,0,0.05);">
 
-      <h2 style="color:#450693;">Good Day ${name},</h2>
+      <h2 style="color:#22050c;">Good Day <strong>${name}!</strong></h2>
 
       <p>Thanks for reaching out!</p>
 
@@ -60,16 +58,16 @@ const autoReplyTemplate = (name) => `
       <hr />
 
       <p style="font-size:12px;color:#777;">
-        This is an automated response from King's porfolio contact system.
+        This is an automated response from King's portfolio contact system.
       </p>
     </div>
   </div>
 `;
 
-// =====================================
+// ===================================== MAIN FUNCTION
 export const sendEmail = async ({ name, email, message }) => {
 	try {
-		// ================= SANITIZE INPUT =================
+		// ================= SANITIZE =================
 		const safeName = escapeHTML(name);
 		const safeEmail = escapeHTML(email);
 		const safeMessage = escapeHTML(message);
@@ -87,15 +85,15 @@ export const sendEmail = async ({ name, email, message }) => {
 			}),
 		});
 
-		// ================= AUTO REPLY =================
+		// ================= AUTO REPLY (FIXED + TEMPLATE USED) =================
 		await transporter.sendMail({
 			from: `"Ebenezer King" <${env.GMAIL_USER}>`,
-			replyTo: env.GMAIL_USER,
-			subject: `✅ Thanks for contacting me, ${safeName}`,
+			to: safeEmail,
+			subject: `🚀 Thanks for contacting me, ${safeName}`,
 			html: autoReplyTemplate(safeName),
 		});
-		console.log("📨 Auto-reply sent successfully");
 	} catch (err) {
-		console.error("❌ Auto-reply failed:", err);
+		console.error("❌ Email error:", err);
+		throw err;
 	}
 };
