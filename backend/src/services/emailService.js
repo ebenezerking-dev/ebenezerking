@@ -25,7 +25,7 @@ const adminTemplate = ({ name, email, message }) => `
   <div style="font-family: Unna, Arial, sans-serif; color:#22050c; background:#f6f7fb; padding:20px; line-height: 1.5;">
     <div style="max-width:600px;margin:auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.1);">
 
-      <div style="background: linear-gradient(90deg, #f97316, #450693);padding:20px;color:#fff;text-align:center;">
+      <div style="background: linear-gradient(180deg, #22050c, #ABE0F0, #22050c);padding:20px;color:#fff;text-align:center;">
         <h2 style="margin:0;">New Contact Message</h2>
       </div>
 
@@ -90,14 +90,12 @@ export const sendEmail = async ({ name, email, message }) => {
 		// ================= AUTO REPLY =================
 		await transporter.sendMail({
 			from: `"Ebenezer King" <${env.GMAIL_USER}>`,
-			to: email,
+			replyTo: env.GMAIL_USER,
 			subject: `✅ Thanks for contacting me, ${safeName}`,
 			html: autoReplyTemplate(safeName),
 		});
-
-		console.log("✅ Admin email + auto-reply sent successfully");
-	} catch (error) {
-		console.error("❌ Nodemailer error:", error);
-		throw error;
+		console.log("📨 Auto-reply sent successfully");
+	} catch (err) {
+		console.error("❌ Auto-reply failed:", err);
 	}
 };
