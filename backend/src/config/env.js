@@ -10,9 +10,8 @@ const env = {
 	PORT: process.env.PORT,
 	mongoURI: process.env.MONGO_URI,
 
-	sendGridApiKey: process.env.SENDGRID_API_KEY,
-	sendGridSender: process.env.SENDGRID_SENDER,
-	sendGridRecipient: process.env.SENDGRID_RECIPIENT,
+	GMAIL_USER: process.env.GMAIL_USER,
+	GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD,
 };
 
 export default env;
