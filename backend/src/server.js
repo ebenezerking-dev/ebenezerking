@@ -1,29 +1,26 @@
 // =====================================
 // src/server.js
-// ===================================== ENTRY POINT - SERVER SETUP
+// ===================================== ENTRY POINT (SERVER BOOTSTRAP)
+
 import app from "./app.js";
 import connectDB from "./config/db.js";
-import { gracefulShutdown } from "./utils/gracefulShutdown.js";
 import env from "./config/env.js";
 
-// ========================= CONSTANTS =========================
-const PORT = env.PORT || 5000;
+// ===================================== PORT CONFIG
+const PORT = env.PORT || 3000;
 
-// ========================= START SERVER =========================
+// ===================================== START SERVER
 const startServer = async () => {
 	try {
-		if (typeof connectDB === "function") {
+		if (connectDB) {
 			await connectDB();
-			console.log("✅ Database connected");
 		}
 
-		const server = app.listen(PORT, "0.0.0.0", () => {
+		app.listen(PORT, "0.0.0.0", () => {
 			console.log(`🚀 Server running on port ${PORT}`);
 		});
-
-		gracefulShutdown(server);
 	} catch (error) {
-		console.error("❌ Failed to start server:", error.message);
+		console.error("❌ Server failed to start:", error.message);
 		process.exit(1);
 	}
 };
