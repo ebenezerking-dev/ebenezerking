@@ -24,6 +24,9 @@ const HeroSection = () => {
 		<section className="heroSection__parent w-full flex flex-col flex-grow">
 			<NavbarSpacer mobileOffset={15} mdOffset={-50} lgOffset={-40} />
 			<div className="heroSection__wrapper">
+				{/* ============================== MP4 MUSIC */}
+
+
 				{/* ========================================================================== */}
 				{/* ============================== SMALL SCREENS */}
 				<div className="smallScreens relative md:hidden w-full h-screen overflow-hidden flex items-center justify-center">

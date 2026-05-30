@@ -31,7 +31,7 @@ const ContactSection = () => {
 		setStatusType("");
 		setIsSending(true);
 		try {
-			const baseUrl = import.meta.env.VITE_LOCAL_API_URL;
+			const baseUrl = import.meta.env.VITE_API_URL;
 			const url = `${baseUrl}/api/contact`;
 			// ===================================== TIMEOUT HANDLING (IMPORTANT FOR RENDER)
 			const controller = new AbortController();
