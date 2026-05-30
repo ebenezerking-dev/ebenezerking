@@ -65,14 +65,15 @@ const autoReplyTemplate = (name) => `
 `;
 
 // ===================================== MAIN FUNCTION
+
 export const sendEmail = async ({ name, email, message }) => {
 	try {
-		// ================= SANITIZE =================
 		const safeName = escapeHTML(name);
 		const safeEmail = escapeHTML(email);
 		const safeMessage = escapeHTML(message);
-
-		// ================= ADMIN EMAIL =================
+		console.log("📨 Sending admin email...");
+		console.log("📧 From:", safeEmail);
+		// ===================================== ADMIN EMAIL
 		await transporter.sendMail({
 			from: `"Portfolio Contact" <${env.GMAIL_USER}>`,
 			to: env.GMAIL_USER,
@@ -84,22 +85,19 @@ export const sendEmail = async ({ name, email, message }) => {
 				message: safeMessage,
 			}),
 		});
-
-		// ================= AUTO REPLY (FIXED + TEMPLATE USED) =================
+		console.log("✅ Admin email sent");
+		// ===================================== AUTO REPLY
+		console.log("📨 Sending auto-reply to:", safeEmail);
 		await transporter.sendMail({
 			from: `"Ebenezer King" <${env.GMAIL_USER}>`,
 			to: safeEmail,
 			subject: `🚀 Thanks for contacting me, ${safeName}`,
 			html: autoReplyTemplate(safeName),
 		});
+		console.log("📨 Auto-reply sent successfully");
 	} catch (error) {
-		console.error("🔥 CONTACT ROUTE ERROR:", error);
-		console.log("📨 Sending admin email...");
-		console.log("📨 Sending auto-reply...");
-
-		res.status(500).json({
-			success: false,
-			error: "Failed to send message. Please try again later.",
-		});
+		console.error("🔥 EMAIL SERVICE ERROR:", error);
+		// IMPORTANT: rethrow so controller handles response
+		throw error;
 	}
 };
