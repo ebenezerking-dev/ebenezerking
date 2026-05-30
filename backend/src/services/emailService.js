@@ -94,6 +94,8 @@ export const sendEmail = async ({ name, email, message }) => {
 		});
 	} catch (error) {
 		console.error("🔥 CONTACT ROUTE ERROR:", error);
+		console.log("📨 Sending admin email...");
+		console.log("📨 Sending auto-reply...");
 
 		res.status(500).json({
 			success: false,
