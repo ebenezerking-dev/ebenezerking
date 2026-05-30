@@ -92,8 +92,12 @@ export const sendEmail = async ({ name, email, message }) => {
 			subject: `🚀 Thanks for contacting me, ${safeName}`,
 			html: autoReplyTemplate(safeName),
 		});
-	} catch (err) {
-		console.error("❌ Email error:", err);
-		throw err;
+	} catch (error) {
+		console.error("🔥 CONTACT ROUTE ERROR:", error);
+
+		res.status(500).json({
+			success: false,
+			error: "Failed to send message. Please try again later.",
+		});
 	}
 };
