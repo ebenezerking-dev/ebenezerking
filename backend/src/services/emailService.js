@@ -18,6 +18,7 @@ const transporter = nodemailer.createTransport({
 // ===================================== HTML ESCAPE (SECURITY)
 const escapeHTML = (text = "") =>
 	String(text).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+console.log("🔥 EMAIL SERVICE VERSION: CLEAN v2");
 
 // ===================================== ADMIN TEMPLATE
 const adminTemplate = ({ name, email, message }) => `
