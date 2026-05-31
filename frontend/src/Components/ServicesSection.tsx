@@ -2,7 +2,6 @@
 // src/Components/ServicesSection.tsx
 // ===================================== SERVICES SECTION COMPONENT
 import CardSlider from "./Reusables/CardSlider";
-import { useState, useEffect } from "react";
 import SectionFrame from "./Reusables/SectionFrame";
 
 const services = [
@@ -44,40 +43,16 @@ const services = [
 ];
 
 const ServicesSection = () => {
-	const [visibleCount, setVisibleCount] = useState(3);
-
-	useEffect(() => {
-		const updateCount = () => {
-			if (window.innerWidth >= 1024) {
-				setVisibleCount(4);
-			} else if (window.innerWidth >= 768) {
-				setVisibleCount(4);
-			} else {
-				setVisibleCount(3);
-			}
-		};
-
-		updateCount();
-		window.addEventListener("resize", updateCount);
-
-		return () => window.removeEventListener("resize", updateCount);
-	}, []);
-
-	// =================================
-
 	return (
-		<SectionFrame className="serviceSection__parent relative h-auto w-full flex flex-col bg-[#262628] md:bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] overflow-hidden">
+		<SectionFrame className="serviceSection__parent relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100% overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
 			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
-				<div className="wrapper__header font-unna text-[1.1rem] text-center mb-[5rem]">
+				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
 					<h2 className="sr-only servicesSection__header">Services</h2>
 
 					<h3 className="header relative inline-block flex">
-						<span className="text-orange-500 font-bold uppercase">
-							services
-						</span>{" "}
-						i can offer you..
+						<span className="text-orange-500">services</span> i can offer you.
 						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-red-500 rounded-full"></span>
 					</h3>
 				</div>
@@ -85,14 +60,11 @@ const ServicesSection = () => {
 				{/* ============================== SERVICE CARDS SLIDER */}
 				<CardSlider
 					items={services}
-					visibleCount={visibleCount}
 					renderItem={(service) => (
-						<div className="serviceCard h-full flex flex-col justify-start text-center md:bg-[#22050c] px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border-2 border-red-500">
-							<h4 className="text-[1.25rem] font-bold text-orange-500 mb-2">
-								{service.title}
-							</h4>
+						<div className="serviceCard h-full flex flex-col justify-start font-tinos text-[1.1rem] text-[#22050c] hover:text-[#00ff91] text-center px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border-2 border-orange-500 hover:bg-[#00485d] transition-all duration-300">
+							<h4 className="font-unna font-bold mb-2">{service.title}</h4>
 
-							<p className="text-[1.1rem]">{service.description}</p>
+							<p>{service.description}</p>
 						</div>
 					)}
 				/>

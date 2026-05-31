@@ -2,22 +2,23 @@
 // src/Components/ProjectsSection.tsx
 // ===================================== PROJECTS SECTION COMPONENT
 import ProjectBoard from "./Reusables/ProjectBoard";
-import { useState, useEffect } from "react";
 
-import Mobile from "../Assets/Projects/taxlator/images/Mobile.webp";
-import Ipad from "../Assets/Projects/taxlator/images/iPad.webp";
-import Macbook from "../Assets/Projects/taxlator/images/Macbook.webp";
+import MobileT from "../Assets/Projects/taxlator/images/Mobile.webp";
+import IpadT from "../Assets/Projects/taxlator/images/iPad.webp";
+import MacbookT from "../Assets/Projects/taxlator/images/Macbook.webp";
 
-import IncomingImage from "../Assets/Projects/incoming/incoming.png";
+import Macbook from "../Assets/Projects/incoming/Macbook.webp";
+import Ipad from "../Assets/Projects/incoming/iPad.webp";
+import Mobile from "../Assets/Projects/incoming/iPhone.webp";
 
 import SectionFrame from "./Reusables/SectionFrame";
 
 const projects = [
 	{
 		images: {
-			mobile: Mobile,
-			tablet: Ipad,
-			desktop: Macbook,
+			mobile: MobileT,
+			tablet: IpadT,
+			desktop: MacbookT,
 		},
 		title: "Taxlator",
 		description:
@@ -36,9 +37,9 @@ const projects = [
 	},
 	{
 		images: {
-			mobile: IncomingImage,
-			tablet: IncomingImage,
-			desktop: IncomingImage,
+			mobile: Mobile,
+			tablet: Ipad,
+			desktop: Macbook,
 		},
 		title: "velly",
 		description: "An online fashion retail store you can own. coming soon!",
@@ -58,47 +59,24 @@ const projects = [
 // =====================================
 
 const ProjectsSection = () => {
-	const [visibleCount, setVisibleCount] = useState(1);
-
-	useEffect(() => {
-		const updateCount = () => {
-			if (window.innerWidth >= 1024) {
-				setVisibleCount(1);
-			} else if (window.innerWidth >= 768) {
-				setVisibleCount(1);
-			} else {
-				setVisibleCount(1);
-			}
-		};
-
-		updateCount();
-		window.addEventListener("resize", updateCount);
-		return () => window.removeEventListener("resize", updateCount);
-	}, []);
-	// =====================================
-
 	return (
-		<SectionFrame className="projectSection__parent relative h-auto w-full flex flex-col bg-[#262628] md:bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] overflow-hidden">
+		<SectionFrame className="projectSection__parent relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100% overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
 			<div className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
-				<div className="wrapper__header font-unna text-[1.1rem] text-center mb-[5rem]">
+				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
 					<h2 className="sr-only projectSection__header">Projects</h2>
 
 					<h3 className="header relative inline-block flex">
-						Some{" "}
-						<span className="text-orange-500 font-bold uppercase">
-							projects
-						</span>{" "}
-						i built
-						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-red-500 rounded-full"></span>
+						Some <span className="text-orange-500">projects</span> i built.
+						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"></span>
 					</h3>
 				</div>
 
 				{/* ============================== CONTENT */}
-				<div className="content__paragraphs font-tinos flex flex-col justify-center gap-4 lg:gap-3 text-[1.3rem] w-full">
+				<div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 text-[1.1rem] text-[#22050c] w-full">
 					{/* ============================== PROJECT BOARD */}
-					<ProjectBoard items={projects} visibleCount={visibleCount} />
+					<ProjectBoard items={projects} />
 				</div>
 			</div>
 

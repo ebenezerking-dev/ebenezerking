@@ -27,26 +27,28 @@ const ContactSection = () => {
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const requestId = Math.random().toString(36).substring(2, 10);
+		console.log(`🚀 [${requestId}] FORM SUBMIT STARTED`);
+		console.log(`📦 [${requestId}] Form Data:`, formData);
 		setStatusMessage("");
 		setStatusType("");
 		setIsSending(true);
 		try {
 			const baseUrl = import.meta.env.VITE_API_URL;
 			const url = `${baseUrl}/api/contact`;
+			console.log(`🌍 [${requestId}] BASE URL:`, baseUrl);
+			console.log(`📡 [${requestId}] FINAL URL:`, url);
 			// ===================================== TIMEOUT HANDLING (IMPORTANT FOR RENDER)
-			const controller = new AbortController();
-			const timeout = setTimeout(() => {
-				console.warn(`⏱️ [${requestId}] Request timeout triggered`);
-				controller.abort();
-			}, 15000);
 			const response = await fetch(url, {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
+				headers: {
+					"Content-Type": "application/json",
+				},
 				body: JSON.stringify(formData),
-				signal: controller.signal,
 			});
-			clearTimeout(timeout);
+			console.log(`📥 [${requestId}] Response received`);
+			console.log(`📊 [${requestId}] Status:`, response.status);
 			const text = await response.text();
+			console.log(`📄 [${requestId}] Raw response:`, text);
 			let data;
 			try {
 				data = JSON.parse(text);
@@ -54,6 +56,7 @@ const ContactSection = () => {
 				console.warn(`⚠️ [${requestId}] JSON parse failed`);
 			}
 			if (response.ok) {
+				console.log(`✅ [${requestId}] SUCCESS`);
 				setStatusMessage(data?.message || "Success");
 				setStatusType("success");
 				setFormData({
@@ -79,37 +82,34 @@ const ContactSection = () => {
 	};
 
 	return (
-		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-[#262628] md:bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] overflow-hidden">
+		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100% overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
 			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
-				<div className="wrapper__header font-unna text-[1.1rem] text-center mb-[5rem]">
+				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
 					<h2 className="sr-only contactSection__header">Contact Me</h2>
 
-					<h3 className="header relative inline-block font-bold">
-						Let's{" "}
-						<span className="text-orange-500 font-bold uppercase">connect</span>
+					<h3 className="header relative inline-block">
+						Let's <span className="text-orange-500">connect.</span>
 						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
 					</h3>
 				</div>
 
 				{/* ========================= CONTACT FORM ======================== */}
-				<div className="flex flex-1 flex-col justify-center items-center pb-[3rem]">
-					<div className="contactSection__form md:text-[#22050c] w-full py-[1rem] mx-auto">
+				<div className="flex flex-1 flex-col justify-center items-center pb-[3rem] text-[1.1rem]">
+					<div className="form__wrapper w-full py-[1rem] mx-auto">
 						<form
 							className="w-full flex flex-col gap-4"
 							onSubmit={handleSubmit}
 						>
 							{/* =========================== NAME */}
 							<div className="nameParent">
-								<label className="block text-orange-500 font-bold mb-2">
-									Name:
-								</label>
+								<label className="block font-bold mb-2">Name:</label>
 								<input
 									type="text"
 									name="name"
 									placeholder="Your Name"
-									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] font-unna font-bold text-[1.1rem] bg-transparent"
+									className="w-full px-4 py-2 border-b border-orange-500/30 rounded-[0.5rem] bg-transparent text-[#22050c]"
 									value={formData.name}
 									onChange={handleChange}
 									required
@@ -118,14 +118,12 @@ const ContactSection = () => {
 
 							{/* =========================== EMAIL */}
 							<div className="emailParent">
-								<label className="block text-orange-500 font-bold mb-2">
-									Email:
-								</label>
+								<label className="block font-bold mb-2">Email:</label>
 								<input
 									type="email"
 									name="email"
 									placeholder="Your Email"
-									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] font-unna font-bold text-[1.1rem] bg-transparent"
+									className="w-full px-4 py-2 border-b border-orange-500/30 rounded-[0.5rem] bg-transparent text-[#22050c]"
 									value={formData.email}
 									onChange={handleChange}
 									required
@@ -134,14 +132,12 @@ const ContactSection = () => {
 
 							{/* =========================== MESSAGE */}
 							<div className="messageParent">
-								<label className="block text-orange-500 font-bold mb-2">
-									Message:
-								</label>
+								<label className="block font-bold mb-2">Message:</label>
 								<textarea
 									name="message"
 									rows={5}
 									placeholder="Your Message"
-									className="w-full px-4 py-2 border-b border-red-500 rounded-[0.5rem] font-unna font-bold text-[1.1rem] bg-transparent"
+									className="w-full px-4 py-2 border-b border-orange-500/30 rounded-[0.5rem] bg-transparent text-[#22050c]"
 									value={formData.message}
 									onChange={handleChange}
 									required
@@ -152,7 +148,7 @@ const ContactSection = () => {
 							<button
 								type="submit"
 								disabled={isSending}
-								className="contactForm__submit bg-[#22050c] text-[#00ff91] font-bold hover:bg-orange-500 py-2 px-4 border-2 border-red-500 rounded-[0.5rem] transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+								className="contactForm__submit border-2 border-orange-500 hover:border-[#00ff91] hover:text-[#00ff91] hover:bg-[#00485d] py-2 px-4 rounded-[0.5rem] transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
 							>
 								{isSending ? "Sending..." : "Send Message"}
 							</button>

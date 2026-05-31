@@ -1,9 +1,7 @@
 /* ================================= */
-@import url("https://fonts.googleapis.com/css2?family=Finlandica+Headline:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 /* ================================= */
-@import "tailwindcss";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,12 +15,14 @@
 		outline: none;
 		user-select: none;
 	}
+
 	html {
 		font-size: 16px;
 		scroll-behavior: smooth;
 	}
+
 	body {
-		font-family: "Finlandica Headline", sans-serif;
+		font-family: "Tinos", serif;
 		color: #00ff91;
 		background: black;
 		width: 100%;
@@ -36,51 +36,40 @@
 	.nav-item {
 		@apply relative w-full py-[0.8rem] px-[0.5rem] text-center transition;
 	}
+
 	.nav-item-hover {
-		@apply transition-colors duration-200;
-	}
-	.nav-item-active {
-		@apply bg-orange-500;
+		@apply transition-colors duration-300;
 	}
 
-	/* ================================= */
+	.nav-item-active {
+		@apply bg-[#00ff91];
+	}
+
 	.nav-divider {
 		@apply block pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2
-	w-[80%] h-[2px]
-	bg-gradient-to-r from-transparent via-orange-500/40 to-transparent
-	shadow-[0_0_6px_rgba(255,165,0,0.3)]
-	transition-all duration-300 ease-out
-	group-hover:via-orange-500
-	group-hover:shadow-[0_0_14px_rgba(255,165,0,0.8)];
+		w-[80%] h-[2px]
+		bg-gradient-to-r from-transparent via-orange-500/40 to-transparent
+		shadow-[0_0_6px_rgba(255,165,0,0.3)]
+		transition-all duration-300
+		group-hover:via-[#00ff91]
+		group-hover:shadow-[0_0_14px_rgba(255,165,0,0.8)];
 	}
 
 	.nav-item:hover {
 		transform: translateY(-1px);
 	}
 
-	/* ================================= */
 	.nav-link {
 		@apply block w-full font-medium tracking-wide capitalize;
 	}
 
-	/* ================================= */
 	.nav-list {
 		@apply w-full flex flex-col pt-[2rem] px-[1rem] list-none;
 	}
-
-	/* ================================= */
-	.font-finlandica {
-		font-family: "Finlandica Headline", sans-serif;
-	}
-	.font-unna {
-		font-family: "Unna", serif;
-	}
-	.font-tinos {
-		font-family: "Tinos", serif;
-	}
 }
 
-/* For autofill styling */
+/* ================================= */
+/* Autofill styling */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -91,10 +80,10 @@ input:-webkit-autofill:active {
 	transition: background-color 9999s ease-in-out 0s;
 }
 
+/* ================================= */
 /* Responsive typography */
 @media (max-width: 768px) {
 	html {
 		font-size: 14px;
 	}
 }
-/* ================================= */

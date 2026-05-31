@@ -2,6 +2,14 @@
 export default {
 	darkMode: "class",
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-	theme: { extend: {} },
+	theme: {
+		extend: {
+			fontFamily: {
+				unna: ["Unna", "serif"],
+				tinos: ["Tinos", "serif"],
+				finlandica: ["Finlandica", "sans-serif"],
+			},
+		},
+	},
 	plugins: [],
 };

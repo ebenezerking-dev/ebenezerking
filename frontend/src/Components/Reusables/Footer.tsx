@@ -29,7 +29,7 @@ function Footer() {
 			animate={footerMotion.animate}
 			exit={footerMotion.exit}
 			transition={footerTransition}
-			className="footer__parent relative bg-black w-full min-h-[130px] text-[1.1rem] py-[1rem] px-[1rem] flex flex-col lg:px-[2rem] md:text-[1.2rem] lg:text-[1.1rem]"
+			className="footer__parent relative bg-[#00485d] w-full min-h-[130px] text-[1.1rem] py-[1rem] px-[1rem] flex flex-col lg:px-[2rem]"
 		>
 			{/* ================ FOOTER CONTENTS ================ */}
 			<div className="relative z-20">
@@ -45,7 +45,7 @@ function Footer() {
 						aria-label="Whatsapp"
 					>
 						<FaWhatsappSquare
-							size={40}
+							size={30}
 							className="mt-[0.4rem] hover:text-orange-500"
 						/>
 					</a>
@@ -63,7 +63,7 @@ function Footer() {
 									aria-label="Twitter"
 								>
 									<span className="inline-flex items-center justify-center p-2 hover:text-orange-500 transition-all duration-300">
-										<RiTwitterXLine className="text-[1.5rem]" />
+										<RiTwitterXLine className="text-[1.3rem]" />
 									</span>
 								</a>
 
@@ -74,7 +74,7 @@ function Footer() {
 									aria-label="LinkedIn"
 								>
 									<span className="inline-flex items-center justify-center p-2 hover:text-orange-500 transition-all duration-300">
-										<FaLinkedin className="text-[1.5rem]" />
+										<FaLinkedin className="text-[1.3rem]" />
 									</span>
 								</a>
 
@@ -85,7 +85,7 @@ function Footer() {
 									aria-label="GitHub"
 								>
 									<span className="inline-flex items-center justify-center p-2 hover:text-orange-500 transition-all duration-300">
-										<FaGithub className="text-[1.5rem]" />
+										<FaGithub className="text-[1.3rem]" />
 									</span>
 								</a>
 							</li>

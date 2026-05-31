@@ -24,7 +24,7 @@ export default function SectionFrame({
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.5, ease: "easeOut" }}
 			viewport={{ amount: 0.2 }}
-			className={`relative pt-[2rem] pb-[5rem] px-4 pt-[2rem] pb-[4rem] overflow-hidden ${className}`}
+			className={`relative pt-[2rem] pb-[16rem] px-4 overflow-hidden ${className}`}
 		>
 			{children}
 		</motion.section>

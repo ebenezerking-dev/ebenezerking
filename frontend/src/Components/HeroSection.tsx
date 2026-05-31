@@ -26,7 +26,6 @@ const HeroSection = () => {
 			<div className="heroSection__wrapper">
 				{/* ============================== MP4 MUSIC */}
 
-
 				{/* ========================================================================== */}
 				{/* ============================== SMALL SCREENS */}
 				<div className="smallScreens relative md:hidden w-full h-screen overflow-hidden flex items-center justify-center">
@@ -39,10 +38,10 @@ const HeroSection = () => {
 					{/* ============= HERO CONTENT */}
 					<div className="smallScreens__content relative flex items-center justify-center text-center rounded-[0.5rem] overflow-hidden">
 						{/* ============= CONTENTS */}
-						<div className="relative z-20 flex flex-col items-center justify-center p-2 bg-[#262628]">
+						<div className="relative z-20 flex flex-col items-center justify-center p-2 bg-gradient-to-b from-[#00485d] to-[#ABE0F0]">
 							<p className="text-[1.2rem] mb-2">Nice to meet you!</p>
 
-							<h1 className="text-[1.4rem] font-bold uppercase border-t-2 border-b-2 border-orange-500 hover:border-[#00ff91] hover:text-orange-500 transition duration-300 px-2">
+							<h1 className="text-[1.4rem] text-[#22050c] font-bold uppercase border-t-2 border-b-2 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
 								<a
 									href="https://docs.google.com/document/d/1rMZx8aLk1ZitCwSRTK706o19mj5UgyeQGABCZt6eAJg/edit?usp=sharing"
 									target="_blank"
@@ -52,7 +51,7 @@ const HeroSection = () => {
 								</a>
 							</h1>
 
-							<span className="flex items-center gap-1 mt-4 animate-bounce">
+							<span className="flex items-center gap-1 mt-4 animate-bounce text-[#22050c]">
 								<PiArrowFatLineDownFill className="text-[1.2rem] opacity-70" />
 								<PiArrowFatLineDownFill className="text-[1.2rem] opacity-70" />
 								<PiArrowFatLineDownFill className="text-[1.2rem] opacity-70" />
@@ -63,9 +62,9 @@ const HeroSection = () => {
 
 				{/* ========================================================================== */}
 				{/* ============================== MEDIUM SCREENS */}
-				<div className="hidden md:flex relative overflow-hidden w-full pb-[3rem] md:bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c]">
+				<div className="hidden md:flex relative overflow-hidden w-full pb-[3rem] md:bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100%">
 					{/* ============= MEDIUM AND LARGE SCREENS HERO CONTAINER */}
-					<div className="h-screen w-[90%] lg:w-[70%] pt-[6rem] mx-auto flex flex-col md:flex-row items-center justify-center gap-[4rem] lg:gap-[4rem]">
+					<div className="h-screen w-[90%] lg:w-[70%] pt-[6rem] mx-auto flex flex-col md:flex-row items-center justify-center gap-[3rem] lg:gap-[5rem]">
 						<motion.div
 							className="flex-shrink-0"
 							initial={springZoom.initial}
@@ -90,7 +89,7 @@ const HeroSection = () => {
 
 						{/* ================= HERO CONTENT */}
 						<motion.div
-							className="bg-[#22050c] p-4 rounded-[0.5rem] flex flex-col items-center md:items-start text-center md:text-left"
+							className="text-[#22050c] p-4 rounded-[0.5rem] flex flex-col items-center md:items-start text-center md:text-left"
 							initial={{ opacity: 0, x: 200 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{
@@ -100,7 +99,7 @@ const HeroSection = () => {
 								delay: 0.5,
 							}}
 						>
-							<h1 className="relative z-20 text-[2rem] font-bold uppercase border-t-4 border-b-4 border-orange-500 hover:border-[#00ff91] hover:text-orange-500 transition duration-300 px-2">
+							<h1 className="relative z-20 text-[2rem] font-unna font-bold uppercase border-t-4 border-b-4 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
 								<a
 									href="https://www.coursera.org/articles/full-stack-developer"
 									target="_blank"
