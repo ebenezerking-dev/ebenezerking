@@ -1,14 +1,13 @@
 /* ================================= */
+/* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 /* ================================= */
+/* TAILWIND CSS v4 */
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* ================================= */
+/* BASE STYLES */
 @layer base {
 	* {
 		margin: 0;
@@ -34,6 +33,7 @@
 }
 
 /* ================================= */
+/* COMPONENTS */
 @layer components {
 	.nav-item {
 		@apply relative w-full py-[0.8rem] px-[0.5rem] text-center transition;
@@ -48,8 +48,7 @@
 	}
 
 	.nav-divider {
-		@apply block pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2
-		w-[80%] h-[2px]
+		@apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px]
 		bg-gradient-to-r from-transparent via-orange-500/40 to-transparent
 		shadow-[0_0_6px_rgba(255,165,0,0.3)]
 		transition-all duration-300
@@ -71,7 +70,7 @@
 }
 
 /* ================================= */
-/* Autofill styling */
+/* INPUT AUTOFILL STYLE */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -83,7 +82,7 @@ input:-webkit-autofill:active {
 }
 
 /* ================================= */
-/* Responsive typography */
+/* RESPONSIVE TYPOGRAPHY */
 @media (max-width: 768px) {
 	html {
 		font-size: 14px;
