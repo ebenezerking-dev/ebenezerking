@@ -37,7 +37,7 @@ function Navbar() {
 				animate={navbarMotion.animate}
 				exit={navbarMotion.exit}
 				transition={navbarTransition}
-				className="navbar__parent fixed top-0 left-0 z-50 bg-[#00485d] w-full text-[1.1rem] flex flex-col px-[1rem] py-[0.5rem]"
+				className="navbar__parent fixed top-0 left-0 z-50 bg-[#00485d] w-full text-[1.5rem] flex flex-col px-[1rem] py-[0.3rem]"
 			>
 				<div className="navbar__main relative flex justify-between items-end">
 					<div>
@@ -51,7 +51,7 @@ function Navbar() {
 								animate={{ rotate: isOpen ? 0 : 180 }}
 								transition={{ duration: 0.3 }}
 							>
-								{isOpen ? <FaTimes size={30} /> : <GiHamburgerMenu size={30} />}
+								{isOpen ? <FaTimes size={43} /> : <GiHamburgerMenu size={43} />}
 							</motion.div>
 						</button>
 					</div>

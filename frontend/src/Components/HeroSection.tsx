@@ -61,7 +61,7 @@ const HeroSection = () => {
 				{/* ============================== MEDIUM SCREENS */}
 				<div className="hidden md:flex relative overflow-hidden w-full pb-[3rem] md:bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100%">
 					{/* ============= MEDIUM AND LARGE SCREENS HERO CONTAINER */}
-					<div className="h-screen w-[90%] lg:w-[70%] pt-[6rem] mx-auto flex flex-col md:flex-row items-center justify-center gap-[1rem] lg:gap-[5rem]">
+					<div className="h-screen w-[90%] lg:w-[70%] mx-auto flex flex-col md:flex-row items-center justify-center gap-[1rem] lg:gap-[5rem]">
 						<motion.div
 							className="flex-shrink-0"
 							initial={springZoom.initial}

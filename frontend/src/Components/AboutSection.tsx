@@ -15,27 +15,30 @@ const AboutSection = () => {
 					<h2 className="sr-only aboutSection__header">About Me</h2>
 
 					<h3 className="header relative inline-block flex">
-						Call me Bob — because I like to{" "}
-						<span className="text-orange-500">build.</span>
+						I am <span className="text-orange-500">King.</span>
 						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"></span>
 					</h3>
 				</div>
 
 				{/* ============================== CONTENT */}
 				<div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 text-[#22050c] w-full md:p-4 rounded-[0.5rem]">
-					<p className="font-bold">I'm King.</p>
 					<p className="font-bold">
-						A Software Developer —
-						<span className="uppercase text-[#00ff91] text-[1.8rem]">I</span>{" "}
-						think,
-						<span className="uppercase text-[#00ff91] text-[1.8rem]">
-							I
-						</span>{" "}
-						visualise,
-						<span className="uppercase text-[#00ff91] text-[1.8rem]">
-							I
-						</span>{" "}
-						code.
+						<span>A Software Developer — </span>
+
+						<span className="block sm:inline">
+							<span className="uppercase text-[#00ff91] text-[1.8rem]">I</span>{" "}
+							think,
+							<span className="uppercase text-[#00ff91] text-[1.8rem]">
+								{" "}
+								I
+							</span>{" "}
+							visualise,
+							<span className="uppercase text-[#00ff91] text-[1.8rem]">
+								{" "}
+								I
+							</span>{" "}
+							code.
+						</span>
 					</p>
 					<p>
 						I turn my ideas into modern digital experiences by combining
