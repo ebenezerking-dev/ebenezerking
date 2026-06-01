@@ -1,57 +1,25 @@
 // =====================================
 // src/services/emailService.js
-// ===================================== EMAIL SERVICE USING NODEMAILER
-import nodemailer from "nodemailer";
+// ===================================== EMAIL SERVICE USING RESEND
+import { Resend } from "resend";
 import env from "../config/env.js";
 
-// ===================================== TRANSPORTER (STABLE GMAIL CONFIG)
-const transporter = nodemailer.createTransport({
-	host: "smtp.gmail.com",
-	port: 465,
-	secure: true,
-	auth: {
-		user: env.GMAIL_USER,
-		pass: env.GMAIL_APP_PASSWORD,
-	},
-	pool: false,
-
-	// 🔥 stability improvements for Render
-	connectionTimeout: 10000,
-	greetingTimeout: 10000,
-	socketTimeout: 15000,
-});
+// ===================================== RESEND INIT
+const resend = new Resend(env.RESEND_API_KEY);
 
 // ===================================== DEBUG LOG
-console.log("🔥 EMAIL SERVICE VERSION: GMAIL STABLE v3");
+console.log("🔥 EMAIL SERVICE VERSION: RESEND v1");
 
 // ===================================== HTML ESCAPE
 const escapeHTML = (text = "") =>
 	String(text).replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-// ===================================== RETRY WRAPPER (CRITICAL FOR RENDER)
-const sendWithRetry = async (mailOptions, retries = 2) => {
-	try {
-		console.time("EMAIL_SEND");
-		return await transporter.sendMail(mailOptions);
-		console.timeEnd("EMAIL_SEND");
-	} catch (err) {
-		if (retries <= 0) throw err;
-
-		console.warn("⚠️ Email retrying... attempts left:", retries);
-
-		// small delay before retry
-		await new Promise((r) => setTimeout(r, 1000));
-
-		return sendWithRetry(mailOptions, retries - 1);
-	}
-};
-
-// ===================================== ADMIN TEMPLATE
+// ===================================== ADMIN TEMPLATE (UNCHANGED)
 const adminTemplate = ({ name, email, message }) => `
   <div style="font-family: Unna, Arial, sans-serif; color:#22050c; background:#f6f7fb; padding:20px; line-height:1.5;">
     <div style="max-width:600px;margin:auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.1);">
 
-      <div style="background: linear-gradient(180deg, #22050c, #ABE0F0, #22050c);padding:20px;color:#fff;text-align:center;">
+      <div style="background: linear-gradient(180deg, #8ad6ed, #8ad6ed, #00485d);padding:20px;color:#fff;text-align:center;">
         <h2 style="margin:0;">New Contact Message</h2>
       </div>
 
@@ -71,7 +39,7 @@ const adminTemplate = ({ name, email, message }) => `
   </div>
 `;
 
-// ===================================== AUTO REPLY TEMPLATE
+// ===================================== AUTO REPLY TEMPLATE (UNCHANGED)
 const autoReplyTemplate = (name) => `
   <div style="font-family: Unna, Arial, sans-serif; color:#22050c; padding:20px;">
     <div style="max-width:600px;margin:auto;background:#fff;border-radius:10px;padding:20px;box-shadow:0 10px 20px rgba(0,0,0,0.05);">
@@ -90,7 +58,7 @@ const autoReplyTemplate = (name) => `
   </div>
 `;
 
-// ===================================== MAIN FUNCTION (STABLE)
+// ===================================== MAIN FUNCTION (RESEND VERSION)
 export const sendEmail = async ({ name, email, message }) => {
 	const safeName = escapeHTML(name);
 	const safeEmail = escapeHTML(email);
@@ -98,30 +66,40 @@ export const sendEmail = async ({ name, email, message }) => {
 
 	console.log("📨 Sending admin email...");
 
-	// ================= ADMIN EMAIL
-	await sendWithRetry({
-		from: `"Portfolio Contact" <${env.GMAIL_USER}>`,
-		to: env.GMAIL_USER,
-		replyTo: safeEmail,
-		subject: `📩 New Contact Message from ${safeName}`,
-		html: adminTemplate({
-			name: safeName,
-			email: safeEmail,
-			message: safeMessage,
-		}),
-	});
+	try {
+		// ================= ADMIN EMAIL
+		const adminResult = await resend.emails.send({
+			from: "Portfolio Contact <onboarding@resend.dev>",
+			to: env.GMAIL_USER, // your receiving email (Gmail for now)
+			reply_to: safeEmail,
+			subject: `📩 New Contact Message from ${safeName}`,
+			html: adminTemplate({
+				name: safeName,
+				email: safeEmail,
+				message: safeMessage,
+			}),
+		});
 
-	console.log("✅ Admin email sent");
+		console.log("✅ Admin email sent:", adminResult);
+	} catch (err) {
+		console.error("❌ Admin email failed:", err);
+		throw err;
+	}
 
-	// ================= AUTO REPLY
 	console.log("📨 Sending auto-reply to:", safeEmail);
 
-	await sendWithRetry({
-		from: `"Ebenezer King" <${env.GMAIL_USER}>`,
-		to: safeEmail,
-		subject: `🚀 Thanks for contacting me, ${safeName}`,
-		html: autoReplyTemplate(safeName),
-	});
+	try {
+		// ================= AUTO REPLY
+		const autoReplyResult = await resend.emails.send({
+			from: "Ebenezer King <onboarding@resend.dev>",
+			to: safeEmail,
+			subject: `🚀 Thanks for contacting me, ${safeName}`,
+			html: autoReplyTemplate(safeName),
+		});
 
-	console.log("📨 Auto-reply sent successfully");
+		console.log("📨 Auto-reply sent successfully:", autoReplyResult);
+	} catch (err) {
+		console.error("❌ Auto-reply failed:", err);
+		throw err;
+	}
 };
