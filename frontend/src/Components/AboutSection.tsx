@@ -9,7 +9,7 @@ const AboutSection = () => {
 	return (
 		<SectionFrame className="aboutSection__parent relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100% overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
-			<div className="aboutSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto text-lg">
+			<div className="aboutSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
 				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
 					<h2 className="sr-only aboutSection__header">About Me</h2>
@@ -22,7 +22,7 @@ const AboutSection = () => {
 				</div>
 
 				{/* ============================== CONTENT */}
-				<div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 text-[#22050c] md:text-[2rem] lg:text-[1.4rem] w-full md:p-4 rounded-[0.5rem]">
+				<div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 text-[#22050c] w-full md:p-4 rounded-[0.5rem]">
 					<p className="font-bold">I'm King.</p>
 					<p className="font-bold">
 						A Software Developer —

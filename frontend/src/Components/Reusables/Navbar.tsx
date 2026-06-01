@@ -6,8 +6,9 @@ import { useState } from "react";
 import NavbarMenu from "./NavbarMenu";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
-import { useNavbar } from "./context/NavbarContext";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import { easeInOut } from "framer-motion";
+import { useNavbar } from "../Reusables/context/NavbarContext";
 
 // ===================================== ANIMATION CONFIG
 const navbarMotion = {
@@ -18,10 +19,10 @@ const navbarMotion = {
 
 const navbarTransition = {
 	duration: 1.5,
-	easing: "ease-out",
+	ease: easeInOut,
 };
 
-// ===================================== NAVBAR COMPONENT
+// =====================================
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 

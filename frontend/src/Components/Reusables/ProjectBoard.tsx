@@ -50,7 +50,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 								{/* ================= MOBILE IMAGE */}
 								{project.images.mobile && (
-									<div className="absolute z-20 left-0 md:left-[5rem] lg:left-[12rem] bottom-[1rem] md:bottom-[0.9rem] h-[50%] w-auto bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] px-[0.3rem] pt-[0.3rem] rounded-[1rem]">
+									<div className="absolute z-20 left-0 md:left-[5rem] lg:left-[8rem] bottom-[0.7rem] md:bottom-[0.7rem] h-[10rem] w-[5rem] md:h-[12.5rem] md:w-[6.5rem] bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] p-1 rounded-[1rem]">
 										<img
 											src={project.images.mobile}
 											alt={project.title}
@@ -61,7 +61,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 								{/* ================= TABLET IMAGE */}
 								{project.images.tablet && (
-									<div className="absolute z-20 right-0 md:right-[5rem] lg:right-[12rem] bottom-[1rem] md:bottom-[0.9rem] h-[50%] w-auto bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] px-[0.3rem] pt-[0.3rem] rounded-[1rem]">
+									<div className="absolute z-20 right-0 md:right-[5rem] lg:right-[8rem] bottom-[0.7rem] md:bottom-[0.7rem] h-[10.2rem] w-[7rem] md:h-[12.3rem] md:w-[7.9rem] bg-gradient-to-b from-[#22050c] via-[#ABE0F0] to-[#22050c] p-1 rounded-[1rem]">
 										<img
 											src={project.images.tablet}
 											alt={project.title}

@@ -4,7 +4,6 @@
 import Kingv2 from "../Assets/profilePic/kingAnimePp.webp";
 import king from "../Assets/backgroundImage/kingAnimePortrait.webp";
 import { PiArrowFatLineDownFill } from "react-icons/pi";
-import NavbarSpacer from "./Reusables/NavbarSpacer";
 import { motion } from "framer-motion";
 
 // =====================================
@@ -21,7 +20,6 @@ const springZoom = {
 const HeroSection = () => {
 	return (
 		<section className="heroSection__parent w-full flex flex-col flex-grow">
-			<NavbarSpacer mobileOffset={10} mdOffset={-50} lgOffset={-40} />
 			<div className="heroSection__wrapper">
 				{/* ============================== MP4 MUSIC */}
 
@@ -40,7 +38,7 @@ const HeroSection = () => {
 						<div className="relative z-20 flex flex-col items-center justify-center p-2 bg-gradient-to-b from-[#00485d] to-[#ABE0F0]">
 							<p className="text-[1.2rem] mb-2">Nice to meet you!</p>
 
-							<h1 className="text-[1.4rem] text-[#22050c] font-unna font-bold uppercase border-t-2 border-b-2 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
+							<h1 className="text-[#22050c] font-unna font-bold uppercase border-t-2 border-b-2 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
 								<a
 									href="https://docs.google.com/document/d/1rMZx8aLk1ZitCwSRTK706o19mj5UgyeQGABCZt6eAJg/edit?usp=sharing"
 									target="_blank"
@@ -98,7 +96,7 @@ const HeroSection = () => {
 								delay: 0.5,
 							}}
 						>
-							<h1 className="relative z-20 text-[1.8rem] font-unna font-bold uppercase border-t-4 border-b-4 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
+							<h1 className="relative z-20 text-2xl font-unna font-bold uppercase border-t-4 border-b-4 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
 								<a
 									href="https://www.coursera.org/articles/full-stack-developer"
 									target="_blank"

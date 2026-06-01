@@ -2,10 +2,11 @@
 // src/Components/Reusables/context/NavbarContext.ts
 // =====================================
 import { createContext, useContext } from "react";
+import type { RefObject } from "react";
 
 // =====================================
 type NavbarContextType = {
-	navbarRef: React.RefObject<HTMLElement | null>;
+	navbarRef: RefObject<HTMLElement | null>;
 	navbarHeight: number;
 };
 

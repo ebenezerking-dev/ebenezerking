@@ -27,7 +27,7 @@ export default function SectionFrame({
 				ease: [0.25, 0.1, 0.25, 1],
 			}}
 			viewport={{ amount: 0.2 }}
-			className={`relative pt-[2rem] pb-[16rem] px-4 overflow-hidden ${className}`}
+			className={`relative pt-[2rem] pb-[16rem] px-4 text-2xl md:text-2xl lg:text-xl overflow-hidden ${className}`}
 		>
 			{children}
 		</motion.section>

@@ -1,35 +1,33 @@
 // =====================================
 // src/Components/Layout.tsx
-// ===================================== LAYOUT COMPONENT
+// =====================================
 import Navbar from "./Reusables/Navbar";
 import Footer from "./Reusables/Footer";
 import BackToTop from "./Reusables/BackToTop";
 
-// =====================================
 interface LayoutProps {
 	children: React.ReactNode;
 }
 
-// =====================================
 function Layout({ children }: LayoutProps) {
 	return (
 		<div className="flex flex-col min-h-screen w-full relative">
-			{/* ============== HEADER ============== */}
+			{/* HEADER */}
 			<header>
 				<Navbar />
 			</header>
 
-			{/* ============== MAIN ============== */}
-			<main className="flex-grow flex flex-col w-full relative z-0">
+			{/* MAIN */}
+			<main className="flex-grow flex flex-col w-full relative z-0 pt-[var(--navbar-height)]">
 				{children}
 			</main>
 
-			{/* ============== FOOTER ============== */}
+			{/* FOOTER */}
 			<footer>
 				<Footer />
 			</footer>
 
-			{/* ============== BACK TO TOP ============== */}
+			{/* BACK TO TOP */}
 			<BackToTop />
 		</div>
 	);
