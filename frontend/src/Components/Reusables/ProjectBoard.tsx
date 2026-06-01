@@ -36,7 +36,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 							className="overflow-hidden"
 						>
 							{/* ================= IMAGES SECTION */}
-							<div className="relative w-full h-[22rem] flex justify-center items-center overflow-hidden">
+							<div className="relative w-full h-[22rem] flex justify-center overflow-hidden">
 								{/* ================= LAPTOP IMAGE */}
 								{project.images.desktop && (
 									<div className="absolute z-10 bottom-[-3rem] md:bottom-0 w-full h-full flex justify-center">
@@ -72,7 +72,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 							</div>
 
 							{/* ================= PROJECT DETAILS */}
-							<div className="p-[1rem] flex flex-col items-start md:items-center gap-[1rem]">
+							<div className="p-[1rem] flex flex-col items-start md:items-center gap-[1.4rem]">
 								{/* ================= TITILE */}
 								<h3 className="text-[1.5rem] font-unna font-bold border-b-2 border-orange-500">
 									{project.title}
@@ -94,7 +94,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</div>
 
 								{/* ================= BUTTON LINKS */}
-								<div className="flex gap-[1rem] pt-[0.5rem]">
+								<div className="flex gap-[1rem] pt-[0.5rem] text-[1.1rem] font-bold">
 									{project.live && (
 										<a
 											href={project.live}

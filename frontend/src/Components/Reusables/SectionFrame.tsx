@@ -20,9 +20,12 @@ export default function SectionFrame({
 	return (
 		<motion.section
 			id={id}
-			initial={{ opacity: 0, y: 80 }}
+			initial={{ opacity: 0, y: 50 }}
 			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5, ease: "easeOut" }}
+			transition={{
+				duration: 0.5,
+				ease: [0.25, 0.1, 0.25, 1],
+			}}
 			viewport={{ amount: 0.2 }}
 			className={`relative pt-[2rem] pb-[16rem] px-4 overflow-hidden ${className}`}
 		>

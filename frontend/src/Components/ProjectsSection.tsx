@@ -62,7 +62,7 @@ const ProjectsSection = () => {
 	return (
 		<SectionFrame className="projectSection__parent relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100% overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
-			<div className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
+			<div className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto text-lg">
 				{/* ============================== CONTENT HEADER */}
 				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
 					<h2 className="sr-only projectSection__header">Projects</h2>
@@ -74,7 +74,7 @@ const ProjectsSection = () => {
 				</div>
 
 				{/* ============================== CONTENT */}
-				<div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 text-[1.1rem] text-[#22050c] w-full">
+				<div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 text-[#22050c] w-full">
 					{/* ============================== PROJECT BOARD */}
 					<ProjectBoard items={projects} />
 				</div>

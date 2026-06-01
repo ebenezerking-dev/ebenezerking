@@ -84,9 +84,9 @@ const ContactSection = () => {
 	return (
 		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100% overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
-			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
+			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto text-lg">
 				{/* ============================== CONTENT HEADER */}
-				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
+				<div className="wrapper__header uppercase font-unna font-bold text-center mb-[16rem]">
 					<h2 className="sr-only contactSection__header">Contact Me</h2>
 
 					<h3 className="header relative inline-block">
@@ -96,7 +96,7 @@ const ContactSection = () => {
 				</div>
 
 				{/* ========================= CONTACT FORM ======================== */}
-				<div className="flex flex-1 flex-col justify-center items-center pb-[3rem] text-[1.1rem]">
+				<div className="flex flex-1 flex-col justify-center items-center pb-[3rem]">
 					<div className="form__wrapper w-full py-[1rem] mx-auto">
 						<form
 							className="w-full flex flex-col gap-4"
@@ -148,7 +148,7 @@ const ContactSection = () => {
 							<button
 								type="submit"
 								disabled={isSending}
-								className="contactForm__submit border-2 border-orange-500 hover:border-[#00ff91] hover:text-[#00ff91] hover:bg-[#00485d] py-2 px-4 rounded-[0.5rem] transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+								className="contactForm__submit text-[1.1rem] font-bold border-2 border-orange-500 hover:border-[#00ff91] hover:text-[#00ff91] hover:bg-[#00485d] py-2 px-4 rounded-[0.5rem] transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
 							>
 								{isSending ? "Sending..." : "Send Message"}
 							</button>

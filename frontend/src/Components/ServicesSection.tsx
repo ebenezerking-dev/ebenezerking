@@ -46,9 +46,9 @@ const ServicesSection = () => {
 	return (
 		<SectionFrame className="serviceSection__parent relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100% overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
-			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
+			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto text-lg">
 				{/* ============================== CONTENT HEADER */}
-				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
+				<div className="wrapper__header uppercase font-unna font-bold text-center mb-[16rem]">
 					<h2 className="sr-only servicesSection__header">Services</h2>
 
 					<h3 className="header relative inline-block flex">
@@ -61,7 +61,7 @@ const ServicesSection = () => {
 				<CardSlider
 					items={services}
 					renderItem={(service) => (
-						<div className="serviceCard h-full flex flex-col justify-start font-tinos text-[1.1rem] text-[#22050c] hover:text-[#00ff91] text-center px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border-2 border-orange-500 hover:bg-[#00485d] transition-all duration-300">
+						<div className="serviceCard h-full flex flex-col justify-start font-tinos text-[#22050c] hover:text-[#00ff91] text-center px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border-2 border-orange-500 hover:bg-[#00485d] transition-all duration-300">
 							<h4 className="font-unna font-bold mb-2">{service.title}</h4>
 
 							<p>{service.description}</p>
