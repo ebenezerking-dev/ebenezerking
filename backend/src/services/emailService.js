@@ -4,10 +4,13 @@
 import { Resend } from "resend";
 import env from "../config/env.js";
 
+// ===================================== LOG
+console.log("🔑 Resend API Key Loaded:", Boolean(env.RESEND_API_KEY));
+
 // ===================================== RESEND INIT
 const resend = new Resend(env.RESEND_API_KEY);
 
-// ===================================== DEBUG LOG
+// ===================================== LOG
 console.log("🔥 EMAIL SERVICE VERSION: RESEND v1");
 
 // ===================================== HTML ESCAPE
@@ -64,13 +67,19 @@ export const sendEmail = async ({ name, email, message }) => {
 	const safeEmail = escapeHTML(email);
 	const safeMessage = escapeHTML(message);
 
+	// ===================================== LOG
 	console.log("📨 Sending admin email...");
 
 	try {
 		// ================= ADMIN EMAIL
+		console.log("📨 Admin Email Payload:", {
+			from: "contact@ebenezerking.com",
+			to: env.GMAIL_USER,
+			replyTo: safeEmail,
+		});
 		const adminResult = await resend.emails.send({
-			from: "Portfolio Contact <onboarding@resend.dev>",
-			to: env.GMAIL_USER, // your receiving email (Gmail for now)
+			from: "Ebenezer King <contact@ebenezerking.com>",
+			to: env.GMAIL_USER,
 			reply_to: safeEmail,
 			subject: `📩 New Contact Message from ${safeName}`,
 			html: adminTemplate({
@@ -80,24 +89,33 @@ export const sendEmail = async ({ name, email, message }) => {
 			}),
 		});
 
+		// ===================================== LOG
 		console.log("✅ Admin email sent:", adminResult);
+		console.log("✅ Admin Email ID:", adminResult?.data?.id);
 	} catch (err) {
 		console.error("❌ Admin email failed:", err);
 		throw err;
 	}
 
+	// ===================================== LOG
 	console.log("📨 Sending auto-reply to:", safeEmail);
 
 	try {
 		// ================= AUTO REPLY
+		console.log("📨 Auto Reply Payload:", {
+			from: "contact@ebenezerking.com",
+			to: safeEmail,
+		});
 		const autoReplyResult = await resend.emails.send({
-			from: "Ebenezer King <onboarding@resend.dev>",
+			from: "Ebenezer King <contact@ebenezerking.com>",
 			to: safeEmail,
 			subject: `🚀 Thanks for contacting me, ${safeName}`,
 			html: autoReplyTemplate(safeName),
 		});
 
+		// ===================================== LOG
 		console.log("📨 Auto-reply sent successfully:", autoReplyResult);
+		console.log("✅ Auto Reply Email ID:", autoReplyResult?.data?.id);
 	} catch (err) {
 		console.error("❌ Auto-reply failed:", err);
 		throw err;
