@@ -11,7 +11,7 @@ const env = {
 	mongoURI: process.env.MONGO_URI,
 
 	GMAIL_USER: process.env.GMAIL_USER,
-	GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD,
+	RESEND_API_KEY: process.env.GMAIL_APP_PASSWORD,
 };
 
 export default env;
