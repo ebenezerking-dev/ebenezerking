@@ -26,6 +26,7 @@ const env = {
 	allowedOrigins: process.env.ALLOWED_ORIGINS,
 
 	MONGO_URI: required("MONGO_URI"),
+	CLOUDINARY_URL: required("CLOUDINARY_URL"),
 	GMAIL_USER: required("GMAIL_USER"),
 	RESEND_API_KEY: required("RESEND_API_KEY"),
 };

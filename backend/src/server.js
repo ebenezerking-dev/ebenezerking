@@ -1,5 +1,5 @@
 // =====================================
-// ENTRY POINT 
+// ENTRY POINT
 // src/server.js
 // =====================================
 import app from "./app.js";

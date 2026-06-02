@@ -1,10 +1,12 @@
 // =====================================
+// APP SETUP
 // src/app.js
-// ===================================== APP SETUP (PRODUCTION SAFE + DEBUG READY)
+// ===================================== 
 import express from "express";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoute.js";
 import healthRoute from "./routes/healthRoute.js";
+import cloudinaryRoutes from "./routes/cloudinaryRoute.js";
 
 const app = express();
 
@@ -60,6 +62,7 @@ app.use(express.json());
 // ===================================== ROUTES
 app.use("/api/contact", contactRoutes);
 app.use("/api/health", healthRoute);
+app.use("/api/upload", cloudinaryRoutes);
 
 // ===================================== ROOT ROUTE
 app.get("/", (req, res) => {

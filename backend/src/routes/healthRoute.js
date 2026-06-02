@@ -1,6 +1,7 @@
 // =====================================
+// HEALTH ROUTE
 // src/routes/healthRoute.js
-// ===================================== HEALTH ROUTE
+// =====================================
 import express from "express";
 
 const router = express.Router();

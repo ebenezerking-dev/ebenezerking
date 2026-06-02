@@ -1,4 +1,5 @@
 // =========================
+// DATABAEE CONFIG
 // src/config/db.js
 // =========================
 import mongoose from "mongoose";

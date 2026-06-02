@@ -1,9 +1,11 @@
 // =====================================
+// CONTACT CONTROLLER
 // src/controllers/contactController.js
-// ===================================== CONTACT CONTROLLER - NON-BLOCKING EMAIL
+// =====================================
 import { sendEmail } from "../services/emailService.js";
+import { uploadImage } from "../services/cloudinaryService.js";
 
-// ===================================== CONTACT FORM HANDLER
+// =====================================
 export const sendContact = async (req, res) => {
 	const requestId = Math.random().toString(36).substring(2, 10);
 
@@ -13,7 +15,7 @@ export const sendContact = async (req, res) => {
 		console.log(`📩 [${requestId}] Incoming contact request`);
 		console.log(`📦 [${requestId}] Payload:`, { name, email, message });
 
-		// ================= BASIC VALIDATION =================
+		// ================= VALIDATION =================
 		if (!name || !email || !message) {
 			return res.status(400).json({
 				success: false,
@@ -39,9 +41,16 @@ export const sendContact = async (req, res) => {
 			});
 		}
 
-		// ================= IMPORTANT CHANGE =================
-		// DO NOT block API on email sending
-		sendEmail({ name, email, message })
+		// ================= DEFAULT IMAGE =================
+		let imageUrl = "https://res.cloudinary.com/default-image.png";
+
+		// ================= OPTIONAL CLOUDINARY UPLOAD =================
+		if (req.file?.path) {
+			imageUrl = await uploadImage(req.file.path);
+		}
+
+		// ================= NON-BLOCKING EMAIL =================
+		sendEmail({ name, email, message, imageUrl })
 			.then(() => {
 				console.log(`✅ [${requestId}] Email sent`);
 			})
@@ -52,7 +61,7 @@ export const sendContact = async (req, res) => {
 				);
 			});
 
-		// ================= ALWAYS RESPOND FAST =================
+		// ================= FAST RESPONSE =================
 		return res.status(200).json({
 			success: true,
 			message: "Message received successfully",
