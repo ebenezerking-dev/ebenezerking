@@ -1,17 +1,32 @@
 // =====================================
+// ENV CONFIG (PRODUCTION SAFE)
 // src/config/env.js
-// ===================================== ENVIRONMENT VARIABLES WRAPPER
+// =====================================
 import dotenv from "dotenv";
 
+// =====================================
 dotenv.config();
 
 // =====================================
-const env = {
-	PORT: process.env.PORT,
-	mongoURI: process.env.MONGO_URI,
+// REQUIRED ENV HELPER (STRICT)
+// =====================================
+const required = (key) => {
+	const value = process.env[key];
 
-	GMAIL_USER: process.env.GMAIL_USER,
-	RESEND_API_KEY: process.env.RESEND_API_KEY,
+	if (!value) {
+		throw new Error(`❌ Missing ENV: ${key}`);
+	}
+
+	return value;
+};
+
+// =====================================
+const env = {
+	PORT: process.env.PORT || 3000,
+
+	MONGO_URI: required("MONGO_URI"),
+	GMAIL_USER: required("GMAIL_USER"),
+	RESEND_API_KEY: required("RESEND_API_KEY"),
 };
 
 export default env;

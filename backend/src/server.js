@@ -1,7 +1,7 @@
 // =====================================
+// ENTRY POINT 
 // src/server.js
-// ===================================== ENTRY POINT (SERVER BOOTSTRAP)
-
+// =====================================
 import app from "./app.js";
 import connectDB from "./config/db.js";
 import env from "./config/env.js";
@@ -23,6 +23,11 @@ const startServer = async () => {
 		console.error("❌ Server failed to start:", error.message);
 		process.exit(1);
 	}
+	console.log("ENV CHECK:", {
+		PORT: process.env.PORT,
+		MONGO: !!process.env.MONGO_URI,
+		RESEND: !!process.env.RESEND_API_KEY,
+	});
 };
 
 startServer();
