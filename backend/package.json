@@ -2,18 +2,19 @@
 	"name": "portfolio-api",
 	"private": true,
 	"version": "1.0.0",
-	"description": "kingv2's Portfolio Contact API - Handles contact form submissions and email notifications",
-	"main": "server.js",
+	"description": "kingv2 Portfolio API",
 	"type": "module",
+	"main": "src/server.js",
 	"scripts": {
 		"start": "node src/server.js",
 		"dev": "nodemon src/server.js",
-		"build": "echo \"Build step not required\""
+		"build": "echo \"no build step\""
 	},
 	"dependencies": {
 		"cors": "^2.8.6",
 		"dotenv": "^17.2.3",
 		"express": "^5.1.0",
+		"express-rate-limit": "^8.5.2",
 		"mongoose": "^9.0.0",
 		"resend": "^6.12.4"
 	},
