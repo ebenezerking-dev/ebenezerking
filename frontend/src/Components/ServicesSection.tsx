@@ -52,7 +52,7 @@ const ServicesSection = () => {
 					<h2 className="sr-only servicesSection__header">Services</h2>
 
 					<h3 className="header relative inline-block flex">
-						<span className="text-orange-500">services</span> i can offer you.
+						services i can offer you.
 						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-red-500 rounded-full"></span>
 					</h3>
 				</div>

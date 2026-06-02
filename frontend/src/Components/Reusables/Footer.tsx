@@ -29,7 +29,7 @@ function Footer() {
 			animate={footerMotion.animate}
 			exit={footerMotion.exit}
 			transition={footerTransition}
-			className="footer__parent relative bg-[#00485d] w-full min-h-[130px] text-[1.1rem] py-[1rem] px-[1rem] flex flex-col lg:px-[2rem]"
+			className="footer__parent relative bg-[#00485d] w-full min-h-[130px] text-[1.1rem] py-[1rem] px-[1rem] flex flex-col"
 		>
 			{/* ================ FOOTER CONTENTS ================ */}
 			<div className="relative z-20">

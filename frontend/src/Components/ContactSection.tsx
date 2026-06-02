@@ -90,7 +90,7 @@ const ContactSection = () => {
 					<h2 className="sr-only contactSection__header">Contact Me</h2>
 
 					<h3 className="header relative inline-block">
-						Let's <span className="text-orange-500">connect.</span>
+						Let's connect.
 						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
 					</h3>
 				</div>
