@@ -2,7 +2,6 @@
 // CONTACT VALIDATOR
 // src/middleware/contactValidator.js
 // =====================================
-
 export const validateContact = (req, res, next) => {
 	let { name, email, message } = req.body;
 
