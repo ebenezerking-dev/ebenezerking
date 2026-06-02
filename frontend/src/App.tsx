@@ -4,34 +4,34 @@
 import "./index.css";
 
 import Layout from "./components/Layout";
-import Hero from "./components/HeroSection";
-import About from "./components/AboutSection";
-import Projects from "./components/ProjectsSection";
-import Services from "./components/ServicesSection";
-import Contact from "./components/ContactSection";
+import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
+import ProjectsSection from "./components/ProjectsSection";
+import ServicesSection from "./components/ServicesSection";
+import ContactSection from "./components/ContactSection";
 
 // =====================================
 function App() {
 	return (
 		<Layout>
 			<section id="home">
-				<Hero />
+				<HeroSection />
 			</section>
 
 			<section id="about">
-				<About />
+				<AboutSection />
 			</section>
 
 			<section id="projects">
-				<Projects />
+				<ProjectsSection />
 			</section>
 
 			<section id="services">
-				<Services />
+				<ServicesSection />
 			</section>
 
 			<section id="contact">
-				<Contact />
+				<ContactSection />
 			</section>
 		</Layout>
 	);
