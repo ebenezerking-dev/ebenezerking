@@ -107,34 +107,47 @@ const ContactSection = () => {
 					</h3>
 				</div>
 
-				<form
-					onSubmit={handleSubmit}
-					className="flex flex-col gap-4 text-[#22050c]"
-				>
-					<input
-						name="name"
-						value={formData.name}
-						onChange={handleChange}
-						placeholder="Your Name"
-					/>
+				{/* ========================= CONTACT FORM ======================== */}
+				<div className="flex flex-1 flex-col justify-center items-center pb-[3rem]">
+					<div className="form__wrapper w-full py-[1rem] mx-auto">
+						{/* =========================== NAME */}
+						<form
+							onSubmit={handleSubmit}
+							className="flex flex-col gap-4 text-[#22050c]"
+						>
+							<input
+								type="text"
+								name="name"
+								placeholder="Your Name"
+								className="w-full px-4 py-2 border-b border-orange-500/20 rounded-[0.5rem] bg-transparent text-[#22050c]"
+								value={formData.name}
+								onChange={handleChange}
+								required
+							/>
 
-					<input
-						name="email"
-						value={formData.email}
-						onChange={handleChange}
-						placeholder="Your Email"
-					/>
+							<input
+								type="email"
+								name="email"
+								placeholder="Your Email"
+								className="w-full px-4 py-2 border-b border-orange-500/30 rounded-[0.5rem] bg-transparent text-[#22050c]"
+								value={formData.email}
+								onChange={handleChange}
+								required
+							/>
+							<textarea
+								name="message"
+								rows={2}
+								placeholder="Your Message"
+								className="w-full px-4 py-2 border-b border-orange-500/20 rounded-[0.5rem] bg-transparent text-[#22050c]"
+								value={formData.message}
+								onChange={handleChange}
+								required
+							/>
 
-					<textarea
-						name="message"
-						value={formData.message}
-						onChange={handleChange}
-						placeholder="Your Message"
-						rows={2}
-					/>
-
-					<LiquidButton status={status}>Send Message</LiquidButton>
-				</form>
+							<LiquidButton status={status}>Send Message</LiquidButton>
+						</form>
+					</div>
+				</div>
 			</div>
 		</SectionFrame>
 	);
