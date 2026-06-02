@@ -98,7 +98,7 @@ const HeroSection = () => {
 						>
 							<h1 className="relative z-20 text-2xl font-unna font-bold uppercase border-t-4 border-b-4 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
 								<a
-									href="https://www.coursera.org/articles/full-stack-developer"
+									href="https://www.w3schools.com/whatis/whatis_fullstack.asp"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
