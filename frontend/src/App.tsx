@@ -3,13 +3,12 @@
 // =====================================
 import "./index.css";
 
-import Layout from "./Components/Layout";
-import Hero from "./Components/HeroSection";
-import About from "./Components/AboutSection";
-import Projects from "./Components/ProjectsSection";
-import Services from "./Components/ServicesSection";
-import Contact from "./Components/ContactSection";
-
+import Layout from "./components/Layout";
+import Hero from "./components/HeroSection";
+import About from "./components/AboutSection";
+import Projects from "./components/ProjectsSection";
+import Services from "./components/ServicesSection";
+import Contact from "./components/ContactSection";
 
 // =====================================
 function App() {

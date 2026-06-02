@@ -8,7 +8,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { easeInOut } from "framer-motion";
-import { useNavbar } from "../Reusables/context/NavbarContext";
+import { useNavbar } from "./context/NavbarContext";
 
 // ===================================== ANIMATION CONFIG
 const navbarMotion = {

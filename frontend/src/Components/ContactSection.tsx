@@ -1,175 +1,141 @@
 // =====================================
+// CONTACT SECTION
 // src/Components/ContactSection.tsx
-// ===================================== CONTACT SECTION COMPONENT
+// =====================================
 import { useState } from "react";
 import SectionFrame from "./Reusables/SectionFrame";
+import { useToast } from "../hooks/useToast";
+import { Toast } from "../Components/ui/Toast";
+import { LiquidButton } from "../Components/ui/LiquidButton";
 
-// =====================================
+type FormState = {
+	name: string;
+	email: string;
+	message: string;
+};
+
+type Status = "idle" | "loading" | "success" | "error";
+
 const ContactSection = () => {
-	const [formData, setFormData] = useState({
+	const [formData, setFormData] = useState<FormState>({
 		name: "",
 		email: "",
 		message: "",
 	});
 
-	const [statusMessage, setStatusMessage] = useState("");
-	const [statusType, setStatusType] = useState("");
-	const [isSending, setIsSending] = useState(false);
+	const [status, setStatus] = useState<Status>("idle");
 
-	type InputEvent = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
+	const { toast, showToast } = useToast();
 
-	const handleChange = (e: InputEvent) => {
-		const { name, value } = e.target;
-		setFormData((prev) => ({ ...prev, [name]: value }));
+	// ================================== INPUT
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+	) => {
+		setFormData((prev) => ({
+			...prev,
+			[e.target.name]: e.target.value,
+		}));
 	};
 
-	// ================================== HANDLE SUBMIT
-	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+	// ================================== VALIDATION
+	const validate = () => {
+		if (!formData.name.trim()) return "Name is required";
+		if (!formData.email.includes("@")) return "Valid email required";
+		if (!formData.message.trim()) return "Message is required";
+		if (formData.message.trim().length < 10)
+			return "Message must be at least 10 characters";
+		return null;
+	};
+
+	// ================================== SUBMIT
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		const requestId = Math.random().toString(36).substring(2, 10);
-		console.log(`🚀 [${requestId}] FORM SUBMIT STARTED`);
-		console.log(`📦 [${requestId}] Form Data:`, formData);
-		setStatusMessage("");
-		setStatusType("");
-		setIsSending(true);
+
+		if (status === "loading") return;
+
+		const error = validate();
+		if (error) {
+			showToast(error, "error");
+			return;
+		}
+
+		setStatus("loading");
+
 		try {
-			const baseUrl = import.meta.env.VITE_API_URL;
-			const url = `${baseUrl}/api/contact`;
-			console.log(`🌍 [${requestId}] BASE URL:`, baseUrl);
-			console.log(`📡 [${requestId}] FINAL URL:`, url);
-			// ===================================== TIMEOUT HANDLING (IMPORTANT FOR RENDER)
-			const response = await fetch(url, {
+			const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
 				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
+				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(formData),
 			});
-			console.log(`📥 [${requestId}] Response received`);
-			console.log(`📊 [${requestId}] Status:`, response.status);
-			const text = await response.text();
-			console.log(`📄 [${requestId}] Raw response:`, text);
-			let data;
-			try {
-				data = JSON.parse(text);
-			} catch {
-				console.warn(`⚠️ [${requestId}] JSON parse failed`);
-			}
-			if (response.ok) {
-				console.log(`✅ [${requestId}] SUCCESS`);
-				setStatusMessage(data?.message || "Success");
-				setStatusType("success");
-				setFormData({
-					name: "",
-					email: "",
-					message: "",
-				});
-			} else {
-				console.warn(`⚠️ [${requestId}] SERVER ERROR`);
-				setStatusMessage(data?.message || "Server error");
-				setStatusType("error");
-			}
-		} catch (error: unknown) {
-			console.error("🔥 FETCH FAILED", error);
 
-			if (error instanceof Error) {
-				console.error("Message:", error.message);
+			const data = await res.json();
+
+			if (!res.ok) {
+				setStatus("error");
+				showToast(data?.message || "Something went wrong", "error");
+				return;
 			}
 
-			setStatusMessage("Network error. Check connection.");
-			setStatusType("error");
+			setStatus("success");
+			showToast("Message sent successfully 🚀", "success");
+
+			setFormData({
+				name: "",
+				email: "",
+				message: "",
+			});
+
+			setTimeout(() => setStatus("idle"), 1200);
+		} catch {
+			setStatus("error");
+			showToast("Network error. Try again.", "error");
+
+			setTimeout(() => setStatus("idle"), 1200);
 		}
 	};
 
 	return (
-		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100% overflow-hidden">
-			{/* ============================== SECTION WRAPPER */}
+		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] via-[#8ad6ed] to-[#00485d] overflow-hidden">
 			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
-				{/* ============================== CONTENT HEADER */}
+				{/* TOAST */}
+				{toast && <Toast message={toast.message} type={toast.type} />}
+				{/* HEADER */}
 				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
-					<h2 className="sr-only contactSection__header">Contact Me</h2>
-
 					<h3 className="header relative inline-block">
 						Let's connect.
 						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
 					</h3>
 				</div>
 
-				{/* ========================= CONTACT FORM ======================== */}
-				<div className="flex flex-1 flex-col justify-center items-center pb-[3rem]">
-					<div className="form__wrapper w-full py-[1rem] mx-auto">
-						<form
-							className="w-full flex flex-col gap-4"
-							onSubmit={handleSubmit}
-						>
-							{/* =========================== NAME */}
-							<div className="nameParent">
-								<label className="block font-bold mb-2">Name:</label>
-								<input
-									type="text"
-									name="name"
-									placeholder="Your Name"
-									className="w-full px-4 py-2 border-b border-orange-500/30 rounded-[0.5rem] bg-transparent text-[#22050c]"
-									value={formData.name}
-									onChange={handleChange}
-									required
-								/>
-							</div>
+				<form
+					onSubmit={handleSubmit}
+					className="flex flex-col gap-4 text-[#22050c]"
+				>
+					<input
+						name="name"
+						value={formData.name}
+						onChange={handleChange}
+						placeholder="Your Name"
+					/>
 
-							{/* =========================== EMAIL */}
-							<div className="emailParent">
-								<label className="block font-bold mb-2">Email:</label>
-								<input
-									type="email"
-									name="email"
-									placeholder="Your Email"
-									className="w-full px-4 py-2 border-b border-orange-500/30 rounded-[0.5rem] bg-transparent text-[#22050c]"
-									value={formData.email}
-									onChange={handleChange}
-									required
-								/>
-							</div>
+					<input
+						name="email"
+						value={formData.email}
+						onChange={handleChange}
+						placeholder="Your Email"
+					/>
 
-							{/* =========================== MESSAGE */}
-							<div className="messageParent">
-								<label className="block font-bold mb-2">Message:</label>
-								<textarea
-									name="message"
-									rows={5}
-									placeholder="Your Message"
-									className="w-full px-4 py-2 border-b border-orange-500/30 rounded-[0.5rem] bg-transparent text-[#22050c]"
-									value={formData.message}
-									onChange={handleChange}
-									required
-								/>
-							</div>
+					<textarea
+						name="message"
+						value={formData.message}
+						onChange={handleChange}
+						placeholder="Your Message"
+						rows={2}
+					/>
 
-							{/* =========================== SEND MESSAGE BUTTON */}
-							<button
-								type="submit"
-								disabled={isSending}
-								className="contactForm__submit text-[1.1rem] font-bold border-2 border-orange-500 hover:border-[#00ff91] hover:text-[#00ff91] hover:bg-[#00485d] py-2 px-4 rounded-[0.5rem] transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-							>
-								{isSending ? "Sending..." : "Send Message"}
-							</button>
-
-							{/* =========================== MESSAGE STATUS */}
-							{statusMessage && (
-								<p
-									className={`pt-[1rem] text-center text-[1rem] font-semibold font-unna ${
-										statusType === "success" ? "text-green-500" : "text-red-400"
-									}`}
-								>
-									{statusMessage}
-								</p>
-							)}
-						</form>
-					</div>
-				</div>
+					<LiquidButton status={status}>Send Message</LiquidButton>
+				</form>
 			</div>
-
-			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
 		</SectionFrame>
 	);
 };
