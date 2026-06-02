@@ -23,6 +23,7 @@ const required = (key) => {
 // =====================================
 const env = {
 	PORT: process.env.PORT || 3000,
+	allowedOrigins: process.env.ALLOWED_ORIGINS,
 
 	MONGO_URI: required("MONGO_URI"),
 	GMAIL_USER: required("GMAIL_USER"),

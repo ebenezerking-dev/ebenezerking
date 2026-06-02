@@ -18,12 +18,9 @@ app.use((req, res, next) => {
 });
 
 // ===================================== CORS CONFIGURATION
-const allowedOrigins = [
-	"http://localhost:5173",
-	"http://localhost:5174",
-	"http://localhost:3000",
-	"https://kingv2.vercel.app",
-];
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+	? process.env.ALLOWED_ORIGINS.split(",")
+	: [];
 
 const corsOptions = {
 	origin: (origin, callback) => {
@@ -32,12 +29,13 @@ const corsOptions = {
 		}
 
 		if (allowedOrigins.includes(origin)) {
+			console.log("✅ CORS allowed:", origin);
 			return callback(null, true);
 		}
 
 		console.warn("❌ CORS blocked:", origin);
 
-		return callback(null, true);
+		return callback(new Error("Not allowed by CORS"));
 	},
 	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 	allowedHeaders: ["Content-Type", "Authorization"],
