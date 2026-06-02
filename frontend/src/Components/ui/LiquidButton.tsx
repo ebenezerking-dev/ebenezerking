@@ -60,7 +60,7 @@ export const LiquidButton = ({
 		<button
 			type="submit"
 			disabled={status === "loading"}
-			className="relative overflow-hidden border-2 border-green-400 rounded px-5 py-2 font-bold"
+			className="relative overflow-hidden font-unna font-bold border-2 border-orange-500 hover:text-[#00ff91] hover:bg-[#00485d] py-2 px-4 rounded-[0.5rem] transition-colors duration-300 cursor-pointer"
 		>
 			<span className="relative z-10">
 				{status === "loading" ? "Sending..." : children}

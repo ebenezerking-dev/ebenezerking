@@ -2,7 +2,7 @@
 // src/Components/AboutSection.tsx
 // ===================================== ABOUT SECTION COMPONENT
 
-import SectionFrame from "./Reusables/SectionFrame";
+import SectionFrame from "./reusables/SectionFrame";
 
 // =====================================
 const AboutSection = () => {

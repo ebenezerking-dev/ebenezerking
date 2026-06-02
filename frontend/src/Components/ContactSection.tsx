@@ -3,11 +3,12 @@
 // src/Components/ContactSection.tsx
 // =====================================
 import { useState } from "react";
-import SectionFrame from "./Reusables/SectionFrame";
+import SectionFrame from "./reusables/SectionFrame";
 import { useToast } from "../hooks/useToast";
-import { Toast } from "../Components/ui/Toast";
-import { LiquidButton } from "../Components/ui/LiquidButton";
+import { Toast } from "./ui/Toast";
+import { LiquidButton } from "./ui/LiquidButton";
 
+// =====================================
 type FormState = {
 	name: string;
 	email: string;
@@ -62,11 +63,14 @@ const ContactSection = () => {
 		setStatus("loading");
 
 		try {
-			const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(formData),
-			});
+			const res = await fetch(
+				`${import.meta.env.VITE_API_URL}/api/contact`,
+				{
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(formData),
+				},
+			);
 
 			const data = await res.json();
 

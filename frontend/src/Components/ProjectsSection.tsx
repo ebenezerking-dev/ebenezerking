@@ -1,7 +1,7 @@
 // =====================================
 // src/Components/ProjectsSection.tsx
 // ===================================== PROJECTS SECTION COMPONENT
-import ProjectBoard from "./Reusables/ProjectBoard";
+import ProjectBoard from "./reusables/ProjectBoard";
 
 import MobileT from "../Assets/Projects/taxlator/images/Mobile.webp";
 import IpadT from "../Assets/Projects/taxlator/images/iPad.webp";
@@ -11,7 +11,7 @@ import Macbook from "../Assets/Projects/incoming/Macbook.webp";
 import Ipad from "../Assets/Projects/incoming/iPad.webp";
 import Mobile from "../Assets/Projects/incoming/iPhone.webp";
 
-import SectionFrame from "./Reusables/SectionFrame";
+import SectionFrame from "./reusables/SectionFrame";
 
 const projects = [
 	{

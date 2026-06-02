@@ -1,8 +1,8 @@
 // =====================================
 // src/Components/ServicesSection.tsx
 // ===================================== SERVICES SECTION COMPONENT
-import CardSlider from "./Reusables/CardSlider";
-import SectionFrame from "./Reusables/SectionFrame";
+import CardSlider from "./reusables/CardSlider";
+import SectionFrame from "./reusables/SectionFrame";
 
 const services = [
 	{
