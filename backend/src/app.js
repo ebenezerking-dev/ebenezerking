@@ -1,7 +1,7 @@
 // =====================================
 // APP SETUP
 // src/app.js
-// ===================================== 
+// =====================================
 import express from "express";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoute.js";
@@ -24,21 +24,22 @@ const allowedOrigins = process.env.ALLOWED_ORIGINS
 	? process.env.ALLOWED_ORIGINS.split(",")
 	: [];
 
+const allowedOrigins = new Set(process.env.ALLOWED_ORIGINS?.split(",") || []);
+
 const corsOptions = {
 	origin: (origin, callback) => {
-		if (!origin) {
-			return callback(null, true);
-		}
+		// allow server-to-server / Postman
+		if (!origin) return callback(null, true);
 
-		if (allowedOrigins.includes(origin)) {
+		if (allowedOrigins.has(origin)) {
 			console.log("✅ CORS allowed:", origin);
 			return callback(null, true);
 		}
 
 		console.warn("❌ CORS blocked:", origin);
-
-		return callback(new Error("Not allowed by CORS"));
+		return callback(null, false);
 	},
+
 	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 	allowedHeaders: ["Content-Type", "Authorization"],
 	credentials: true,
@@ -63,6 +64,11 @@ app.use(express.json());
 app.use("/api/contact", contactRoutes);
 app.use("/api/health", healthRoute);
 app.use("/api/upload", cloudinaryRoutes);
+
+// 👇 ADD THIS HERE
+app.get("/ping", (req, res) => {
+	res.send("pong");
+});
 
 // ===================================== ROOT ROUTE
 app.get("/", (req, res) => {
