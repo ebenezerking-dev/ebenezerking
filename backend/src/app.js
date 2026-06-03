@@ -13,17 +13,11 @@ const app = express();
 // ===================================== REQUEST LOGGER (DEBUG ONLY)
 app.use((req, res, next) => {
 	const requestId = Math.random().toString(36).substring(2, 10);
-
 	req.requestId = requestId;
-
 	next();
 });
 
-// ===================================== CORS CONFIGURATION
-const allowedOrigins = process.env.ALLOWED_ORIGINS
-	? process.env.ALLOWED_ORIGINS.split(",")
-	: [];
-
+// ===================================== CORS CONFIGURATION (FIXED)
 const allowedOrigins = new Set(process.env.ALLOWED_ORIGINS?.split(",") || []);
 
 const corsOptions = {
@@ -48,7 +42,7 @@ const corsOptions = {
 // ===================================== APPLY CORS
 app.use(cors(corsOptions));
 
-// ===================================== PRE-FLIGHT SAFETY (IMPORTANT)
+// ===================================== PRE-FLIGHT SAFETY
 app.use((req, res, next) => {
 	if (req.method === "OPTIONS") {
 		console.log("🟡 Preflight handled");
@@ -65,7 +59,7 @@ app.use("/api/contact", contactRoutes);
 app.use("/api/health", healthRoute);
 app.use("/api/upload", cloudinaryRoutes);
 
-// 👇 ADD THIS HERE
+// ===================================== PING ROUTE
 app.get("/ping", (req, res) => {
 	res.send("pong");
 });
