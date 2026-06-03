@@ -17,73 +17,76 @@ export const autoReplyTemplate = (name) => {
 	`;
 
 	const body = `
-		<h3 style="font-size:20px;font-weight:700;margin:0 0 20px 0;">
+		<h3 style="font-size:20px;font-weight:700;margin:0 0 40px 0;">
   					🎉 Hi ${name} 🎉
 		</h3>
 
-		<p style="font-size:16px;">
+		<div style="font-size:16px;margin:10px 0 0 0;">
+				<p>
   					I’ve received your message and will get back to you shortly.
-		</p>
+				</p>
 
-		<p style="font-size:16px;">
-			Feel free to check out my portfolio in the meantime.
-		</p>
+				<p>
+					In the meantime, feel free to check out my portfolio.
+				</p>
+		</div>
+
 	`;
 
 	const footer = `
-	<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-	<tr>
-	<td
-		background="${EMAIL_ASSETS.footer}"
-		style="
-			background-image:url('${EMAIL_ASSETS.footer}');
-			background-size:cover;
-			background-position:center;
-			padding:25px;
-		"
-	>
+			<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+  			<tr>
+  			  <td
+  			    background="${EMAIL_ASSETS.footer}"
+    			  style="
+    			    background-image:url('${EMAIL_ASSETS.footer}');
+    			    background-size:cover;
+    			    background-position:center;
+       			 padding:25px;
+    		  " >
 
-	<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+      		<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
 
-	<!-- ROW 1 -->
-	<tr>
+        	<!----------------------- ROW ONE ----------------------->
 
-		<td width="50%" align="left" valign="middle" style="padding:10px;">
-				<img src="${EMAIL_ASSETS.logo}" width="120" style="display:block;border:0;" />
-		</td>
+        	<tr>
+          <!----------------------- LOGO ----------------------->
+          <td align="left" valign="middle" style="width:50%; padding:10px;">
+          		<img src="${EMAIL_ASSETS.logo}" width="110" style="display:block;border:0;" />
+          </td>
 
-		<td width="50%" align="right" valign="middle" style="padding:10px;">
-			<div style="text-align:right;">
-				${socialIcons}
+          <!----------------------- SOCIAL + WEBSITE ----------------------->
+          <td align="right" valign="middle" style="width:50%; padding:10px;">
+            <div style="text-align:right;">
 
-				<p style="margin:8px 0 0;">
-					<a
-						href="https://ebenezerking.com"
-						style="color:#00485d;font-size:15px;font-weight:700;text-decoration:underline;"
-					>
-						ebenezerking.com
-					</a>
-				</p>
-			</div>
-		</td>
+			     <p style="margin:0 0 5px;">
+                <a
+                  href="https://ebenezerking.com"
+                  style="color:#00485d;font-size:15px;font-weight:700;text-decoration:underline;"
+                >
+                  ebenezerking.com
+                </a>
+              </p>
 
-	</tr>
+              ${socialIcons}
+            </div>
+          </td>
+        	</tr>
 
-	<!-- COPYRIGHT -->
-	<tr>
-		<td colspan="2" align="center" style="padding-top:15px;">
-			<p style="margin:0;font-size:12px;font-weight:600;color:#00485d;">
-				© ${new Date().getFullYear()} Ebenezer King
-			</p>
-		</td>
-	</tr>
+       		 <!----------------------- ROW TWO COPYRIGHT ----------------------->
 
-	</table>
-
-	</td>
-	</tr>
-	</table>
-	`;
+        		<tr>
+         			 <td colspan="2" align="center" style="padding-top:10px;">
+          		 	 <p style="margin:0;font-size:12px;font-weight:500;color:#00485d;">
+           		 	  © ${new Date().getFullYear()} Ebenezer King
+         			   </p>
+        			  </td>
+       				 </tr>
+      				</table>
+   				 </td>
+ 			 </tr>
+		</table>
+		`;
 
 	return emailBase({ header, body, footer });
 };

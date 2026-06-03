@@ -4,10 +4,10 @@
 // =====================================
 import app from "./app.js";
 import connectDB from "./config/db.js";
-import env from "./config/env.js"; // ✅ Import env
+import env from "./config/env.js"; 
 
 // =====================================
-const PORT = env.PORT; // ✅ Use env.PORT
+const PORT = env.PORT;
 
 // =====================================
 const startServer = async () => {
