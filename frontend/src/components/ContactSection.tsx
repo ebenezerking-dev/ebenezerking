@@ -62,15 +62,14 @@ const ContactSection = () => {
 
 		setStatus("loading");
 
+		console.log("API URL:", import.meta.env.VITE_API_URL);
+
 		try {
-			const res = await fetch(
-				`${import.meta.env.VITE_API_URL}/api/contact`,
-				{
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify(formData),
-				},
-			);
+			const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			});
 
 			const data = await res.json();
 
