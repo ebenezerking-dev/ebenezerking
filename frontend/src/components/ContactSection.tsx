@@ -3,7 +3,7 @@
 // src/Components/ContactSection.tsx
 // =====================================
 import { useState } from "react";
-import SectionFrame from "./reusables/SectionFrame";
+import SectionFrame from "../components/reusables/SectionFrame";
 import { useToast } from "../hooks/useToast";
 import { Toast } from "./ui/Toast";
 import { LiquidButton } from "./ui/LiquidButton";

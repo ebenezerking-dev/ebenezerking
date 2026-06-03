@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
-import { NavbarProvider } from "./components/reusables/context/NavbarProvider";
+import { NavbarProvider } from ".";
 
 // =====================================
 ReactDOM.createRoot(document.getElementById("root")!).render(

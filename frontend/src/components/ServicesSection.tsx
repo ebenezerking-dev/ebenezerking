@@ -1,10 +1,18 @@
 // =====================================
+// SERVICES SECTION
 // src/Components/ServicesSection.tsx
-// ===================================== SERVICES SECTION COMPONENT
-import CardSlider from "./reusables/CardSlider";
-import SectionFrame from "./reusables/SectionFrame";
+// =====================================
+import CardSlider from "../components/reusables/CardSlider";
+import SectionFrame from "../components/reusables/SectionFrame";
 
-const services = [
+// =====================================
+type Service = {
+	title: string;
+	description: string;
+};
+
+// =====================================
+const services: Service[] = [
 	{
 		title: "Front-End Development",
 		description:
@@ -58,9 +66,9 @@ const ServicesSection = () => {
 				</div>
 
 				{/* ============================== SERVICE CARDS SLIDER */}
-				<CardSlider
+				<CardSlider<Service>
 					items={services}
-					renderItem={(service) => (
+					renderItem={(service: Service) => (
 						<div className="serviceCard h-full flex flex-col justify-start font-tinos text-[#22050c] hover:text-[#00ff91] text-center px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border-2 border-orange-500 hover:bg-[#00485d] transition-all duration-300">
 							<h4 className="font-unna font-bold mb-2">{service.title}</h4>
 

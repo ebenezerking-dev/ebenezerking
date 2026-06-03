@@ -3,7 +3,7 @@
 // =====================================
 import { useLayoutEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { NavbarContext } from "./NavbarContext";
+import { NavbarContext } from "../../reusables/context/NavbarContext";
 
 export function NavbarProvider({ children }: { children: ReactNode }) {
 	const navbarRef = useRef<HTMLElement | null>(null);

@@ -2,11 +2,12 @@
 // src/Components/Reusables/CardSlider.tsx
 // =====================================
 import { motion } from "framer-motion";
+import type { ReactElement } from "react";
 
 // =====================================
 type CardSliderProps<T> = {
 	items: T[];
-	renderItem: (item: T, index: number) => React.ReactElement;
+	renderItem: (item: T, index: number) => ReactElement;
 };
 
 // =====================================

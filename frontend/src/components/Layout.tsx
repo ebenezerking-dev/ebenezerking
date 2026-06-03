@@ -1,9 +1,9 @@
 // =====================================
 // src/Components/Layout.tsx
 // =====================================
-import Navbar from "./reusables/Navbar";
-import Footer from "./reusables/Footer";
-import BackToTop from "./reusables/BackToTop";
+import Navbar from "../components/reusables/Navbar";
+import Footer from "../components/reusables/Footer";
+import BackToTop from "../components/reusables/BackToTop";
 
 interface LayoutProps {
 	children: React.ReactNode;
