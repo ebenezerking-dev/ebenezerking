@@ -42,7 +42,7 @@ export const autoReplyTemplate = (name) => {
     	   	 background-image:url('${EMAIL_ASSETS.footer}');
       	 	 background-size:cover;
       	 	 background-position:center;
-      		  padding: 35px 25px;
+      		  padding: 50px 25px;
      		 "
    		 >
 
@@ -51,8 +51,8 @@ export const autoReplyTemplate = (name) => {
       		  <!---------------- ROW ONE ---------------->
        		 <tr>
       	 	   <!---------------- LOGO ---------------->
-      	 	  <td align="left" valign="middle" style="width:50%;padding:15px 0 0 15px;">
-       	     <img src="${EMAIL_ASSETS.logo}" width="140" style="display:block;border:0;" />
+      	 	  <td align="left" valign="middle" style="width:50%;padding:20px 0 0 15px;">
+       	     <img src="${EMAIL_ASSETS.logo}" width="150" style="display:block;border:0;" />
        		   </td>
 
       		    <!---------------- SOCIAL + WEBSITE ---------------->

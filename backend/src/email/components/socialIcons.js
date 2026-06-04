@@ -15,10 +15,10 @@ export const socialIcons = `
   </a>
 
   <a href="https://x.com/a_devlin" style="margin:0 5px; display:inline-block;">
-    <img src="${EMAIL_ASSETS.twitter}" width="18" style="display:block;" />
+    <img src="${EMAIL_ASSETS.twitter}" width="14" style="display:block;" />
   </a>
 
     <a href="https://wa.me/message/UHRWC3UBMMB2E1" style="margin:0 5px; display:inline-block;">
-    <img src="${EMAIL_ASSETS.whatsapp}" width="20" style="display:block;" />
+    <img src="${EMAIL_ASSETS.whatsapp}" width="24" style="display:block;" />
   </a>
 `;
