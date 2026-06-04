@@ -9,92 +9,102 @@ import { EMAIL_ASSETS } from "../../email/assets/emailAssets.js";
 // ===================================
 export const adminTemplate = ({ name, email, message }) => {
 	const header = `
-        <!-- BACKGROUND IMAGE HEADER -->
-		<img
-			src="${EMAIL_ASSETS.header}"
-			width="600"
-			style="display:block;width:100%;max-width:600px;"
-		/>
-	`;
+      		  <!-- BACKGROUND IMAGE HEADER -->
+				<img
+				src="${EMAIL_ASSETS.header}"
+				width="600"
+				style="display:block;width:100%;max-width:600px;"
+				/>
+				`;
 
 	const body = `
-        <!-- NAME -->
-		<p style="font-size:16px;font-weight:700;margin-bottom:8px;color:#00485d;">
+      			  <!---------------- NAME ---------------->
+					<p style="font-size:16px;font-weight:700;margin-bottom:8px;color:#00485d;">
  					 Name:
  					 <span style="color:#000000;font-weight:600;">${name}</span>
-		</p>
+					</p>
 
-        <!-- EMAIL -->
-		<p style="font-size:14px;font-weight:700;margin-bottom:8px;color:#00485d;">
+       	        <!---------------- EMAIL ---------------->
+				<p style="font-size:14px;font-weight:700;margin-bottom:8px;color:#00485d;">
  					 Email:
  					 <span style="color:#000000;font-weight:400;">${email}</span>
-		</p>
+				</p>
 
-		<hr style="margin:15px 0;" />
+				<hr style="margin:15px 0;" />
 
-        <!-- MESSAGE -->
-		<div style="background:#f3f3f3;padding:25px 15px;border-left:4px solid #00485d;border-radius:6px;min-height:120px;font-size:15px;line-height:1.6;">
+                <!---------------- MESSAGE ---------------->
+				<div style="background:#f3f3f3;padding:25px 15px;border-left:4px solid #00485d;border-radius:6px;min-height:120px;font-size:15px;line-height:1.6;">
   					<p style="font-size:16px;font-weight:700;color:#00485d;margin:0 0 8px;">
     				<span>Message:</span>
   					</p>
   					${message}
-		</div>
-	`;
+					</div>
+					`;
 
 	const footer = `
-		<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-  			<tr>
-    		<td
-    		  background="${EMAIL_ASSETS.footer}"
-    		 	 style="
-    	   	 background-image:url('${EMAIL_ASSETS.footer}');
-      	 	 background-size:cover;
-      	 	 background-position:center;
-      		  padding: 50px 25px;
-     		 "
-   		 >
+				<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+ 				 <tr>
+  				  <td
+   				   background="${EMAIL_ASSETS.footer}"
+    			  style="
+     			   background-image:url('${EMAIL_ASSETS.footer}');
+      				  background-size:cover;
+     				   background-position:center;
+      				  padding:50px 25px;
+     				 ">
 
-     	 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+      			<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+        
+				<!---------------- ROW ONE - LOGO ---------------->
+      			  <tr>
+         			 <td
+           			 class="footer-column footer-logo"
+        		    align="left"
+          		  	valign="middle"
+            		style="width:50%;padding:20px 0 0 15px;">
 
-      		  <!---------------- ROW ONE ---------------->
-       		 <tr>
-      	 	   <!---------------- LOGO ---------------->
-      	 	  <td align="left" valign="middle" style="width:50%;padding:20px 0 0 15px;">
-       	     <img src="${EMAIL_ASSETS.logo}" width="170" style="display:block;border:0;" />
-       		   </td>
+           		 <img
+             	 src="${EMAIL_ASSETS.logo}"
+             	 width="170"
+            	  style="display:block;border:0;" />
+        	 	 </td>
 
-      		    <!---------------- SOCIAL + WEBSITE ---------------->
-       		   <td align="right" valign="middle" style="width:50%;padding:15px 15px 0 0;;">
-        	    <div style="text-align:right;">
+          		<!---------------- WEBSITE + SOCIALS ---------------->
+         			 <td
+         		   class="footer-column footer-social"
+           			 align="right"
+           			 valign="middle"
+           			 style="width:50%;padding:15px 15px 0 0;">
+            		<div style="text-align:right;">
 
-            	  <p style="margin:0 0 5px;">
-            	    <a
-             	     href="https://ebenezerking.com"
-              	    style="color:#22050c;font-size:15px;font-weight:500;text-decoration:underline;"
-            	    >
-             	     ebenezerking.com
-                </a>
-              </p>
+              		<p style="margin:0 0 8px;">
+              		  <a href="https://ebenezerking.com"
+                  		style="color:#22050c;font-size:15px;font-weight:500;text-decoration:underline;">
+                  		ebenezerking.com
+                		</a>
+              			</p>
 
-              ${socialIcons}
+              			${socialIcons}
+            		</div>
+          		</td>
+        		</tr>
 
-            </div>
-          </td>
-        </tr>
-
-        <!---------------- ROW TWO COPYRIGHT ---------------->
-        <tr>
-          <td colspan="2" align="center" style="padding-top:5px;">
-            <p style="margin:0;font-size:12px;font-weight:700;color:#00ff91;">
-              © ${new Date().getFullYear()} Ebenezer King
-            </p>
-          </td>
-        </tr>
-      </table>
-   	 </td>
-  	</tr>
-	</table>
-	`;
+        		<!---------------- COPYRIGHT ---------------->
+        		<tr>
+         		 <td
+          		  colspan="2"
+           			 align="center"
+            		style="padding-top:10px;">
+            		<p style="margin:0;font-size:12px;font-weight:700;color:#00ff91;">
+              		© ${new Date().getFullYear()} Ebenezer King
+            		</p>
+          			</td>
+        			</tr>
+      				</table>
+    				</td>
+  					</tr>
+					</table>
+					`;
 
 	return emailBase({ header, body, footer });
 };
