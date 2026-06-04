@@ -3,8 +3,8 @@
 // ===================================== HOME SECTION COMPONENT
 import Kingv2 from "../Assets/profilePic/kingAnimePp.webp";
 import king from "../Assets/backgroundImage/kingAnimePortrait.webp";
-import { PiArrowFatLineDownFill } from "react-icons/pi";
 import { motion } from "framer-motion";
+import TimeDate from "./reusables/TimeDate";
 
 // =====================================
 const springZoom = {
@@ -35,24 +35,22 @@ const HeroSection = () => {
 					{/* ============= HERO CONTENT */}
 					<div className="smallScreens__content relative flex items-center justify-center text-center rounded-[0.5rem] overflow-hidden">
 						{/* ============= CONTENTS */}
-						<div className="relative z-20 flex flex-col items-center justify-center p-2 bg-gradient-to-b from-[#00485d] to-[#ABE0F0]">
+						<div className="relative z-20 flex flex-col items-center justify-center p-2 bg-gradient-to-b from-[#00485d] via-[#ABE0F0] to-[#00485d]">
 							<p className="text-[1.2rem] mb-2">Nice to meet you!</p>
 
-							<h1 className="text-[#22050c] font-unna font-bold uppercase border-t-2 border-b-2 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
+							<h1 className="text-[#22050c] text-2xl font-unna font-bold uppercase border-t-2 border-b-2 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
 								<a
 									href="https://docs.google.com/document/d/1rMZx8aLk1ZitCwSRTK706o19mj5UgyeQGABCZt6eAJg/edit?usp=sharing"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									I'm a full-stack Developer
+									full-stack Developer
 								</a>
 							</h1>
-
-							<span className="flex items-center gap-1 mt-4 animate-bounce text-[#22050c]">
-								<PiArrowFatLineDownFill className="text-[1.2rem] opacity-70" />
-								<PiArrowFatLineDownFill className="text-[1.2rem] opacity-70" />
-								<PiArrowFatLineDownFill className="text-[1.2rem] opacity-70" />
-							</span>
+							<TimeDate
+								showTime={false}
+								className="timeDate text-[1rem] mx-auto text-[#22050c]"
+							/>
 						</div>
 					</div>
 				</div>
@@ -105,6 +103,10 @@ const HeroSection = () => {
 									Full-Stack Developer
 								</a>
 							</h1>
+							<TimeDate
+								showTime={false}
+								className="timeDate text-[1rem] mx-auto"
+							/>
 						</motion.div>
 					</div>
 				</div>

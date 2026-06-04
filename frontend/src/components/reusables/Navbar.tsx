@@ -1,7 +1,6 @@
 // =====================================
 // src/Components/Navbar.tsx
 // =====================================
-import TimeDate from "./TimeDate";
 import { useState } from "react";
 import NavbarMenu from "./NavbarMenu";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,6 +8,7 @@ import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { easeInOut } from "framer-motion";
 import { useNavbar } from "./context/NavbarContext";
+import logoCom from "../../Assets/logoCom.png";
 
 // ===================================== ANIMATION CONFIG
 const navbarMotion = {
@@ -40,8 +40,9 @@ function Navbar() {
 				className="navbar__parent fixed top-0 left-0 z-50 bg-[#00485d] w-full text-[1.5rem] flex flex-col px-[1rem] py-[0.3rem]"
 			>
 				<div className="navbar__main relative flex justify-between items-end">
+					{/* ========================= LOGO  */}
 					<div>
-						<TimeDate className="timeDate text-[1rem]" />
+						<img src={logoCom} alt="logo" className="w-25" />
 					</div>
 
 					<div className="navbar__button flex items-center gap-4">

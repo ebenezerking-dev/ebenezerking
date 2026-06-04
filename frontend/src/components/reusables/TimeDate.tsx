@@ -1,17 +1,24 @@
 // =====================================
-// TimeDate Reusable Component
-// ===================================== TIME AND DATE COMPONENT
-
+// TIME AND DATE COMPONENT
+// Reusable
+// =====================================
 import { useEffect, useState } from "react";
 
 // =====================================
 interface TimeDateProps {
 	className?: string;
+	showTime?: boolean;
+	showDate?: boolean;
 }
 
-const TimeDate = ({ className = "" }: TimeDateProps) => {
-	const [gmtTime, setGmtTime] = useState<string>("");
-	const [gmtDate, setGmtDate] = useState<string>("");
+// =====================================
+const TimeDate = ({
+	className = "",
+	showTime = true,
+	showDate = true,
+}: TimeDateProps) => {
+	const [gmtTime, setGmtTime] = useState("");
+	const [gmtDate, setGmtDate] = useState("");
 
 	useEffect(() => {
 		const updateTime = () => {
@@ -27,11 +34,12 @@ const TimeDate = ({ className = "" }: TimeDateProps) => {
 				dateStyle: "full",
 			});
 
-			setGmtTime(time + " GMT");
+			setGmtTime(`${time} GMT`);
 			setGmtDate(date);
 		};
 
 		updateTime();
+
 		const interval = setInterval(updateTime, 1000);
 
 		return () => clearInterval(interval);
@@ -41,8 +49,8 @@ const TimeDate = ({ className = "" }: TimeDateProps) => {
 		<div
 			className={`time-date__parent flex flex-col leading-none text-[0.9rem] font-bold italic mt-[0.3rem] ${className}`}
 		>
-			<p className="m-1">{gmtTime}</p>
-			<p className="m-1">{gmtDate}</p>
+			{showTime && <p className="m-1">{gmtTime}</p>}
+			{showDate && <p className="m-1">{gmtDate}</p>}
 		</div>
 	);
 };

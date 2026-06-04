@@ -82,7 +82,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								<p className="font-unna">{project.description}</p>
 
 								{/* ================= TECH TOOLS */}
-								<div className="flex flex-wrap gap-[0.5rem]">
+								<div className="flex flex-wrap gap-[0.5rem] text-[1rem]">
 									{project.tech.map((tech, idx) => (
 										<span
 											key={idx}
