@@ -52,7 +52,7 @@ export const autoReplyTemplate = (name) => {
        		 <tr>
       	 	   <!---------------- LOGO ---------------->
       	 	  <td align="left" valign="middle" style="width:50%;padding:20px 0 0 15px;">
-       	     <img src="${EMAIL_ASSETS.logo}" width="150" style="display:block;border:0;" />
+       	     <img src="${EMAIL_ASSETS.logo}" width="170" style="display:block;border:0;" />
        		   </td>
 
       		    <!---------------- SOCIAL + WEBSITE ---------------->
@@ -62,7 +62,7 @@ export const autoReplyTemplate = (name) => {
             	  <p style="margin:0 0 5px;">
             	    <a
              	     href="https://ebenezerking.com"
-              	    style="color:#22050c;font-size:15px;font-weight:700;text-decoration:underline;"
+              	    style="color:#22050c;font-size:15px;font-weight:500;text-decoration:underline;"
             	    >
              	     ebenezerking.com
                 </a>
