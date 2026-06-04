@@ -82,9 +82,7 @@ export const autoReplyTemplate = (name) => {
             </p>
           </td>
         </tr>
-
       </table>
-
     </td>
   </tr>
 </table>
