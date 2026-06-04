@@ -43,15 +43,16 @@ export const adminTemplate = ({ name, email, message }) => {
 
 	const footer = `
 			<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-  			<tr>
-  			  <td
-  			    background="${EMAIL_ASSETS.footer}"
-    			  style="
-    			    background-image:url('${EMAIL_ASSETS.footer}');
-    			    background-size:cover;
-    			    background-position:center;
-       			 padding:25px;
-    		  " >
+  				<tr>
+    		<td
+    		  background="${EMAIL_ASSETS.footer}"
+    		 	 style="
+    	   	 background-image:url('${EMAIL_ASSETS.footer}');
+      	 	 background-size:cover;
+      	 	 background-position:center;
+      		  padding: 42px 25px;
+     		 "
+   		 >
 
       		<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
 
@@ -59,8 +60,8 @@ export const adminTemplate = ({ name, email, message }) => {
 
         	<tr>
           <!----------------------- LOGO ----------------------->
-          <td align="left" valign="middle" style="width:50%; padding:10px;">
-          		<img src="${EMAIL_ASSETS.logo}" width="110" style="display:block;border:0;" />
+          <td align="left" valign="middle" style="width:50%; padding:15px 0 0 15px;">
+          		<img src="${EMAIL_ASSETS.logo}" width="120" style="display:block;border:0;" />
           </td>
 
           <!----------------------- SOCIAL + WEBSITE ----------------------->
@@ -70,7 +71,7 @@ export const adminTemplate = ({ name, email, message }) => {
 			     <p style="margin:0 0 5px;">
                 <a
                   href="https://ebenezerking.com"
-                  style="color:#00485d;font-size:15px;font-weight:700;text-decoration:underline;"
+                  style="color:#22050c;font-size:15px;font-weight:700;text-decoration:underline;"
                 >
                   ebenezerking.com
                 </a>
@@ -84,8 +85,8 @@ export const adminTemplate = ({ name, email, message }) => {
        		 <!----------------------- ROW TWO COPYRIGHT ----------------------->
 
         		<tr>
-         			 <td colspan="2" align="center" style="padding-top:10px;">
-          		 	 <p style="margin:0;font-size:12px;font-weight:500;color:#00485d;">
+         			 <td colspan="2" align="center" style="padding-top:5px;">
+          		 	 <p style="margin:0;font-size:12px;font-weight:700;color:#00ff91;">
            		 	  © ${new Date().getFullYear()} Ebenezer King
          			   </p>
         			  </td>

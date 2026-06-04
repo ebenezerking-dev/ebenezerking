@@ -12,17 +12,17 @@ export const EMAIL_ASSETS = {
 	footer:
 		"https://res.cloudinary.com/ebenezerking/image/upload/v1780513964/email-footer_nfd4os.png",
 
-	logo: "https://res.cloudinary.com/ebenezerking/image/upload/v1780514246/email-logo-ebenezerking_rfrx9m.png",
+	logo: "https://res.cloudinary.com/ebenezerking/image/upload/v1780532483/email-logoCom_bkuea9.png",
 
 	github:
-		"https://res.cloudinary.com/ebenezerking/image/upload/v1780514887/icon-github_dfk5wj.png",
+		"https://res.cloudinary.com/ebenezerking/image/upload/v1780531075/icon-github_kawr88.svg",
 
 	linkedin:
-		"https://res.cloudinary.com/ebenezerking/image/upload/v1780514886/icon-linkedin_u7ogqp.png",
+		"https://res.cloudinary.com/ebenezerking/image/upload/v1780531075/icon-linkedin_dwive4.svg",
 
 	twitter:
-		"https://res.cloudinary.com/ebenezerking/image/upload/v1780514885/icon-twitter_ispsmw.png",
+		"https://res.cloudinary.com/ebenezerking/image/upload/v1780531075/x_c8fh2d.svg",
 
 	whatsapp:
-		"https://res.cloudinary.com/ebenezerking/image/upload/v1780514850/icon-whatsapp_rz01c2.png",
+		"https://res.cloudinary.com/ebenezerking/image/upload/v1780531075/icon-whatsapp_b8mr71.svg",
 };
