@@ -62,8 +62,6 @@ const ContactSection = () => {
 
 		setStatus("loading");
 
-		console.log("API URL:", import.meta.env.VITE_API_URL);
-
 		try {
 			const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
 				method: "POST",
