@@ -152,6 +152,8 @@ const ContactSection = () => {
 					</div>
 				</div>
 			</div>
+			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
 		</SectionFrame>
 	);
 };
