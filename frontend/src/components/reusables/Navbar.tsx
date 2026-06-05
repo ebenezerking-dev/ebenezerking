@@ -8,7 +8,7 @@ import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { easeInOut } from "framer-motion";
 import { useNavbar } from "./context/NavbarContext";
-import logoCom from "../../Assets/logoCom.png";
+import logoCom from "../../Assets/logoCom.webp";
 
 // ===================================== ANIMATION CONFIG
 const navbarMotion = {
