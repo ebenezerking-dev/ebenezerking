@@ -8,7 +8,8 @@
 	"scripts": {
 		"start": "node src/server.js",
 		"dev": "nodemon src/server.js",
-		"build": "echo \"no build step\""
+		"build": "echo \"no build step\"",
+		"email-preview": "nodemon src/email/previewEmail.js"
 	},
 	"dependencies": {
 		"cloudinary": "^2.10.0",
