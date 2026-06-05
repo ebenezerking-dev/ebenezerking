@@ -42,7 +42,7 @@ function Navbar() {
 				<div className="navbar__main relative flex justify-between items-end">
 					{/* ========================= LOGO  */}
 					<div>
-						<img src={logoCom} alt="logo" className="w-25" />
+						<img src={logoCom} alt="logo" className="w-40 lg:w-50" />
 					</div>
 
 					<div className="navbar__button flex items-center gap-4">
