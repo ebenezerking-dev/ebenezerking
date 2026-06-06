@@ -7,7 +7,7 @@ import { EMAIL_ASSETS } from "../../email/assets/emailAssets.js";
 // ===================================
 export const socialIcons = `
 <!--  GITHUB -->
-  <div style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
+  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
     <a href="https://github.com/ebenezerking-dev" style="display: inline-block; transition: transform 0.2s;">
       <img 
         src="${EMAIL_ASSETS.github}" 
@@ -20,7 +20,7 @@ export const socialIcons = `
   </div>
 
 <!--  LINKEDIN -->
-  <div style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
+  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
     <a href="https://www.linkedin.com/in/ebenezerking" style="display: inline-block;">
       <img 
         src="${EMAIL_ASSETS.linkedin}" 
@@ -33,7 +33,7 @@ export const socialIcons = `
   </div>
   
 <!--  TWITTER -->
-  <div style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
+  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
     <a href="https://x.com/a_devlin" style="display: inline-block;">
       <img 
         src="${EMAIL_ASSETS.twitter}" 
@@ -46,7 +46,7 @@ export const socialIcons = `
   </div>
    
  <!--  WHATSAPP -->
-  <div style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
+  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
     <a href="https://wa.me/message/UHRWC3UBMMB2E1" style="display: inline-block;">
       <img 
         src="${EMAIL_ASSETS.whatsapp}" 

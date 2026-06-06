@@ -72,42 +72,41 @@ export const autoReplyTemplate = (name) => {
 		background-repeat:no-repeat;
 		width:100%;">
 
-	<!-- ====================================== -->
-      <!-- INNER CONTAINER - MOBILE - FOOTER -START -->
-      <table class="mobile-footer" width="100%" height="120" cellpadding="0" cellspacing="0" border="0"
+		<!-- =============== MOBILE ================ -->
+		<!-- ====================================== -->
+		 <!-- INNER CONTAINER - MOBILE - FOOTER -START -->
+     	<table class="mobile-footer" width="100%" height="120" cellpadding="0" cellspacing="0" border="0"
              style="display:none; max-width: 600px; width: 100%; margin: 0 auto; color: #00ff91;">
 
         <!-- ===================== -->
         <!-- TOP ROW (3 COLUMNS) -->
         <!-- ===================== -->
-        <tr class="footer-row">
+        <tr style="border: 1px solid orange">
 
-		  <!-- ===================== LOGO ===================== -->
+        <!-- ===================== SOCIAL ===================== -->
+          <td
+              valign="bottom"
+              width="33.33%"
+              style="padding: 0;">
+
+            <div class="social-icon" style="text-align:end; height:20px; padding: 0 10px 0 0;">
+              ${socialIcons}
+            </div>
+          </td>
+
+		<!-- ===================== LOGO ===================== -->
           <td
               align="center"
               valign="bottom"
               width="33.33%"
 			  style="text-align:center; padding: 0;">
 
-
             <img
               src="${EMAIL_ASSETS.logo}"
-              width="120"
-              class="logo-img"
-              style="display:block; width:120px; max-width:120px; margin:0 auto;"
+              width="100"
+              style="display:block; width:100px; max-width:100px; margin:0 auto;"
               alt="Logo"
             />
-          </td>
-
-          <!-- ===================== SOCIAL ===================== -->
-          <td
-              valign="bottom"
-              width="33.33%"
-              style="padding: 0;">
-
-            <div class="social-wrapper" style="text-align:end; height:20px; padding: 0 20px 0 0;">
-              ${socialIcons}
-            </div>
           </td>
 
           <!-- ===================== WEBSITE ===================== -->
@@ -115,11 +114,88 @@ export const autoReplyTemplate = (name) => {
               align="right"
               valign="bottom"
               width="33.33%"
-              style="text-align:end; padding: 0 0 0 20px;">
+              style="text-align:end; padding: 0 0 3px 10px;">
+
+            <p style="text-align: start; height:20px;">
+              <a href="https://ebenezerking.com"
+                 style="font-size:10px; font-weight:500; color: #00ff91; text-decoration:underline; text-align: end;">
+                ebenezerking.com
+              </a>
+            </p>
+          </td>
+
+        </tr>
+
+        <!-- ===================== -->
+        <!-- ===================== COPYRIGHT ROW ===================== -->
+        <!-- ===================== -->
+        <tr>
+          <td colspan="3"
+              align="center"
+              width="100%"
+              style="height: 28px; padding: 2px 0 18px;">
+
+            <p
+               style="margin:0; font-size:5px; font-weight:300; text-align:center;">
+              © ${new Date().getFullYear()} Ebenezer King. All rights reserved.
+            </p>
+
+          </td>
+        </tr>
+
+      </table>
+      <!-- INNER CONTAINER - MOBILE - FOOTER -END -->
+	<!-- ======================================================= -->
+
+
+	<!-- ====================== DESKTOP ========================= -->
+	<!-- ======================================================= -->
+	<!-- INNER CONTAINER - DESKTOP - FOOTER - START -->
+      <table class="desktop-footer" width="100%" height="120" cellpadding="0" cellspacing="0" border="0"
+             style="display:block; max-width: 600px; width: 100%; margin: 0 auto; color: #00ff91;">
+
+        <!-- ===================== -->
+        <!-- TOP ROW (3 COLUMNS) -->
+        <!-- ===================== -->
+        <tr>
+
+          <!-- ===================== SOCIAL ===================== -->
+          <td
+              valign="bottom"
+              width="33.33%"
+              style="padding: 0;">
+
+            <div style="text-align:end; height:20px; padding: 0 20px 0 0;">
+              ${socialIcons}
+            </div>
+          </td>
+		  
+		  <!-- ===================== LOGO ===================== -->
+          <td
+              align="center"
+              valign="bottom"
+              width="33.33%"
+			  style="text-align:center; padding: 0;">
+
+            <img
+              src="${EMAIL_ASSETS.logo}"
+              width="130"
+              class="logo-desktop"
+              style="display:block; width:130px; max-width:130px; margin:0 auto;"
+              alt="Logo"
+            />
+          </td>
+
+          <!-- ===================== WEBSITE ===================== -->
+          <td
+              align="right"
+              valign="bottom"
+              width="33.33%"
+              style="text-align:end; padding: 0 0 3px 20px;">
 
             <p class="website" style="text-align: start; height:20px;">
               <a href="https://ebenezerking.com"
-                 style="font-size:16px; font-weight:500; color: #00ff91; text-decoration:underline; text-align: end;">
+                 style="font-size:16px; font-weight:300; color: #00ff91; text-decoration:underline; text-align: end;">
                 ebenezerking.com
               </a>
             </p>
@@ -145,87 +221,10 @@ export const autoReplyTemplate = (name) => {
         </tr>
 
       </table>
-     	 <!-- INNER CONTAINER - MOBILE - FOOTER -END -->
-		<!-- ======================================================= -->
+	<!-- INNER CONTAINER - DESKTOP - FOOTER - END -->
+	<!-- ====================================== -->
 
-
-		<!-- ======================================================= -->
-		<!-- INNER CONTAINER - DESKTOP - FOOTER - START -->
-    	  <table class="desktop-footer" width="100%" height="120" cellpadding="0" cellspacing="0" border="0"
-             style="display:block; max-width: 600px; width: 100%; margin: 0 auto; color: #00ff91;">
-
-        <!-- ===================== -->
-        <!-- TOP ROW (3 COLUMNS) -->
-        <!-- ===================== -->
-        <tr class="footer-row">
-
-          <!-- ===================== SOCIAL ===================== -->
-          <td
-              valign="bottom"
-              width="33.33%"
-              style="padding: 0;">
-
-            <div class="social-wrapper" style="text-align:end; height:20px; padding: 0 20px 0 0;">
-              ${socialIcons}
-            </div>
-          </td>
-		  
-		  <!-- ===================== LOGO ===================== -->
-          <td
-              align="center"
-              valign="bottom"
-              width="33.33%"
-			  style="text-align:center; padding: 0;">
-
-
-            <img
-              src="${EMAIL_ASSETS.logo}"
-              width="120"
-              class="logo-img"
-              style="display:block; width:120px; max-width:120px; margin:0 auto;"
-              alt="Logo"
-            />
-          </td>
-
-          <!-- ===================== WEBSITE ===================== -->
-          <td
-              align="right"
-              valign="bottom"
-              width="33.33%"
-              style="text-align:end; padding: 0 0 0 20px;">
-
-            <p class="website" style="text-align: start; height:20px;">
-              <a href="https://ebenezerking.com"
-                 style="font-size:16px; font-weight:500; color: #00ff91; text-decoration:underline; text-align: end;">
-                ebenezerking.com
-              </a>
-            </p>
-          </td>
-
-        </tr>
-
-        <!-- ===================== -->
-        <!-- ===================== COPYRIGHT ROW ===================== -->
-        <!-- ===================== -->
-        <tr>
-          <td colspan="3"
-              align="center"
-              width="100%"
-              style="height: 28px; padding: 2px 0 18px;">
-
-            <p
-               style="margin:0; font-size:10px; font-weight:300; text-align:center;">
-              © ${new Date().getFullYear()} Ebenezer King. All rights reserved.
-            </p>
-
-          </td>
-        </tr>
-
-     	 </table>
-		<!-- INNER CONTAINER - DESKTOP - FOOTER - END -->
-		<!-- ====================================== -->
-
-   	 </td>
+    </td>
   	</tr>
 	</table>
 	`;

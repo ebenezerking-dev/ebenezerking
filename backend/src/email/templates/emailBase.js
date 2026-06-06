@@ -70,7 +70,6 @@ export const emailBase = ({ header, body, footer, previewText = "" }) => {
   	display: none !important;
   	max-height: 0 !important;
   	overflow: hidden !important;
-	background: red !important;
 	}
 
   	/* CLASS / DESKTOP VIEW  */
@@ -100,59 +99,18 @@ export const emailBase = ({ header, body, footer, previewText = "" }) => {
     overflow: hidden !important;
   	}
 
-
-  
   	/* CLASS / RESPONSIVE-TABLE  */
   	table[class="responsive-table"] {
     width: 100% !important;
  	}
-  
-  	/* CLASS / LOGO-IMG  */
- 	img[class="logo-img"] {
-    width: 140px !important;
-    height: auto !important;
- 	 }
 
-
-	/* CLASS / FOOTER ROW STACK */
-  	/* CLASS / FOOTER-ROW  */
+  	/* ====================== CLASS / FOOTER-ROW  */
   	/* TR */
  	 tr[class="footer-row"] {
     display: block !important;
     width: 100% !important;
  	 }
-  
-  	/* FOOTER COLUMN STACK MOBILE */
-  	/* CLASS / FOOTER-COLUMN  */
-  	/* TD */
- 	 td[class="footer-column"] {
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    padding: 9px 0 !important;
-  	}
-  
 
-  
-  	/* CLASS / FOOTER-ROW-DIV */
-  	/* DIV */
-  	div[class="footer-row-div"] {
-    width: 200px !important;
-	max-height: 70px !important;
- 	 }
-
-  	/* CLASS / DEV-LOGO */
-  	/* DIV */
-	 div[class="dev-logo"] {
- 	 text-align: center !important;
- 	 }
-
-	/* CLASS / SOCIAL WRAPPER */
-  	/* DIV */
-  	div[class="social-wrapper"] {
-    text-align: center !important;
- 	 }
-  
   	/* CLASS / DEV WEBSITE */
   	/* DIV */
   	div[class="dev-website"] {
@@ -170,27 +128,37 @@ export const emailBase = ({ header, body, footer, previewText = "" }) => {
   	p[class="text"] {
     font-size: 16px !important;
   	}
-	}
     
   	/* ==================================== */
   	/* MEDIA QUERIES - 480px */
-	/* CLASS / PADDING-SMALL */
   	/* ==================================== */
     @media only screen and (max-width: 480px) {
       td[class="padding-small"] {
         padding: 7px 0 !important;
       }
+
+  	/* ======================== SOCIALS - CLASS / SOCIAL-ITEM */
+	.social-item {
+    margin: 0 1px !important;
+  }
       
-  	/* CLASS / SOCIAL-ICONS */
+  	/*  ======================== SOCIALS - CLASS / SOCIAL-ICONS */
       img[class="social-icon"] {
-        width: 20px !important;
-        height: 20px !important;
+        width: 13px !important;
+        height: 13px !important;
+		padding: 0; !important;
+      }
+
+	/* CLASS / DEV-LOGO */
+      img[class="logo-mobile"] {
+        width: 13px !important;
+		max-width: 13px !important;
       }
 
   	/* CLASS / WEBSITE */
   	/* P */
 		p[class="website"] {
-        font-size: 12px !important;
+        font-size: 13px !important;
       }
       
   	/* CLASS / COPYRIGHT */
@@ -201,11 +169,6 @@ export const emailBase = ({ header, body, footer, previewText = "" }) => {
 		width: 100% !important;
       }
       
-      .btn-text {
-        font-size: 14px !important;
-      }
-    }
-    
   	/* DARK MODE SUPPORT */
     @media (prefers-color-scheme: dark) {
       .email-container {
@@ -214,6 +177,10 @@ export const emailBase = ({ header, body, footer, previewText = "" }) => {
       
       .dark-mode-text {
         color: #00ff91 !important;
+      }
+
+      .light-mode-text {
+        color: #22050c !important;
       }
       
       .message-box {
@@ -228,17 +195,11 @@ export const emailBase = ({ header, body, footer, previewText = "" }) => {
       background-color: #f5f5f5;
     }
     
-  	/* BUTTON STYLES */
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #00485d;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      text-align: center;
-    }
+  	/* ======================= BUTTON STYLES */
+  	.mobile-btn {
+    display: block !important;
+    margin: 0 0 10px 0 !important;
+  }
     
     .btn:hover {
       background-color: #006b88;
@@ -298,10 +259,10 @@ export const emailBase = ({ header, body, footer, previewText = "" }) => {
         <table width="100%" max-width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="max-width: 600px; width: 100%; margin-top: 20px;">
           <tr>
             <td align="center" valign="top" style="padding: 20px 15px;">
-              <p style="font-size: 12px; color: #CCCCCC; margin: 0;">
+              <p class="dark-mode-text light-mode-text" style="font-size: 10px; margin: 0;">
                 You're receiving this email because you contacted Ebenezer King through the portfolio website.
               </p>
-              <p style="font-size: 12px; color: #CCCCCC; margin: 10px 0 0 0;">
+              <p class="dark-mode-text light-mode-text" style="font-size: 10px; margin: 10px 0 0 0;">
                 Built with ❤️ for great communication
               </p>
             </td>
