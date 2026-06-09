@@ -3,7 +3,9 @@
 // =====================================
 import { motion, AnimatePresence } from "framer-motion";
 import { Fragment } from "react";
+import RippleButton from "../reusables/RippleButton";
 
+// =====================================
 type Project = {
 	title: string;
 	description: string;
@@ -21,6 +23,7 @@ type ProjectBoardProps = {
 	items: Project[];
 };
 
+// =====================================
 const ProjectBoard = ({ items }: ProjectBoardProps) => {
 	return (
 		<div className="projectBoard__parent flex flex-col gap-[3rem] w-full">
@@ -73,7 +76,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 							{/* ================= PROJECT DETAILS */}
 							<div className="p-[1rem] flex flex-col items-start md:items-center gap-[1.4rem]">
-								{/* ================= TITILE */}
+								{/* ================= TITLE */}
 								<h3 className="text-[1.5rem] font-unna font-bold border-b-2 border-orange-500">
 									{project.title}
 								</h3>
@@ -94,27 +97,17 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</div>
 
 								{/* ================= BUTTON LINKS */}
-								<div className="flex gap-[1rem] pt-[0.5rem] text-[1.1rem] font-bold">
+								<div className="flex gap-[1rem] pt-[0.5rem]">
 									{project.live && (
-										<a
-											href={project.live}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="border-2 border-orange-500 hover:border-[#00ff91] hover:text-[#00ff91] hover:bg-[#00485d] py-2 px-4 rounded-[0.5rem] transition-colors duration-300"
-										>
+										<RippleButton href={project.live} size="lg">
 											Live Demo
-										</a>
+										</RippleButton>
 									)}
 
 									{project.github && (
-										<a
-											href={project.github}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="border-2 border-orange-500 hover:border-[#00ff91] hover:text-[#00ff91] hover:bg-[#00485d] py-2 px-4 rounded-[0.5rem] transition-colors duration-300"
-										>
+										<RippleButton href={project.github} size="lg">
 											GitHub
-										</a>
+										</RippleButton>
 									)}
 								</div>
 							</div>

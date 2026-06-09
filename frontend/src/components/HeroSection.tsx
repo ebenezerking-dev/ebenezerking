@@ -35,10 +35,8 @@ const HeroSection = () => {
 					{/* ============= HERO CONTENT */}
 					<div className="smallScreens__content relative flex items-center justify-center text-center rounded-[0.5rem] overflow-hidden">
 						{/* ============= CONTENTS */}
-						<div className="relative z-20 flex flex-col items-center justify-center p-2 bg-gradient-to-b from-[#00485d] via-[#ABE0F0] to-[#00485d]">
-							<p className="text-[1.2rem] mb-2">Nice to meet you!</p>
-
-							<h1 className="text-[#22050c] text-2xl font-unna font-bold uppercase border-t-2 border-b-2 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
+						<div className="relative z-20 flex flex-col items-center justify-center">
+							<h1 className="bg-[#000000] text-2xl font-unna font-bold uppercase border-t-12 border-b-12 border-orange-500 rounded-full hover:border-[#00ff91] transition duration-300 p-4 cursor-pointer">
 								<a
 									href="https://docs.google.com/document/d/1rMZx8aLk1ZitCwSRTK706o19mj5UgyeQGABCZt6eAJg/edit?usp=sharing"
 									target="_blank"
@@ -46,20 +44,20 @@ const HeroSection = () => {
 								>
 									full-stack Developer
 								</a>
+								<TimeDate
+									showTime={false}
+									className="timeDate text-[1rem] mx-auto font-semibold"
+								/>
 							</h1>
-							<TimeDate
-								showTime={false}
-								className="timeDate text-[1rem] mx-auto text-[#22050c]"
-							/>
 						</div>
 					</div>
 				</div>
 
 				{/* ========================================================================== */}
 				{/* ============================== MEDIUM SCREENS */}
-				<div className="hidden md:flex relative overflow-hidden w-full pb-[3rem] md:bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100%">
+				<div className="hidden md:flex relative overflow-hidden w-full pb-[3rem] md:bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD]">
 					{/* ============= MEDIUM AND LARGE SCREENS HERO CONTAINER */}
-					<div className="h-screen w-[90%] lg:w-[70%] mx-auto flex flex-col md:flex-row items-center justify-center gap-[1rem] lg:gap-[5rem]">
+					<div className="h-screen w-[90%] lg:w-[70%] mx-auto flex flex-col md:flex-row items-center justify-center gap-[1rem] lg:gap-[4rem]">
 						<motion.div
 							className="flex-shrink-0"
 							initial={springZoom.initial}
@@ -72,7 +70,7 @@ const HeroSection = () => {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<motion.div className="w-full h-[370px] lg:h-[430px] overflow-hidden border-4 border-orange-500 hover:border-[#00ff91] rounded-full z-20 relative transition-all duration-300 group">
+								<motion.div className="w-full h-[370px] lg:h-[430px] overflow-hidden border-b-12 border-t-12 border-orange-500 hover:border-[#00ff91] rounded-full z-20 relative transition-all duration-300 group">
 									<img
 										src={Kingv2}
 										alt="King"
@@ -84,7 +82,7 @@ const HeroSection = () => {
 
 						{/* ================= HERO CONTENT */}
 						<motion.div
-							className="text-[#22050c] p-4 rounded-[0.5rem] flex flex-col items-center md:items-start text-center md:text-left"
+							className="p-4 rounded-[0.5rem] flex flex-col items-center md:items-start text-center md:text-left"
 							initial={{ opacity: 0, x: 200 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{
@@ -94,7 +92,7 @@ const HeroSection = () => {
 								delay: 0.5,
 							}}
 						>
-							<h1 className="relative z-20 text-2xl font-unna font-bold uppercase border-t-4 border-b-4 border-orange-500 hover:border-[#00ff91] transition duration-300 px-2">
+							<h1 className="relative z-20 flex flex-col text-2xl  font-unna font-bold uppercase bg-[#000000] border-t-12 border-b-12 border-orange-500 rounded-full hover:border-[#00ff91] transition duration-300 p-4 cursor-pointer">
 								<a
 									href="https://www.w3schools.com/whatis/whatis_fullstack.asp"
 									target="_blank"
@@ -102,11 +100,11 @@ const HeroSection = () => {
 								>
 									Full-Stack Developer
 								</a>
+								<TimeDate
+									showTime={false}
+									className="timeDate text-[1rem] mx-auto font-semibold"
+								/>
 							</h1>
-							<TimeDate
-								showTime={false}
-								className="timeDate text-[1rem] mx-auto"
-							/>
 						</motion.div>
 					</div>
 				</div>

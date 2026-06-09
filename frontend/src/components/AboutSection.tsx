@@ -6,17 +6,18 @@ import SectionFrame from "../components/reusables/SectionFrame";
 // =====================================
 const AboutSection = () => {
 	return (
-		<SectionFrame className="aboutSection__parent relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] from-0% via-[#8ad6ed] via-50% to-[#00485d] to-100% overflow-hidden">
+		<SectionFrame className="aboutSection__parent relative h-auto w-full flex flex-col bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD] overflow-hidden">
 			{/* ============================== SECTION WRAPPER */}
 			<div className="aboutSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
-				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
-					<h2 className="sr-only aboutSection__header">About Me</h2>
-
-					<h3 className="header relative inline-block flex">
-						I am Ebenezer King.
-						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"></span>
-					</h3>
+				<div className="text-center">
+					<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
+						<h2 className="sr-only aboutSection__header">About Me</h2>
+						<h3 className="header relative inline-block">
+							I am Ebenezer<span className="text-orange-500">King.</span>
+							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"></span>
+						</h3>
+					</div>
 				</div>
 
 				{/* ============================== CONTENT */}
@@ -25,14 +26,16 @@ const AboutSection = () => {
 						<span>A Full Stack Developer — </span>
 
 						<span className="block sm:inline">
-							<span className="uppercase text-[#00ff91] text-[1.8rem]">I</span>{" "}
+							<span className="uppercase text-orange-500 text-[1.8rem] font-bold">
+								I
+							</span>{" "}
 							think,
-							<span className="uppercase text-[#00ff91] text-[1.8rem]">
+							<span className="uppercase text-orange-500 text-[1.8rem] font-bold">
 								{" "}
 								I
 							</span>{" "}
 							visualise,
-							<span className="uppercase text-[#00ff91] text-[1.8rem]">
+							<span className="uppercase text-orange-500 text-[1.8rem] font-bold">
 								{" "}
 								I
 							</span>{" "}

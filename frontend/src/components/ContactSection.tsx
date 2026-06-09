@@ -96,16 +96,18 @@ const ContactSection = () => {
 	};
 
 	return (
-		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-gradient-to-b from-[#00485d] via-[#8ad6ed] to-[#00485d] overflow-hidden">
+		<SectionFrame className="contactSection relative h-auto w-full flex flex-col bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD] overflow-hidden">
 			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
-				{/* TOAST */}
+				{/* =========================== TOAST */}
 				{toast && <Toast message={toast.message} type={toast.type} />}
-				{/* HEADER */}
-				<div className="wrapper__header uppercase font-unna font-bold text-[1rem] text-center mb-[16rem]">
-					<h3 className="header relative inline-block">
-						Let's connect.
-						<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
-					</h3>
+				{/* =========================== HEADER */}
+				<div className="text-center">
+					<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
+						<h3 className="header relative inline-block">
+							Let's connect.
+							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
+						</h3>
+					</div>
 				</div>
 
 				{/* ========================= CONTACT FORM ======================== */}

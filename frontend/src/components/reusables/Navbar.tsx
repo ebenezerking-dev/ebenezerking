@@ -1,8 +1,9 @@
 // =====================================
 // src/Components/Navbar.tsx
 // =====================================
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavbarMenu from "./NavbarMenu";
+import RippleButton from "../reusables/RippleButton";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -25,8 +26,25 @@ const navbarTransition = {
 // =====================================
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
+	const [isLargeScreen, setIsLargeScreen] = useState(false);
 
 	const { navbarRef, navbarHeight } = useNavbar();
+
+	useEffect(() => {
+		const checkScreenSize = () => {
+			const largeScreen = window.innerWidth >= 1024;
+			setIsLargeScreen(largeScreen);
+
+			if (largeScreen) {
+				setIsOpen(false);
+			}
+		};
+
+		checkScreenSize();
+		window.addEventListener("resize", checkScreenSize);
+
+		return () => window.removeEventListener("resize", checkScreenSize);
+	}, []);
 
 	return (
 		<>
@@ -37,15 +55,38 @@ function Navbar() {
 				animate={navbarMotion.animate}
 				exit={navbarMotion.exit}
 				transition={navbarTransition}
-				className="navbar__parent fixed top-0 left-0 z-50 bg-[#00485d] w-full text-[1.5rem] flex flex-col px-[1rem] py-[0.3rem]"
+				className="navbar__parent fixed top-0 left-0 z-50 bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD] w-full text-[1.5rem] flex flex-col px-[1rem] py-[0.3rem] lg:py-[0.5rem] border-b-12 border-orange-500/30"
 			>
-				<div className="navbar__main relative flex justify-between items-end">
+				<div className="navbar__main relative flex justify-between items-center max-w-7xl mx-auto w-full">
 					{/* ========================= LOGO  */}
 					<div>
-						<img src={logoCom} alt="logo" className="w-40 lg:w-50" />
+						<img
+							src={logoCom}
+							alt="logo"
+							className="w-25 bg-[#000000] p-3 rounded-[1rem]"
+						/>
 					</div>
 
-					<div className="navbar__button flex items-center gap-4">
+					{/* ========================= DESKTOP MENU (visible on large screens) */}
+					<div className="hidden lg:block">
+						<ul className="flex justify-center gap-3 text-[1.1rem] font-bold">
+							<li>
+								<RippleButton href="#about">about</RippleButton>
+							</li>
+							<li>
+								<RippleButton href="#projects">projects</RippleButton>
+							</li>
+							<li>
+								<RippleButton href="#services">services</RippleButton>
+							</li>
+							<li>
+								<RippleButton href="#contact">contact</RippleButton>
+							</li>
+						</ul>
+					</div>
+
+					{/* ========================= MOBILE MENU BUTTON (visible on medium and below) */}
+					<div className="lg:hidden flex items-center">
 						<button onClick={() => setIsOpen(!isOpen)}>
 							<motion.div
 								initial={false}
@@ -59,9 +100,9 @@ function Navbar() {
 				</div>
 			</motion.nav>
 
-			{/* ================================= MENU ================================= */}
+			{/* ================================= MOBILE MENU (only visible when open) ================================= */}
 			<NavbarMenu
-				isOpen={isOpen}
+				isOpen={isOpen && !isLargeScreen}
 				toggleMenu={() => setIsOpen(false)}
 				topOffset={navbarHeight}
 			/>
