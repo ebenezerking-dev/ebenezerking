@@ -7,54 +7,51 @@ import { EMAIL_ASSETS } from "../../email/assets/emailAssets.js";
 // ===================================
 export const socialIcons = `
 <!--  GITHUB -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://github.com/ebenezerking-dev" style="display: inline-block; transition: transform 0.2s;">
+  <div style="display:inline-block; margin-right: 3px; vertical-align:bottom; line-height:0;">
+    <a href="https://github.com/ebenezerking-dev" style="display: inline-block;">
       <img 
         src="${EMAIL_ASSETS.github}" 
-        width="20" 
+		alt="GitHub"
         class="social-icon"
-        style="display: block; width: 20px; max-height: 20px; transition: opacity 0.2s;"
-        alt="GitHub"
+      	style="display:block; border:0; width:17px; height:17px;"
       />
     </a>
   </div>
 
 <!--  LINKEDIN -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
+ <div style="display:inline-block; margin-right: 3px; vertical-align:bottom; line-height:0;">
     <a href="https://www.linkedin.com/in/ebenezerking" style="display: inline-block;">
       <img 
         src="${EMAIL_ASSETS.linkedin}" 
-        width="20" 
+		alt="LinkedIn"
         class="social-icon"
-        style="display: block; width: 20px; max-height: 20px;"
-        alt="LinkedIn"
+      	style="display:block; border:0; width:17px; height:17px;"
+        
       />
     </a>
   </div>
   
 <!--  TWITTER -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
+ <div style="display:inline-block; margin-right: 3px; vertical-align:bottom; line-height:0;">
     <a href="https://x.com/a_devlin" style="display: inline-block;">
       <img 
         src="${EMAIL_ASSETS.twitter}" 
-        width="20" 
+		alt="X (Twitter)"
         class="social-icon"
-        style="display: block; width: 20px; max-height: 20px;"
-        alt="X (Twitter)"
+      	style="display:block; border:0; width:17px; height:17px;"
       />
     </a>
   </div>
    
  <!--  WHATSAPP -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://wa.me/message/UHRWC3UBMMB2E1" style="display: inline-block;">
-      <img 
-        src="${EMAIL_ASSETS.whatsapp}" 
-        width="20" 
-        class="social-icon"
-        style="display: block; width: 20px; max-height: 20px;"
-        alt="WhatsApp"
-      />
-    </a>
-  </div>
+<div style="display:inline-block; margin-right: 3px; vertical-align:bottom; line-height:0;">
+  <a href="https://wa.me/message/UHRWC3UBMMB2E1" style="display:inline-block;">
+    <img 
+      src="${EMAIL_ASSETS.whatsapp}" 
+      alt="WhatsApp"
+	  class="social-icon"
+      style="display:block; border:0; width:17px; height:17px;"
+    />
+  </a>
+</div>
 `;

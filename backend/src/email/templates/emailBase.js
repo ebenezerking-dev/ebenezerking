@@ -1,6 +1,5 @@
 // ===================================
 // EMAIL BASE TEMPLATE
-// src/email/templates/emailBase.js
 // ===================================
 export const emailBase = ({ header, body, footer, previewText = "" }) => {
 	return `<!DOCTYPE html>
@@ -13,232 +12,180 @@ export const emailBase = ({ header, body, footer, previewText = "" }) => {
  	 <title>Email Template</title>
   
  	 <!-- ==================== STYLE START ==================== -->
-  	<style>
-  	/*  CLIENT-SAFE RESETS */
-    body, table, td, p, a, div, span {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font-size: 100%;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.5;
-    }
-    
-    body {
-      height: 100% !important;
-      width: 100% !important;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    
-  	/* EMAIL CONTAINER */
-    .email-container {
-      max-width: 600px;
-      width: 100%;
-      margin: 0 auto;
-      background-color: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-    
-  	/* RESPONSIVE IMAGES */
-    img {
-      border: 0;
-      height: auto;
-      line-height: 100%;
-      outline: none;
-      text-decoration: none;
-      -ms-interpolation-mode: bicubic;
-    }
-    
-    .img-responsive {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-  	/* RESPONSIVE TABLES */
-    .wrapper-table {
-      width: 100%;
-      table-layout: fixed;
-    }
-
-  	/* CLASS / MOBILE VIEW  */
-	.mobile-footer {
-  	display: none !important;
-  	max-height: 0 !important;
-  	overflow: hidden !important;
+	<style>
+	/* =========================================
+   CLIENT-SAFE RESETS
+	========================================= */
+	body, table, td, p, a, div, span {
+  	margin: 0;
+  	padding: 0;
+ 	 border: 0;
+ 	 font-size: 100%;
+ 	 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+ 	 line-height: 1.5;
 	}
 
-  	/* CLASS / DESKTOP VIEW  */
-	.desktop-footer {
-	display: table !important;
+	body {
+  	height: 100% !important;
+  	width: 100% !important;
+  	background-color: #f5f5f5;
+  	margin: 0;
+  	padding: 0;
 	}
-    
-  	/* ================================= */
-  	/* MEDIA QUERIES - 600px */
-  	/* ================================= */
-	@media only screen and (max-width: 600px) {
-  	.email-container {
-  	  width: 100% !important;
-   	 border-radius: 0 !important;
- 	 }
 
-  	/* CLASS / MOBILE VIEW  */
-	.mobile-footer {
-    display: table !important;
-    max-height: none !important;
-  	}
-
-  	/* CLASS / DESKTOP VIEW  */
-	.desktop-footer {
-    display: none !important;
-    max-height: 0 !important;
-    overflow: hidden !important;
-  	}
-
-  	/* CLASS / RESPONSIVE-TABLE  */
-  	table[class="responsive-table"] {
+	/* =========================================
+   BASE LAYOUT CLASSES
+	========================================= */
+	.responsive-table {
     width: 100% !important;
+    }
+
+	/* =========================================
+   RESPONSIVE IMAGES
+	========================================= */
+	img {
+ 	 border: 0;
+ 	 height: auto;
+ 	 line-height: 100%;
+ 	 outline: none;
+  	text-decoration: none;
+  	-ms-interpolation-mode: bicubic;
+	}
+
+	.img-responsive {
+  	max-width: 100%;
+  	height: auto;
+  	display: block;
+	}
+
+	/* =========================================
+  	 EMAIL OUTLOOK
+	========================================= */
+	.ExternalClass, .ReadMsgBody {
+  	width: 100%;
+  	background-color: #000000;
+	}
+
+	.btn:hover {
+  	background-color: #006b88;
+	}
+
+	/* =========================================
+   MEDIA QUERY 600px
+	========================================= */
+	@media only screen and (max-width: 600px) {
+
+	td.table-body {
+  	background-color: #00485d !important;
+	}
+
+  	.email-container {
+    width: 100% !important;
+    border-radius: 0 !important;
+  	}
+
+  	.responsive-table {
+    width: 100% !important;
+  	}
+
+  	.footer-row {
+    display: block !important;
+    width: 100% !important;
+  	}
+
+
+	.social-icon {
+    width: 15px !important;
+    height: 15px !important;
+    padding: 0 !important;
+	}
+
+  	.title {
+    font-size: 24px !important;
+  	}
+
+  	.text {
+    font-size: 16px !important;
  	}
 
-  	/* ====================== CLASS / FOOTER-ROW  */
-  	/* TR */
- 	 tr[class="footer-row"] {
-    display: block !important;
-    width: 100% !important;
- 	 }
-
-  	/* CLASS / DEV WEBSITE */
-  	/* DIV */
-  	div[class="dev-website"] {
-    text-align: center !important;
+	.body-padding {
+    padding: 40px 10px !important;
   	}
-  
-  	/* CLASS / TITLE */
-  	/* H3 */
-  	h3[class="title"] {
-    font-size: 24px !important;
-	 }
-  
-  	/* CLASS / TEXT */
-  	/* P */
-  	p[class="text"] {
-    font-size: 16px !important;
-  	}
-    
-  	/* ==================================== */
-  	/* MEDIA QUERIES - 480px */
-  	/* ==================================== */
-    @media only screen and (max-width: 480px) {
-      td[class="padding-small"] {
-        padding: 7px 0 !important;
-      }
 
-  	/* ======================== SOCIALS - CLASS / SOCIAL-ITEM */
+	.body-container {
+	background-color: #00485d !important;
+	}
+
+	.mobile-btn {
+  	display: block !important;
+  	width: fit-content !important;
+  	margin: 6px auto !important;
+	background-color: #000000 !important;
+	color: #00ff91 !important;
+  	}
+
 	.social-item {
-    margin: 0 1px !important;
-  }
-      
-  	/*  ======================== SOCIALS - CLASS / SOCIAL-ICONS */
-      img[class="social-icon"] {
-        width: 13px !important;
-        height: 13px !important;
-		padding: 0; !important;
-      }
+  	margin-left: 5px !important;
+	}
 
-	/* CLASS / DEV-LOGO */
-      img[class="logo-mobile"] {
-        width: 13px !important;
-		max-width: 13px !important;
-      }
+	.message-box {
+	background-color: #000000 !important;
+	color: #00ff91 !important;
+	}
 
-  	/* CLASS / WEBSITE */
-  	/* P */
-		p[class="website"] {
-        font-size: 13px !important;
-      }
-      
-  	/* CLASS / COPYRIGHT */
-  	/* P */
-      p[class="copyright"] {
-        font-size: 5px !important;
-        padding: 10px 0 !important;
-		width: 100% !important;
-      }
-      
-  	/* DARK MODE SUPPORT */
-    @media (prefers-color-scheme: dark) {
-      .email-container {
-        background-color: #1a1a1a !important;
-      }
-      
-      .dark-mode-text {
-        color: #00ff91 !important;
-      }
+  	.logo-mobile {
+    width: 110px !important;
+    max-width: 110px !important;
+  	}
 
-      .light-mode-text {
-        color: #22050c !important;
-      }
-      
-      .message-box {
-        background: #2a2a2a !important;
-        border-left-color: #00ff91 !important;
-      }
-    }
-    
-  	/* OUTLOOK SPECIFIC */
-    .ExternalClass, .ReadMsgBody {
-      width: 100%;
-      background-color: #f5f5f5;
-    }
-    
-  	/* ======================= BUTTON STYLES */
-  	.mobile-btn {
-    display: block !important;
-    margin: 0 0 10px 0 !important;
-  }
-    
-    .btn:hover {
-      background-color: #006b88;
-    }
-  	</style>
+  	.email-container {
+    background-color: #000000 !important;
+  	}
+
+  	.light-mode-text {
+    color: #000000 !important;
+ 	 }
+	}
+
+	</style>
  	 <!-- ==================== STYLE END ==================== -->
 	</head>
 
+ 	 <!-- ==================== EMAIL TEMPLATE STRUCTURE ==================== -->
+ 	 <!-- ==================== MAIN BODY START ==================== -->
 	<body style="background-color: #f5f5f5; margin: 0; padding: 20px 0;">
   	<!--[if (gte mso 9)|(IE)]>
-    <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td>
  	 <![endif]-->
   
-  	<!-- PREHEADER TEXT (for preview) -->
- 	 <div style="display: none; font-size: 1px; color: #f5f5f5; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-    ${previewText}
+  	<!-- ==================== PREHEADER PREVIEW TEXT ==================== -->
+ 	 <div style="display:none; max-height:0; overflow:hidden; opacity:0;">
+    			${previewText}
  	 </div>
   
- 	 <!-- MAIN EMAIL CONTAINER -->
-  	<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#f5f5f5">
-   	 <tr>
-      <td align="center" valign="top" style="padding: 20px 10px;">
-        <table width="100%" max-width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-container" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+ 	<!-- ==================== MAIN EMAIL CONTAINER ==================== -->
+  	<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color: #f5f5f5; min-width: 320px;">
+   	<tr>
+      		<td 
+				align="center" valign="top" style="padding: 20px 10px;">
+    <table class="body-container" width="100%" cellpadding="0" cellspacing="0" border="0" 
+				align="center" style="max-width: 600px; width: 100%; background-color: #00485d; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
           
-          <!-- HEADER SECTION -->
-          <tr>
-            <td align="center" valign="top" style="padding: 0;">
+    <!-- ==================== HEADER SECTION ==================== -->
+    <tr>
+            <td align="center" valign="top" style="background-color: #000000; color: #00ff91; padding: 0;">
               ${header}
             </td>
           </tr>
           
-          <!-- BODY SECTION -->
+          <!-- ==================== BODY SECTION ==================== -->
           <tr>
-            <td align="center" valign="top" class="padding" style="padding: 40px 30px;">
+            <td class="body-padding" align="center" valign="top"  style="background-color: #00485d; padding: 40px 15px;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td align="left" valign="top" style="color: #333333;">
+                  <td class="table-body" align="left" valign="top" style="background-color: #00485d; color: #00ff91;">
                     ${body}
                   </td>
                 </tr>
@@ -246,36 +193,20 @@ export const emailBase = ({ header, body, footer, previewText = "" }) => {
             </td>
           </tr>
           
-          <!-- FOOTER SECTION -->
+          <!-- ==================== FOOTER SECTION ==================== -->
           <tr>
-            <td align="center" valign="top" style="padding: 0;">
+            <td align="center" valign="top" style="background-color: #000000; color: #00ff91; padding: 0;">
               ${footer}
             </td>
           </tr>
           
         </table>
-        
-        <!-- POST-FOOTER (unsubscribe/address) -->
-        <table width="100%" max-width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="max-width: 600px; width: 100%; margin-top: 20px;">
-          <tr>
-            <td align="center" valign="top" style="padding: 20px 15px;">
-              <p class="dark-mode-text light-mode-text" style="font-size: 10px; margin: 0;">
-                You're receiving this email because you contacted Ebenezer King through the portfolio website.
-              </p>
-              <p class="dark-mode-text light-mode-text" style="font-size: 10px; margin: 10px 0 0 0;">
-                Built with ❤️ for great communication
-              </p>
-            </td>
-          </tr>
-       	 </table>
-     	</td>
-    </tr>
-  	</table>
   
 	  <!--[if (gte mso 9)|(IE)]>
         </td>
       </tr>
    	 </table>
+	 
  	 <![endif]-->
 	</body>
 	</html>`;

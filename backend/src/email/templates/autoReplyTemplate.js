@@ -8,8 +8,19 @@ import { socialIcons } from "../components/socialIcons.js";
 
 // ===================================
 export const autoReplyTemplate = (name) => {
+	const websiteLink = `
+	<a href="https://ebenezerking.com"
+	style="color:#00ff91; text-decoration:underline;">
+	ebenezerking.com
+	</a>
+	`;
+
+	const copyright = `
+	© ${new Date().getFullYear()} Ebenezer King. All rights reserved.
+	`;
+
 	const header = `
-	<!-- AUTO REPLY HEADER -->
+	<!-- ====================  AUTO REPLY EMAIL HEADER ==================== -->
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td align="center" valign="top" style="padding: 0;">
@@ -26,35 +37,32 @@ export const autoReplyTemplate = (name) => {
   	`;
 
 	const body = `
-		<!-- AUTO REPLY BODY -->
+		<!-- ================= AUTO REPLY BODY ================= -->
    		 <div style="text-align: center;">
-     	 <div style="display: inline-block; background: linear-gradient(135deg, #00485d 0%, #006b88 100%); width: 60px; height: 60px; border-radius: 50%; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-     	   <span style="font-size: 32px;">🎉</span>
-     	 </div>
       
-         <!-- AUTO REPLY MESSAGE CONTENT -->
-      	<h3 class="title" style="font-size: 28px; font-weight: 700; margin: 0 0 16px 0; color: #00485d; background: linear-gradient(135deg, #00485d, #00ff91); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-        Hi ${name}! 👋
+         <!-- ================= AUTO REPLY MESSAGE CONTENT ================= -->
+      	<h3 class="title" style="font-size: 20px; font-weight: 700; margin: 0 0 16px 0; color: #00ff91; background-color: #000000; border-top: 4px solid #00ff91; border-radius: 12px; padding: 4px;">
+        Hi ${name}! ✨
      	 </h3>
       
-     	 <div class="message-box" style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin: 20px 0;">
-        <p class="text" style="font-size: 16px; margin: 0 0 15px 0; color: #333333;">
+     	 <div class="message-box" style="background: #000000; padding: 15px; border-left: 4px solid #00ff91; border-right: 4px solid #00ff91; border-radius: 12px; margin: 20px 0;">
+        <p class="text" style="font-size: 14px; margin: 0 0 15px 0; color: #00ff91;">
           I've received your message and will get back to you within 24 hours.
       	  </p>
         
-        	<p class="text" style="font-size: 16px; margin: 0 0 20px 0; color: #333333;">
+        	<p class="text" style="font-size: 14px; margin: 0 0 20px 0; color: #00ff91;">
           	In the meantime, feel free to explore my work:
         	</p>
         
-		<!-- AUTO REPLY ACTION BUTTONS -->
-      	  <a href="https://ebenezerking.com" class="btn" style="display: inline-block; padding: 12px 30px; background-color: #00485d; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600;">
-          View Portfolio →
-        	</a>
-      		</div>
+		<!-- ================= AUTO REPLY ACTION BUTTONS ================= -->
+        <a href="https://ebenezerking.com"class="mobile-btn" style="display: inline-block; padding: 10px 20px; background-color: #000000; color: #00ff91; text-decoration: none; border: 1px solid #00ff91; border-radius: 8px; font-weight: 600; margin: 0 5px;">
+          View Porfolio →
+        </a>
+      	</div>
       
-        <!-- AUTO REPLY QUICK TIP -->
-      	<div style="margin-top: 30px; padding: 20px; background: #f0f7fa; border-radius: 12px;">
-       	 <p style="font-size: 14px; color: #666666; margin: 0;">
+        <!-- ================= AUTO REPLY QUICK TIP ================= -->
+      	<div class="message-box" style="margin-top: 30px; padding: 20px; background: #000000; border-bottom: 4px solid #00ff91; border-radius: 12px;">
+       	 <p style="font-size: 11px; color: #00ff91; margin: 0;">
           💡 Quick tip: Check out my latest projects while you wait!
         </p>	
       </div>
@@ -62,172 +70,37 @@ export const autoReplyTemplate = (name) => {
   	`;
 
 	const footer = `
-	<!-- GENERAL FOOTER -->
-	<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #1a1a1a;">
- 	 <tr>
-    <td align="center" valign="middle"
-        style="background-image: url('${EMAIL_ASSETS.footer}');
-		background-size:100% 100%;
-		background-position:center;
-		background-repeat:no-repeat;
-		width:100%;">
-
-		<!-- =============== MOBILE ================ -->
-		<!-- ====================================== -->
-		 <!-- INNER CONTAINER - MOBILE - FOOTER -START -->
-     	<table class="mobile-footer" width="100%" height="120" cellpadding="0" cellspacing="0" border="0"
-             style="display:none; max-width: 600px; width: 100%; margin: 0 auto; color: #00ff91;">
-
-        <!-- ===================== -->
-        <!-- TOP ROW (3 COLUMNS) -->
-        <!-- ===================== -->
-        <tr style="border: 1px solid orange">
-
-        <!-- ===================== SOCIAL ===================== -->
-          <td
-              valign="bottom"
-              width="33.33%"
-              style="padding: 0;">
-
-            <div class="social-icon" style="text-align:end; height:20px; padding: 0 10px 0 0;">
-              ${socialIcons}
-            </div>
-          </td>
-
-		<!-- ===================== LOGO ===================== -->
-          <td
-              align="center"
-              valign="bottom"
-              width="33.33%"
-			  style="text-align:center; padding: 0;">
-
-            <img
-              src="${EMAIL_ASSETS.logo}"
-              width="100"
-              style="display:block; width:100px; max-width:100px; margin:0 auto;"
-              alt="Logo"
-            />
-          </td>
-
-          <!-- ===================== WEBSITE ===================== -->
-          <td
-              align="right"
-              valign="bottom"
-              width="33.33%"
-              style="text-align:end; padding: 0 0 3px 10px;">
-
-            <p style="text-align: start; height:20px;">
-              <a href="https://ebenezerking.com"
-                 style="font-size:10px; font-weight:500; color: #00ff91; text-decoration:underline; text-align: end;">
-                ebenezerking.com
-              </a>
-            </p>
-          </td>
-
-        </tr>
-
-        <!-- ===================== -->
-        <!-- ===================== COPYRIGHT ROW ===================== -->
-        <!-- ===================== -->
-        <tr>
-          <td colspan="3"
-              align="center"
-              width="100%"
-              style="height: 28px; padding: 2px 0 18px;">
-
-            <p
-               style="margin:0; font-size:5px; font-weight:300; text-align:center;">
-              © ${new Date().getFullYear()} Ebenezer King. All rights reserved.
-            </p>
-
-          </td>
-        </tr>
-
-      </table>
-      <!-- INNER CONTAINER - MOBILE - FOOTER -END -->
-	<!-- ======================================================= -->
-
-
-	<!-- ====================== DESKTOP ========================= -->
-	<!-- ======================================================= -->
-	<!-- INNER CONTAINER - DESKTOP - FOOTER - START -->
-      <table class="desktop-footer" width="100%" height="120" cellpadding="0" cellspacing="0" border="0"
-             style="display:block; max-width: 600px; width: 100%; margin: 0 auto; color: #00ff91;">
-
-        <!-- ===================== -->
-        <!-- TOP ROW (3 COLUMNS) -->
-        <!-- ===================== -->
-        <tr>
-
-          <!-- ===================== SOCIAL ===================== -->
-          <td
-              valign="bottom"
-              width="33.33%"
-              style="padding: 0;">
-
-            <div style="text-align:end; height:20px; padding: 0 20px 0 0;">
-              ${socialIcons}
-            </div>
-          </td>
-		  
-		  <!-- ===================== LOGO ===================== -->
-          <td
-              align="center"
-              valign="bottom"
-              width="33.33%"
-			  style="text-align:center; padding: 0;">
-
-            <img
+    <!-- CLEAN FOOTER (NO IMAGE BACKGROUND) -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #000000; max-width: 600px;">
+      <tr>
+        <td align="center" valign="top" style="padding: 20px 20px; background-color: #000000; border: 4px solid #00ff91">
+          
+          <!-- LOGO -->
+          <div align="center">
+            <img 
               src="${EMAIL_ASSETS.logo}"
               width="130"
-              class="logo-desktop"
               style="display:block; width:130px; max-width:130px; margin:0 auto;"
-              alt="Logo"
+              alt="Logo" 
             />
-          </td>
-
-          <!-- ===================== WEBSITE ===================== -->
-          <td
-              align="right"
-              valign="bottom"
-              width="33.33%"
-              style="text-align:end; padding: 0 0 3px 20px;">
-
-            <p class="website" style="text-align: start; height:20px;">
-              <a href="https://ebenezerking.com"
-                 style="font-size:16px; font-weight:300; color: #00ff91; text-decoration:underline; text-align: end;">
-                ebenezerking.com
-              </a>
+          </div>
+          
+          <!-- SOCIAL ICONS -->
+          <div align="center" style="margin-top: 20px;">
+            ${socialIcons}
+          </div>
+          
+          <!-- COPYRIGHT -->
+          <div align="center" style="margin-top: 20px;">
+            <p style="margin:0; font-size:10px; font-weight:300; text-align:center; color: #00ff91;">
+              ${copyright}
             </p>
-          </td>
-
-        </tr>
-
-        <!-- ===================== -->
-        <!-- ===================== COPYRIGHT ROW ===================== -->
-        <!-- ===================== -->
-        <tr>
-          <td colspan="3"
-              align="center"
-              width="100%"
-              style="height: 28px; padding: 2px 0 18px;">
-
-            <p
-               style="margin:0; font-size:10px; font-weight:300; text-align:center;">
-              © ${new Date().getFullYear()} Ebenezer King. All rights reserved.
-            </p>
-
-          </td>
-        </tr>
-
-      </table>
-	<!-- INNER CONTAINER - DESKTOP - FOOTER - END -->
-	<!-- ====================================== -->
-
-    </td>
-  	</tr>
-	</table>
-	`;
+          </div>
+          
+        </td>
+      </tr>
+    </table>
+  `;
 
 	return emailBase({
 		header,

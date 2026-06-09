@@ -1,4 +1,30 @@
+
 <!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: #ddd;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .phone {
+      width: 600px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+	  border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <!DOCTYPE html>
 	<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
 	<head>
  	 <meta charset="UTF-8">
@@ -8,229 +34,176 @@
  	 <title>Email Template</title>
   
  	 <!-- ==================== STYLE START ==================== -->
-  	<style>
-  	/*  CLIENT-SAFE RESETS */
-    body, table, td, p, a, div, span {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font-size: 100%;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.5;
-    }
-    
-    body {
-      height: 100% !important;
-      width: 100% !important;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    
-  	/* EMAIL CONTAINER */
-    .email-container {
-      max-width: 600px;
-      width: 100%;
-      margin: 0 auto;
-      background-color: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-    
-  	/* RESPONSIVE IMAGES */
-    img {
-      border: 0;
-      height: auto;
-      line-height: 100%;
-      outline: none;
-      text-decoration: none;
-      -ms-interpolation-mode: bicubic;
-    }
-    
-    .img-responsive {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-  	/* RESPONSIVE TABLES */
-    .wrapper-table {
-      width: 100%;
-      table-layout: fixed;
-    }
-
-  	/* CLASS / MOBILE VIEW  */
-	.mobile-footer {
-  	display: none !important;
-  	max-height: 0 !important;
-  	overflow: hidden !important;
+	<style>
+	/* =========================================
+   CLIENT-SAFE RESETS
+	========================================= */
+	body, table, td, p, a, div, span {
+  	margin: 0;
+  	padding: 0;
+ 	 border: 0;
+ 	 font-size: 100%;
+ 	 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+ 	 line-height: 1.5;
 	}
 
-  	/* CLASS / DESKTOP VIEW  */
-	.desktop-footer {
-	display: table !important;
+	body {
+  	height: 100% !important;
+  	width: 100% !important;
+  	background-color: #f5f5f5;
+  	margin: 0;
+  	padding: 0;
 	}
-    
-  	/* ================================= */
-  	/* MEDIA QUERIES - 600px */
-  	/* ================================= */
-	@media only screen and (max-width: 600px) {
-  	.email-container {
-  	  width: 100% !important;
-   	 border-radius: 0 !important;
- 	 }
 
-  	/* CLASS / MOBILE VIEW  */
-	.mobile-footer {
-    display: table !important;
-    max-height: none !important;
-  	}
-
-  	/* CLASS / DESKTOP VIEW  */
-	.desktop-footer {
-    display: none !important;
-    max-height: 0 !important;
-    overflow: hidden !important;
-  	}
-
-  	/* CLASS / RESPONSIVE-TABLE  */
-  	table[class="responsive-table"] {
+	/* =========================================
+   BASE LAYOUT CLASSES
+	========================================= */
+	.responsive-table {
     width: 100% !important;
+    }
+
+	/* =========================================
+   RESPONSIVE IMAGES
+	========================================= */
+	img {
+ 	 border: 0;
+ 	 height: auto;
+ 	 line-height: 100%;
+ 	 outline: none;
+  	text-decoration: none;
+  	-ms-interpolation-mode: bicubic;
+	}
+
+	.img-responsive {
+  	max-width: 100%;
+  	height: auto;
+  	display: block;
+	}
+
+	/* =========================================
+  	 EMAIL OUTLOOK
+	========================================= */
+	.ExternalClass, .ReadMsgBody {
+  	width: 100%;
+  	background-color: #000000;
+	}
+
+	.btn:hover {
+  	background-color: #006b88;
+	}
+
+	/* =========================================
+   MEDIA QUERY 600px
+	========================================= */
+	@media only screen and (max-width: 600px) {
+
+	td.table-body {
+  	background-color: #00485d !important;
+	}
+
+  	.email-container {
+    width: 100% !important;
+    border-radius: 0 !important;
+  	}
+
+  	.responsive-table {
+    width: 100% !important;
+  	}
+
+  	.footer-row {
+    display: block !important;
+    width: 100% !important;
+  	}
+
+
+	.social-icon {
+    width: 15px !important;
+    height: 15px !important;
+    padding: 0 !important;
+	}
+
+  	.title {
+    font-size: 24px !important;
+  	}
+
+  	.text {
+    font-size: 16px !important;
  	}
 
-  	/* ====================== CLASS / FOOTER-ROW  */
-  	/* TR */
- 	 tr[class="footer-row"] {
-    display: block !important;
-    width: 100% !important;
- 	 }
-
-  	/* CLASS / DEV WEBSITE */
-  	/* DIV */
-  	div[class="dev-website"] {
-    text-align: center !important;
+	.body-padding {
+    padding: 40px 10px !important;
   	}
-  
-  	/* CLASS / TITLE */
-  	/* H3 */
-  	h3[class="title"] {
-    font-size: 24px !important;
-	 }
-  
-  	/* CLASS / TEXT */
-  	/* P */
-  	p[class="text"] {
-    font-size: 16px !important;
-  	}
-    
-  	/* ==================================== */
-  	/* MEDIA QUERIES - 480px */
-  	/* ==================================== */
-    @media only screen and (max-width: 480px) {
-      td[class="padding-small"] {
-        padding: 7px 0 !important;
-      }
 
-  	/* ======================== SOCIALS - CLASS / SOCIAL-ITEM */
+	.body-container {
+	background-color: #00485d !important;
+	}
+
+	.mobile-btn {
+  	display: block !important;
+  	width: fit-content !important;
+  	margin: 6px auto !important;
+	background-color: #000000 !important;
+	color: #00ff91 !important;
+  	}
+
 	.social-item {
-    margin: 0 1px !important;
-  }
-      
-  	/*  ======================== SOCIALS - CLASS / SOCIAL-ICONS */
-      img[class="social-icon"] {
-        width: 13px !important;
-        height: 13px !important;
-		padding: 0; !important;
-      }
+  	margin-left: 5px !important;
+	}
 
-	/* CLASS / DEV-LOGO */
-      img[class="logo-mobile"] {
-        width: 13px !important;
-		max-width: 13px !important;
-      }
+	.message-box {
+	background-color: #000000 !important;
+	color: #00ff91 !important;
+	}
 
-  	/* CLASS / WEBSITE */
-  	/* P */
-		p[class="website"] {
-        font-size: 13px !important;
-      }
-      
-  	/* CLASS / COPYRIGHT */
-  	/* P */
-      p[class="copyright"] {
-        font-size: 5px !important;
-        padding: 10px 0 !important;
-		width: 100% !important;
-      }
-      
-  	/* DARK MODE SUPPORT */
-    @media (prefers-color-scheme: dark) {
-      .email-container {
-        background-color: #1a1a1a !important;
-      }
-      
-      .dark-mode-text {
-        color: #00ff91 !important;
-      }
+  	.logo-mobile {
+    width: 110px !important;
+    max-width: 110px !important;
+  	}
 
-      .light-mode-text {
-        color: #22050c !important;
-      }
-      
-      .message-box {
-        background: #2a2a2a !important;
-        border-left-color: #00ff91 !important;
-      }
-    }
-    
-  	/* OUTLOOK SPECIFIC */
-    .ExternalClass, .ReadMsgBody {
-      width: 100%;
-      background-color: #f5f5f5;
-    }
-    
-  	/* ======================= BUTTON STYLES */
-  	.mobile-btn {
-    display: block !important;
-    margin: 0 0 10px 0 !important;
-  }
-    
-    .btn:hover {
-      background-color: #006b88;
-    }
-  	</style>
+  	.email-container {
+    background-color: #000000 !important;
+  	}
+
+  	.light-mode-text {
+    color: #000000 !important;
+ 	 }
+	}
+
+	</style>
  	 <!-- ==================== STYLE END ==================== -->
 	</head>
 
+ 	 <!-- ==================== EMAIL TEMPLATE STRUCTURE ==================== -->
+ 	 <!-- ==================== MAIN BODY START ==================== -->
 	<body style="background-color: #f5f5f5; margin: 0; padding: 20px 0;">
   	<!--[if (gte mso 9)|(IE)]>
-    <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td>
  	 <![endif]-->
   
-  	<!-- PREHEADER TEXT (for preview) -->
- 	 <div style="display: none; font-size: 1px; color: #f5f5f5; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-    New message from John Doe via your portfolio contact form
+  	<!-- ==================== PREHEADER PREVIEW TEXT ==================== -->
+ 	 <div style="display:none; max-height:0; overflow:hidden; opacity:0;">
+    			New message from John Doe via your portfolio contact form
  	 </div>
   
- 	 <!-- MAIN EMAIL CONTAINER -->
-  	<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#f5f5f5">
-   	 <tr>
-      <td align="center" valign="top" style="padding: 20px 10px;">
-        <table width="100%" max-width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-container" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+ 	<!-- ==================== MAIN EMAIL CONTAINER ==================== -->
+  	<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color: #f5f5f5; min-width: 320px;">
+   	<tr>
+      		<td 
+				align="center" valign="top" style="padding: 20px 10px;">
+    <table class="body-container" width="100%" cellpadding="0" cellspacing="0" border="0" 
+				align="center" style="max-width: 600px; width: 100%; background-color: #00485d; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
           
-          <!-- HEADER SECTION -->
-          <tr>
-            <td align="center" valign="top" style="padding: 0;">
+    <!-- ==================== HEADER SECTION ==================== -->
+    <tr>
+            <td align="center" valign="top" style="background-color: #000000; color: #00ff91; padding: 0;">
               
-	<!-- ADMIN HEADER -->
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td align="center" valign="top" style="padding: 0;">
           <img
-            src="https://res.cloudinary.com/ebenezerking/image/upload/v1780696572/email-ebenezerking-header_iqlnrn.png"
+            src="https://res.cloudinary.com/ebenezerking/image/upload/v1780947996/Email_Header_r3capj.png"
             width="600"
             class="img-responsive"
             style="display: block; width: 100%; max-width: 600px; height: auto; border: 0;"
@@ -239,377 +212,185 @@
         </td>
       </tr>
     </table>
-  	
+  
             </td>
           </tr>
           
-          <!-- BODY SECTION -->
+          <!-- ==================== BODY SECTION ==================== -->
           <tr>
-            <td align="center" valign="top" class="padding" style="padding: 40px 30px;">
+            <td class="body-padding" align="center" valign="top"  style="background-color: #00485d; padding: 40px 15px;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td align="left" valign="top" style="color: #333333;">
+                  <td class="table-body" align="left" valign="top" style="background-color: #00485d; color: #00ff91;">
                     
-	<!-- ADMIN BODY -->
-	<!-- CONTACT INFORMATION HEADER CARD -->
-    <div>
-
-	<!-- CONTACT INFORMATION CARD -->
-      <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin-bottom: 25px;">
-        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-          <tr style="background-color: #f8f9fa;">
-            <td style="padding: 15px 20px; border-bottom: 2px solid #00485d;">
-              <span style="font-size: 18px; font-weight: 700; color: #00485d;">Contact Information</span>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 20px;">
-              <div style="margin-bottom: 15px;">
-                <div style="display: inline-block; width: 80px; font-weight: 700; color: #00485d;">Name:</div>
-                <div style="display: inline-block; font-weight: 500; color: #333333;">John Doe</div>
-              </div>
-              <div style="margin-bottom: 15px;">
-                <div style="display: inline-block; width: 80px; font-weight: 700; color: #00485d;">Email:</div>
-                <div style="display: inline-block;">
-                  <a href="mailto:john@example.com" style="color: #006b88; text-decoration: none; font-weight: 500;">john@example.com</a>
+    <!-- CONTACT INFORMATION CARD -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 25px;">
+      <tr>
+        <td style="padding: 0;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top: 4px solid #00ff91; border-radius: 12px; background-color: #000000;">
+            <tr>
+              <td style="padding: 15px; border-bottom: 1px solid #00ff91; background-color: #000000;">
+                <span style="font-size: 18px; font-weight: 700; color: #00ff91;">🚀 Contact Information</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 15px; background-color: #000000;">
+                <div style="margin-bottom: 15px;">
+                  <span style="display: inline-block; width: 80px; font-weight: 700; color: #00ff91;">Name:</span>
+                  <span style="display: inline-block; font-weight: 500; color: #00ff91;">John Doe</span>
                 </div>
-              </div>
-              <div style="margin-bottom: 15px;">
-                <div style="display: inline-block; width: 80px; font-weight: 700; color: #00485d;">IP Address:</div>
-                <div style="display: inline-block; color: #666666;">Recorded</div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      
-      <!-- CONTACT MESSAGE CONTENT -->
-      <div style="background: #f8f9fa; border-radius: 12px; padding: 25px; border-left: 4px solid #00ff91;">
-        <div style="margin-bottom: 15px;">
-          <span style="font-size: 18px; font-weight: 700; color: #00485d;">💬 Message Content</span>
-        </div>
-        <div style="background: #ffffff; padding: 20px; border-radius: 8px; min-height: 150px; font-size: 15px; line-height: 1.6; color: #333333;">
-          Hello there!
-        </div>
-      </div>
-      
-      <!-- CONTACT ACTION BUTTONS -->
-      <div style="text-align: center; margin-top: 30px;">
-        <a href="mailto:john@example.com" class="mobile-btn" style="display: inline-block; padding: 12px 24px; background-color: #00485d; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 0 5px;">
-          Reply to John
-        </a>
-        <a href="https://ebenezerking.com"class="mobile-btn" style="display: inline-block; padding: 12px 24px; background-color: #ffffff; color: #00485d; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 0 5px; border: 2px solid #00485d;">
-          View Porfolio →
-        </a>
-      </div>
-    </div>
-  	
+                <div style="margin-bottom: 15px;">
+                  <span style="display: inline-block; width: 80px; font-weight: 700; color: #00ff91;">Email:</span>
+                  <span style="display: inline-block;">
+                    <a href="mailto:john@example.com" style="color: #00ff91; text-decoration: none; font-weight: 500;">john@example.com</a>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- MESSAGE CONTENT -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 30px;">
+      <tr>
+        <td style="padding: 0;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #000000; border-radius: 12px; border-bottom: 4px solid #00ff91;">
+            <tr>
+              <td style="padding: 25px 15px 15px 15px; background-color: #000000;">
+                <span style="font-size: 18px; font-weight: 700; color: #00ff91;">💬 Message Content</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 15px 25px 15px; background-color: #000000;">
+                <div style="background-color: #000000; color: #00ff91; padding: 20px; border: 1px solid #00ff91; border-radius: 8px; font-size: 15px; line-height: 1.6;">
+                  Hello there!
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ACTION BUTTONS -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td align="center" style="padding: 0;">
+          <a href="mailto:john@example.com" class="mobile-btn" style="display: inline-block; padding: 10px 20px; background-color: #000000; color: #00ff91; text-decoration: none; border: 1px solid #00ff91; border-radius: 8px; font-weight: 600; margin: 0 5px 10px 5px;">
+            Reply to John
+          </a>
+          <a href="https://ebenezerking.com" class="mobile-btn" style="display: inline-block; padding: 10px 20px; background-color: #000000; color: #00ff91; text-decoration: none; border: 1px solid #00ff91; border-radius: 8px; font-weight: 600; margin: 0 5px;">
+            View Portfolio →
+          </a>
+        </td>
+      </tr>
+    </table>
+  
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
           
-          <!-- FOOTER SECTION -->
+          <!-- ==================== FOOTER SECTION ==================== -->
           <tr>
-            <td align="center" valign="top" style="padding: 0;">
+            <td align="center" valign="top" style="background-color: #000000; color: #00ff91; padding: 0;">
               
-	<!-- GENERAL FOOTER -->
-	<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #1a1a1a;">
- 	 <tr>
-    <td align="center" valign="middle"
-        style="background-image: url('https://res.cloudinary.com/ebenezerking/image/upload/v1780687356/email-ebenezerking-footer_su7j21.png');
-		background-size:100% 100%;
-		background-position:center;
-		background-repeat:no-repeat;
-		width:100%;">
-
-		<!-- =============== MOBILE ================ -->
-		<!-- ====================================== -->
-		 <!-- INNER CONTAINER - MOBILE - FOOTER -START -->
-     	<table class="mobile-footer" width="100%" height="120" cellpadding="0" cellspacing="0" border="0"
-             style="display:none; max-width: 600px; width: 100%; margin: 0 auto; color: #00ff91;">
-
-        <!-- ===================== -->
-        <!-- TOP ROW (3 COLUMNS) -->
-        <!-- ===================== -->
-        <tr style="border: 1px solid orange">
-
-        <!-- ===================== SOCIAL ===================== -->
-          <td
-              valign="bottom"
-              width="33.33%"
-              style="padding: 0;">
-
-            <div class="social-icon" style="text-align:end; height:20px; padding: 0 10px 0 0;">
-              
-<!--  GITHUB -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://github.com/ebenezerking-dev" style="display: inline-block; transition: transform 0.2s;">
-      <img 
-        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694837/icon-github_ditm62.svg" 
-        width="20" 
-        class="social-icon"
-        style="display: block; width: 20px; max-height: 20px; transition: opacity 0.2s;"
-        alt="GitHub"
-      />
-    </a>
-  </div>
-
-<!--  LINKEDIN -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://www.linkedin.com/in/ebenezerking" style="display: inline-block;">
-      <img 
-        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694835/icon-linkedin_ntpvub.svg" 
-        width="20" 
-        class="social-icon"
-        style="display: block; width: 20px; max-height: 20px;"
-        alt="LinkedIn"
-      />
-    </a>
-  </div>
-  
-<!--  TWITTER -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://x.com/a_devlin" style="display: inline-block;">
-      <img 
-        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694833/icon-twitter_sztng1.svg" 
-        width="20" 
-        class="social-icon"
-        style="display: block; width: 20px; max-height: 20px;"
-        alt="X (Twitter)"
-      />
-    </a>
-  </div>
-   
- <!--  WHATSAPP -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://wa.me/message/UHRWC3UBMMB2E1" style="display: inline-block;">
-      <img 
-        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694833/icon-whatsapp_re3bnb.svg" 
-        width="20" 
-        class="social-icon"
-        style="display: block; width: 20px; max-height: 20px;"
-        alt="WhatsApp"
-      />
-    </a>
-  </div>
-
-            </div>
-          </td>
-
-		<!-- ===================== LOGO ===================== -->
-          <td
-              align="center"
-              valign="bottom"
-              width="33.33%"
-			  style="text-align:center; padding: 0;">
-
-            <img
-              src="https://res.cloudinary.com/ebenezerking/image/upload/v1780685245/logoCom_fduvoe.png"
-              width="100"
-              style="display:block; width:100px; max-width:100px; margin:0 auto;"
-              alt="Logo"
-            />
-          </td>
-
-          <!-- ===================== WEBSITE ===================== -->
-          <td
-              align="right"
-              valign="bottom"
-              width="33.33%"
-              style="text-align:end; padding: 0 0 3px 10px;">
-
-            <p style="text-align: start; height:20px;">
-              <a href="https://ebenezerking.com"
-                 style="font-size:10px; font-weight:500; color: #00ff91; text-decoration:underline; text-align: end;">
-                ebenezerking.com
-              </a>
-            </p>
-          </td>
-
-        </tr>
-
-        <!-- ===================== -->
-        <!-- ===================== COPYRIGHT ROW ===================== -->
-        <!-- ===================== -->
-        <tr>
-          <td colspan="3"
-              align="center"
-              width="100%"
-              style="height: 28px; padding: 2px 0 18px;">
-
-            <p
-               style="margin:0; font-size:5px; font-weight:300; text-align:center;">
-              © 2026 Ebenezer King. All rights reserved.
-            </p>
-
-          </td>
-        </tr>
-
-      </table>
-      <!-- INNER CONTAINER - MOBILE - FOOTER -END -->
-	<!-- ======================================================= -->
-
-
-	<!-- ====================== DESKTOP ========================= -->
-	<!-- ======================================================= -->
-	<!-- INNER CONTAINER - DESKTOP - FOOTER - START -->
-      <table class="desktop-footer" width="100%" height="120" cellpadding="0" cellspacing="0" border="0"
-             style="display:block; max-width: 600px; width: 100%; margin: 0 auto; color: #00ff91;">
-
-        <!-- ===================== -->
-        <!-- TOP ROW (3 COLUMNS) -->
-        <!-- ===================== -->
-        <tr>
-
-          <!-- ===================== SOCIAL ===================== -->
-          <td
-              valign="bottom"
-              width="33.33%"
-              style="padding: 0;">
-
-            <div style="text-align:end; height:20px; padding: 0 20px 0 0;">
-              
-<!--  GITHUB -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://github.com/ebenezerking-dev" style="display: inline-block; transition: transform 0.2s;">
-      <img 
-        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694837/icon-github_ditm62.svg" 
-        width="20" 
-        class="social-icon"
-        style="display: block; width: 20px; max-height: 20px; transition: opacity 0.2s;"
-        alt="GitHub"
-      />
-    </a>
-  </div>
-
-<!--  LINKEDIN -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://www.linkedin.com/in/ebenezerking" style="display: inline-block;">
-      <img 
-        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694835/icon-linkedin_ntpvub.svg" 
-        width="20" 
-        class="social-icon"
-        style="display: block; width: 20px; max-height: 20px;"
-        alt="LinkedIn"
-      />
-    </a>
-  </div>
-  
-<!--  TWITTER -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://x.com/a_devlin" style="display: inline-block;">
-      <img 
-        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694833/icon-twitter_sztng1.svg" 
-        width="20" 
-        class="social-icon"
-        style="display: block; width: 20px; max-height: 20px;"
-        alt="X (Twitter)"
-      />
-    </a>
-  </div>
-   
- <!--  WHATSAPP -->
-  <div class="social-item" style="display: inline-block; margin: 0 4px; text-align: center; height: 20px;">
-    <a href="https://wa.me/message/UHRWC3UBMMB2E1" style="display: inline-block;">
-      <img 
-        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694833/icon-whatsapp_re3bnb.svg" 
-        width="20" 
-        class="social-icon"
-        style="display: block; width: 20px; max-height: 20px;"
-        alt="WhatsApp"
-      />
-    </a>
-  </div>
-
-            </div>
-          </td>
-		  
-		  <!-- ===================== LOGO ===================== -->
-          <td
-              align="center"
-              valign="bottom"
-              width="33.33%"
-			  style="text-align:center; padding: 0;">
-
-            <img
+    <!-- CLEAN FOOTER (NO IMAGE BACKGROUND) -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #000000; max-width: 600px;">
+      <tr>
+        <td align="center" valign="top" style="padding: 20px 20px; background-color: #000000; border-bottom: 5px solid #00ff91">
+          
+          <!-- LOGO -->
+          <div align="center">
+            <img 
               src="https://res.cloudinary.com/ebenezerking/image/upload/v1780685245/logoCom_fduvoe.png"
               width="130"
-              class="logo-desktop"
               style="display:block; width:130px; max-width:130px; margin:0 auto;"
-              alt="Logo"
+              alt="Logo" 
             />
-          </td>
+          </div>
+          
+          <!-- SOCIAL ICONS -->
+          <div align="center" style="margin-top: 20px;">
+            
+<!--  GITHUB -->
+  <div style="display:inline-block; margin-right: 3px; vertical-align:bottom; line-height:0;">
+    <a href="https://github.com/ebenezerking-dev" style="display: inline-block;">
+      <img 
+        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694837/icon-github_ditm62.svg" 
+		alt="GitHub"
+        class="social-icon"
+      	style="display:block; border:0; width:17px; height:17px;"
+      />
+    </a>
+  </div>
 
-          <!-- ===================== WEBSITE ===================== -->
-          <td
-              align="right"
-              valign="bottom"
-              width="33.33%"
-              style="text-align:end; padding: 0 0 3px 20px;">
+<!--  LINKEDIN -->
+ <div style="display:inline-block; margin-right: 3px; vertical-align:bottom; line-height:0;">
+    <a href="https://www.linkedin.com/in/ebenezerking" style="display: inline-block;">
+      <img 
+        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694835/icon-linkedin_ntpvub.svg" 
+		alt="LinkedIn"
+        class="social-icon"
+      	style="display:block; border:0; width:17px; height:17px;"
+        
+      />
+    </a>
+  </div>
+  
+<!--  TWITTER -->
+ <div style="display:inline-block; margin-right: 3px; vertical-align:bottom; line-height:0;">
+    <a href="https://x.com/a_devlin" style="display: inline-block;">
+      <img 
+        src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694833/icon-twitter_sztng1.svg" 
+		alt="X (Twitter)"
+        class="social-icon"
+      	style="display:block; border:0; width:17px; height:17px;"
+      />
+    </a>
+  </div>
+   
+ <!--  WHATSAPP -->
+<div style="display:inline-block; margin-right: 3px; vertical-align:bottom; line-height:0;">
+  <a href="https://wa.me/message/UHRWC3UBMMB2E1" style="display:inline-block;">
+    <img 
+      src="https://res.cloudinary.com/ebenezerking/image/upload/v1780694833/icon-whatsapp_re3bnb.svg" 
+      alt="WhatsApp"
+	  class="social-icon"
+      style="display:block; border:0; width:17px; height:17px;"
+    />
+  </a>
+</div>
 
-            <p class="website" style="text-align: start; height:20px;">
-              <a href="https://ebenezerking.com"
-                 style="font-size:16px; font-weight:300; color: #00ff91; text-decoration:underline; text-align: end;">
-                ebenezerking.com
-              </a>
-            </p>
-          </td>
-
-        </tr>
-
-        <!-- ===================== -->
-        <!-- ===================== COPYRIGHT ROW ===================== -->
-        <!-- ===================== -->
-        <tr>
-          <td colspan="3"
-              align="center"
-              width="100%"
-              style="height: 28px; padding: 2px 0 18px;">
-
-            <p
-               style="margin:0; font-size:10px; font-weight:300; text-align:center;">
+          </div>
+          
+          <!-- COPYRIGHT -->
+          <div align="center" style="margin-top: 20px;">
+            <p style="margin:0; font-size:10px; font-weight:300; text-align:center; color: #00ff91;">
               © 2026 Ebenezer King. All rights reserved.
             </p>
-
-          </td>
-        </tr>
-
-      </table>
-	<!-- INNER CONTAINER - DESKTOP - FOOTER - END -->
-	<!-- ====================================== -->
-
-    </td>
-  	</tr>
-	</table>
-	
+          </div>
+          
+        </td>
+      </tr>
+    </table>
+  
             </td>
           </tr>
           
         </table>
-        
-        <!-- POST-FOOTER (unsubscribe/address) -->
-        <table width="100%" max-width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="max-width: 600px; width: 100%; margin-top: 20px;">
-          <tr>
-            <td align="center" valign="top" style="padding: 20px 15px;">
-              <p class="dark-mode-text light-mode-text" style="font-size: 10px; margin: 0;">
-                You're receiving this email because you contacted Ebenezer King through the portfolio website.
-              </p>
-              <p class="dark-mode-text light-mode-text" style="font-size: 10px; margin: 10px 0 0 0;">
-                Built with ❤️ for great communication
-              </p>
-            </td>
-          </tr>
-       	 </table>
-     	</td>
-    </tr>
-  	</table>
   
 	  <!--[if (gte mso 9)|(IE)]>
         </td>
       </tr>
    	 </table>
+	 
  	 <![endif]-->
 	</body>
 	</html>
+  </div>
+</body>
+</html>

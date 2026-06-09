@@ -4,10 +4,10 @@
 // ===================================
 export const EMAIL_ASSETS = {
 	header:
-		"https://res.cloudinary.com/ebenezerking/image/upload/v1780696572/email-ebenezerking-header_iqlnrn.png",
+		"https://res.cloudinary.com/ebenezerking/image/upload/v1780947996/Email_Header_r3capj.png",
 
 	footer:
-		"https://res.cloudinary.com/ebenezerking/image/upload/v1780687356/email-ebenezerking-footer_su7j21.png",
+		"https://res.cloudinary.com/ebenezerking/image/upload/v1780954575/Email_Footer_czuke6.png",
 
 	logo: "https://res.cloudinary.com/ebenezerking/image/upload/v1780685245/logoCom_fduvoe.png",
 

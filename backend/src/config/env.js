@@ -36,6 +36,11 @@ const env = {
 	GMAIL_USER: required("GMAIL_USER"),
 	RESEND_API_KEY: required("RESEND_API_KEY"),
 	NODE_ENV: process.env.NODE_ENV || "development",
+
+	mailHost: process.env.MAIL_HOST,
+	mailPort: process.env.MAIL_PORT,
+	mailUser: process.env.MAIL_USER,
+	mailPass: process.env.MAIL_PASS,
 };
 
 export default env;
