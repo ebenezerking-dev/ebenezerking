@@ -64,11 +64,11 @@ const ProjectsSection = () => {
 			{/* ============================== SECTION WRAPPER */}
 			<div className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
-				<div className="text-center">
+				<div className="text-left">
 					<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
 						<h2 className="sr-only projectSection__header">Projects</h2>
 						<h3 className="header relative inline-block flex">
-							Some <span className="text-orange-500">projects</span> i built.
+							Some projects i built.
 							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"></span>
 						</h3>
 					</div>
@@ -82,7 +82,7 @@ const ProjectsSection = () => {
 			</div>
 
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD] to-transparent"></div>
 		</SectionFrame>
 	);
 };

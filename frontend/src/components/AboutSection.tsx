@@ -10,22 +10,20 @@ const AboutSection = () => {
 			{/* ============================== SECTION WRAPPER */}
 			<div className="aboutSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
-				<div className="text-center">
+				<div className="text-left">
 					<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
 						<h2 className="sr-only aboutSection__header">About Me</h2>
 						<h3 className="header relative inline-block">
-							I am Ebenezer<span className="text-orange-500">King.</span>
+							I am Ebenezer King.
 							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"></span>
 						</h3>
 					</div>
 				</div>
 
 				{/* ============================== CONTENT */}
-				<div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 text-[#22050c] w-full md:p-4 rounded-[0.5rem]">
+				<div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 text-[#22050c] w-full md:p-4 rounded-[0.5rem] text-lg font-semibold">
 					<p className="font-bold">
-						<span>A Full Stack Developer — </span>
-
-						<span className="block sm:inline">
+						<span className="block xl:inline">
 							<span className="uppercase text-orange-500 text-[1.8rem] font-bold">
 								I
 							</span>{" "}
@@ -62,7 +60,7 @@ const AboutSection = () => {
 				</div>
 			</div>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD] to-transparent"></div>
 		</SectionFrame>
 	);
 };

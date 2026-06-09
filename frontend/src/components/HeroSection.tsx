@@ -107,6 +107,8 @@ const HeroSection = () => {
 							</h1>
 						</motion.div>
 					</div>
+					{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
+					<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD] to-transparent"></div>
 				</div>
 			</div>
 		</section>

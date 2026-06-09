@@ -47,10 +47,10 @@ const BackToTop = () => {
 		isVisible && (
 			<button
 				onClick={scrollToTop}
-				className="fixed bottom-[18rem] right-[1rem] z-[9999] text-orange-500 font-bold border-2 border-[#00ff91] rounded-l-[2rem] p-[1.2rem] bg-gradient-to-r from-[#00ff91]/50 via-[#000000] to-[#00ff91]/50 backdrop-blur-md transition-all duration-300 cursor-pointer hover:opacity-100 opacity-80"
+				className="fixed bottom-[4rem] lg:bottom-[7rem] right-[1rem] lg:right-[5rem] z-[9999] border-2 border-[#00ff91] rounded-l-[2rem] p-2 bg-transparent backdrop-blur-md transition-all duration-300 cursor-pointer hover:opacity-100 opacity-80"
 				aria-label="Back to top"
 			>
-				<RiArrowUpDoubleLine size={20} />
+				<RiArrowUpDoubleLine size={32} className="text-[#00ff91] text-md font-bold" />
 			</button>
 		)
 	);

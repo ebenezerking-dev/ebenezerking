@@ -56,12 +56,12 @@ const ServicesSection = () => {
 			{/* ============================== SECTION WRAPPER */}
 			<div className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 				{/* ============================== CONTENT HEADER */}
-				<div className="text-center">
+				<div className="text-left">
 					<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
 						<h2 className="sr-only servicesSection__header">Services</h2>
 
 						<h3 className="header relative inline-block flex">
-							<span className="text-orange-500">services</span> i can offer you.
+							services i can offer you.
 							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-red-500 rounded-full"></span>
 						</h3>
 					</div>
@@ -71,8 +71,10 @@ const ServicesSection = () => {
 				<CardSlider<Service>
 					items={services}
 					renderItem={(service: Service) => (
-						<div className="serviceCard h-full flex flex-col justify-start font-tinos text-[#22050c] hover:text-[#00ff91] text-center px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border-2 border-orange-500 hover:bg-[#000000] hover:border-[#00ff91] transition-all duration-300">
-							<h4 className="font-unna font-bold mb-2">{service.title}</h4>
+						<div className="serviceCard h-full flex flex-col justify-start font-tinos text-lg font-semibold text-[#22050c] hover:text-[#00ff91] text-center px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border-2 border-[#000AFD]/20 hover:bg-[#000000] hover:border-[#00ff91] transition-all duration-300">
+							<h4 className="text-2xl font-unna font-bold mb-2">
+								{service.title}
+							</h4>
 
 							<p>{service.description}</p>
 						</div>
@@ -81,7 +83,7 @@ const ServicesSection = () => {
 			</div>
 
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD] to-transparent"></div>
 		</SectionFrame>
 	);
 };

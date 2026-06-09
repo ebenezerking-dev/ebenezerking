@@ -30,37 +30,38 @@ function Footer() {
 			className="footer__parent relative bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD] w-full py-[2rem] px-[1.5rem]"
 		>
 			<div className="relative z-20 max-w-7xl mx-auto w-full">
-				{/* Main footer content - 3 columns on large screens */}
+				{/* ===================================== MAIN FOOTER CONTENTS*/}
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-8">
-					{/* Column 1: Brand/About */}
+					{/* COLUMN ONE - RESUME */}
 					<div>
-						<h3 className="text-[#00ff91] font-bold text-xl mb-3">
+						<h3 className="inline-block text-[#00ff91] font-bold text-xl bg-[#000000] px-2 rounded-[0.5rem] border-b-6 border-orange-500 hover:border-[#00ff91] mb-3 transition-colors duration-300">
 							<a
 								href="https://docs.google.com/document/d/1rMZx8aLk1ZitCwSRTK706o19mj5UgyeQGABCZt6eAJg/edit?usp=sharing"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								Ebenezer<span className="text-orange-500"> King</span>
+								Resume
 							</a>
 						</h3>
-						<p className="text-[#22050c] text-sm leading-relaxed">
+						<p className="text-[#22050c] text-md font-semibold leading-relaxed">
 							Full-stack developer crafting meaningful digital experiences with
 							React, Node.js, and modern web technologies.
 						</p>
 					</div>
 
-					{/* Column 2: Quick Links */}
+					{/* COLUMN TWO - QUICK LINKS */}
 					<div className="flex justify-start text-[#22050c] lg:justify-center">
 						<div>
-							<h6 className="font-semibold mb-3 text-sm uppercase tracking-wider">
+							<h6 className="relative font-bold mb-5 text-xl uppercase tracking-wider">
 								Explore
+								<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
 							</h6>
-							<ul className="space-y-2 text-sm flex flex-col lg:items-center">
+							<ul className="space-y-2 text-lg font-semibold flex flex-col lg:items-center">
 								{["About", "Projects", "Contact"].map((item) => (
 									<li key={item}>
 										<a
 											href={`#${item.toLowerCase()}`}
-											className="hover:text-orange-500 transition-colors duration-300"
+											className="inline-block text-[#00ff91] font-bold text-xl bg-[#000000] px-2 rounded-[0.5rem] border-b-6 border-orange-500 hover:border-[#00ff91] transition-colors duration-300"
 										>
 											{item}
 										</a>
@@ -70,12 +71,15 @@ function Footer() {
 						</div>
 					</div>
 
-					{/* Column 3: Contact */}
-					<div className="footer__contact flex flex-col items-end">
-						<h6 className="font-semibold text-[#22050c] mb-1">
+					{/* COLUMN THREE: CONTACT */}
+					<div className="footer__contact flex flex-col items-end text-[#22050c]">
+						<h6 className="relative font-bold mb-5 text-xl uppercase tracking-wider mb-3">
 							Hire or recommend me
+							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
 						</h6>
-						<p className="text-[#22050c] text-sm mb-2">Get in touch!</p>
+						<p className="text-[#22050c] text-md font-semibold mb-1">
+							Get in touch!
+						</p>
 						<a
 							href="https://wa.me/message/UHRWC3UBMMB2E1"
 							target="_blank"
@@ -92,7 +96,7 @@ function Footer() {
 				</div>
 
 				{/* Bottom bar: Social + Copyright */}
-				<div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 pt-6 border-t border-[#00ff91] text-[#22050c]">
+				<div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 pt-6 border-t border-[#000AFD]/20 text-[#22050c]">
 					<nav>
 						<ul className="flex gap-1">
 							{[
@@ -120,7 +124,7 @@ function Footer() {
 										aria-label={social.label}
 										className="inline-flex items-center justify-center p-2 hover:text-[#00ff91] transition-all duration-300"
 									>
-										<social.icon className="text-[1.3rem]" />
+										<social.icon className="text-[1.5rem]" />
 									</a>
 								</li>
 							))}

@@ -101,7 +101,7 @@ const ContactSection = () => {
 				{/* =========================== TOAST */}
 				{toast && <Toast message={toast.message} type={toast.type} />}
 				{/* =========================== HEADER */}
-				<div className="text-center">
+				<div className="text-left">
 					<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
 						<h3 className="header relative inline-block">
 							Let's connect.
@@ -116,13 +116,13 @@ const ContactSection = () => {
 						{/* =========================== NAME */}
 						<form
 							onSubmit={handleSubmit}
-							className="flex flex-col gap-4 text-[#22050c]"
+							className="flex flex-col gap-4 text-[#22050c] font-semibold text-lg"
 						>
 							<input
 								type="text"
 								name="name"
 								placeholder="Your Name"
-								className="w-full px-4 py-2 border-b border-orange-500/20 rounded-[0.5rem] bg-transparent text-[#22050c]"
+								className="w-full px-4 py-2 border-b border-[#000AFD]/20 rounded-[0.5rem] bg-transparent text-[#22050c]"
 								value={formData.name}
 								onChange={handleChange}
 								required
@@ -132,7 +132,7 @@ const ContactSection = () => {
 								type="email"
 								name="email"
 								placeholder="Your Email"
-								className="w-full px-4 py-2 border-b border-orange-500/30 rounded-[0.5rem] bg-transparent text-[#22050c]"
+								className="w-full px-4 py-2 border-b border-[#000AFD]/30 rounded-[0.5rem] bg-transparent text-[#22050c]"
 								value={formData.email}
 								onChange={handleChange}
 								required
@@ -141,7 +141,7 @@ const ContactSection = () => {
 								name="message"
 								rows={2}
 								placeholder="Your Message"
-								className="w-full px-4 py-2 border-b border-orange-500/20 rounded-[0.5rem] bg-transparent text-[#22050c]"
+								className="w-full px-4 py-2 border-b border-[#000AFD]/20 rounded-[0.5rem] bg-transparent text-[#22050c]"
 								value={formData.message}
 								onChange={handleChange}
 								required
@@ -153,7 +153,7 @@ const ContactSection = () => {
 				</div>
 			</div>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent shadow-[0_0_12px_rgba(255,165,0,0.7)]"></div>
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD] to-transparent"></div>
 		</SectionFrame>
 	);
 };

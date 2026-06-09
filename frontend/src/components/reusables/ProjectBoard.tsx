@@ -77,19 +77,22 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 							{/* ================= PROJECT DETAILS */}
 							<div className="p-[1rem] flex flex-col items-start md:items-center gap-[1.4rem]">
 								{/* ================= TITLE */}
-								<h3 className="text-[1.5rem] font-unna font-bold border-b-2 border-orange-500">
+								<h3 className="relative text-2xl font-unna font-bold">
 									{project.title}
+									<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"></span>
 								</h3>
 
 								{/* ================= DESCRIPTION */}
-								<p className="font-unna">{project.description}</p>
+								<p className="font-unna text-lg font-semibold">
+									{project.description}
+								</p>
 
 								{/* ================= TECH TOOLS */}
-								<div className="flex flex-wrap gap-[0.5rem] text-[1rem]">
+								<div className="flex flex-wrap gap-[0.5rem] text-sm font-semibold">
 									{project.tech.map((tech, idx) => (
 										<span
 											key={idx}
-											className="border border-orange-500 p-1 rounded-[0.5rem]"
+											className="border border-[#000AFD]/20 p-1 rounded-[0.5rem]"
 										>
 											{tech}
 										</span>

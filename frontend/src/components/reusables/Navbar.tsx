@@ -55,7 +55,7 @@ function Navbar() {
 				animate={navbarMotion.animate}
 				exit={navbarMotion.exit}
 				transition={navbarTransition}
-				className="navbar__parent fixed top-0 left-0 z-50 bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD] w-full text-[1.5rem] flex flex-col px-[1rem] py-[0.3rem] lg:py-[0.5rem] border-b-12 border-orange-500/30"
+				className="navbar__parent fixed top-0 left-0 z-50 bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD] w-full flex flex-col px-[1rem] py-[0.3rem] lg:py-[0.5rem] border-b-12 border-[#000AFD]/30"
 			>
 				<div className="navbar__main relative flex justify-between items-center max-w-7xl mx-auto w-full">
 					{/* ========================= LOGO  */}
@@ -69,7 +69,7 @@ function Navbar() {
 
 					{/* ========================= DESKTOP MENU (visible on large screens) */}
 					<div className="hidden lg:block">
-						<ul className="flex justify-center gap-3 text-[1.1rem] font-bold">
+						<ul className="flex justify-center gap-3 text-lg font-bold">
 							<li>
 								<RippleButton href="#about">about</RippleButton>
 							</li>
