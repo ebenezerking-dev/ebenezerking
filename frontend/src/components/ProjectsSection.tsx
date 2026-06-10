@@ -3,6 +3,14 @@
 // ===================================== PROJECTS SECTION COMPONENT
 import ProjectBoard from "../components/reusables/ProjectBoard";
 import SectionFrame from "../components/reusables/SectionFrame";
+import { motion } from "framer-motion";
+import {
+	containerVariants,
+	headerVariants,
+	underlineVariants,
+	dividerVariants,
+	viewportRepeat,
+} from "./reusables/animations/sectionAnimations";
 
 import MobileT from "../Assets/Projects/taxlator/images/Mobile.webp";
 import IpadT from "../Assets/Projects/taxlator/images/iPad.webp";
@@ -60,29 +68,51 @@ const projects = [
 
 const ProjectsSection = () => {
 	return (
-		<SectionFrame className="projectSection__parent relative h-auto w-full flex flex-col bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD] overflow-hidden">
-			{/* ============================== SECTION WRAPPER */}
-			<div className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
-				{/* ============================== CONTENT HEADER */}
-				<div className="text-left">
-					<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
-						<h2 className="sr-only projectSection__header">Projects</h2>
-						<h3 className="header relative inline-block flex">
-							Some projects i built.
-							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"></span>
-						</h3>
-					</div>
-				</div>
+		<SectionFrame>
+			<motion.div
+				initial="hidden"
+				whileInView="visible"
+				viewport={viewportRepeat}
+				className="projectSection__parent relative h-auto w-full flex flex-col overflow-hidden"
+			>
+				{/* ============================== SECTION WRAPPER */}
+				<motion.div
+					variants={containerVariants}
+					className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
+				>
+					{/* ============================== CONTENT HEADER */}
+					<motion.div variants={headerVariants} className="text-left">
+						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
+							<h2 className="sr-only projectSection__header">Projects</h2>
+							<h3 className="header relative inline-block flex">
+								Some projects i built.
+								<motion.span
+									variants={underlineVariants}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"
+								></motion.span>
+							</h3>
+						</div>
+					</motion.div>
 
-				{/* ============================== CONTENT */}
-				<div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 text-[#22050c] w-full">
-					{/* ============================== PROJECT BOARD */}
-					<ProjectBoard items={projects} />
-				</div>
-			</div>
+					{/* ============================== CONTENT */}
+					<motion.div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 w-full pb-[5rem]">
+						{/* ============================== PROJECT BOARD */}
+						<ProjectBoard items={projects} />
+					</motion.div>
+				</motion.div>
 
-			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD] to-transparent"></div>
+				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
+				<motion.div
+					variants={dividerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false, amount: 0.2 }}
+					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-left"
+				/>
+			</motion.div>
 		</SectionFrame>
 	);
 };

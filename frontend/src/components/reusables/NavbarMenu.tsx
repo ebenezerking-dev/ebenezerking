@@ -1,5 +1,13 @@
 // =====================================
-// src/Components/NavbarMenu.tsx
+// src/Components/reusables/NavbarMenu.tsx
+// =====================================
+import { motion, AnimatePresence } from "framer-motion";
+import {
+	backdropVariants,
+	mobileMenuVariants,
+	mobileMenuItemVariants,
+} from "./animations/sectionAnimations";
+
 // =====================================
 interface NavbarMenuProps {
 	isOpen: boolean;
@@ -14,59 +22,92 @@ export default function NavbarMenu({
 	topOffset,
 }: NavbarMenuProps) {
 	return (
-		<>
-			{/* ================= BACKDROP */}
-			<div
-				onClick={toggleMenu}
-				className={`fixed inset-0 z-30 bg-black/10 backdrop-blur-[2px] transition-opacity duration-300 ${
-					isOpen
-						? "opacity-100 pointer-events-auto"
-						: "opacity-0 pointer-events-none"
-				}`}
-			/>
-			{/* ================= MENU */}
-			<div
-				className={`fixed left-0 w-full z-40 bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD] text-lg text-[#22050c] font-bold shadow-lg transition-all duration-300 ease-in-out ${
-					isOpen
-						? "translate-y-0 opacity-100 pointer-events-auto"
-						: "-translate-y-6 opacity-0 pointer-events-none"
-				}`}
-				style={{
-					top: `${topOffset}px`,
-				}}
-			>
-				{/* ================= NAV UN-ORDERED LIST */}
-				<ul className="nav-list text-center">
-					{/* ================= LIST */}
-					<li className="nav-item nav-item-hover group">
-						<a href="#about" onClick={toggleMenu} className="nav-link">
-							about
-						</a>
-						<div className="nav-divider" />
-					</li>
+		<AnimatePresence>
+			{isOpen && (
+				<>
+					{/* ================= BACKDROP */}
+					<motion.div
+						onClick={toggleMenu}
+						variants={backdropVariants}
+						initial="hidden"
+						animate="visible"
+						exit="exit"
+						className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm cursor-pointer"
+					/>
 
-					<li className="nav-item nav-item-hover group">
-						<a href="#projects" onClick={toggleMenu} className="nav-link">
-							projects
-						</a>
-						<div className="nav-divider" />
-					</li>
+					{/* ================= MENU */}
+					<motion.div
+						variants={mobileMenuVariants}
+						initial="hidden"
+						animate="visible"
+						exit="exit"
+						className="fixed left-0 w-full z-40 bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] text-lg font-bold shadow-2xl overflow-hidden"
+						style={{
+							top: `${topOffset}px`,
+						}}
+					>
+						{/* ================= NAV UN-ORDERED LIST */}
+						<ul className="nav-list text-center py-2">
+							{/* ================= LIST ITEMS */}
+							<motion.li
+								variants={mobileMenuItemVariants}
+								className="nav-item group relative"
+							>
+								<a
+									href="#about"
+									onClick={toggleMenu}
+									className="nav-link block py-2 px-6 transition-colors duration-300 group-hover:text-[#00ff91]"
+								>
+									about
+								</a>
+								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
+							</motion.li>
 
-					<li className="nav-item nav-item-hover group">
-						<a href="#services" onClick={toggleMenu} className="nav-link">
-							services
-						</a>
-						<div className="nav-divider" />
-					</li>
+							<motion.li
+								variants={mobileMenuItemVariants}
+								className="nav-item group relative"
+							>
+								<a
+									href="#projects"
+									onClick={toggleMenu}
+									className="nav-link block py-2 px-6 transition-colors duration-300 group-hover:text-[#00ff91]"
+								>
+									projects
+								</a>
+								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
+							</motion.li>
 
-					<li className="nav-item nav-item-hover group">
-						<a href="#contact" onClick={toggleMenu} className="nav-link">
-							contact
-						</a>
-						<div className="nav-divider" />
-					</li>
-				</ul>
-			</div>
-		</>
+							<motion.li
+								variants={mobileMenuItemVariants}
+								className="nav-item group relative"
+							>
+								<a
+									href="#services"
+									onClick={toggleMenu}
+									className="nav-link block py-2 px-6 transition-colors duration-300 group-hover:text-[#00ff91]"
+								>
+									services
+								</a>
+								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
+							</motion.li>
+
+							<motion.li
+								variants={mobileMenuItemVariants}
+								className="nav-item group relative"
+							>
+								<a
+									href="#contact"
+									onClick={toggleMenu}
+									className="nav-link block py-2 px-6 transition-colors duration-300 group-hover:text-[#00ff91]"
+								>
+									contact
+								</a>
+								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
+							</motion.li>
+						</ul>
+					</motion.div>
+				</>
+			)}
+		</AnimatePresence>
 	);
 }

@@ -28,7 +28,7 @@ export default function RippleButton({
 		<a
 			href={href}
 			onClick={onClick}
-			className={`relative inline-flex items-center justify-center ${sizeClasses[size]} overflow-hidden tracking-tighter text-[#00ff91] font-bold bg-[#000000] border-r-6 border-orange-500 hover:border-[#00ff91] rounded-md group transition-all duration-300 hover:scale-105 active:scale-95`}
+			className={`relative inline-flex items-center justify-center ${sizeClasses[size]} overflow-hidden tracking-tighter text-[#00ff91] font-bold bg-[#000000] border-r-6 border-orange-500 hover:text-[#000000] hover:border-[#00ff91] rounded-md group transition-all duration-300 hover:scale-105 active:scale-95`}
 		>
 			{/* Expanding circle effect */}
 			<span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-orange-500 rounded-full group-hover:w-56 group-hover:h-56" />

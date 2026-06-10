@@ -5,10 +5,12 @@ import Navbar from "../components/reusables/Navbar";
 import Footer from "../components/reusables/Footer";
 import BackToTop from "../components/reusables/BackToTop";
 
+// =====================================
 interface LayoutProps {
 	children: React.ReactNode;
 }
 
+// =====================================
 function Layout({ children }: LayoutProps) {
 	return (
 		<div className="flex flex-col min-h-screen w-full relative">

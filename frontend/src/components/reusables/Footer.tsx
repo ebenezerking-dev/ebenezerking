@@ -27,14 +27,14 @@ function Footer() {
 			animate={footerMotion.animate}
 			exit={footerMotion.exit}
 			transition={footerTransition}
-			className="footer__parent relative bg-gradient-to-r from-[#000AFD] via-[#00FF91] to-[#000AFD] w-full py-[2rem] px-[1.5rem]"
+			className="footer__parent relative bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] w-full py-[2rem] px-[1.5rem]"
 		>
 			<div className="relative z-20 max-w-7xl mx-auto w-full">
 				{/* ===================================== MAIN FOOTER CONTENTS*/}
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-8">
 					{/* COLUMN ONE - RESUME */}
 					<div>
-						<h3 className="inline-block text-[#00ff91] font-bold text-xl bg-[#000000] px-2 rounded-[0.5rem] border-b-6 border-orange-500 hover:border-[#00ff91] mb-3 transition-colors duration-300">
+						<button className="inline-block text-[#00ff91] font-bold text-xl bg-[#000000] px-2 rounded-[0.5rem] border-b-6 border-orange-500 hover:border-[#00ff91] mb-3 transition-colors duration-300">
 							<a
 								href="https://docs.google.com/document/d/1rMZx8aLk1ZitCwSRTK706o19mj5UgyeQGABCZt6eAJg/edit?usp=sharing"
 								target="_blank"
@@ -42,15 +42,17 @@ function Footer() {
 							>
 								Resume
 							</a>
-						</h3>
-						<p className="text-[#22050c] text-md font-semibold leading-relaxed">
+						</button>
+
+						{/* =================== PARAGRAPH */}
+						<p className="text-md leading-relaxed text-white/80">
 							Full-stack developer crafting meaningful digital experiences with
 							React, Node.js, and modern web technologies.
 						</p>
 					</div>
 
-					{/* COLUMN TWO - QUICK LINKS */}
-					<div className="flex justify-start text-[#22050c] lg:justify-center">
+					{/* ==================== COLUMN TWO - QUICK LINKS */}
+					<div className="flex justify-start lg:justify-center">
 						<div>
 							<h6 className="relative font-bold mb-5 text-xl uppercase tracking-wider">
 								Explore
@@ -61,7 +63,7 @@ function Footer() {
 									<li key={item}>
 										<a
 											href={`#${item.toLowerCase()}`}
-											className="inline-block text-[#00ff91] font-bold text-xl bg-[#000000] px-2 rounded-[0.5rem] border-b-6 border-orange-500 hover:border-[#00ff91] transition-colors duration-300"
+											className="inline-block font-bold text-xl px-2 rounded-[0.5rem] border-b-6 border-orange-500 hover:border-[#00ff91] transition-colors duration-300 text-white/80"
 										>
 											{item}
 										</a>
@@ -71,13 +73,13 @@ function Footer() {
 						</div>
 					</div>
 
-					{/* COLUMN THREE: CONTACT */}
-					<div className="footer__contact flex flex-col items-end text-[#22050c]">
+					{/* ==================== COLUMN THREE: CONTACT */}
+					<div className="footer__contact flex flex-col items-end">
 						<h6 className="relative font-bold mb-5 text-xl uppercase tracking-wider mb-3">
 							Hire or recommend me
 							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
 						</h6>
-						<p className="text-[#22050c] text-md font-semibold mb-1">
+						<p className="text-md font-semibold mb-1 text-white/80">
 							Get in touch!
 						</p>
 						<a
@@ -85,18 +87,15 @@ function Footer() {
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="Whatsapp"
-							className="hover:scale-110 transition-transform duration-300"
+							className="hover:scale-110 hover:text-[#00ff91] transition-transform duration-300 text-white/80"
 						>
-							<FaWhatsappSquare
-								size={32}
-								className="text-[#22050c] hover:text-[#00ff91] transition-colors"
-							/>
+							<FaWhatsappSquare size={32} />
 						</a>
 					</div>
 				</div>
 
-				{/* Bottom bar: Social + Copyright */}
-				<div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 pt-6 border-t border-[#000AFD]/20 text-[#22050c]">
+				{/* ==================== BOTTOM: SOCIALS + COPYRIGHT */}
+				<div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 pt-6 border-t border-[#000AFD]/80">
 					<nav>
 						<ul className="flex gap-1">
 							{[
@@ -122,7 +121,7 @@ function Footer() {
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label={social.label}
-										className="inline-flex items-center justify-center p-2 hover:text-[#00ff91] transition-all duration-300"
+										className="inline-flex items-center justify-center p-2 hover:text-[#00ff91] transition-all duration-300 text-white/80"
 									>
 										<social.icon className="text-[1.5rem]" />
 									</a>
@@ -131,7 +130,7 @@ function Footer() {
 						</ul>
 					</nav>
 
-					<div className="footer__date text-sm text-center lg:text-right">
+					<div className="footer__date text-sm text-center lg:text-right text-white/80">
 						&copy; {date}. Designed &amp; built by Ebenezer King
 					</div>
 				</div>
