@@ -1,7 +1,7 @@
 // =====================================
-// src/Components/AboutSection.tsx
+// src/components/section/AboutSection.tsx
 // ===================================== ABOUT SECTION COMPONENT
-import SectionFrame from "../components/reusables/SectionFrame";
+import SectionFrame from "../reusables/SectionFrame";
 import { motion } from "framer-motion";
 import {
 	containerVariants,
@@ -10,7 +10,7 @@ import {
 	underlineVariants,
 	dividerVariants,
 	viewportRepeat,
-} from "./reusables/animations/sectionAnimations";
+} from "../reusables/animations/sectionAnimations";
 
 // ===================================== COMPONENT
 const AboutSection = () => {

@@ -1,9 +1,9 @@
 // =====================================
 // SERVICES SECTION
-// src/Components/ServicesSection.tsx
+// src/components/sections/ServicesSection.tsx
 // =====================================
-import CardSlider from "../components/reusables/CardSlider";
-import SectionFrame from "../components/reusables/SectionFrame";
+import CardSlider from "../reusables/CardSlider";
+import SectionFrame from "../reusables/SectionFrame";
 import { motion } from "framer-motion";
 import {
 	containerVariants,
@@ -11,7 +11,7 @@ import {
 	underlineVariants,
 	dividerVariants,
 	viewportRepeat,
-} from "./reusables/animations/sectionAnimations";
+} from "../reusables/animations/sectionAnimations";
 
 // =====================================
 type Service = {

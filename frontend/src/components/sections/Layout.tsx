@@ -1,9 +1,9 @@
 // =====================================
-// src/Components/Layout.tsx
+// src/components/sections/Layout.tsx
 // =====================================
-import Navbar from "../components/reusables/Navbar";
-import Footer from "../components/reusables/Footer";
-import BackToTop from "../components/reusables/BackToTop";
+import Navbar from "../reusables/Navbar";
+import Footer from "../reusables/Footer";
+import BackToTop from "../reusables/BackToTop";
 
 // =====================================
 interface LayoutProps {
@@ -14,22 +14,22 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
 	return (
 		<div className="flex flex-col min-h-screen w-full relative">
-			{/* HEADER */}
+			{/* =================== HEADER */}
 			<header>
 				<Navbar />
 			</header>
 
-			{/* MAIN */}
+			{/* =================== MAIN */}
 			<main className="flex-grow flex flex-col w-full relative z-0 pt-[var(--navbar-height)]">
 				{children}
 			</main>
 
-			{/* FOOTER */}
+			{/* =================== FOOTER */}
 			<footer>
 				<Footer />
 			</footer>
 
-			{/* BACK TO TOP */}
+			{/* =================== BACK TO TOP */}
 			<BackToTop />
 		</div>
 	);

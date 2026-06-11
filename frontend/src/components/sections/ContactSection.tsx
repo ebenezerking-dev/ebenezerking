@@ -1,12 +1,12 @@
 // =====================================
 // CONTACT SECTION
-// src/Components/ContactSection.tsx
+// src/components/sections/ContactSection.tsx
 // =====================================
 import { useState } from "react";
-import SectionFrame from "../components/reusables/SectionFrame";
-import { useToast } from "../hooks/useToast";
-import { Toast } from "./ui/Toast";
-import { LiquidButton } from "./ui/LiquidButton";
+import SectionFrame from "../reusables/SectionFrame";
+import { useToast } from "../../hooks/useToast";
+import { Toast } from "../ui/Toast";
+import { LiquidButton } from "../ui/LiquidButton";
 import { motion, AnimatePresence } from "framer-motion";
 import {
 	containerVariants,
@@ -19,7 +19,7 @@ import {
 	formFieldVariants,
 	formButtonVariants,
 	toastVariants,
-} from "./reusables/animations/sectionAnimations";
+} from "../reusables/animations/sectionAnimations";
 
 // =====================================
 type FormState = {

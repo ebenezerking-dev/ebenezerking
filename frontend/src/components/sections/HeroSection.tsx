@@ -1,16 +1,15 @@
 // =====================================
-// src/Components/HeroSection.tsx
+// src/components/sections/HeroSection.tsx
 // ===================================== HOME SECTION COMPONENT
-import Kingv2 from "../Assets/profilePic/kingAnimePp.webp";
-import king from "../Assets/backgroundImage/kingAnimePortrait.webp";
+import King from "../../Assets/profilePic/kingAnimePp.webp";
+import kingAnime from "../../Assets/backgroundImage/kingAnimePortrait.webp";
 import { motion } from "framer-motion";
-import TimeDate from "./reusables/TimeDate";
+import TimeDate from "../reusables/TimeDate";
 import {
 	heroContainerVariants,
 	heroTitleVariants,
 	mobileHeroVariants,
-	viewportRepeat,
-} from "./reusables/animations/sectionAnimations";
+} from "../reusables/animations/sectionAnimations";
 
 const HeroSection = () => {
 	return (
@@ -19,7 +18,7 @@ const HeroSection = () => {
 				{/* ============================== SMALL SCREENS */}
 				<div className="smallScreens relative flex flex-col md:hidden w-full h-screen overflow-hidden flex items-center justify-center">
 					<img
-						src={king}
+						src={kingAnime}
 						alt="Background"
 						className="smallScreens__backgroundImage absolute inset-0 w-full h-full object-cover object-[center_80%] z-0"
 					/>
@@ -29,7 +28,6 @@ const HeroSection = () => {
 								initial="hidden"
 								animate="visible"
 								whileInView="visible"
-								viewport={viewportRepeat}
 								variants={mobileHeroVariants}
 								className="bg-[#000000]/30 text-2xl font-unna font-bold uppercase border-t-12 border-b-12 border-orange-500 rounded-[1rem] hover:bg-[#000000] hover:border-[#00ff91] transition duration-300 p-4 cursor-pointer"
 							>
@@ -115,7 +113,7 @@ const HeroSection = () => {
 										}}
 									>
 										<img
-											src={Kingv2}
+											src={King}
 											alt="King"
 											className="object-cover w-full h-auto scale-x-[-1] rounded-br-[5rem] border-b-6 border-orange-500 group-hover:border-[#00ff91] transition-all duration-500"
 										/>

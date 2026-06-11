@@ -1,9 +1,16 @@
 // =====================================
 // src/Components/Reusables/Footer.jsx
 // ===================================== ANIMATION CONFIG
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaLinkedin, FaGithub, FaWhatsappSquare } from "react-icons/fa";
+import {
+	leftFooterVariants,
+	centerFooterVariants,
+	rightFooterVariants,
+	hoverUnderlineVariants,
+	viewportRepeat,
+} from "./animations/sectionAnimations";
 
 // =====================================
 const footerMotion = {
@@ -33,7 +40,12 @@ function Footer() {
 				{/* ===================================== MAIN FOOTER CONTENTS*/}
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-8">
 					{/* COLUMN ONE - RESUME */}
-					<div>
+					<motion.div
+						variants={leftFooterVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportRepeat}
+					>
 						<button className="inline-block text-[#00ff91] font-bold text-xl bg-[#000000] px-2 rounded-[0.5rem] border-b-6 border-orange-500 hover:border-[#00ff91] mb-3 transition-colors duration-300">
 							<a
 								href="https://docs.google.com/document/d/1rMZx8aLk1ZitCwSRTK706o19mj5UgyeQGABCZt6eAJg/edit?usp=sharing"
@@ -46,13 +58,30 @@ function Footer() {
 
 						{/* =================== PARAGRAPH */}
 						<p className="text-md leading-relaxed text-white/80">
-							Full-stack developer crafting meaningful digital experiences with
-							React, Node.js, and modern web technologies.
+							Get in touch:{" "}
+							<motion.a
+								href="mailto:contact@ebenezerking.com"
+								className="relative text-lg hover:text-[#00FF91] transition-colors"
+								initial="hidden"
+								whileHover="visible"
+							>
+								contact@ebenezerking.com
+								<motion.span
+									variants={hoverUnderlineVariants}
+									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-[#00FF91] rounded-full"
+								/>
+							</motion.a>
 						</p>
-					</div>
+					</motion.div>
 
 					{/* ==================== COLUMN TWO - QUICK LINKS */}
-					<div className="flex justify-start lg:justify-center">
+					<motion.div
+						variants={centerFooterVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportRepeat}
+						className="flex justify-start lg:justify-center"
+					>
 						<div>
 							<h6 className="relative font-bold mb-5 text-xl uppercase tracking-wider">
 								Explore
@@ -71,10 +100,16 @@ function Footer() {
 								))}
 							</ul>
 						</div>
-					</div>
+					</motion.div>
 
 					{/* ==================== COLUMN THREE: CONTACT */}
-					<div className="footer__contact flex flex-col items-end">
+					<motion.div
+						variants={rightFooterVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportRepeat}
+						className="footer__contact flex flex-col items-end"
+					>
 						<h6 className="relative font-bold mb-5 text-xl uppercase tracking-wider mb-3">
 							Hire or recommend me
 							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
@@ -91,7 +126,7 @@ function Footer() {
 						>
 							<FaWhatsappSquare size={32} />
 						</a>
-					</div>
+					</motion.div>
 				</div>
 
 				{/* ==================== BOTTOM: SOCIALS + COPYRIGHT */}

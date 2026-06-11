@@ -1,8 +1,8 @@
 // =====================================
-// src/Components/ProjectsSection.tsx
+// src/components/sections/ProjectsSection.tsx
 // ===================================== PROJECTS SECTION COMPONENT
-import ProjectBoard from "../components/reusables/ProjectBoard";
-import SectionFrame from "../components/reusables/SectionFrame";
+import ProjectBoard from "../reusables/ProjectBoard";
+import SectionFrame from "../reusables/SectionFrame";
 import { motion } from "framer-motion";
 import {
 	containerVariants,
@@ -10,15 +10,15 @@ import {
 	underlineVariants,
 	dividerVariants,
 	viewportRepeat,
-} from "./reusables/animations/sectionAnimations";
+} from "../reusables/animations/sectionAnimations";
 
-import MobileT from "../Assets/Projects/taxlator/images/Mobile.webp";
-import IpadT from "../Assets/Projects/taxlator/images/iPad.webp";
-import MacbookT from "../Assets/Projects/taxlator/images/Macbook.webp";
+import MobileT from "../../Assets/Projects/taxlator/images/Mobile.webp";
+import IpadT from "../../Assets/Projects/taxlator/images/iPad.webp";
+import MacbookT from "../../Assets/Projects/taxlator/images/Macbook.webp";
 
-import Macbook from "../Assets/Projects/incoming/Macbook.webp";
-import Ipad from "../Assets/Projects/incoming/iPad.webp";
-import Mobile from "../Assets/Projects/incoming/iPhone.webp";
+import Macbook from "../../Assets/Projects/incoming/Macbook.webp";
+import Ipad from "../../Assets/Projects/incoming/iPad.webp";
+import Mobile from "../../Assets/Projects/incoming/iPhone.webp";
 
 // =====================================
 const projects = [

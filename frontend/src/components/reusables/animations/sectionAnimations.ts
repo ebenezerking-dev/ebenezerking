@@ -3,6 +3,17 @@
 // ===================================== SHARED ANIMATION VARIANTS
 import type { Variants } from "framer-motion";
 
+// ===================================== HELPER FUNCTION FOR VIEWPORT
+export const viewportOnce = {
+	once: true,
+	amount: 0.2,
+};
+
+export const viewportRepeat = {
+	once: false,
+	amount: 0.2,
+};
+
 // ===================================== MOBILE MENU VARIANTS
 export const backdropVariants: Variants = {
 	hidden: { opacity: 0 },
@@ -60,6 +71,47 @@ export const mobileMenuItemVariants: Variants = {
 	},
 };
 
+// ===================================== HERO VARIANTS
+export const mobileHeroVariants: Variants = {
+	hidden: {
+		opacity: 0,
+		x: -300,
+	},
+	visible: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 0.5,
+			ease: [1.5, 0.5, 0.5, 0.5],
+			delay: 0.5,
+		},
+	},
+};
+
+export const heroContainerVariants: Variants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.2,
+			delayChildren: 0.1,
+		},
+	},
+};
+
+export const heroTitleVariants: Variants = {
+	hidden: { opacity: 0, x: -100 },
+	visible: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 0.6,
+			ease: [0.25, 0.1, 0.25, 1],
+			delay: 0.3,
+		},
+	},
+};
+
 // ===================================== CONTAINER VARIANTS
 export const containerVariants: Variants = {
 	hidden: { opacity: 0 },
@@ -72,9 +124,9 @@ export const containerVariants: Variants = {
 	},
 };
 
-// ===================================== ITEM VARIANTS
-export const itemVariants: Variants = {
-	hidden: { opacity: 0, y: 20 },
+// ===================================== HEADER VARIANTS
+export const headerVariants: Variants = {
+	hidden: { opacity: 0, y: 15 },
 	visible: {
 		opacity: 1,
 		y: 0,
@@ -82,9 +134,9 @@ export const itemVariants: Variants = {
 	},
 };
 
-// ===================================== HEADER VARIANTS
-export const headerVariants: Variants = {
-	hidden: { opacity: 0, y: 15 },
+// ===================================== ITEM VARIANTS
+export const itemVariants: Variants = {
+	hidden: { opacity: 0, y: 20 },
 	visible: {
 		opacity: 1,
 		y: 0,
@@ -148,63 +200,6 @@ export const scaleVariants: Variants = {
 		scale: 1,
 		transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
 	},
-};
-
-// ===================================== HERO VARIANTS
-export const heroContainerVariants: Variants = {
-	hidden: { opacity: 0 },
-	visible: {
-		opacity: 1,
-		transition: {
-			staggerChildren: 0.2,
-			delayChildren: 0.1,
-		},
-	},
-};
-
-export const heroTitleVariants: Variants = {
-	hidden: { opacity: 0, x: -100 },
-	visible: {
-		opacity: 1,
-		x: 0,
-		transition: {
-			duration: 0.6,
-			ease: [0.25, 0.1, 0.25, 1],
-			delay: 0.3,
-		},
-	},
-};
-
-export const mobileHeroVariants: Variants = {
-	hidden: {
-		opacity: 0,
-		x: -300,
-	},
-	visible: {
-		opacity: 1,
-		x: 0,
-		transition: {
-			duration: 0.5,
-			ease: [0.5, 0.5, 0.5, 0.5],
-			delay: 0.5,
-		},
-	},
-};
-
-// ===================================== HELPER FUNCTION FOR VIEWPORT
-export const viewportConfig = {
-	once: false,
-	amount: 0.2,
-};
-
-export const viewportOnce = {
-	once: true,
-	amount: 0.2,
-};
-
-export const viewportRepeat = {
-	once: false,
-	amount: 0.2,
 };
 
 // ===================================== PROJECT CARD VARIANTS
@@ -297,5 +292,73 @@ export const toastVariants: Variants = {
 		y: -20,
 		scale: 0.95,
 		transition: { duration: 0.2 },
+	},
+};
+
+// ===================================== FOOTER VARIANTS
+export const leftFooterVariants: Variants = {
+	hidden: {
+		opacity: 0,
+		x: -100,
+	},
+
+	visible: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 0.6,
+			ease: [0.25, 0.1, 0.25, 1],
+			delay: 0.3,
+		},
+	},
+};
+
+export const rightFooterVariants: Variants = {
+	hidden: {
+		opacity: 0,
+		x: 100,
+	},
+
+	visible: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 0.6,
+			ease: [0.25, 0.1, 0.25, 1],
+			delay: 0.3,
+		},
+	},
+};
+
+export const centerFooterVariants: Variants = {
+	hidden: {
+		opacity: 0,
+		y: 100,
+	},
+
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 0.9,
+			ease: [0.25, 0.1, 0.25, 1],
+			delay: 0.3,
+		},
+	},
+};
+
+// ===================================== HOVER UNDERLINE VARIANTS
+export const hoverUnderlineVariants: Variants = {
+	hidden: {
+		width: 0,
+		opacity: 0,
+	},
+	visible: {
+		width: "100%",
+		opacity: 1,
+		transition: {
+			duration: 0.4,
+			ease: [0.25, 0.1, 0.25, 1],
+		},
 	},
 };
