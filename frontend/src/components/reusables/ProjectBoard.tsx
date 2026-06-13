@@ -158,7 +158,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								>
 									{project.live && (
 										<motion.div variants={scaleVariants}>
-											<RippleButton href={project.live} size="lg">
+											<RippleButton href={project.live} size="lg" newTab>
 												Live Demo
 											</RippleButton>
 										</motion.div>
@@ -166,7 +166,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 									{project.github && (
 										<motion.div variants={scaleVariants}>
-											<RippleButton href={project.github} size="lg">
+											<RippleButton href={project.github} size="lg" newTab>
 												GitHub
 											</RippleButton>
 										</motion.div>

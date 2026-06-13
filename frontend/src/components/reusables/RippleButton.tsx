@@ -9,6 +9,7 @@ interface RippleButtonProps {
 	children: ReactNode;
 	onClick?: () => void;
 	size?: "sm" | "md" | "lg";
+	newTab?: boolean;
 }
 
 // =====================================
@@ -17,6 +18,7 @@ export default function RippleButton({
 	children,
 	onClick,
 	size = "md",
+	newTab = false,
 }: RippleButtonProps) {
 	const sizeClasses = {
 		sm: "px-3 py-1 text-xs",
@@ -28,6 +30,8 @@ export default function RippleButton({
 		<a
 			href={href}
 			onClick={onClick}
+			target={newTab ? "_blank" : undefined}
+			rel={newTab ? "noopener noreferrer" : undefined}
 			className={`relative inline-flex items-center justify-center ${sizeClasses[size]} overflow-hidden tracking-tighter text-[#00ff91] font-bold bg-[#000000] border-r-6 border-orange-500 hover:text-[#000000] hover:border-[#00ff91] rounded-md group transition-all duration-300 hover:scale-105 active:scale-95`}
 		>
 			{/* Expanding circle effect */}
