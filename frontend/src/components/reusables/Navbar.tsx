@@ -55,9 +55,9 @@ function Navbar() {
 				animate={navbarMotion.animate}
 				exit={navbarMotion.exit}
 				transition={navbarTransition}
-				className="navbar__parent fixed top-0 left-0 z-50 bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] w-full flex flex-col px-4 py-[0.3rem] lg:py-2 lg:px-6 border-b-6 border-[#000AFD]/30"
+				className="navbar__parent fixed top-0 left-0 z-50 bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] w-full flex flex-col px-6 py-[0.3rem] lg:py-2 border-b-6 border-[#000AFD]/30"
 			>
-				<div className="navbar__main relative flex justify-between items-center max-w-7xl mx-auto w-full min-w-0 overflow-x-clip px-4 lg:px-4">
+				<div className="navbar__main relative flex justify-between items-center max-w-7xl mx-auto w-full min-w-0 overflow-x-clip px-4 sm:px-6 lg:px-6 lg:max-w-none">
 					{/* ========================= LOGO  */}
 					<div>
 						<img
