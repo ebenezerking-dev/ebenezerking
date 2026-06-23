@@ -73,7 +73,7 @@ const CardSlider = <T,>({
 			initial="hidden"
 			whileInView="visible"
 			viewport={viewportRepeat}
-			className="w-full pb-[5rem]"
+			className="w-full pb-20 px-4"
 		>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 				{items.map((item, index) => (

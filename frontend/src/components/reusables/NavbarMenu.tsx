@@ -60,7 +60,7 @@ export default function NavbarMenu({
 								>
 									about
 								</a>
-								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
+								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
 							</motion.li>
 
 							<motion.li
@@ -74,7 +74,7 @@ export default function NavbarMenu({
 								>
 									projects
 								</a>
-								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
+								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
 							</motion.li>
 
 							<motion.li
@@ -88,7 +88,7 @@ export default function NavbarMenu({
 								>
 									services
 								</a>
-								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
+								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
 							</motion.li>
 
 							<motion.li
@@ -102,7 +102,7 @@ export default function NavbarMenu({
 								>
 									contact
 								</a>
-								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
+								<div className="nav-divider absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-[#000AFD]/20 to-transparent transition-all duration-300 group-hover:via-[#00ff91] group-hover:shadow-[0_0_14px_rgba(0,255,145,0.8)]" />
 							</motion.li>
 						</ul>
 					</motion.div>

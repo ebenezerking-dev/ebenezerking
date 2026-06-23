@@ -19,7 +19,7 @@ export const Toast = ({
 
 	return (
 		<div
-			className={`fixed top-[7rem] right-[35rem] z-50 px-4 py-3 rounded-lg text-white shadow-lg animate-fade-in ${styles[type]}`}
+			className={`fixed top-28 right-140 z-50 px-4 py-3 rounded-lg text-white shadow-lg animate-fade-in ${styles[type]}`}
 		>
 			{message}
 		</div>

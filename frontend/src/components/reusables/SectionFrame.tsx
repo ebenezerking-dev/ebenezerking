@@ -19,7 +19,7 @@ export default function SectionFrame({
 	return (
 		<section
 			id={id}
-			className={`relative bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] pt-[4rem] pb-[1rem] px-4 text-2xl md:text-2xl lg:text-xl overflow-hidden ${className}`}
+			className={`relative bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] pt-16 pb-4 px-4 text-2xl md:text-2xl lg:text-xl overflow-hidden ${className}`}
 		>
 			{children}
 		</section>

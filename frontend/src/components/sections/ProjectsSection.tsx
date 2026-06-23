@@ -81,10 +81,10 @@ const ProjectsSection = () => {
 					className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
 					{/* ============================== CONTENT HEADER */}
-					<motion.div variants={headerVariants} className="text-left">
-						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
+					<motion.div variants={headerVariants} className="text-left px-4">
+						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="sr-only projectSection__header">Projects</h2>
-							<h3 className="header relative inline-block flex">
+							<h3 className="header relative inline-block">
 								Some projects i built.
 								<motion.span
 									variants={underlineVariants}
@@ -98,7 +98,7 @@ const ProjectsSection = () => {
 					</motion.div>
 
 					{/* ============================== CONTENT */}
-					<motion.div className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 w-full pb-[5rem]">
+					<motion.div className="content__paragraphs flex flex-col justify-center px-2 gap-4 lg:gap-3 w-full pb-20">
 						{/* ============================== PROJECT BOARD */}
 						<ProjectBoard items={projects} />
 					</motion.div>
@@ -110,7 +110,7 @@ const ProjectsSection = () => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: false, amount: 0.2 }}
-					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-left"
+					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
 		</SectionFrame>

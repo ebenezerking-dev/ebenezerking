@@ -20,16 +20,16 @@ const AboutSection = () => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
-				className="aboutSection__parent relative h-auto w-full flex flex-col overflow-hidden"
+				className="aboutSection__parent relative h-auto w-full flex flex-col overflow-hidden px-4"
 			>
 				{/* ============================== SECTION WRAPPER */}
 				<motion.div
 					variants={containerVariants}
-					className="aboutSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-[5rem]"
+					className="aboutSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
 				>
 					{/* ============================== CONTENT HEADER */}
 					<motion.div variants={headerVariants} className="text-left">
-						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
+						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="sr-only aboutSection__header">About Me</h2>
 							<h3 className="header relative inline-block">
 								I am Ebenezer King.
@@ -94,7 +94,7 @@ const AboutSection = () => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={viewportRepeat}
-					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-left"
+					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
 		</SectionFrame>

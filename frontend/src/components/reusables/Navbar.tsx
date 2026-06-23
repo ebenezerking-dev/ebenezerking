@@ -55,15 +55,15 @@ function Navbar() {
 				animate={navbarMotion.animate}
 				exit={navbarMotion.exit}
 				transition={navbarTransition}
-				className="navbar__parent fixed top-0 left-0 z-50 bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] w-full flex flex-col px-[1rem] py-[0.3rem] lg:py-[0.5rem] border-b-6 border-[#000AFD]/30"
+				className="navbar__parent fixed top-0 left-0 z-50 bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] w-full flex flex-col px-4 py-[0.3rem] lg:py-2 lg:px-6 border-b-6 border-[#000AFD]/30"
 			>
-				<div className="navbar__main relative flex justify-between items-center max-w-7xl mx-auto w-full">
+				<div className="navbar__main relative flex justify-between items-center max-w-7xl mx-auto w-full min-w-0 overflow-x-clip px-4 lg:px-4">
 					{/* ========================= LOGO  */}
 					<div>
 						<img
 							src={logoCom}
 							alt="logo"
-							className="w-25 bg-[#000000] p-3 rounded-[1rem]"
+							className="w-25 bg-[#000000] p-3 rounded-2xl"
 						/>
 					</div>
 
@@ -93,7 +93,11 @@ function Navbar() {
 								animate={{ rotate: isOpen ? 0 : 180 }}
 								transition={{ duration: 0.3 }}
 							>
-								{isOpen ? <FaTimes size={43} /> : <GiHamburgerMenu size={43} />}
+								{isOpen ? (
+									<FaTimes style={{ width: 36, height: 36 }} />
+								) : (
+									<GiHamburgerMenu style={{ width: 36, height: 36 }} />
+								)}
 							</motion.div>
 						</button>
 					</div>

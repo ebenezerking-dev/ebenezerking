@@ -136,8 +136,9 @@ const ContactSection = () => {
 					</AnimatePresence>
 
 					{/* =========================== HEADER */}
-					<motion.div variants={headerVariants} className="text-left">
-						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
+					<motion.div variants={headerVariants} className="text-left px-4">
+						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
+							<h2 className="sr-only contactSection__header">Contact</h2>
 							<h3 className="header relative inline-block">
 								Let's connect.
 								<motion.span
@@ -154,14 +155,14 @@ const ContactSection = () => {
 					{/* ========================= CONTACT FORM ======================== */}
 					<motion.div
 						variants={fadeInUpVariants}
-						className="flex flex-1 flex-col justify-center items-center pb-[5rem]"
+						className="flex flex-1 flex-col justify-center items-center px-2 pb-20"
 					>
 						<motion.div
 							variants={formContainerVariants}
 							initial="hidden"
 							whileInView="visible"
 							viewport={viewportRepeat}
-							className="form__wrapper w-full py-[1rem] mx-auto"
+							className="form__wrapper w-full py-4 mx-auto"
 						>
 							{/* =========================== FORM */}
 							<form
@@ -174,7 +175,7 @@ const ContactSection = () => {
 										type="text"
 										name="name"
 										placeholder="Your Name"
-										className="w-full px-4 py-2 border-b border-[#000AFD]/80 rounded-[0.5rem] bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-orange-500 transition-colors duration-300"
+										className="w-full px-4 py-2 border-b border-[#000AFD]/80 rounded-lg bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-orange-500 transition-colors duration-300"
 										value={formData.name}
 										onChange={handleChange}
 										required
@@ -187,7 +188,7 @@ const ContactSection = () => {
 										type="email"
 										name="email"
 										placeholder="Your Email"
-										className="w-full px-4 py-2 border-b border-[#000AFD]/80 rounded-[0.5rem] bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-orange-500 transition-colors duration-300"
+										className="w-full px-4 py-2 border-b border-[#000AFD]/80 rounded-lg bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-orange-500 transition-colors duration-300"
 										value={formData.email}
 										onChange={handleChange}
 										required
@@ -200,7 +201,7 @@ const ContactSection = () => {
 										name="message"
 										rows={4}
 										placeholder="Your Message"
-										className="w-full px-4 py-2 border-b border-[#000AFD]/80 rounded-[0.5rem] bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-orange-500 transition-colors duration-300 resize-none"
+										className="w-full px-4 py-2 border-b border-[#000AFD]/80 rounded-lg bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-orange-500 transition-colors duration-300 resize-none"
 										value={formData.message}
 										onChange={handleChange}
 										required
@@ -222,7 +223,7 @@ const ContactSection = () => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={viewportRepeat}
-					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-left"
+					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
 		</SectionFrame>

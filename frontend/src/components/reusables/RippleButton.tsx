@@ -70,7 +70,7 @@ export default function RippleButton({
 			</span>
 
 			{/* Gradient overlay */}
-			<span className="absolute inset-0 w-full h-full -mt-1 rounded-md opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-200" />
+			<span className="absolute inset-0 w-full h-full -mt-1 rounded-md opacity-30 bg-linear-to-b from-transparent via-transparent to-gray-200" />
 
 			{/* Button text */}
 			<span className="relative font-semibold capitalize z-10">{children}</span>

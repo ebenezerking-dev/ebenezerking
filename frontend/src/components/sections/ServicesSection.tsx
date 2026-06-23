@@ -73,8 +73,8 @@ const ServicesSection = () => {
 					className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
 					{/* ============================== CONTENT HEADER */}
-					<motion.div variants={headerVariants} className="text-left">
-						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-[14rem] bg-[#000000] p-3 rounded-[1rem]">
+					<motion.div variants={headerVariants} className="text-left px-4">
+						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="sr-only servicesSection__header">Services</h2>
 
 							<h3 className="header relative inline-block">
@@ -91,13 +91,15 @@ const ServicesSection = () => {
 					</motion.div>
 
 					{/* ============================== SERVICE CARDS SLIDER */}
-
 					<CardSlider<Service>
 						items={services}
 						staggerDelay={0.12}
 						cardAnimation="fadeUp"
 						renderItem={(service: Service, index: number) => (
-							<motion.div className="serviceCard h-full flex flex-col justify-start font-tinos bg-[#000000]/20 text-lg hover:text-[#00ff91] text-center px-4 py-[1rem] rounded-[0.5rem] md:rounded-[1rem] border-1 border-[#000AFD]/80 hover:bg-[#000000] hover:border-[#00ff91] transition-all duration-300">
+							<motion.div
+								key={index}
+								className="serviceCard h-full flex flex-col justify-start font-tinos bg-[#000000]/20 text-lg hover:text-[#00ff91] text-center px-4 py-4 rounded-lg md:rounded-2xl border border-[#000AFD]/80 hover:bg-[#000000] hover:border-[#00ff91] transition-all duration-300"
+							>
 								<h4 className="relative text-2xl font-unna font-bold mb-3">
 									{service.title}
 									<motion.span
@@ -139,7 +141,7 @@ const ServicesSection = () => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={viewportRepeat}
-					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-left"
+					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
 		</SectionFrame>

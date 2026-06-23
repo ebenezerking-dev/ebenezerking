@@ -39,7 +39,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 			initial="hidden"
 			whileInView="visible"
 			viewport={viewportRepeat}
-			className="projectBoard__parent flex flex-col gap-[3rem] w-full"
+			className="projectBoard__parent flex flex-col gap-12 w-full"
 		>
 			<AnimatePresence>
 				{items.map((project, index) => (
@@ -49,7 +49,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 							className="overflow-hidden"
 						>
 							{/* ================= IMAGES SECTION */}
-							<div className="relative w-full h-[22rem] flex justify-center overflow-hidden">
+							<div className="relative w-full h-60 sm:h-88 lg:h-90 flex justify-center overflow-hidden">
 								{/* ================= DESKTOP */}
 								{project.images.desktop && (
 									<motion.div
@@ -58,7 +58,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 										whileInView="visible"
 										viewport={viewportRepeat}
 										transition={{ delay: 0.2 }}
-										className="absolute z-10 bottom-[-3rem] md:bottom-0 w-full h-full flex justify-center"
+										className="absolute z-10 w-full h-full flex justify-center bottom-0"
 									>
 										<img
 											src={project.images.desktop}
@@ -76,7 +76,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 										whileInView="visible"
 										viewport={viewportRepeat}
 										transition={{ delay: 0.2 }}
-										className="absolute z-20 left-0 md:left-[5rem] lg:left-[12rem] bottom-[0.7rem] md:bottom-[0.7rem] h-[10rem] w-[5rem] md:h-[12.5rem] md:w-[6.5rem] bg-gradient-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] p-1 rounded-[1rem]"
+										className="absolute z-20 left-0 sm:left-24 bottom-14 sm:bottom-24 h-32 w-20 sm:h-40 sm:w-30 lg:h-60 lg:w-30 lg:left-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
 									>
 										<img
 											src={project.images.mobile}
@@ -94,7 +94,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 										whileInView="visible"
 										viewport={viewportRepeat}
 										transition={{ delay: 0.3 }}
-										className="absolute z-20 right-0 md:right-[5rem] lg:right-[12rem] bottom-[0.7rem] md:bottom-[0.7rem] h-[10.2rem] w-[7rem] md:h-[12.3rem] md:w-[7.9rem] bg-gradient-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] p-1 rounded-[1rem]"
+										className="absolute z-20 right-0 sm:right-24 bottom-7 sm:bottom-14 h-38 w-26 sm:h-50 sm:w-40 lg:h-60 lg:w-40 lg:right-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
 									>
 										<img
 											src={project.images.tablet}
@@ -108,10 +108,10 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 							{/* ================= PROJECT DETAILS */}
 							<motion.div
 								variants={containerVariants}
-								className="p-[1rem] flex flex-col items-start md:items-center gap-[1.4rem]"
+								className="py-4 px-2 flex flex-col items-start sm:items-center gap-[1.4rem]"
 							>
 								<motion.div variants={itemVariants}>
-									<div className="bg-[#000000]/20 p-2 rounded-[0.5rem]">
+									<div className="bg-[#000000]/20 p-2 rounded-lg">
 										<h3 className="relative text-2xl font-unna font-bold">
 											{project.title}
 											<motion.span
@@ -139,13 +139,13 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 								<motion.div
 									variants={containerVariants}
-									className="flex flex-wrap gap-[0.5rem] text-sm"
+									className="flex flex-wrap gap-2 text-sm"
 								>
 									{project.tech.map((tech, idx) => (
 										<motion.span
 											key={idx}
 											variants={techTagVariants}
-											className="bg-[#000000]/20 border border-[#000AFD]/80 p-2 rounded-[0.5rem]"
+											className="bg-[#000000]/20 border border-[#000AFD]/80 p-2 rounded-lg"
 										>
 											{tech}
 										</motion.span>
@@ -154,7 +154,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 								<motion.div
 									variants={containerVariants}
-									className="flex gap-[1rem] pt-[0.5rem]"
+									className="flex gap-4 pt-2"
 								>
 									{project.live && (
 										<motion.div variants={scaleVariants}>
@@ -181,7 +181,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								initial="hidden"
 								whileInView="visible"
 								viewport={viewportRepeat}
-								className="border-orange-500/30 my-[1rem] origin-left"
+								className="border-orange-500/30 my-4 origin-left"
 							/>
 						)}
 					</Fragment>

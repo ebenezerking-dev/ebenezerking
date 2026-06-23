@@ -13,19 +13,19 @@ interface LayoutProps {
 // =====================================
 function Layout({ children }: LayoutProps) {
 	return (
-		<div className="flex flex-col min-h-screen w-full relative">
+		<div className="flex flex-col min-h-screen relative">
 			{/* =================== HEADER */}
 			<header>
 				<Navbar />
 			</header>
 
 			{/* =================== MAIN */}
-			<main className="flex-grow flex flex-col w-full relative z-0 pt-[var(--navbar-height)]">
+			<main className="w-full grow flex flex-col relative z-0 pt-(--navbar-height)">
 				{children}
 			</main>
 
 			{/* =================== FOOTER */}
-			<footer>
+			<footer className="w-full relative z-0">
 				<Footer />
 			</footer>
 

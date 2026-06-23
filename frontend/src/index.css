@@ -17,6 +17,10 @@
 		user-select: none;
 	}
 
+	:root {
+		--navbar-height: 80px;
+	}
+
 	html {
 		font-size: 16px;
 		scroll-behavior: smooth;
@@ -29,45 +33,45 @@
 		width: 100%;
 		min-height: 100vh;
 		display: block;
+		overflow-x: hidden;
 	}
 }
 
 /* ================================= */
 /* COMPONENTS */
 @layer components {
-/* MOBILE MENU STYLES */
-.nav-item {
-  @apply relative w-full py-[0.8rem] px-[0.5rem] text-center transition-all duration-300;
-}
+	.nav-item {
+		@apply relative w-full py-[0.8rem] px-2 text-center transition-all duration-300;
+	}
 
-.nav-item:hover {
-  transform: translateY(-1px);
-}
+	.nav-item:hover {
+		transform: translateY(-1px);
+	}
 
-.nav-link {
-  @apply block w-full font-bold tracking-wide capitalize text-white transition-all duration-300;
-}
+	.nav-link {
+		@apply block w-full font-bold tracking-wide capitalize text-white transition-all duration-300;
+	}
 
-.nav-item:hover .nav-link {
-  color: #00ff91;
-  text-shadow: 0 0 8px rgba(0, 255, 145, 0.5);
-}
+	.nav-item:hover .nav-link {
+		color: #00ff91;
+		text-shadow: 0 0 8px rgba(0, 255, 145, 0.5);
+	}
 
-.nav-divider {
-  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[2px]
-    bg-gradient-to-r from-transparent via-[#000AFD]/20 to-transparent
-    transition-all duration-300;
-}
+	.nav-divider {
+		@apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5
+      bg-linear-to-r from-transparent via-[#000AFD]/20 to-transparent
+      transition-all duration-300;
+	}
 
-.nav-item:hover .nav-divider {
-  @apply via-[#00ff91];
-  box-shadow: 0 0 14px rgba(0, 255, 145, 0.8);
-  width: 90%;
-}
+	.nav-item:hover .nav-divider {
+		@apply via-[#00ff91];
+		box-shadow: 0 0 14px rgba(0, 255, 145, 0.8);
+		width: 90%;
+	}
 
-.nav-list {
-  @apply w-full flex flex-col pt-[2rem] px-[1rem] list-none;
-}
+	.nav-list {
+		@apply w-full flex flex-col pt-8 list-none;
+	}
 }
 
 /* ================================= */
@@ -92,17 +96,57 @@ input:-webkit-autofill:active {
 
 /* ================================= */
 /* NAVBAR RESPONSIVE BEHAVIOR */
-/* Ensures smooth transitions between mobile and desktop */
 @media (min-width: 1024px) {
-	/* Any desktop-specific navbar adjustments */
 	.navbar__parent {
 		@apply shadow-md;
 	}
 }
 
-/* Mobile menu backdrop blur fix for better performance */
 @media (max-width: 1023px) {
 	.backdrop-blur-sm {
 		backdrop-filter: blur(4px);
 	}
+}
+
+/* ================================= */
+/* FOOTER FIX */
+.footer__parent {
+	box-sizing: border-box !important;
+	max-width: 100vw !important;
+	overflow-x: hidden !important;
+}
+
+.footer__parent .max-w-7xl {
+	box-sizing: border-box !important;
+	max-width: 100% !important;
+}
+
+/* ================================= */
+/* OVERFLOW PROTECTION */
+img {
+	max-width: 100% !important;
+	height: auto !important;
+}
+
+.container,
+[class*="container"] {
+	max-width: 100% !important;
+	overflow-x: hidden !important;
+}
+
+.w-screen,
+.min-h-screen,
+.h-screen {
+	max-width: 100vw !important;
+}
+
+.flex,
+.grid {
+	min-width: 0;
+	min-height: 0;
+}
+
+.absolute,
+.fixed {
+	max-width: 100vw !important;
 }
