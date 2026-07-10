@@ -1,9 +1,10 @@
-// =====================================
 // src/components/sections/ProjectsSection.tsx
-// ===================================== PROJECTS SECTION COMPONENT
+// this is a section that renders the projects data for a career page
+// ================== IMPORTS
 import ProjectBoard from "../reusables/ProjectBoard";
-import SectionFrame from "../reusables/SectionFrame";
+import SectionFrame from "./Frames/SectionFrame";
 import { motion } from "framer-motion";
+import type { ProjectSection, Theme } from "../../types/career";
 import {
 	containerVariants,
 	headerVariants,
@@ -12,63 +13,16 @@ import {
 	viewportRepeat,
 } from "../reusables/animations/sectionAnimations";
 
-import MobileT from "../../Assets/Projects/taxlator/images/Mobile.webp";
-import IpadT from "../../Assets/Projects/taxlator/images/iPad.webp";
-import MacbookT from "../../Assets/Projects/taxlator/images/Macbook.webp";
+// ================== PROPS
+type ProjectsSectionProps = {
+	projects: ProjectSection;
+	theme: Theme;
+};
 
-import Macbook from "../../Assets/Projects/incoming/Macbook.webp";
-import Ipad from "../../Assets/Projects/incoming/iPad.webp";
-import Mobile from "../../Assets/Projects/incoming/iPhone.webp";
-
-// =====================================
-const projects = [
-	{
-		images: {
-			mobile: MobileT,
-			tablet: IpadT,
-			desktop: MacbookT,
-		},
-		title: "Taxlator",
-		description:
-			"Your tax calculator app with real-time updates and calculations.",
-		tech: [
-			"React",
-			"JavaScript",
-			"TypeScript",
-			"TailwindCSS",
-			"Express.js",
-			"Node.js",
-			"MongoDB",
-		],
-		live: "https://taxlator-v2.vercel.app/",
-		github: "https://github.com/ebenezerkingv2/taxlatorV2_frontend",
-	},
-	{
-		images: {
-			mobile: Mobile,
-			tablet: Ipad,
-			desktop: Macbook,
-		},
-		title: "velly",
-		description: "An online fashion retail store you can own. coming soon!",
-		tech: [
-			"React",
-			"JavaScript",
-			"TypeScript",
-			"TailwindCSS",
-			"Express.js",
-			"Node.js",
-			"PostgreSQL",
-		],
-		live: "https://kingv2.vercel.app/",
-		github: "https://github.com/ebenezerkingv2/kingv2",
-	},
-];
-// =====================================
-
-const ProjectsSection = () => {
+// ================== PROJECTS SECTION
+const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 	return (
-		<SectionFrame>
+		<SectionFrame id="projects" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -83,24 +37,22 @@ const ProjectsSection = () => {
 					{/* ============================== CONTENT HEADER */}
 					<motion.div variants={headerVariants} className="text-left px-4">
 						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
-							<h2 className="sr-only projectSection__header">Projects</h2>
-							<h3 className="header relative inline-block">
-								Some projects i built.
+							<h2 className="header relative inline-block">
+								{projects.title}
 								<motion.span
 									variants={underlineVariants}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
 									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"
-								></motion.span>
-							</h3>
+								/>
+							</h2>
 						</div>
 					</motion.div>
 
 					{/* ============================== CONTENT */}
 					<motion.div className="content__paragraphs flex flex-col justify-center px-2 gap-4 lg:gap-3 w-full pb-20">
-						{/* ============================== PROJECT BOARD */}
-						<ProjectBoard items={projects} />
+						<ProjectBoard items={projects.items} />
 					</motion.div>
 				</motion.div>
 

@@ -32,10 +32,10 @@ export default function RippleButton({
 			onClick={onClick}
 			target={newTab ? "_blank" : undefined}
 			rel={newTab ? "noopener noreferrer" : undefined}
-			className={`relative inline-flex items-center justify-center ${sizeClasses[size]} overflow-hidden tracking-tighter text-[#00ff91] font-bold bg-[#000000] border-r-6 border-orange-500 hover:text-[#000000] hover:border-[#00ff91] rounded-md group transition-all duration-300 hover:scale-105 active:scale-95`}
+			className={`relative inline-flex items-center justify-center ${sizeClasses[size]} overflow-hidden tracking-tighter text-white font-bold bg-[#000000] border-r-6 border-[#00ff91] hover:text-black hover:border-orange-500 rounded-md group transition-all duration-300 hover:scale-105 active:scale-95`}
 		>
 			{/* Expanding circle effect */}
-			<span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-orange-500 rounded-full group-hover:w-56 group-hover:h-56" />
+			<span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#00ff91] rounded-full group-hover:w-56 group-hover:h-56" />
 
 			{/* Left decorative wave */}
 			<span className="absolute bottom-0 left-0 h-full -ml-2">

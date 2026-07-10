@@ -109,7 +109,6 @@ input:-webkit-autofill:active {
 }
 
 /* ================================= */
-/* FOOTER FIX */
 .footer__parent {
 	box-sizing: border-box !important;
 	max-width: 100vw !important;

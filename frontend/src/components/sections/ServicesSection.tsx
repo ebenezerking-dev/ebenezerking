@@ -1,10 +1,10 @@
-// =====================================
-// SERVICES SECTION
 // src/components/sections/ServicesSection.tsx
-// =====================================
-import CardSlider from "../reusables/CardSlider";
-import SectionFrame from "../reusables/SectionFrame";
+// this is a section that renders the services data for a career page
+// ================== IMPORTS
+import ServiceCardSlider from "../reusables/ServiceCardSlider";
+import SectionFrame from "./Frames/SectionFrame";
 import { motion } from "framer-motion";
+import type { Service, Theme } from "../../types/career";
 import {
 	containerVariants,
 	headerVariants,
@@ -13,54 +13,15 @@ import {
 	viewportRepeat,
 } from "../reusables/animations/sectionAnimations";
 
-// =====================================
-type Service = {
-	title: string;
-	description: string;
-};
-
-// =====================================
-const services: Service[] = [
-	{
-		title: "Front-End Development",
-		description:
-			"Build responsive, modern React apps with reusable components and smooth animations.",
-	},
-	{
-		title: "Back-End Development",
-		description:
-			"Create secure, scalable APIs and server logic using Node.js, Express, MongoDB or PostgreSQL.",
-	},
-	{
-		title: "Full-Stack Solutions",
-		description:
-			"Deliver end-to-end applications: e-commerce platforms, real-time apps, and CMS solutions.",
-	},
-	{
-		title: "Code Review & Optimization",
-		description:
-			"Audit existing code for performance, fix inefficiencies, and improve maintainability.",
-	},
-	{
-		title: "Code Revamp & Modernization",
-		description:
-			"Refactor or rebuild frontend and backend code for better structure, scalability, and maintainability.",
-	},
-	{
-		title: "Deployment & Maintenance",
-		description:
-			"Deploy on AWS, Vercel, Netlify, or custom domains, optimize performance, and maintain your apps.",
-	},
-	{
-		title: "Consulting & Advanced Services",
-		description:
-			"Technical guidance, API integration, serverless functions, testing strategies, and architecture planning.",
-	},
-];
-
-const ServicesSection = () => {
+// ================== PROPS
+interface ServicesSectionProps {
+	services: Service[];
+	theme: Theme;
+}
+// ================== SERVICES SECTION
+const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 	return (
-		<SectionFrame>
+		<SectionFrame id="services" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -91,7 +52,7 @@ const ServicesSection = () => {
 					</motion.div>
 
 					{/* ============================== SERVICE CARDS SLIDER */}
-					<CardSlider<Service>
+					<ServiceCardSlider<Service>
 						items={services}
 						staggerDelay={0.12}
 						cardAnimation="fadeUp"

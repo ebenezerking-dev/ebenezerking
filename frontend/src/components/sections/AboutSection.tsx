@@ -1,8 +1,9 @@
-// =====================================
-// src/components/section/AboutSection.tsx
-// ===================================== ABOUT SECTION COMPONENT
-import SectionFrame from "../reusables/SectionFrame";
+// src/components/sections/AboutSection.tsx
+// this is a section that renders the about data for a career page
+// ================== IMPORTS
+import SectionFrame from "./Frames/SectionFrame";
 import { motion } from "framer-motion";
+import type { About, Theme } from "../../types/career";
 import {
 	containerVariants,
 	itemVariants,
@@ -12,10 +13,16 @@ import {
 	viewportRepeat,
 } from "../reusables/animations/sectionAnimations";
 
-// ===================================== COMPONENT
-const AboutSection = () => {
+// ================== PROPS
+type AboutSectionProps = {
+	about: About;
+	theme: Theme;
+};
+
+// ================== ABOUT SECTION
+const AboutSection = ({ about, theme }: AboutSectionProps) => {
 	return (
-		<SectionFrame>
+		<SectionFrame id="about" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -30,9 +37,9 @@ const AboutSection = () => {
 					{/* ============================== CONTENT HEADER */}
 					<motion.div variants={headerVariants} className="text-left">
 						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
-							<h2 className="sr-only aboutSection__header">About Me</h2>
 							<h3 className="header relative inline-block">
-								I am Ebenezer King.
+								{about.title}
+
 								<motion.span
 									variants={underlineVariants}
 									initial="hidden"
@@ -49,42 +56,29 @@ const AboutSection = () => {
 						variants={containerVariants}
 						className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 w-full md:p-4 text-lg"
 					>
-						<motion.p variants={itemVariants} className="font-bold">
-							<span className="inline-block xl:inline">
-								<span className="uppercase text-orange-500 text-[2rem] font-bold">
-									I
-								</span>{" "}
-								think,
-								<span className="uppercase text-orange-500 text-[2rem] font-bold">
-									{" "}
-									I
-								</span>{" "}
-								visualise,
-								<span className="uppercase text-orange-500 text-[2rem] font-bold">
-									{" "}
-									I
-								</span>{" "}
-								code.
-							</span>
-						</motion.p>
+						{/* ============================== INTRO */}
+						{about.intro && (
+							<motion.p variants={itemVariants} className="font-bold">
+								<span className="inline-block xl:inline">
+									{about.intro.split(",").map((part, index, array) => (
+										<span key={index}>
+											<span className="uppercase text-orange-500 text-[2rem] font-bold">
+												I
+											</span>{" "}
+											{part.trim()}
+											{index < array.length - 1 ? "," : "."}{" "}
+										</span>
+									))}
+								</span>
+							</motion.p>
+						)}
 
-						<motion.p variants={itemVariants}>
-							I turn my ideas into modern digital experiences by combining
-							thoughtful design, clean code architecture, and problem-solving to
-							build products people enjoy using.
-						</motion.p>
-
-						<motion.p variants={itemVariants}>
-							From responsive front-end interfaces to scalable backend systems,
-							I build and manage full-stack web applications focused on
-							performance, usability, and real business impact.
-						</motion.p>
-
-						<motion.p variants={itemVariants}>
-							I also strive well in a collaborative team setting, brainstorming
-							creative solutions, and bringing projects to life with attention
-							to detail and user experience.
-						</motion.p>
+						{/* ============================== PARAGRAPHS */}
+						{about.paragraphs.map((paragraph, index) => (
+							<motion.p key={index} variants={itemVariants}>
+								{paragraph}
+							</motion.p>
+						))}
 					</motion.div>
 				</motion.div>
 

@@ -1,9 +1,10 @@
-// =====================================
-// src/Components/Reusables/ProjectBoard.tsx (Cleaner version)
-// =====================================
+// src/Components/Reusables/ProjectBoard.tsx
+// this is a reusable component that renders a board of project cards with animation
+// ================== IMPORTS
 import { motion, AnimatePresence } from "framer-motion";
 import { Fragment } from "react";
 import RippleButton from "../reusables/RippleButton";
+import type { Project } from "../../types/career";
 import {
 	containerVariants,
 	itemVariants,
@@ -15,23 +16,12 @@ import {
 	viewportRepeat,
 } from "../reusables/animations/sectionAnimations";
 
-type Project = {
-	title: string;
-	description: string;
-	images: {
-		mobile: string;
-		tablet?: string;
-		desktop?: string;
-	};
-	tech: string[];
-	live?: string;
-	github?: string;
-};
-
+// ================== INTERFACE
 type ProjectBoardProps = {
 	items: Project[];
 };
 
+// ================== PROJECT BOARD
 const ProjectBoard = ({ items }: ProjectBoardProps) => {
 	return (
 		<motion.div
@@ -76,7 +66,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 										whileInView="visible"
 										viewport={viewportRepeat}
 										transition={{ delay: 0.2 }}
-										className="absolute z-20 left-0 sm:left-24 bottom-14 sm:bottom-24 h-32 w-20 sm:h-40 sm:w-30 lg:h-60 lg:w-30 lg:left-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
+										className="absolute z-20 left-0 sm:left-24 bottom-11 sm:bottom-24 h-32 w-20 sm:h-40 sm:w-30 lg:h-60 lg:w-30 lg:left-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
 									>
 										<img
 											src={project.images.mobile}
@@ -94,7 +84,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 										whileInView="visible"
 										viewport={viewportRepeat}
 										transition={{ delay: 0.3 }}
-										className="absolute z-20 right-0 sm:right-24 bottom-7 sm:bottom-14 h-38 w-26 sm:h-50 sm:w-40 lg:h-60 lg:w-40 lg:right-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
+										className="absolute z-20 right-0 sm:right-24 bottom-3 sm:bottom-14 h-36 w-26 sm:h-50 sm:w-40 lg:h-60 lg:w-40 lg:right-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
 									>
 										<img
 											src={project.images.tablet}
@@ -141,7 +131,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 									variants={containerVariants}
 									className="flex flex-wrap gap-2 text-sm"
 								>
-									{project.tech.map((tech, idx) => (
+									{project.technologies.map((tech, idx) => (
 										<motion.span
 											key={idx}
 											variants={techTagVariants}

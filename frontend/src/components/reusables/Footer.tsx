@@ -47,12 +47,8 @@ function Footer() {
 						viewport={viewportRepeat}
 					>
 						<button className="inline-block text-[#00ff91] font-bold text-xl bg-[#000000] px-2 rounded-lg border-b-6 border-orange-500 hover:border-[#00ff91] mb-3 transition-colors duration-300">
-							<a
-								href="https://docs.google.com/document/d/1rMZx8aLk1ZitCwSRTK706o19mj5UgyeQGABCZt6eAJg/edit?usp=sharing"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Resume
+							<a href="">
+								Resumes
 							</a>
 						</button>
 

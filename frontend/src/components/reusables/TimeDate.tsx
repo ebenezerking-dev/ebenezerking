@@ -47,7 +47,7 @@ const TimeDate = ({
 
 	return (
 		<div
-			className={`time-date__parent flex flex-col leading-none text-[0.9rem] font-bold italic mt-[0.3rem] ${className}`}
+			className={`time-date__parent flex flex-col leading-none font-bold italic mt-[0.3rem] ${className}`}
 		>
 			{showTime && <p className="m-1">{gmtTime}</p>}
 			{showDate && <p className="m-1">{gmtDate}</p>}

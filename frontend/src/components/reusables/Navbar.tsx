@@ -1,6 +1,6 @@
-// =====================================
 // src/Components/Navbar.tsx
-// =====================================
+// ================== IMPORTS
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import NavbarMenu from "./NavbarMenu";
 import RippleButton from "../reusables/RippleButton";
@@ -9,9 +9,14 @@ import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { easeInOut } from "framer-motion";
 import { useNavbar } from "./context/NavbarContext";
-import logoCom from "../../Assets/logoCom.webp";
+import type { NavigationItem } from "../../types/career";
 
-// ===================================== ANIMATION CONFIG
+// ================== PROPS
+interface NavbarProps {
+	navigation: NavigationItem[];
+}
+
+// ================== ANIMATION CONFIG
 const navbarMotion = {
 	initial: { y: -150, opacity: 1 },
 	animate: { y: 0, opacity: 1 },
@@ -24,7 +29,7 @@ const navbarTransition = {
 };
 
 // =====================================
-function Navbar() {
+const Navbar = ({ navigation }: NavbarProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isLargeScreen, setIsLargeScreen] = useState(false);
 
@@ -55,38 +60,33 @@ function Navbar() {
 				animate={navbarMotion.animate}
 				exit={navbarMotion.exit}
 				transition={navbarTransition}
-				className="navbar__parent fixed top-0 left-0 z-50 bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] w-full flex flex-col px-6 py-[0.3rem] lg:py-2 border-b-6 border-[#000AFD]/30"
+				className="navbar__parent fixed top-0 left-0 z-50 bg-[linear-gradient(160deg,#7a19ff,#150036,#7a19ff)] w-full flex flex-col px-6 py-[0.3rem] lg:py-2 border-b-6 border-[#000AFD]/30"
 			>
 				<div className="navbar__main relative flex justify-between items-center max-w-7xl mx-auto w-full min-w-0 overflow-x-clip px-4 sm:px-6 lg:px-6 lg:max-w-none">
 					{/* ========================= LOGO  */}
-					<div>
-						<img
-							src={logoCom}
-							alt="logo"
-							className="w-25 bg-[#000000] p-3 rounded-2xl"
-						/>
+					<div className="">
+						<Link
+							to="/"
+							className="relative bg-black hover:bg-[#00ff91] w-fit mx-auto p-1 text-white hover:text-black border-x-6 border-[#00ff91] hover:border-orange-500 rounded-md text-2xl font-bold transition-all duration-300 hover:opacity-80 hover:tracking-wide"
+						>
+							Ebenezer
+							<span className="absolute inset-0 w-full h-full -mt-1 rounded-md opacity-30 bg-linear-to-b from-transparent via-transparent to-gray-200" />
+						</Link>
 					</div>
 
 					{/* ========================= DESKTOP MENU (visible on large screens) */}
 					<div className="hidden lg:block">
 						<ul className="flex justify-center gap-3 text-lg font-bold">
-							<li>
-								<RippleButton href="#about">about</RippleButton>
-							</li>
-							<li>
-								<RippleButton href="#projects">projects</RippleButton>
-							</li>
-							<li>
-								<RippleButton href="#services">services</RippleButton>
-							</li>
-							<li>
-								<RippleButton href="#contact">contact</RippleButton>
-							</li>
+							{navigation.map((item) => (
+								<li key={item.href}>
+									<RippleButton href={item.href}>{item.label}</RippleButton>
+								</li>
+							))}
 						</ul>
 					</div>
 
-					{/* ========================= MOBILE MENU BUTTON (visible on medium and below) */}
-					<div className="lg:hidden flex items-center text-[#00ff91]">
+					{/* ========================= MOBILE MENU BUTTON */}
+					<div className="lg:hidden flex items-center text-white">
 						<button onClick={() => setIsOpen(!isOpen)}>
 							<motion.div
 								initial={false}
@@ -106,12 +106,13 @@ function Navbar() {
 
 			{/* ================================= MOBILE MENU (only visible when open) ================================= */}
 			<NavbarMenu
+				navigation={navigation}
 				isOpen={isOpen && !isLargeScreen}
 				toggleMenu={() => setIsOpen(false)}
 				topOffset={navbarHeight}
 			/>
 		</>
 	);
-}
+};
 
 export default Navbar;

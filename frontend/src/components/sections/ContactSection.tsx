@@ -1,13 +1,12 @@
-// =====================================
-// CONTACT SECTION
 // src/components/sections/ContactSection.tsx
-// =====================================
+// ================== IMPORTS
 import { useState } from "react";
-import SectionFrame from "../reusables/SectionFrame";
+import SectionFrame from "./Frames/SectionFrame";
 import { useToast } from "../../hooks/useToast";
 import { Toast } from "../ui/Toast";
 import { LiquidButton } from "../ui/LiquidButton";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Contact, Theme } from "../../types/career";
 import {
 	containerVariants,
 	headerVariants,
@@ -21,7 +20,14 @@ import {
 	toastVariants,
 } from "../reusables/animations/sectionAnimations";
 
-// =====================================
+// ================== PROPS
+type ContactSectionProps = {
+	contact: Contact;
+	career: string;
+	theme: Theme;
+};
+
+// ================== STATE TYPES
 type FormState = {
 	name: string;
 	email: string;
@@ -30,7 +36,8 @@ type FormState = {
 
 type Status = "idle" | "loading" | "success" | "error";
 
-const ContactSection = () => {
+// ================== CONTACT SECTION
+const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 	const [formData, setFormData] = useState<FormState>({
 		name: "",
 		email: "",
@@ -41,7 +48,7 @@ const ContactSection = () => {
 
 	const { toast, showToast } = useToast();
 
-	// ================================== INPUT
+	// ================== HANDLE CHANGE
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
@@ -51,7 +58,7 @@ const ContactSection = () => {
 		}));
 	};
 
-	// ================================== VALIDATION
+	// ================== HANDLE VALIDATION
 	const validate = () => {
 		if (!formData.name.trim()) return "Name is required";
 		if (!formData.email.includes("@")) return "Valid email required";
@@ -61,7 +68,7 @@ const ContactSection = () => {
 		return null;
 	};
 
-	// ================================== SUBMIT
+	// ================== HANDLE SUBMIT
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
@@ -79,7 +86,10 @@ const ContactSection = () => {
 			const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(formData),
+				body: JSON.stringify({
+					...formData,
+					career,
+				}),
 			});
 
 			const data = await res.json();
@@ -109,7 +119,7 @@ const ContactSection = () => {
 	};
 
 	return (
-		<SectionFrame>
+		<SectionFrame id="contact" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -151,6 +161,17 @@ const ContactSection = () => {
 							</h3>
 						</div>
 					</motion.div>
+
+					<div className="px-4 mb-6 text-center">
+						<p className="text-lg">
+							<a
+								href={`mailto:${contact.email}`}
+								className="text-orange-500 hover:underline"
+							>
+								{contact.email}
+							</a>
+						</p>
+					</div>
 
 					{/* ========================= CONTACT FORM ======================== */}
 					<motion.div

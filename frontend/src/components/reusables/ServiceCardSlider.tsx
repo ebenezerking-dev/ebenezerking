@@ -1,20 +1,18 @@
-// =====================================
-// src/Components/Reusables/CardSlider.tsx (Fixed version)
-// =====================================
+// src/Components/Reusables/ServiceCardSlider.tsx
+// this is a reusable component that renders a slider of service cards with animation
+// ================== IMPORTS
 import { motion } from "framer-motion";
 import type { ReactElement } from "react";
 import type { Variants } from "framer-motion";
-import { viewportRepeat } from "../reusables/animations/sectionAnimations";
-
-// =====================================
-type CardSliderProps<T> = {
+import { viewportRepeat } from "./animations/sectionAnimations";
+// ================== PROPS
+type ServiceCardSliderProps<T> = {
 	items: T[];
 	renderItem: (item: T, index: number) => ReactElement;
 	staggerDelay?: number;
 	cardAnimation?: "fadeUp" | "fadeLeft" | "scale";
 };
-
-// =====================================
+// ================== VARIANTS
 const getCardVariants = (animationType: string): Variants => {
 	switch (animationType) {
 		case "fadeLeft":
@@ -48,12 +46,13 @@ const getCardVariants = (animationType: string): Variants => {
 	}
 };
 
-const CardSlider = <T,>({
+// ================== SERVICE CARD SLIDER
+const ServiceCardSlider = <T,>({
 	items,
 	renderItem,
 	staggerDelay = 0.1,
 	cardAnimation = "fadeUp",
-}: CardSliderProps<T>) => {
+}: ServiceCardSliderProps<T>) => {
 	const cardContainerVariants: Variants = {
 		hidden: { opacity: 0 },
 		visible: {
@@ -95,4 +94,4 @@ const CardSlider = <T,>({
 	);
 };
 
-export default CardSlider;
+export default ServiceCardSlider;

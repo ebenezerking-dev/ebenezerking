@@ -1,0 +1,115 @@
+// src/types/career.ts
+// this file contains the interface types for the career data used in the project
+
+// ================== CAREER INTERFACE
+export interface CareerData {
+	slug: string;
+	title: string;
+	subtitle: string;
+	navigation: NavigationItem[];
+	theme: Theme;
+	hero: Hero;
+	about: About;
+	skills: SkillSection;
+	experience: ExperienceSection;
+	projects?: ProjectSection;
+	services?: ServiceSection;
+	certifications?: CertificationSection;
+	contact: Contact;
+}
+
+export interface NavigationItem {
+	label: string;
+	href: string;
+}
+
+export interface Theme {
+	primary: string;
+	secondary: string;
+	accent: string;
+	background: string;
+	surface: string;
+	gradientFrom: string;
+	gradientVia: string;
+	gradientTo: string;
+	divider: string;
+	underline: string;
+}
+
+export interface Hero {
+	title: string;
+	subtitle: string;
+	heroImage: string;
+}
+
+export interface About {
+	title: string;
+	intro?: string;
+	paragraphs: string[];
+}
+
+export interface SkillSection {
+	title: string;
+	items: Skill[];
+}
+export interface Skill {
+	name: string;
+	icon?: string;
+}
+
+export interface ExperienceSection {
+	title: string;
+	items: Experience[];
+}
+export interface Experience {
+	company: string;
+	role: string;
+	duration: string;
+	description: string[];
+}
+
+export interface ProjectSection {
+	title: string;
+	items: Project[];
+}
+export interface Project {
+	title: string;
+	description: string;
+	images: {
+		mobile?: string;
+		tablet?: string;
+		desktop?: string;
+	};
+	technologies: string[];
+	github?: string;
+	live?: string;
+}
+
+export interface ServiceSection {
+	title: string;
+	items: Service[];
+}
+export interface Service {
+	title: string;
+	description: string;
+	icon?: string;
+}
+
+export interface CertificationSection {
+	title: string;
+	items: Certification[];
+}
+export interface Certification {
+	title: string;
+	issuer: string;
+	date: string;
+	credentialId?: string;
+	image?: string;
+}
+
+export interface Contact {
+	title: string;
+	email: string;
+	linkedin?: string;
+	github?: string;
+}
