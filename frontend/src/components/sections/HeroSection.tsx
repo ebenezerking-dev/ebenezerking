@@ -9,7 +9,7 @@ import {
 	heroTitleVariants,
 	heroSubTitleVariants,
 	heroDateVariants,
-} from "../reusables/animations/sectionAnimations";
+} from "../reusables/animations";
 
 // ================== PROPS
 type HeroSectionProps = {

@@ -2,26 +2,26 @@
 // this is a section that renders the services data for a career page
 // ================== IMPORTS
 import ServiceCardSlider from "../reusables/ServiceCardSlider";
-import SectionFrame from "./Frames/SectionFrame";
+import DeveloperFrame from "./Frames/DeveloperFrame";
 import { motion } from "framer-motion";
-import type { Service, Theme } from "../../types/career";
+import type { Service, ServiceData, Theme } from "../../types/career";
 import {
 	containerVariants,
 	headerVariants,
 	underlineVariants,
 	dividerVariants,
 	viewportRepeat,
-} from "../reusables/animations/sectionAnimations";
+} from "../reusables/animations";
 
 // ================== PROPS
 interface ServicesSectionProps {
-	services: Service[];
+	services: ServiceData;
 	theme: Theme;
 }
 // ================== SERVICES SECTION
 const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 	return (
-		<SectionFrame id="services" theme={theme}>
+		<DeveloperFrame id="services" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -53,7 +53,7 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 
 					{/* ============================== SERVICE CARDS SLIDER */}
 					<ServiceCardSlider<Service>
-						items={services}
+						items={services.items}
 						staggerDelay={0.12}
 						cardAnimation="fadeUp"
 						renderItem={(service: Service, index: number) => (
@@ -105,7 +105,7 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
-		</SectionFrame>
+		</DeveloperFrame>
 	);
 };
 

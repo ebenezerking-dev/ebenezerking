@@ -1,17 +1,17 @@
 // src/components/sections/AboutSection.tsx
 // this is a section that renders the about data for a career page
 // ================== IMPORTS
-import SectionFrame from "./Frames/SectionFrame";
+import DeveloperFrame from "./Frames/DeveloperFrame";
 import { motion } from "framer-motion";
 import type { About, Theme } from "../../types/career";
 import {
 	containerVariants,
-	itemVariants,
+	fadeInUpVariants,
 	headerVariants,
 	underlineVariants,
 	dividerVariants,
 	viewportRepeat,
-} from "../reusables/animations/sectionAnimations";
+} from "../reusables/animations";
 
 // ================== PROPS
 type AboutSectionProps = {
@@ -22,7 +22,7 @@ type AboutSectionProps = {
 // ================== ABOUT SECTION
 const AboutSection = ({ about, theme }: AboutSectionProps) => {
 	return (
-		<SectionFrame id="about" theme={theme}>
+		<DeveloperFrame id="about" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -58,7 +58,7 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 					>
 						{/* ============================== INTRO */}
 						{about.intro && (
-							<motion.p variants={itemVariants} className="font-bold">
+							<motion.p variants={fadeInUpVariants} className="font-bold">
 								<span className="inline-block xl:inline">
 									{about.intro.split(",").map((part, index, array) => (
 										<span key={index}>
@@ -75,7 +75,7 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 
 						{/* ============================== PARAGRAPHS */}
 						{about.paragraphs.map((paragraph, index) => (
-							<motion.p key={index} variants={itemVariants}>
+							<motion.p key={index} variants={fadeInUpVariants}>
 								{paragraph}
 							</motion.p>
 						))}
@@ -91,7 +91,7 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
-		</SectionFrame>
+		</DeveloperFrame>
 	);
 };
 

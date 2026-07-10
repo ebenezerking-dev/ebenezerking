@@ -5,7 +5,7 @@ import HomeSelection from "../components/home/HomeSelection";
 import {
 	heroTitleVariants,
 	HomeHeroImageVariants,
-} from "../components/reusables/animations/sectionAnimations";
+} from "../components/reusables/animations";
 import HeroVideo from "../components/ui/HeroVideo";
 import { images } from "../data/media";
 // ================= HOME PAGE

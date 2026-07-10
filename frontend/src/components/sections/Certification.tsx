@@ -1,14 +1,19 @@
 // src/components/sections/CertificationSection.tsx
 // this is a section that renders the certification data for a career page
 // ================== IMPORTS
-import SectionFrame from "./Frames/SectionFrame";
+import DeveloperFrame from "./Frames/DeveloperFrame";
 import { motion } from "framer-motion";
-import type { Certification, Theme } from "../../types/career";
-import { viewportRepeat } from "../reusables/animations/sectionAnimations";
+import type { CertificationData, Theme } from "../../types/career";
+import {
+	containerVariants,
+	headerVariants,
+	underlineVariants,
+	viewportRepeat,
+} from "../reusables/animations";
 
 // ================== PROPS
 type CertificationSectionProps = {
-	certifications: Certification[];
+	certifications: CertificationData;
 	theme: Theme;
 };
 
@@ -18,13 +23,37 @@ const CertificationSection = ({
 	theme,
 }: CertificationSectionProps) => {
 	return (
-		<SectionFrame id="certifications" theme={theme}>
+		<DeveloperFrame id="certifications" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
 				className="certificationsSection__parent relative h-auto w-full flex flex-col overflow-hidden px-4"
-			></motion.div>
-		</SectionFrame>
+			>
+				{" "}
+				{/* ============================== SECTION WRAPPER */}
+				<motion.div
+					variants={containerVariants}
+					className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
+				>
+					{/* ============================== CONTENT HEADER */}
+					<motion.div variants={headerVariants} className="text-left px-4">
+						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
+							<h2 className="header relative inline-block">
+								{certifications.title}
+								<motion.span
+									variants={underlineVariants}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"
+								/>
+							</h2>
+						</div>
+					</motion.div>
+				</motion.div>
+			</motion.div>
+		</DeveloperFrame>
 	);
 };
+export default CertificationSection;

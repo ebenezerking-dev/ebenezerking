@@ -5,7 +5,7 @@ import {
 	backdropVariants,
 	mobileMenuVariants,
 	mobileMenuItemVariants,
-} from "./animations/sectionAnimations";
+} from "../reusables/animations";
 import type { NavigationItem } from "../../types/career";
 // ================== PROPS
 interface NavbarMenuProps {

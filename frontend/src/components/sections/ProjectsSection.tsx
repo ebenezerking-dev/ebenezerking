@@ -2,27 +2,27 @@
 // this is a section that renders the projects data for a career page
 // ================== IMPORTS
 import ProjectBoard from "../reusables/ProjectBoard";
-import SectionFrame from "./Frames/SectionFrame";
+import DeveloperFrame from "./Frames/DeveloperFrame";
 import { motion } from "framer-motion";
-import type { ProjectSection, Theme } from "../../types/career";
+import type { ProjectData, Theme } from "../../types/career";
 import {
 	containerVariants,
 	headerVariants,
 	underlineVariants,
 	dividerVariants,
 	viewportRepeat,
-} from "../reusables/animations/sectionAnimations";
+} from "../reusables/animations";
 
 // ================== PROPS
 type ProjectsSectionProps = {
-	projects: ProjectSection;
+	projects: ProjectData;
 	theme: Theme;
 };
 
 // ================== PROJECTS SECTION
 const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 	return (
-		<SectionFrame id="projects" theme={theme}>
+		<DeveloperFrame id="projects" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -65,7 +65,7 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
-		</SectionFrame>
+		</DeveloperFrame>
 	);
 };
 

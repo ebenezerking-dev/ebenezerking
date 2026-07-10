@@ -6,7 +6,7 @@ import {
 	heroFullStackVariants,
 	heroFitnessVariants,
 	heroCustomerVariants,
-} from "../components/reusables/animations/sectionAnimations";
+} from "../components/reusables/animations";
 // ================== HOME PAGE SELECTION
 export const homePageSelection = [
 	{

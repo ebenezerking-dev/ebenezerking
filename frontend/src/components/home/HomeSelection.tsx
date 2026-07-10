@@ -4,7 +4,7 @@
 // ================== IMPORTS
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { homeHeroSpanOneVariants } from "../reusables/animations/sectionAnimations";
+import { homeHeroSpanOneVariants } from "../reusables/animations";
 import { homePageSelection } from "../../data/homePageSelection";
 
 const MotionLink = motion(Link);

@@ -4,7 +4,7 @@
 import { motion } from "framer-motion";
 import type { ReactElement } from "react";
 import type { Variants } from "framer-motion";
-import { viewportRepeat } from "./animations/sectionAnimations";
+import { viewportRepeat } from "../reusables/animations";
 // ================== PROPS
 type ServiceCardSliderProps<T> = {
 	items: T[];

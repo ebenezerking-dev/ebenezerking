@@ -60,7 +60,7 @@ export const developerData = {
 	},
 
 	skills: {
-		title: "My Technical Toolkit",
+		title: "My Technical Skills",
 		items: [
 			{
 				name: "React",

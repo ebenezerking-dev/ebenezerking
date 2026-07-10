@@ -1,10 +1,9 @@
-// =====================================
 // src/pages/components/sections/Frames/SectionFrame.tsx
 // ================== IMPORTS
 import type { ReactNode } from "react";
 import type { Theme } from "../../../types/career";
 
-// ================== DATA
+// ================== PROPS
 type SectionFrameProps = {
 	id?: string;
 	children: ReactNode;
@@ -12,7 +11,7 @@ type SectionFrameProps = {
 	theme: Theme;
 };
 
-// ================== FUNCTION
+// ================== SECTION FRAME COMPONENT
 export default function SectionFrame({
 	id,
 	children,

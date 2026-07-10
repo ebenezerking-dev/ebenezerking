@@ -1,7 +1,7 @@
 // src/components/sections/ContactSection.tsx
 // ================== IMPORTS
 import { useState } from "react";
-import SectionFrame from "./Frames/SectionFrame";
+import DeveloperFrame from "./Frames/DeveloperFrame";
 import { useToast } from "../../hooks/useToast";
 import { Toast } from "../ui/Toast";
 import { LiquidButton } from "../ui/LiquidButton";
@@ -18,7 +18,7 @@ import {
 	formFieldVariants,
 	formButtonVariants,
 	toastVariants,
-} from "../reusables/animations/sectionAnimations";
+} from "../reusables/animations";
 
 // ================== PROPS
 type ContactSectionProps = {
@@ -119,7 +119,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 	};
 
 	return (
-		<SectionFrame id="contact" theme={theme}>
+		<DeveloperFrame id="contact" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -247,7 +247,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
-		</SectionFrame>
+		</DeveloperFrame>
 	);
 };
 

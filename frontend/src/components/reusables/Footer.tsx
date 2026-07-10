@@ -10,7 +10,7 @@ import {
 	rightFooterVariants,
 	hoverUnderlineVariants,
 	viewportRepeat,
-} from "./animations/sectionAnimations";
+} from "../reusables/animations";
 
 // =====================================
 const footerMotion = {
@@ -47,9 +47,7 @@ function Footer() {
 						viewport={viewportRepeat}
 					>
 						<button className="inline-block text-[#00ff91] font-bold text-xl bg-[#000000] px-2 rounded-lg border-b-6 border-orange-500 hover:border-[#00ff91] mb-3 transition-colors duration-300">
-							<a href="">
-								Resumes
-							</a>
+							<a href="">Resumes</a>
 						</button>
 
 						{/* =================== PARAGRAPH */}

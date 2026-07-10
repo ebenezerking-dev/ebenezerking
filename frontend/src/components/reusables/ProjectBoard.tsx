@@ -7,14 +7,14 @@ import RippleButton from "../reusables/RippleButton";
 import type { Project } from "../../types/career";
 import {
 	containerVariants,
-	itemVariants,
 	projectCardVariants,
 	deviceImageVariants,
+	fadeInUpVariants,
 	techTagVariants,
 	hrVariants,
 	scaleVariants,
 	viewportRepeat,
-} from "../reusables/animations/sectionAnimations";
+} from "../reusables/animations";
 
 // ================== INTERFACE
 type ProjectBoardProps = {
@@ -98,44 +98,42 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 							{/* ================= PROJECT DETAILS */}
 							<motion.div
 								variants={containerVariants}
+								initial="hidden"
+								whileInView="visible"
+								viewport={viewportRepeat}
 								className="py-4 px-2 flex flex-col items-start sm:items-center gap-[1.4rem]"
 							>
-								<motion.div variants={itemVariants}>
+								<motion.div variants={fadeInUpVariants}>
 									<div className="bg-[#000000]/20 p-2 rounded-lg">
 										<h3 className="relative text-2xl font-unna font-bold">
 											{project.title}
-											<motion.span
-												variants={{
-													hidden: { width: "0%", opacity: 0 },
-													visible: {
-														width: "30%",
-														opacity: 1,
-														transition: {
-															duration: 0.6,
-															delay: 0.3,
-															ease: "easeInOut",
-														},
-													},
-												}}
-												className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full"
-											/>
+											<motion.span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full" />
 										</h3>
 									</div>
 								</motion.div>
 
-								<motion.p variants={itemVariants} className="font-unna text-lg">
+								<motion.p
+									variants={fadeInUpVariants}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									className="font-unna text-lg"
+								>
 									{project.description}
 								</motion.p>
 
 								<motion.div
 									variants={containerVariants}
-									className="flex flex-wrap gap-2 text-sm"
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									className="flex flex-wrap gap-2"
 								>
-									{project.technologies.map((tech, idx) => (
+									{project.technologies.map((tech) => (
 										<motion.span
-											key={idx}
+											key={tech}
 											variants={techTagVariants}
-											className="bg-[#000000]/20 border border-[#000AFD]/80 p-2 rounded-lg"
+											className="rounded-lg border border-[#000AFD]/80 bg-[#000000]/20 p-2"
 										>
 											{tech}
 										</motion.span>
@@ -144,6 +142,9 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 								<motion.div
 									variants={containerVariants}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
 									className="flex gap-4 pt-2"
 								>
 									{project.live && (

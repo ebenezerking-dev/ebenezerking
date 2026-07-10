@@ -5,16 +5,16 @@
 export interface CareerData {
 	slug: string;
 	title: string;
-	subtitle: string;
+	subtitle?: string;
 	navigation: NavigationItem[];
 	theme: Theme;
 	hero: Hero;
 	about: About;
-	skills: SkillSection;
-	experience: ExperienceSection;
-	projects?: ProjectSection;
-	services?: ServiceSection;
-	certifications?: CertificationSection;
+	skills: SkillsData;
+	experience: ExperienceData;
+	projects?: ProjectData;
+	services?: ServiceData;
+	certifications?: CertificationData;
 	contact: Contact;
 }
 
@@ -48,7 +48,7 @@ export interface About {
 	paragraphs: string[];
 }
 
-export interface SkillSection {
+export interface SkillsData {
 	title: string;
 	items: Skill[];
 }
@@ -57,7 +57,7 @@ export interface Skill {
 	icon?: string;
 }
 
-export interface ExperienceSection {
+export interface ExperienceData {
 	title: string;
 	items: Experience[];
 }
@@ -68,7 +68,7 @@ export interface Experience {
 	description: string[];
 }
 
-export interface ProjectSection {
+export interface ProjectData {
 	title: string;
 	items: Project[];
 }
@@ -85,7 +85,7 @@ export interface Project {
 	live?: string;
 }
 
-export interface ServiceSection {
+export interface ServiceData {
 	title: string;
 	items: Service[];
 }
@@ -95,7 +95,7 @@ export interface Service {
 	icon?: string;
 }
 
-export interface CertificationSection {
+export interface CertificationData {
 	title: string;
 	items: Certification[];
 }
