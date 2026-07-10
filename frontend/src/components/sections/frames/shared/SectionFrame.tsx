@@ -1,7 +1,7 @@
-// src/pages/components/sections/Frames/SectionFrame.tsx
+// src/pages/components/sections/frames/shared/SectionFrame.tsx
 // ================== IMPORTS
 import type { ReactNode } from "react";
-import type { Theme } from "../../../types/career";
+import type { Theme } from "../../../../types/career";
 
 // ================== PROPS
 type SectionFrameProps = {

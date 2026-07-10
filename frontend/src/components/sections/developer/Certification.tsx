@@ -1,15 +1,15 @@
-// src/components/sections/CertificationSection.tsx
+// src/components/sections/developer/CertificationSection.tsx
 // this is a section that renders the certification data for a career page
 // ================== IMPORTS
-import DeveloperFrame from "./Frames/DeveloperFrame";
+import DeveloperFrame from "../frames/developer/DeveloperFrame";
 import { motion } from "framer-motion";
-import type { CertificationData, Theme } from "../../types/career";
+import type { CertificationData, Theme } from "../../../types/career";
 import {
 	containerVariants,
 	headerVariants,
 	underlineVariants,
 	viewportRepeat,
-} from "../reusables/animations";
+} from "../../reusables/animations";
 
 // ================== PROPS
 type CertificationSectionProps = {
@@ -17,7 +17,7 @@ type CertificationSectionProps = {
 	theme: Theme;
 };
 
-// ================== SKILL SECTION
+// ================== CERTIFICATIONS SECTION
 const CertificationSection = ({
 	certifications,
 	theme,
@@ -31,12 +31,12 @@ const CertificationSection = ({
 				className="certificationsSection__parent relative h-auto w-full flex flex-col overflow-hidden px-4"
 			>
 				{" "}
-				{/* ============================== SECTION WRAPPER */}
+				{/* ============================== CERTIFICATIONS WRAPPER */}
 				<motion.div
 					variants={containerVariants}
 					className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
-					{/* ============================== CONTENT HEADER */}
+					{/* ============================== CERTIFICATIONS HEADER */}
 					<motion.div variants={headerVariants} className="text-left px-4">
 						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="header relative inline-block">

@@ -4,7 +4,7 @@
 // ================== IMPORTS
 import { images } from "../../data/media";
 
-// ================== CAREER DATA EXPORTS
+// ================== DEVELOPER CAREER DATA EXPORTS
 export const developerData = {
 	slug: "full-stack",
 	title: "Full-Stack Developer",

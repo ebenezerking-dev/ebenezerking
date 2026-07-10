@@ -1,10 +1,10 @@
-// src/pages/components/sections/Frames/DeveloperFrame.tsx
+// src/pages/components/sections/frames/developer/DeveloperFrame.tsx
 
 // ================== IMPORTS
 import type { ReactNode } from "react";
-import SectionFrame from "./SectionFrame";
-import { developerData } from "../../../data/careers/developer";
-import type { Theme } from "../../../types/career";
+import SectionFrame from "../shared/SectionFrame";
+import { developerData } from "../../../../data/careers/developer";
+import type { Theme } from "../../../../types/career";
 
 // ================== PROPS
 type DeveloperFrameProps = {

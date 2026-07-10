@@ -1,9 +1,9 @@
-// src/components/sections/AboutSection.tsx
+// src/components/sections/developer/AboutSection.tsx
 // this is a section that renders the about data for a career page
 // ================== IMPORTS
-import DeveloperFrame from "./Frames/DeveloperFrame";
+import DeveloperFrame from "../frames/developer/DeveloperFrame";
 import { motion } from "framer-motion";
-import type { About, Theme } from "../../types/career";
+import type { About, Theme } from "../../../types/career";
 import {
 	containerVariants,
 	fadeInUpVariants,
@@ -11,7 +11,7 @@ import {
 	underlineVariants,
 	dividerVariants,
 	viewportRepeat,
-} from "../reusables/animations";
+} from "../../reusables/animations";
 
 // ================== PROPS
 type AboutSectionProps = {
@@ -29,12 +29,12 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 				viewport={viewportRepeat}
 				className="aboutSection__parent relative h-auto w-full flex flex-col overflow-hidden px-4"
 			>
-				{/* ============================== SECTION WRAPPER */}
+				{/* ============================== ABOUT WRAPPER */}
 				<motion.div
 					variants={containerVariants}
 					className="aboutSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
 				>
-					{/* ============================== CONTENT HEADER */}
+					{/* ============================== ABOUT HEADER */}
 					<motion.div variants={headerVariants} className="text-left">
 						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h3 className="header relative inline-block">
@@ -51,12 +51,12 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 						</div>
 					</motion.div>
 
-					{/* ============================== CONTENT */}
+					{/* ============================== ABOUT BODY */}
 					<motion.div
 						variants={containerVariants}
 						className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 w-full md:p-4 text-lg"
 					>
-						{/* ============================== INTRO */}
+						{/* ============================== ABOUT INTRO */}
 						{about.intro && (
 							<motion.p variants={fadeInUpVariants} className="font-bold">
 								<span className="inline-block xl:inline">

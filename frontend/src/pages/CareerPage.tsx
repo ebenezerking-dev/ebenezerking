@@ -4,12 +4,13 @@
 // ================== IMPORTS
 import { useOutletContext } from "react-router-dom";
 import type { CareerData } from "../types/career";
-import HeroSection from "../components/sections/HeroSection";
-import AboutSection from "../components/sections/AboutSection";
-import SkillsSection from "../components/sections/SkillsSection";
-import ProjectsSection from "../components/sections/ProjectsSection";
-import ServicesSection from "../components/sections/ServicesSection";
-import ContactSection from "../components/sections/ContactSection";
+import HeroSection from "../components/sections/developer/HeroSection";
+import AboutSection from "../components/sections/developer/AboutSection";
+import SkillsSection from "../components/sections/developer/SkillsSection";
+import ExperienceSection from "../components/sections/developer/ExperienceSection";
+import ProjectsSection from "../components/sections/developer/ProjectsSection";
+import ServicesSection from "../components/sections/developer/ServicesSection";
+import ContactSection from "../components/sections/developer/ContactSection";
 // ================== CAREER PAGE
 const CareerPage = () => {
 	const selectedCareer = useOutletContext<CareerData>();
@@ -20,6 +21,10 @@ const CareerPage = () => {
 			<AboutSection about={selectedCareer.about} theme={selectedCareer.theme} />
 			<SkillsSection
 				skills={selectedCareer.skills}
+				theme={selectedCareer.theme}
+			/>
+			<ExperienceSection
+				experience={selectedCareer.experience}
 				theme={selectedCareer.theme}
 			/>
 			{selectedCareer.projects && (

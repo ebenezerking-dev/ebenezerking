@@ -1,17 +1,17 @@
-// src/components/sections/SkillsSection.tsx
+// src/components/sections/developer/SkillsSection.tsx
 // this is a section that renders the skills data for a career page
 
 // ================== IMPORTS
 import { motion } from "framer-motion";
-import DeveloperFrame from "./Frames/DeveloperFrame";
-import type { SkillsData, Theme } from "../../types/career";
+import DeveloperFrame from "../frames/developer/DeveloperFrame";
+import type { SkillsData, Theme } from "../../../types/career";
 import {
 	containerVariants,
 	headerVariants,
 	itemWaveVariants,
 	underlineVariants,
 	viewportRepeat,
-} from "../reusables/animations";
+} from "../../reusables/animations";
 
 // ================== PROPS
 type SkillsSectionProps = {
@@ -29,12 +29,12 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 				viewport={viewportRepeat}
 				className="skillsSection__parent relative flex w-full flex-col overflow-hidden px-4"
 			>
-				{/* ============================== SECTION WRAPPER */}
+				{/* ============================== SKILLS WRAPPER */}
 				<motion.div
 					variants={containerVariants}
 					className="skillsSection__wrapper mx-auto w-full md:w-[90%] lg:w-[70%]"
 				>
-					{/* ============================== SECTION HEADER */}
+					{/* ============================== SKILLS HEADER */}
 					<motion.div variants={headerVariants} className="text-left px-4">
 						<div className="inline-block rounded-2xl bg-[#000000] p-3 font-unna text-[1rem] font-bold uppercase mb-56">
 							<h2 className="relative inline-block">
@@ -48,7 +48,7 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 						</div>
 					</motion.div>
 
-					{/* ============================== SKILLS GRID */}
+					{/* ============================== SKILLS BODY */}
 					<motion.div
 						variants={containerVariants}
 						initial="hidden"
@@ -56,10 +56,11 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 						viewport={viewportRepeat}
 						className="grid grid-cols-2 gap-4 px-4 pb-20 sm:grid-cols-3 lg:grid-cols-4"
 					>
+						{/* ============================== SKILLS GRID */}
 						{skills.items.map((skill, index) => (
 							<motion.div
 								key={skill.name}
-								custom={index} 
+								custom={index}
 								variants={itemWaveVariants}
 								initial="hidden"
 								whileInView="visible"

@@ -1,15 +1,15 @@
-// src/components/sections/HeroSection.tsx
+// src/components/sections/developer/HeroSection.tsx
 // this is a section that renders the hero data for a career page
 // ================== IMPORTS
 import { motion } from "framer-motion";
-import TimeDate from "../reusables/TimeDate";
-import type { Hero, Theme } from "../../types/career";
+import TimeDate from "../../reusables/TimeDate";
+import type { Hero, Theme } from "../../../types/career";
 import {
 	developerHeroImageVariants,
 	heroTitleVariants,
 	heroSubTitleVariants,
 	heroDateVariants,
-} from "../reusables/animations";
+} from "../../reusables/animations";
 
 // ================== PROPS
 type HeroSectionProps = {
@@ -17,6 +17,7 @@ type HeroSectionProps = {
 	theme: Theme;
 };
 
+// ================== HERO SECTION
 const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 	return (
 		<section className="heroSection__parent w-full">
@@ -41,9 +42,9 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 							backgroundImage: `url(${hero.heroImage})`,
 						}}
 					>
-						{/* ================= OVERLAY
-						<div className="absolute inset-0 bg-black/20 rounded-l-lg" /> */}
-						{/* ======================== HERO CONTENT HEADER */}
+						{/* ================= OVERLAY */}
+						<div className="absolute inset-0 bg-black/20 rounded-tl-[5rem] rounded-tr-[5rem] rounded-bl-[5rem]" />
+						{/* ======================== HERO HEADER */}
 						<motion.div
 							variants={heroTitleVariants}
 							initial="hidden"
@@ -55,7 +56,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 								<span className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full" />
 							</h1>
 						</motion.div>
-
+						{/* ======================== HERO BODY */}
 						<motion.div
 							variants={heroSubTitleVariants}
 							initial="hidden"
@@ -69,7 +70,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 							<span className="absolute w-1.5 right-3 top-1/2 -translate-y-1/2 h-8 bg-orange-500 rounded-full" />
 						</motion.div>
 
-						{/* ======================= TIME DATE */}
+						{/* ======================= HERO TIME DATE */}
 						<motion.div
 							variants={heroDateVariants}
 							initial="hidden"

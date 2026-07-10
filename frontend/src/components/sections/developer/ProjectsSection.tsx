@@ -1,17 +1,17 @@
-// src/components/sections/ProjectsSection.tsx
+// src/components/sections/developer/ProjectsSection.tsx
 // this is a section that renders the projects data for a career page
 // ================== IMPORTS
-import ProjectBoard from "../reusables/ProjectBoard";
-import DeveloperFrame from "./Frames/DeveloperFrame";
+import ProjectBoard from "../../reusables/ProjectBoard";
+import DeveloperFrame from "../../sections/frames/developer/DeveloperFrame";
 import { motion } from "framer-motion";
-import type { ProjectData, Theme } from "../../types/career";
+import type { ProjectData, Theme } from "../../../types/career";
 import {
 	containerVariants,
 	headerVariants,
 	underlineVariants,
 	dividerVariants,
 	viewportRepeat,
-} from "../reusables/animations";
+} from "../../reusables/animations";
 
 // ================== PROPS
 type ProjectsSectionProps = {
@@ -29,12 +29,12 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 				viewport={viewportRepeat}
 				className="projectSection__parent relative h-auto w-full flex flex-col overflow-hidden"
 			>
-				{/* ============================== SECTION WRAPPER */}
+				{/* ============================== PROJECTS WRAPPER */}
 				<motion.div
 					variants={containerVariants}
 					className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
-					{/* ============================== CONTENT HEADER */}
+					{/* ============================== PROJECTS HEADER */}
 					<motion.div variants={headerVariants} className="text-left px-4">
 						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="header relative inline-block">
@@ -50,7 +50,7 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 						</div>
 					</motion.div>
 
-					{/* ============================== CONTENT */}
+					{/* ============================== PROJECTS BODY */}
 					<motion.div className="content__paragraphs flex flex-col justify-center px-2 gap-4 lg:gap-3 w-full pb-20">
 						<ProjectBoard items={projects.items} />
 					</motion.div>

@@ -1,17 +1,17 @@
-// src/components/sections/ServicesSection.tsx
+// src/components/sections/developer/ServicesSection.tsx
 // this is a section that renders the services data for a career page
 // ================== IMPORTS
-import ServiceCardSlider from "../reusables/ServiceCardSlider";
-import DeveloperFrame from "./Frames/DeveloperFrame";
+import ServiceCardSlider from "../../reusables/ServiceCardSlider";
+import DeveloperFrame from "../../sections/frames/developer/DeveloperFrame";
 import { motion } from "framer-motion";
-import type { Service, ServiceData, Theme } from "../../types/career";
+import type { Service, ServiceData, Theme } from "../../../types/career";
 import {
 	containerVariants,
 	headerVariants,
 	underlineVariants,
 	dividerVariants,
 	viewportRepeat,
-} from "../reusables/animations";
+} from "../../reusables/animations";
 
 // ================== PROPS
 interface ServicesSectionProps {
@@ -28,12 +28,12 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 				viewport={viewportRepeat}
 				className="serviceSection__parent relative h-auto w-full flex flex-col overflow-hidden"
 			>
-				{/* ============================== SECTION WRAPPER */}
+				{/* ============================== SERVICES WRAPPER */}
 				<motion.div
 					variants={containerVariants}
 					className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
-					{/* ============================== CONTENT HEADER */}
+					{/* ============================== SERVICES HEADER */}
 					<motion.div variants={headerVariants} className="text-left px-4">
 						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="sr-only servicesSection__header">Services</h2>
@@ -51,6 +51,7 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 						</div>
 					</motion.div>
 
+					{/* ============================== SERVICES BODY */}
 					{/* ============================== SERVICE CARDS SLIDER */}
 					<ServiceCardSlider<Service>
 						items={services.items}

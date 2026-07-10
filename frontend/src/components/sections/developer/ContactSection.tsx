@@ -1,12 +1,12 @@
-// src/components/sections/ContactSection.tsx
+// src/components/sections/developer/ContactSection.tsx
 // ================== IMPORTS
 import { useState } from "react";
-import DeveloperFrame from "./Frames/DeveloperFrame";
-import { useToast } from "../../hooks/useToast";
-import { Toast } from "../ui/Toast";
-import { LiquidButton } from "../ui/LiquidButton";
+import DeveloperFrame from "../frames/developer/DeveloperFrame";
+import { useToast } from "../../../hooks/useToast";
+import { Toast } from "../../ui/Toast";
+import { LiquidButton } from "../../ui/LiquidButton";
 import { motion, AnimatePresence } from "framer-motion";
-import type { Contact, Theme } from "../../types/career";
+import type { Contact, Theme } from "../../../types/career";
 import {
 	containerVariants,
 	headerVariants,
@@ -18,7 +18,7 @@ import {
 	formFieldVariants,
 	formButtonVariants,
 	toastVariants,
-} from "../reusables/animations";
+} from "../../reusables/animations";
 
 // ================== PROPS
 type ContactSectionProps = {
@@ -130,7 +130,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 					variants={containerVariants}
 					className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
-					{/* =========================== TOAST */}
+					{/* =========================== CONTACT TOAST */}
 					<AnimatePresence>
 						{toast && (
 							<motion.div
@@ -145,7 +145,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 						)}
 					</AnimatePresence>
 
-					{/* =========================== HEADER */}
+					{/* =========================== CONTACT HEADER */}
 					<motion.div variants={headerVariants} className="text-left px-4">
 						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="sr-only contactSection__header">Contact</h2>
@@ -162,6 +162,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 						</div>
 					</motion.div>
 
+					{/* =========================== CONTACT BODY */}
 					<div className="px-4 mb-6 text-center">
 						<p className="text-lg">
 							<a
