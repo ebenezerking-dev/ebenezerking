@@ -10,6 +10,7 @@ import SkillsSection from "../components/sections/developer/SkillsSection";
 import ExperienceSection from "../components/sections/developer/ExperienceSection";
 import ProjectsSection from "../components/sections/developer/ProjectsSection";
 import ServicesSection from "../components/sections/developer/ServicesSection";
+import CertificationSection from "../components/sections/developer/CertificationSection";
 import ContactSection from "../components/sections/developer/ContactSection";
 // ================== CAREER PAGE
 const CareerPage = () => {
@@ -39,6 +40,10 @@ const CareerPage = () => {
 					theme={selectedCareer.theme}
 				/>
 			)}
+			<CertificationSection
+				certifications={selectedCareer.certifications}
+				theme={selectedCareer.theme}
+			/>
 			<ContactSection
 				contact={selectedCareer.contact}
 				career={selectedCareer.slug}

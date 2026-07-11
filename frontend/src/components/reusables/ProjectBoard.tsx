@@ -65,8 +65,8 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 										initial="hidden"
 										whileInView="visible"
 										viewport={viewportRepeat}
-										transition={{ delay: 0.2 }}
-										className="absolute z-20 left-0 sm:left-24 bottom-11 sm:bottom-24 h-32 w-20 sm:h-40 sm:w-30 lg:h-60 lg:w-30 lg:left-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
+										transition={{ delay: 0.3 }}
+										className="absolute z-20 left-1 sm:left-8 bottom-11 sm:bottom-24 h-32 w-20 sm:h-40 sm:w-30 lg:h-60 lg:w-30 lg:left-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
 									>
 										<img
 											src={project.images.mobile}
@@ -84,7 +84,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 										whileInView="visible"
 										viewport={viewportRepeat}
 										transition={{ delay: 0.3 }}
-										className="absolute z-20 right-0 sm:right-24 bottom-3 sm:bottom-14 h-36 w-26 sm:h-50 sm:w-40 lg:h-60 lg:w-40 lg:right-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
+										className="absolute z-20 right-1 sm:right-8 bottom-3 sm:bottom-9 h-36 w-26 sm:h-50 sm:w-40 lg:h-55 lg:w-40 lg:right-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
 									>
 										<img
 											src={project.images.tablet}
@@ -117,7 +117,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
-									className="font-unna text-lg"
+									className="font-unna text-sm sm:text-md"
 								>
 									{project.description}
 								</motion.p>
@@ -127,7 +127,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
-									className="flex flex-wrap gap-2"
+									className="flex flex-wrap gap-2 text-sm sm:text-md"
 								>
 									{project.technologies.map((tech) => (
 										<motion.span
@@ -149,7 +149,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								>
 									{project.live && (
 										<motion.div variants={scaleVariants}>
-											<RippleButton href={project.live} size="lg" newTab>
+											<RippleButton href={project.live} size="md" newTab>
 												Live Demo
 											</RippleButton>
 										</motion.div>
@@ -157,7 +157,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 									{project.github && (
 										<motion.div variants={scaleVariants}>
-											<RippleButton href={project.github} size="lg" newTab>
+											<RippleButton href={project.github} size="md" newTab>
 												GitHub
 											</RippleButton>
 										</motion.div>

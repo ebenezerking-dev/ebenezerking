@@ -14,7 +14,7 @@ export interface CareerData {
 	experience: ExperienceData;
 	projects?: ProjectData;
 	services?: ServiceData;
-	certifications?: CertificationData;
+	certifications: CertificationData;
 	contact: Contact;
 }
 
@@ -102,9 +102,9 @@ export interface CertificationData {
 export interface Certification {
 	title: string;
 	issuer: string;
-	date: string;
+	issuedDate: string;
 	credentialId?: string;
-	image?: string;
+	image: string;
 }
 
 export interface Contact {

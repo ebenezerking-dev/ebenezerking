@@ -46,8 +46,12 @@ export const images = {
 			},
 
 			certificates: {
-				metaFrontEnd: "...",
-				awsCloudPractitioner: "...",
+				TSAcademy:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1783746121/TSAcademy_Backend.jpg",
+				AltSchoolAfrica:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1783746148/AltSchool_Africa_Frontend.jpg",
+				TechCrush:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1783703883/TechCrush_Backend.jpg",
 			},
 		},
 

@@ -124,11 +124,12 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
-				className="contactSection relative h-auto w-full flex flex-col overflow-hidden"
+				className="parent relative h-auto w-full flex flex-col overflow-hidden"
 			>
+				{/* ============================== CONTACT WRAPPER */}
 				<motion.div
 					variants={containerVariants}
-					className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
+					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
 					{/* =========================== CONTACT TOAST */}
 					<AnimatePresence>
@@ -138,7 +139,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 								initial="hidden"
 								animate="visible"
 								exit="hidden"
-								className="fixed top-4 right-4 z-50"
+								className="toast fixed top-4 right-4 z-50"
 							>
 								<Toast message={toast.message} type={toast.type} />
 							</motion.div>
@@ -146,10 +147,13 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 					</AnimatePresence>
 
 					{/* =========================== CONTACT HEADER */}
-					<motion.div variants={headerVariants} className="text-left px-4">
-						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
+					<motion.div
+						variants={headerVariants}
+						className="header text-left px-4"
+					>
+						<div className="inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="sr-only contactSection__header">Contact</h2>
-							<h3 className="header relative inline-block">
+							<h3 className="relative inline-block">
 								Let's connect.
 								<motion.span
 									variants={underlineVariants}
@@ -163,7 +167,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 					</motion.div>
 
 					{/* =========================== CONTACT BODY */}
-					<div className="px-4 mb-6 text-center">
+					<div className="body px-4 mb-6 text-center">
 						<p className="text-lg">
 							<a
 								href={`mailto:${contact.email}`}
@@ -174,22 +178,22 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 						</p>
 					</div>
 
-					{/* ========================= CONTACT FORM ======================== */}
+					{/* ========================= CONTACT FORM WRAPPER ======================== */}
 					<motion.div
 						variants={fadeInUpVariants}
-						className="flex flex-1 flex-col justify-center items-center px-2 pb-20"
+						className="form__wrapper flex flex-1 flex-col justify-center items-center px-2 pb-20"
 					>
 						<motion.div
 							variants={formContainerVariants}
 							initial="hidden"
 							whileInView="visible"
 							viewport={viewportRepeat}
-							className="form__wrapper w-full py-4 mx-auto"
+							className="w-full py-4 mx-auto"
 						>
 							{/* =========================== FORM */}
 							<form
 								onSubmit={handleSubmit}
-								className="flex flex-col gap-4 text-lg"
+								className="form flex flex-col gap-4 text-lg"
 							>
 								{/* NAME FIELD */}
 								<motion.div variants={formFieldVariants}>

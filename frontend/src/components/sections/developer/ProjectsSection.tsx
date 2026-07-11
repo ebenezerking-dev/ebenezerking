@@ -27,16 +27,16 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
-				className="projectSection__parent relative h-auto w-full flex flex-col overflow-hidden"
+				className="parent relative h-auto w-full flex flex-col overflow-hidden"
 			>
 				{/* ============================== PROJECTS WRAPPER */}
 				<motion.div
 					variants={containerVariants}
-					className="projectSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
+					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
 					{/* ============================== PROJECTS HEADER */}
 					<motion.div variants={headerVariants} className="text-left px-4">
-						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
+						<div className="header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="header relative inline-block">
 								{projects.title}
 								<motion.span
@@ -51,7 +51,7 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 					</motion.div>
 
 					{/* ============================== PROJECTS BODY */}
-					<motion.div className="content__paragraphs flex flex-col justify-center px-2 gap-4 lg:gap-3 w-full pb-20">
+					<motion.div className="body flex flex-col justify-center px-2 gap-4 lg:gap-3 w-full pb-20">
 						<ProjectBoard items={projects.items} />
 					</motion.div>
 				</motion.div>

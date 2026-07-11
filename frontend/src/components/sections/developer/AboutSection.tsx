@@ -5,7 +5,7 @@ import DeveloperFrame from "../frames/developer/DeveloperFrame";
 import { motion } from "framer-motion";
 import type { About, Theme } from "../../../types/career";
 import {
-	containerVariants,
+	sectionContainerVariants,
 	fadeInUpVariants,
 	headerVariants,
 	underlineVariants,
@@ -27,19 +27,21 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
-				className="aboutSection__parent relative h-auto w-full flex flex-col overflow-hidden px-4"
+				className="parent relative h-auto w-full flex flex-col overflow-hidden px-4"
 			>
 				{/* ============================== ABOUT WRAPPER */}
 				<motion.div
-					variants={containerVariants}
-					className="aboutSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
+					variants={sectionContainerVariants}
+					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
 				>
 					{/* ============================== ABOUT HEADER */}
-					<motion.div variants={headerVariants} className="text-left">
-						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
+					<motion.div
+						variants={headerVariants}
+						className="header text-left px-4"
+					>
+						<div className="inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h3 className="header relative inline-block">
 								{about.title}
-
 								<motion.span
 									variants={underlineVariants}
 									initial="hidden"
@@ -53,8 +55,8 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 
 					{/* ============================== ABOUT BODY */}
 					<motion.div
-						variants={containerVariants}
-						className="content__paragraphs flex flex-col justify-center gap-4 lg:gap-3 w-full md:p-4 text-lg"
+						variants={sectionContainerVariants}
+						className="body flex flex-col justify-center gap-4 lg:gap-3 w-full md:p-4 text-lg"
 					>
 						{/* ============================== ABOUT INTRO */}
 						{about.intro && (

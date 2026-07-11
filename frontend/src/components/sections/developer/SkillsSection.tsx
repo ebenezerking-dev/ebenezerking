@@ -6,11 +6,13 @@ import { motion } from "framer-motion";
 import DeveloperFrame from "../frames/developer/DeveloperFrame";
 import type { SkillsData, Theme } from "../../../types/career";
 import {
-	containerVariants,
+	sectionContainerVariants,
 	headerVariants,
-	itemWaveVariants,
 	underlineVariants,
 	viewportRepeat,
+	dividerVariants,
+	cardContainerVariants,
+	getCardVariants,
 } from "../../reusables/animations";
 
 // ================== PROPS
@@ -27,19 +29,21 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
-				className="skillsSection__parent relative flex w-full flex-col overflow-hidden px-4"
+				className="parent relative flex w-full flex-col overflow-hidden px-4"
 			>
 				{/* ============================== SKILLS WRAPPER */}
 				<motion.div
-					variants={containerVariants}
-					className="skillsSection__wrapper mx-auto w-full md:w-[90%] lg:w-[70%]"
+					variants={sectionContainerVariants}
+					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
 				>
 					{/* ============================== SKILLS HEADER */}
-					<motion.div variants={headerVariants} className="text-left px-4">
+					<motion.div
+						variants={headerVariants}
+						className="header text-left px-4"
+					>
 						<div className="inline-block rounded-2xl bg-[#000000] p-3 font-unna text-[1rem] font-bold uppercase mb-56">
 							<h2 className="relative inline-block">
 								{skills.title}
-
 								<motion.span
 									variants={underlineVariants}
 									className="absolute left-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] -translate-x-1/2 rounded-full bg-orange-500"
@@ -50,22 +54,26 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 
 					{/* ============================== SKILLS BODY */}
 					<motion.div
-						variants={containerVariants}
+						variants={cardContainerVariants(0.08)}
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportRepeat}
-						className="grid grid-cols-2 gap-4 px-4 pb-20 sm:grid-cols-3 lg:grid-cols-4"
+						className="body grid grid-cols-2 gap-4 px-4 pb-20 sm:grid-cols-3 lg:grid-cols-4"
 					>
 						{/* ============================== SKILLS GRID */}
-						{skills.items.map((skill, index) => (
+						{skills.items.map((skill) => (
 							<motion.div
 								key={skill.name}
-								custom={index}
-								variants={itemWaveVariants}
-								initial="hidden"
-								whileInView="visible"
-								viewport={viewportRepeat}
-								className="flex items-center justify-center rounded-xl border border-[#000AFD]/80 bg-[#000000]/20 px-4 py-4 text-center transition-all duration-300 hover:border-[#00FF91] hover:bg-[#000000] hover:text-[#00FF91]"
+								variants={getCardVariants("scale")}
+								whileHover={{
+									y: -5,
+									scale: 1.02,
+									transition: {
+										duration: 0.2,
+										ease: "easeOut",
+									},
+								}}
+								className="flex items-center justify-center rounded-xl text-sm sm:text-md border border-[#000AFD]/80 bg-[#000000]/20 px-4 py-4 text-center transition-all duration-300 hover:border-[#00FF91] hover:bg-[#000000] hover:text-[#00FF91]"
 							>
 								<h3 className="font-unna text-xl">{skill.name}</h3>
 							</motion.div>
@@ -73,6 +81,14 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 					</motion.div>
 				</motion.div>
 			</motion.div>
+			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
+			<motion.div
+				variants={dividerVariants}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: false, amount: 0.2 }}
+				className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
+			/>
 		</DeveloperFrame>
 	);
 };

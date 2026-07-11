@@ -1,9 +1,9 @@
-// src/components/sections/developer/ExperienceSection.tsx
-// this is a section that renders the experience data for a career page
+// src/components/sections/developer/CertificationSection.tsx
+// this is a section that renders the certification data for a career page
 // ================== IMPORTS
 import DeveloperFrame from "../frames/developer/DeveloperFrame";
 import { motion } from "framer-motion";
-import type { ExperienceData, Theme } from "../../../types/career";
+import type { CertificationData, Theme } from "../../../types/career";
 import {
 	sectionContainerVariants,
 	headerVariants,
@@ -11,37 +11,39 @@ import {
 	viewportRepeat,
 	dividerVariants,
 	fadeInUpVariants,
+	deviceImageVariants,
 } from "../../reusables/animations";
 
 // ================== PROPS
-type ExperienceSectionProps = {
-	experience: ExperienceData;
+type CertificationSectionProps = {
+	certifications: CertificationData;
 	theme: Theme;
 };
 
-// ================== EXPERIENCE SECTION
-const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
+// ================== CERTIFICATIONS SECTION
+const CertificationSection = ({
+	certifications,
+	theme,
+}: CertificationSectionProps) => {
 	return (
-		<DeveloperFrame id="experience" theme={theme}>
+		<DeveloperFrame id="certifications" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
-				className="parent relative h-auto w-full flex flex-col overflow-hidden px-4"
+				className="certificationsSection__parent relative h-auto w-full flex flex-col overflow-hidden px-4"
 			>
-				{/* ============================== EXPERIENCE WRAPPER */}
+				{" "}
+				{/* ============================== CERTIFICATIONS WRAPPER */}
 				<motion.div
 					variants={sectionContainerVariants}
 					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
 				>
-					{/* ============================== EXPERIENCE HEADER */}
-					<motion.div
-						variants={headerVariants}
-						className="header text-left px-4"
-					>
+					{/* ============================== CERTIFICATIONS HEADER */}
+					<motion.div variants={headerVariants} className="text-left px-4">
 						<div className="header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="relative inline-block">
-								{experience.title}
+								{certifications.title}
 								<motion.span
 									variants={underlineVariants}
 									initial="hidden"
@@ -52,54 +54,69 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 							</h2>
 						</div>
 					</motion.div>
-					{/* ============================== EXPERIENCE BODY */}
+					{/* ============================== CERTIFICATIONS BODY */}
 					<motion.div
 						variants={sectionContainerVariants}
 						className="body flex flex-col gap-8 w-full md:p-4 text-lg"
 					>
-						{experience.items.map((item) => (
+						{/* title: string; issuer: string; date: string; credentialId?: string;
+						image?: string; */}
+						{certifications.items.map((item) => (
 							<div
-								key={`${item.company}-${item.role}`}
+								key={`${item.title}-${item.issuer}`}
 								className="w-full max-w-2xl mx-auto"
 							>
-								{/* ========== COMPANY */}
+								{/* ========== TITLE */}
 								<motion.div
 									variants={headerVariants}
 									className="flex justify-center"
 								>
 									<div className="relative z-10 inline-flex bg-[#000000] px-3 pt-1 pb-3 rounded-2xl">
 										<h3 className="relative inline-block">
-											{item.company}
+											{item.title}
 											<span className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full" />
 										</h3>
 									</div>
 								</motion.div>
-
-								{/* ========== ROLE */}
+								{/* ========== ISSUER */}
 								<motion.p
 									variants={fadeInUpVariants}
 									className="mt-4 font-semibold"
 								>
-									{item.role}
+									{item.issuer}
 								</motion.p>
-
-								{/* ========== DURATION */}
+								{/* ========== DATE ISSUED */}
 								<motion.p
 									variants={fadeInUpVariants}
 									className="text-sm text-white/70 mb-4"
 								>
-									{item.duration}
+									{item.issuedDate}
 								</motion.p>
-
-								{/* ========== DESCRIPTION */}
-								<motion.ul
+								{/* ========== CREDENTIAL ID */}
+								<motion.p
 									variants={fadeInUpVariants}
-									className="list-disc pl-5 space-y-2"
+									className="text-sm opacity-70 mb-4"
 								>
-									{item.description.map((desc) => (
-										<li key={desc}>{desc}</li>
-									))}
-								</motion.ul>
+									{item.credentialId}
+								</motion.p>
+								{/* ========== CERTIFICATE IMAGE */}
+								<motion.div
+									variants={deviceImageVariants}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									transition={{ delay: 0.3 }}
+									className="relative overflow-hidden rounded-xl group"
+								>
+									<img
+										src={item.image}
+										alt={item.title}
+										className="w-full h-full object-contain rounded-xl"
+									/>
+									{/* ========== CERTIFICATE IMAGE OVERLAY */}
+									<div className="absolute inset-0 rounded-xl bg-linear-to-t from-black/30 via-black/10 to-transparent transition-opacity duration-300 group-hover:opacity-5" />
+									{/* <div className="absolute inset-0 rounded-xl bg-linear-to-t from-black/40 via-black/20 to-transparent" /> */}
+								</motion.div>
 							</div>
 						))}
 					</motion.div>
@@ -116,5 +133,4 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 		</DeveloperFrame>
 	);
 };
-
-export default ExperienceSection;
+export default CertificationSection;

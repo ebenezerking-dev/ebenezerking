@@ -20,19 +20,19 @@ type HeroSectionProps = {
 // ================== HERO SECTION
 const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 	return (
-		<section className="heroSection__parent w-full">
+		<section className="parent w-full">
 			{/* ============================== SMALL SCREENS */}
 
 			{/* ============================== MEDIUM AND LARGE SCREENS */}
 			<div
-				className="heroSection__wrapper min-h-[calc(100vh-var(--navbar-height))] relative overflow-hidden w-full"
+				className="wrapper__theme min-h-[calc(100vh-var(--navbar-height))] relative overflow-hidden w-full"
 				style={{
 					background: `linear-gradient(135deg, ${theme.gradientFrom}, ${theme.gradientVia}, ${theme.gradientTo}
 						)`,
 				}}
 			>
 				{/* ====================== HERO CONTENT BODY */}
-				<div className="parent h-150 w-[90%] lg:w-[70%] mx-auto mt-40 md:mt-50 lg:mt-14 rounded-4xl">
+				<div className="wrapper__backgroundImage h-150 w-[90%] lg:w-[70%] mx-auto mt-40 md:mt-50 lg:mt-14 rounded-4xl">
 					<motion.div
 						variants={developerHeroImageVariants}
 						initial="hidden"
@@ -49,7 +49,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 							variants={heroTitleVariants}
 							initial="hidden"
 							animate="visible"
-							className="relative z-10 inline-flex bg-[#000000] px-3 pt-1 pb-3 rounded-2xl"
+							className="header relative z-10 inline-flex bg-[#000000] px-3 pt-1 pb-3 rounded-2xl"
 						>
 							<h1 className="relative inline-block">
 								{hero.title}
@@ -61,7 +61,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 							variants={heroSubTitleVariants}
 							initial="hidden"
 							animate="visible"
-							className="relative z-10 inline-flex bg-[#000000]/90 px-6 py-3 rounded-2xl"
+							className="body relative z-10 inline-flex bg-[#000000]/90 px-6 py-3 rounded-2xl"
 						>
 							<h2 className="relative inline-block lg:text-4xl">
 								{hero.subtitle}
@@ -70,16 +70,16 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 							<span className="absolute w-1.5 right-3 top-1/2 -translate-y-1/2 h-8 bg-orange-500 rounded-full" />
 						</motion.div>
 
-						{/* ======================= HERO TIME DATE */}
+						{/* ======================= HERO DATE */}
 						<motion.div
 							variants={heroDateVariants}
 							initial="hidden"
 							animate="visible"
-							className="relative z-10 w-full"
+							className="dateWrapper relative z-10 w-full"
 						>
 							<TimeDate
 								showTime={false}
-								className="timeDate text-1xl text-white text-end font-semibold hover:text-[#00FF91] transition-colors duration-300"
+								className="date text-1xl text-white text-end font-semibold hover:text-[#00FF91] transition-colors duration-300"
 							/>
 						</motion.div>
 					</motion.div>

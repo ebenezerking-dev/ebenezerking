@@ -26,20 +26,21 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
-				className="serviceSection__parent relative h-auto w-full flex flex-col overflow-hidden"
+				className="parent relative h-auto w-full flex flex-col overflow-hidden"
 			>
 				{/* ============================== SERVICES WRAPPER */}
 				<motion.div
 					variants={containerVariants}
-					className="serviceSection__wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
+					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
 					{/* ============================== SERVICES HEADER */}
-					<motion.div variants={headerVariants} className="text-left px-4">
-						<div className="wrapper__header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
-							<h2 className="sr-only servicesSection__header">Services</h2>
-
-							<h3 className="header relative inline-block">
-								services i can offer you.
+					<motion.div
+						variants={headerVariants}
+						className="header text-left px-4"
+					>
+						<div className="inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
+							<h3 className="relative inline-block">
+								{services.title}
 								<motion.span
 									variants={underlineVariants}
 									initial="hidden"

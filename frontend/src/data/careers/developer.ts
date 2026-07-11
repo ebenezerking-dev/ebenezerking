@@ -81,7 +81,7 @@ export const developerData = {
 				name: "Node.js",
 			},
 			{
-				name: "Express",
+				name: "Express.js",
 			},
 			{
 				name: "MongoDB",
@@ -117,23 +117,33 @@ export const developerData = {
 		title: "Work experience",
 		items: [
 			{
-				company: "Freelance",
-				role: "Frontend Developer",
-				duration: "2024 - Present",
+				company: "TS Academy - Remote",
+				role: "Backend Developer",
+				duration: "Nov 2025 - Feb 2026",
 				description: [
-					"Developed responsive websites",
-					"Worked with React and TypeScript",
-					"Created reusable component libraries",
+					"Developed and maintained RESTful APIs using Node.js and Express",
+					"Integrated database solutions for efficient data handling and retrieval",
+					"Collaborated with frontend developers to ensure seamless API integration",
 				],
 			},
 			{
-				company: "Freelance",
+				company: "TechCrush - Remote",
 				role: "Backend Developer",
-				duration: "2025 - Present",
+				duration: "Oct 2025 - Jan 2026",
 				description: [
-					"Developed Restful APIs",
-					"Worked with Node.js and Express",
-					"Debugged and optimized database queries",
+					"Built scalable backend services and API endpoints",
+					"Optimized database queries to improve application performance",
+					"Contributed to debugging and improving existing systems",
+				],
+			},
+			{
+				company: "Altschool Africa - Remote",
+				role: "Frontend Developer",
+				duration: "May 2024 - May 2025",
+				description: [
+					"Built responsive user interfaces using React and Tailwind CSS",
+					"Implemented reusable components for a scalable frontend architecture",
+					"Collaborated with designers to translate UI/UX designs into functional interfaces",
 				],
 			},
 		],
@@ -174,8 +184,8 @@ export const developerData = {
 					"MongoDB",
 					"Cloudinary",
 				],
-				github: "",
-				live: "",
+				github: "https://github.com/ebenezerking-dev/ebenezerking",
+				live: "https://ebenezerking.com",
 			},
 			// Project 3 - Taxlator
 			{
@@ -199,7 +209,7 @@ export const developerData = {
 	},
 
 	services: {
-		title: "Services i can offer you.",
+		title: "Services i offer.",
 		items: [
 			{
 				title: "Web Development",
@@ -243,16 +253,25 @@ export const developerData = {
 		title: "Professional Certifications.",
 		items: [
 			{
-				title: "Meta Front-End Developer",
-				issuer: "Meta",
-				date: "2025",
-				image: "...",
+				title: "Frontend Developer",
+				issuer: "AltSchool Africa",
+				issuedDate: "14th May 2025",
+				credentialId: "REF-N9jLNoZmOMW8X2",
+				image: images.careers.developer.certificates.AltSchoolAfrica,
 			},
 			{
-				title: "AWS Certified Cloud Practitioner",
-				issuer: "Amazon Web Services",
-				date: "2026",
-				image: "...",
+				title: "Backend Developer",
+				issuer: "TS Academy",
+				issuedDate: "1st April 2026",
+				credentialId: "TSLKRVLV98B5F2",
+				image: images.careers.developer.certificates.TSAcademy,
+			},
+			{
+				title: "Backend Developer",
+				issuer: "TechCrush",
+				issuedDate: "24th Jan 2026",
+				credentialId: "TEC-52F307EO",
+				image: images.careers.developer.certificates.TechCrush,
 			},
 		],
 	},
