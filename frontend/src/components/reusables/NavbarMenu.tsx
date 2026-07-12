@@ -1,6 +1,7 @@
 // src/Components/reusables/NavbarMenu.tsx
 // ================== IMPORTS
 import { motion, AnimatePresence } from "framer-motion";
+import { NAVBAR_HEIGHT } from "../../constants/layout";
 import {
 	backdropVariants,
 	mobileMenuVariants,
@@ -12,7 +13,6 @@ interface NavbarMenuProps {
 	navigation: NavigationItem[];
 	isOpen: boolean;
 	toggleMenu: () => void;
-	topOffset: number;
 }
 
 // ================== NAVBAR COMPONENT
@@ -20,7 +20,6 @@ export default function NavbarMenu({
 	navigation,
 	isOpen,
 	toggleMenu,
-	topOffset,
 }: NavbarMenuProps) {
 	return (
 		<AnimatePresence>
@@ -44,7 +43,7 @@ export default function NavbarMenu({
 						exit="exit"
 						className="fixed left-0 w-full z-40 bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] text-lg font-bold shadow-2xl overflow-hidden"
 						style={{
-							top: `${topOffset}px`,
+							top: `${NAVBAR_HEIGHT}px`,
 						}}
 					>
 						{/* ================= NAV UN-ORDERED LIST */}

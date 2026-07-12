@@ -2,13 +2,13 @@
 // ================== IMPORTS
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { NAVBAR_HEIGHT } from "../../constants/layout";
 import NavbarMenu from "./NavbarMenu";
 import RippleButton from "../reusables/RippleButton";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { easeInOut } from "framer-motion";
-import { useNavbar } from "./context/NavbarContext";
 import type { NavigationItem } from "../../types/career";
 
 // ================== PROPS
@@ -33,8 +33,6 @@ const Navbar = ({ navigation }: NavbarProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isLargeScreen, setIsLargeScreen] = useState(false);
 
-	const { navbarRef, navbarHeight } = useNavbar();
-
 	useEffect(() => {
 		const checkScreenSize = () => {
 			const largeScreen = window.innerWidth >= 1024;
@@ -55,12 +53,12 @@ const Navbar = ({ navigation }: NavbarProps) => {
 		<>
 			{/* ================================= NAVBAR ================================= */}
 			<motion.nav
-				ref={navbarRef}
 				initial={navbarMotion.initial}
 				animate={navbarMotion.animate}
 				exit={navbarMotion.exit}
 				transition={navbarTransition}
-				className="navbar__parent fixed top-0 left-0 z-50 bg-[linear-gradient(160deg,#7a19ff,#150036,#7a19ff)] w-full flex flex-col px-6 py-[0.3rem] lg:py-2 border-b-6 border-[#000AFD]/30"
+				style={{ height: `${NAVBAR_HEIGHT}px` }}
+				className="navbar__parent fixed w-full flex items-center top-0 left-0 z-50 bg-[linear-gradient(160deg,#7a19ff,#150036,#7a19ff)] px-6 border-[#000AFD]/30"
 			>
 				<div className="navbar__main relative flex justify-between items-center max-w-7xl mx-auto w-full min-w-0 overflow-x-clip px-4 sm:px-6 lg:px-6 lg:max-w-none">
 					{/* ========================= LOGO  */}
@@ -111,7 +109,6 @@ const Navbar = ({ navigation }: NavbarProps) => {
 				navigation={navigation}
 				isOpen={isOpen && !isLargeScreen}
 				toggleMenu={() => setIsOpen(false)}
-				topOffset={navbarHeight}
 			/>
 		</>
 	);

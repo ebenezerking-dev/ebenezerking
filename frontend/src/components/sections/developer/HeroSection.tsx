@@ -2,6 +2,7 @@
 // this is a section that renders the hero data for a career page
 // ================== IMPORTS
 import { motion } from "framer-motion";
+import { NAVBAR_HEIGHT } from "../../../constants/layout";
 import TimeDate from "../../reusables/TimeDate";
 import type { Hero, Theme } from "../../../types/career";
 import RippleButton from "../../reusables/RippleButton";
@@ -23,18 +24,17 @@ type HeroSectionProps = {
 const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 	return (
 		<section className="parent w-full">
-			{/* ============================== SMALL SCREENS */}
-
-			{/* ============================== MEDIUM AND LARGE SCREENS */}
+			{/* ============================== HERO WRAPPER */}
 			<div
-				className="wrapper__theme min-h-[calc(100vh-var(--navbar-height))] relative overflow-hidden w-full"
+				className="wrapper__theme relative overflow-hidden flex items-center justify-center w-full"
 				style={{
+					minHeight: `calc(100dvh - ${NAVBAR_HEIGHT}px)`,
 					background: `linear-gradient(135deg, ${theme.gradientFrom}, ${theme.gradientVia}, ${theme.gradientTo}
 						)`,
 				}}
 			>
 				{/* ====================== HERO CONTENT BODY */}
-				<div className="wrapper__backgroundImage h-150 w-[90%] lg:w-[70%] mx-auto mt-40 md:mt-50 lg:mt-14 rounded-4xl">
+				<div className="wrapper__backgroundImage h-150 w-[90%] lg:w-[70%] rounded-4xl">
 					<motion.div
 						variants={developerHeroImageVariants}
 						initial="hidden"

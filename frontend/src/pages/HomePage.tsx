@@ -15,7 +15,7 @@ const HomePage = () => {
 			{/* ====== */}
 			{/* ====== */}
 			{/* ============================== SMALL SCREENS */}
-			<div className="smallScreens relative md:hidden w-full h-dvh overflow-hidden">
+			<div className="smallScreens relative md:hidden w-full min-h-dvh overflow-hidden">
 				{/* ============= HERO DEV IMAGE BACKGROUND */}
 				<img
 					src={images.homePage.mobileHeroPoster}
@@ -31,7 +31,7 @@ const HomePage = () => {
 							variants={heroTitleVariants}
 							initial="hidden"
 							animate="visible"
-							className="bg-black/50 w-fit mx-auto px-3 pt-1 pb-3 rounded-2xl"
+							className="bg-black w-fit mx-auto px-3 pt-1 pb-3 rounded-2xl"
 						>
 							<h1 className="relative inline-flex text-white">
 								Choose a career to explore.

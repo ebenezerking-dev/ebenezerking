@@ -17,10 +17,6 @@
 		user-select: none;
 	}
 
-	:root {
-		--navbar-height: 80px;
-	}
-
 	html {
 		font-size: 16px;
 		scroll-behavior: smooth;

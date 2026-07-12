@@ -2,6 +2,7 @@
 
 // ================== IMPORTS
 import { Navigate, Outlet, useParams } from "react-router-dom";
+import { NAVBAR_HEIGHT } from "../../constants/layout";
 import { careers } from "../../data/careers";
 import type { CareerData } from "../../types/career";
 import Navbar from "../reusables/Navbar";
@@ -26,7 +27,10 @@ const OtherPagesLayout = () => {
 			</header>
 
 			{/* =================== MAIN */}
-			<main className="w-full grow flex flex-col relative z-0 pt-(--navbar-height)">
+			<main
+				className="w-full grow flex flex-col relative z-0"
+				style={{ paddingTop: `${NAVBAR_HEIGHT}px` }}
+			>
 				<Outlet context={selectedCareer satisfies CareerData} />
 			</main>
 
