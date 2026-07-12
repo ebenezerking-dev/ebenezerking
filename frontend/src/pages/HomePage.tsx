@@ -15,7 +15,7 @@ const HomePage = () => {
 			{/* ====== */}
 			{/* ====== */}
 			{/* ============================== SMALL SCREENS */}
-			<div className="smallScreens relative md:hidden w-full min-h-dvh overflow-hidden">
+			<div className="smallScreens relative md:hidden w-full min-h-dvh overflow-hidden border">
 				{/* ============= HERO DEV IMAGE BACKGROUND */}
 				<img
 					src={images.homePage.mobileHeroPoster}
@@ -24,8 +24,8 @@ const HomePage = () => {
 				/>
 
 				{/* ======================== HERO CONTENT */}
-				<div className="relative z-10 flex items-center justify-center w-full h-full bg-black/20">
-					<div className=" w-full h-160 flex flex-col gap-8">
+				<div className="heroContent__wrapper absolute inset-0 z-10 flex items-center justify-center bg-black/20">
+					<div className="w-full h-160 flex flex-col gap-8">
 						{/* ======================== HEADER */}
 						<motion.div
 							variants={heroTitleVariants}
@@ -35,12 +35,12 @@ const HomePage = () => {
 						>
 							<h1 className="relative inline-flex text-white">
 								Choose a career to explore.
-								<span className="w-[30%] absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full" />
+								<span className="absolute left-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] -translate-x-1/2 rounded-full bg-orange-500" />
 							</h1>
 						</motion.div>
 
 						{/* ======================== BODY */}
-						<div className="h-full flex flex-col justify-end gap-3 pl-6">
+						<div className="flex-1 flex flex-col justify-end gap-3 pl-6 pb-5">
 							<HomeSelection />
 						</div>
 					</div>
