@@ -7,9 +7,10 @@ import { motion } from "framer-motion";
 import { homeHeroSpanOneVariants } from "../reusables/animations";
 import { homePageSelection } from "../../data/homePageSelection";
 
-const MotionLink = motion(Link);
 // ================== HOME SELECTION
 const HomeSelection = () => {
+	const MotionLink = motion(Link);
+
 	return (
 		<>
 			{homePageSelection.map((career) => (

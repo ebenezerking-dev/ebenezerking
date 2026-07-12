@@ -61,23 +61,30 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 						className="body grid grid-cols-2 gap-4 px-4 pb-20 sm:grid-cols-3 lg:grid-cols-4"
 					>
 						{/* ============================== SKILLS GRID */}
-						{skills.items.map((skill) => (
-							<motion.div
-								key={skill.name}
-								variants={getCardVariants("scale")}
-								whileHover={{
-									y: -5,
-									scale: 1.02,
-									transition: {
-										duration: 0.2,
-										ease: "easeOut",
-									},
-								}}
-								className="flex items-center justify-center rounded-xl text-sm sm:text-md border border-[#000AFD]/80 bg-[#000000]/20 px-4 py-4 text-center transition-all duration-300 hover:border-[#00FF91] hover:bg-[#000000] hover:text-[#00FF91]"
-							>
-								<h3 className="font-unna text-xl">{skill.name}</h3>
-							</motion.div>
-						))}
+						{skills.items.map((skill) => {
+							const Icon = skill.icon;
+
+							return (
+								<motion.div
+									key={skill.name}
+									variants={getCardVariants("scale")}
+									whileHover={{
+										y: -5,
+										scale: 1.02,
+										transition: {
+											duration: 0.2,
+											ease: "easeOut",
+										},
+									}}
+									className="flex flex-col items-center justify-center rounded-xl border border-[#000AFD]/80 bg-[#000000]/20 px-4 py-6 text-center transition-all duration-300 hover:border-[#00FF91] hover:bg-[#000000] hover:text-[#00FF91]"
+								>
+									{Icon && (
+										<Icon className="mb-3 text-3xl" />
+									)}
+									<h3 className="font-unna text-xl">{skill.name}</h3>
+								</motion.div>
+							);
+						})}
 					</motion.div>
 				</motion.div>
 			</motion.div>

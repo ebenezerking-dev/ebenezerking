@@ -8,7 +8,7 @@ import { LiquidButton } from "../../ui/LiquidButton";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Contact, Theme } from "../../../types/career";
 import {
-	containerVariants,
+	sectionContainerVariants,
 	headerVariants,
 	underlineVariants,
 	dividerVariants,
@@ -128,7 +128,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 			>
 				{/* ============================== CONTACT WRAPPER */}
 				<motion.div
-					variants={containerVariants}
+					variants={sectionContainerVariants}
 					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
 					{/* =========================== CONTACT TOAST */}

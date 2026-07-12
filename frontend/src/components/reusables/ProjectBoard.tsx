@@ -6,7 +6,7 @@ import { Fragment } from "react";
 import RippleButton from "../reusables/RippleButton";
 import type { Project } from "../../types/career";
 import {
-	containerVariants,
+	sectionContainerVariants,
 	projectCardVariants,
 	deviceImageVariants,
 	fadeInUpVariants,
@@ -25,7 +25,7 @@ type ProjectBoardProps = {
 const ProjectBoard = ({ items }: ProjectBoardProps) => {
 	return (
 		<motion.div
-			variants={containerVariants}
+			variants={sectionContainerVariants}
 			initial="hidden"
 			whileInView="visible"
 			viewport={viewportRepeat}
@@ -97,7 +97,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 							{/* ================= PROJECT DETAILS */}
 							<motion.div
-								variants={containerVariants}
+								variants={projectCardVariants}
 								initial="hidden"
 								whileInView="visible"
 								viewport={viewportRepeat}
@@ -107,7 +107,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 									<div className="bg-[#000000]/20 p-2 rounded-lg">
 										<h3 className="relative text-2xl font-unna font-bold">
 											{project.title}
-											<motion.span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full" />
+											<motion.span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full" />
 										</h3>
 									</div>
 								</motion.div>
@@ -123,7 +123,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</motion.p>
 
 								<motion.div
-									variants={containerVariants}
+									variants={projectCardVariants}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -141,7 +141,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</motion.div>
 
 								<motion.div
-									variants={containerVariants}
+									variants={projectCardVariants}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -149,7 +149,11 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								>
 									{project.live && (
 										<motion.div variants={scaleVariants}>
-											<RippleButton href={project.live} size="md" newTab>
+											<RippleButton
+												href={project.live}
+												size="md"
+												target="_blank"
+											>
 												Live Demo
 											</RippleButton>
 										</motion.div>
@@ -157,7 +161,11 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 									{project.github && (
 										<motion.div variants={scaleVariants}>
-											<RippleButton href={project.github} size="md" newTab>
+											<RippleButton
+												href={project.github}
+												size="md"
+												target="_blank"
+											>
 												GitHub
 											</RippleButton>
 										</motion.div>

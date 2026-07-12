@@ -6,7 +6,7 @@ import DeveloperFrame from "../../sections/frames/developer/DeveloperFrame";
 import { motion } from "framer-motion";
 import type { ProjectData, Theme } from "../../../types/career";
 import {
-	containerVariants,
+	sectionContainerVariants,
 	headerVariants,
 	underlineVariants,
 	dividerVariants,
@@ -31,7 +31,7 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 			>
 				{/* ============================== PROJECTS WRAPPER */}
 				<motion.div
-					variants={containerVariants}
+					variants={sectionContainerVariants}
 					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
 					{/* ============================== PROJECTS HEADER */}

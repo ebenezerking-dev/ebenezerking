@@ -2,10 +2,28 @@
 // this is a data file that contains the career data for the developer career page
 
 // ================== IMPORTS
+import type { CareerData } from "../../types/career";
 import { images } from "../../data/media";
+import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
+
+import {
+	SiTypescript,
+	SiJavascript,
+	SiTailwindcss,
+	SiExpress,
+	SiMongodb,
+	SiPostgresql,
+	SiCloudinary,
+	SiGithub,
+	SiFigma,
+	SiVercel,
+	SiNetlify,
+	SiRender,
+	SiMui,
+} from "react-icons/si";
 
 // ================== DEVELOPER CAREER DATA EXPORTS
-export const developerData = {
+export const developerData: CareerData = {
 	slug: "full-stack",
 	title: "Full-Stack Developer",
 
@@ -26,6 +44,11 @@ export const developerData = {
 			label: "Contact",
 			href: "#contact",
 		},
+		{
+			label: "Resume",
+			href: "https://docs.google.com/document/d/1Yy5hnoUfNJudXfDZjr4CW6ugIVcJaxIYl-nhSmbubBM/edit?tab=t.0#heading=h.t6hma59hwmra",
+			target: "_blank",
+		},
 	],
 
 	theme: {
@@ -45,6 +68,11 @@ export const developerData = {
 		title: "Full-Stack Developer",
 		subtitle: "Building responsive, accessible and scalable web applications",
 		heroImage: images.careers.developer.heroPoster,
+		button: {
+			label: "Download Resume",
+			href: "/resume/developer.pdf",
+			download: true,
+		},
 	},
 
 	about: {
@@ -64,51 +92,67 @@ export const developerData = {
 		items: [
 			{
 				name: "React",
+				icon: FaReact,
 			},
 			{
-				name: "TypeScript",
+				name: "Typescript",
+				icon: SiTypescript,
 			},
 			{
-				name: "JavaScript",
+				name: "Javascript",
+				icon: SiJavascript,
 			},
 			{
 				name: "Tailwind CSS",
+				icon: SiTailwindcss,
 			},
 			{
 				name: "Material UI",
+				icon: SiMui,
 			},
 			{
 				name: "Node.js",
+				icon: FaNodeJs,
 			},
 			{
 				name: "Express.js",
+				icon: SiExpress,
 			},
 			{
 				name: "MongoDB",
+				icon: SiMongodb,
 			},
 			{
 				name: "PostgreSQL",
+				icon: SiPostgresql,
 			},
 			{
 				name: "Cloudinary",
+				icon: SiCloudinary,
 			},
 			{
 				name: "Git",
+				icon: FaGitAlt,
 			},
 			{
 				name: "Github",
+				icon: SiGithub,
 			},
 			{
 				name: "Figma",
+				icon: SiFigma,
 			},
 			{
 				name: "Vercel",
+				icon: SiVercel,
 			},
 			{
 				name: "Netlify",
+				icon: SiNetlify,
 			},
 			{
 				name: "Render",
+				icon: SiRender,
 			},
 		],
 	},
@@ -154,23 +198,6 @@ export const developerData = {
 		items: [
 			// Project 1 - Velly
 			{
-				title: "Velly",
-				description: "An online fashion retail store you can own. coming soon!",
-				images: images.careers.developer.projects.velly,
-				technologies: [
-					"React",
-					"JavaScript",
-					"TypeScript",
-					"TailwindCSS",
-					"Express.js",
-					"Node.js",
-					"PostgreSQL",
-				],
-				github: "https://github.com/ebenezerkingv2/kingv2",
-				live: "https://kingv2.vercel.app/",
-			},
-			// Project 2 - Portfolio
-			{
 				title: "Portfolio",
 				description: "A personal portfolio website to showcase my career work.",
 				images: images.careers.developer.projects.portfolio,
@@ -187,7 +214,7 @@ export const developerData = {
 				github: "https://github.com/ebenezerking-dev/ebenezerking",
 				live: "https://ebenezerking.com",
 			},
-			// Project 3 - Taxlator
+			// Project 2 - Taxlator
 			{
 				title: "Taxlator",
 				description:

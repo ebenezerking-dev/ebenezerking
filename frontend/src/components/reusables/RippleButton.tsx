@@ -9,7 +9,9 @@ interface RippleButtonProps {
 	children: ReactNode;
 	onClick?: () => void;
 	size?: "sm" | "md" | "lg";
-	newTab?: boolean;
+	target?: "_self" | "_blank";
+	download?: boolean;
+	className?: string;
 }
 
 // =====================================
@@ -18,7 +20,9 @@ export default function RippleButton({
 	children,
 	onClick,
 	size = "md",
-	newTab = false,
+	target,
+	download = false,
+	className,
 }: RippleButtonProps) {
 	const sizeClasses = {
 		sm: "px-3 py-1 text-xs",
@@ -30,9 +34,11 @@ export default function RippleButton({
 		<a
 			href={href}
 			onClick={onClick}
-			target={newTab ? "_blank" : undefined}
-			rel={newTab ? "noopener noreferrer" : undefined}
-			className={`relative inline-flex items-center justify-center ${sizeClasses[size]} overflow-hidden tracking-tighter text-white font-bold bg-[#000000] border-r-6 border-[#00ff91] hover:text-black hover:border-orange-500 rounded-md group transition-all duration-300 hover:scale-105 active:scale-95`}
+			download={download}
+			target={target}
+			rel={target === "_blank" ? "noopener noreferrer" : undefined}
+			className={`relative inline-flex items-center justify-center ${sizeClasses[size]} overflow-hidden tracking-tighter text-white font-bold bg-[#000000] border-r-6 border-[#00ff91] hover:text-black hover:border-orange-500 rounded-md group transition-all duration-300 hover:scale-105 active:scale-95
+			${className ?? ""}`}
 		>
 			{/* Expanding circle effect */}
 			<span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#00ff91] rounded-full group-hover:w-56 group-hover:h-56" />

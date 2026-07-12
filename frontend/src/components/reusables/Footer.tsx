@@ -1,15 +1,18 @@
 // =====================================
 // src/Components/Reusables/Footer.jsx
 // ===================================== ANIMATION CONFIG
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaLinkedin, FaGithub, FaWhatsappSquare } from "react-icons/fa";
+import { footerCareerLinks } from "../../data/footerCareerLinks";
 import {
 	leftFooterVariants,
 	centerFooterVariants,
 	rightFooterVariants,
 	hoverUnderlineVariants,
 	viewportRepeat,
+	homeHeroSpanOneVariants,
 } from "../reusables/animations";
 
 // =====================================
@@ -27,6 +30,7 @@ const footerTransition = {
 // ===================================== FOOTER COMPONENT
 function Footer() {
 	const date = new Date().getFullYear();
+	const MotionLink = motion(Link);
 
 	return (
 		<motion.footer
@@ -39,19 +43,15 @@ function Footer() {
 			<div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6">
 				{/* ===================================== MAIN FOOTER CONTENTS*/}
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-8">
-					{/* COLUMN ONE - RESUME */}
+					{/* COLUMN ONE */}
 					<motion.div
 						variants={leftFooterVariants}
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportRepeat}
 					>
-						<button className="inline-block text-[#00ff91] font-bold text-xl bg-[#000000] px-2 rounded-lg border-b-6 border-orange-500 hover:border-[#00ff91] mb-3 transition-colors duration-300">
-							<a href="">Resumes</a>
-						</button>
-
 						{/* =================== PARAGRAPH */}
-						<p className="text-md leading-relaxed text-white/80">
+						<p className="text-md leading-relaxed text-white">
 							Get in touch:{" "}
 							<motion.a
 								href="mailto:contact@ebenezerking.com"
@@ -77,19 +77,29 @@ function Footer() {
 						className="flex justify-start lg:justify-center"
 					>
 						<div>
-							<h6 className="relative font-bold mb-5 text-xl uppercase tracking-wider">
-								Explore
-								<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
+							<h6 className="relative  inline-block font-bold mb-5 text-xl uppercase tracking-wider">
+								Career Paths
+								<span className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full" />
 							</h6>
-							<ul className="space-y-2 text-lg font-semibold flex flex-col lg:items-center">
-								{["About", "Projects", "Contact"].map((item) => (
-									<li key={item}>
-										<a
-											href={`#${item.toLowerCase()}`}
-											className="inline-block font-bold text-xl px-2 rounded-lg border-b-6 border-orange-500 hover:border-[#00ff91] transition-colors duration-300 text-white/80"
+							<ul className="space-y-2">
+								{footerCareerLinks.map((career) => (
+									<li key={career.href}>
+										<MotionLink
+											to={`/careers/${career.href}`}
+											initial="initial"
+											whileHover="hover"
+											className="group flex items-center gap-2"
 										>
-											{item}
-										</a>
+											<motion.span
+												variants={homeHeroSpanOneVariants}
+												className="text-orange-500 group-hover:text-[#00FF91]"
+											>
+												❖
+											</motion.span>
+											<span className="group-hover:text-[#00FF91] transition-colors">
+												{career.title}
+											</span>
+										</MotionLink>
 									</li>
 								))}
 							</ul>
@@ -139,7 +149,7 @@ function Footer() {
 									label: "LinkedIn",
 								},
 								{
-									href: "https://github.com/ebenezerkingv2",
+									href: "https://github.com/ebenezerking-dev",
 									icon: FaGithub,
 									label: "GitHub",
 								},

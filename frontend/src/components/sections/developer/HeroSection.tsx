@@ -4,11 +4,13 @@
 import { motion } from "framer-motion";
 import TimeDate from "../../reusables/TimeDate";
 import type { Hero, Theme } from "../../../types/career";
+import RippleButton from "../../reusables/RippleButton";
 import {
 	developerHeroImageVariants,
 	heroTitleVariants,
 	heroSubTitleVariants,
 	heroDateVariants,
+	buttonEntranceVariants,
 } from "../../reusables/animations";
 
 // ================== PROPS
@@ -57,17 +59,32 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 							</h1>
 						</motion.div>
 						{/* ======================== HERO BODY */}
-						<motion.div
-							variants={heroSubTitleVariants}
-							initial="hidden"
-							animate="visible"
-							className="body relative z-10 inline-flex bg-[#000000]/90 px-6 py-3 rounded-2xl"
-						>
-							<h2 className="relative inline-block lg:text-4xl">
-								{hero.subtitle}
-							</h2>
-							<span className="absolute w-1.5 left-3 top-1/2 -translate-y-1/2 h-8 bg-orange-500 rounded-full" />
-							<span className="absolute w-1.5 right-3 top-1/2 -translate-y-1/2 h-8 bg-orange-500 rounded-full" />
+						<motion.div className="body__wrapper w-full flex flex-col items-center justify-center gap-6 text-center">
+							<motion.div
+								variants={heroSubTitleVariants}
+								initial="hidden"
+								animate="visible"
+								className="body__subtitle relative z-10 inline-flex bg-[#000000]/90 px-6 py-3 rounded-2xl"
+							>
+								<h2 className="relative inline-block lg:text-4xl">
+									{hero.subtitle}
+								</h2>
+								<span className="absolute w-1.5 left-3 top-1/2 -translate-y-1/2 h-8 bg-orange-500 rounded-full" />
+								<span className="absolute w-1.5 right-3 top-1/2 -translate-y-1/2 h-8 bg-orange-500 rounded-full" />
+							</motion.div>
+							{/* ======================= DOWNLOAD RESUME BUTTON */}
+							<motion.div
+								variants={buttonEntranceVariants}
+								initial="hidden"
+								animate="visible"
+							>
+								<RippleButton
+									href={hero.button.href}
+									download={hero.button.download}
+								>
+									{hero.button.label}
+								</RippleButton>
+							</motion.div>
 						</motion.div>
 
 						{/* ======================= HERO DATE */}

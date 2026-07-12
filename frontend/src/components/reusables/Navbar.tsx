@@ -79,7 +79,9 @@ const Navbar = ({ navigation }: NavbarProps) => {
 						<ul className="flex justify-center gap-3 text-lg font-bold">
 							{navigation.map((item) => (
 								<li key={item.href}>
-									<RippleButton href={item.href}>{item.label}</RippleButton>
+									<RippleButton href={item.href} target={item.target}>
+										{item.label}
+									</RippleButton>
 								</li>
 							))}
 						</ul>

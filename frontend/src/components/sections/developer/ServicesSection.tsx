@@ -6,7 +6,7 @@ import DeveloperFrame from "../../sections/frames/developer/DeveloperFrame";
 import { motion } from "framer-motion";
 import type { Service, ServiceData, Theme } from "../../../types/career";
 import {
-	containerVariants,
+	sectionContainerVariants,
 	headerVariants,
 	underlineVariants,
 	dividerVariants,
@@ -30,7 +30,7 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 			>
 				{/* ============================== SERVICES WRAPPER */}
 				<motion.div
-					variants={containerVariants}
+					variants={sectionContainerVariants}
 					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
 				>
 					{/* ============================== SERVICES HEADER */}

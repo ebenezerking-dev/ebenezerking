@@ -1,6 +1,9 @@
 // src/types/career.ts
 // this file contains the interface types for the career data used in the project
 
+// ================== IMPORTS
+import type { IconType } from "react-icons";
+
 // ================== CAREER INTERFACE
 export interface CareerData {
 	slug: string;
@@ -21,6 +24,7 @@ export interface CareerData {
 export interface NavigationItem {
 	label: string;
 	href: string;
+	target?: "_self" | "_blank";
 }
 
 export interface Theme {
@@ -40,6 +44,12 @@ export interface Hero {
 	title: string;
 	subtitle: string;
 	heroImage: string;
+	button: HeroButton;
+}
+export interface HeroButton {
+	label: string;
+	href: string;
+	download?: boolean;
 }
 
 export interface About {
@@ -54,7 +64,7 @@ export interface SkillsData {
 }
 export interface Skill {
 	name: string;
-	icon?: string;
+	icon?: IconType;
 }
 
 export interface ExperienceData {
