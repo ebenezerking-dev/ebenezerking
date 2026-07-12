@@ -20,7 +20,7 @@ const OtherPagesLayout = () => {
 	}
 
 	return (
-		<div className="flex flex-col min-h-screen relative">
+		<div className="flex flex-col min-h-dvh relative">
 			{/* =================== HEADER */}
 			<header>
 				<Navbar navigation={selectedCareer.navigation} />

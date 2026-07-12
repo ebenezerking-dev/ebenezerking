@@ -25,7 +25,7 @@ const HomePage = () => {
 
 				{/* ======================== HERO CONTENT */}
 				<div className="heroContent__wrapper absolute inset-0 z-10 flex items-center justify-center bg-black/20">
-					<div className="w-full h-160 flex flex-col gap-8">
+					<div className="h-160 flex flex-col gap-8">
 						{/* ======================== HEADER */}
 						<motion.div
 							variants={heroTitleVariants}

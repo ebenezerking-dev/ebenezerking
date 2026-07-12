@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 // ================== HOME PAGE LAYOUT
 const HomePageLayout = () => {
 	return (
-		<main className="min-h-screen">
+		<main className="min-h-dvh">
 			<Outlet />
 		</main>
 	);
