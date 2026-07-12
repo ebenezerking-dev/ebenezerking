@@ -15,7 +15,7 @@ const HomePage = () => {
 			{/* ====== */}
 			{/* ====== */}
 			{/* ============================== SMALL SCREENS */}
-			<div className="smallScreens relative md:hidden w-full min-h-dvh overflow-hidden border">
+			<div className="smallScreens relative md:hidden w-full min-h-dvh overflow-hidden">
 				{/* ============= HERO DEV IMAGE BACKGROUND */}
 				<img
 					src={images.homePage.mobileHeroPoster}

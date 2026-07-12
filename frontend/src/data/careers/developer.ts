@@ -5,7 +5,6 @@
 import type { CareerData } from "../../types/career";
 import { images } from "../../data/media";
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
-
 import {
 	SiTypescript,
 	SiJavascript,
