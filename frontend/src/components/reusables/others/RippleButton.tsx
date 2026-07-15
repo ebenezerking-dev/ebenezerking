@@ -1,5 +1,4 @@
-// =====================================
-// src/Components/Reusables/RippleButton.tsx
+// src/components/reusables/others/RippleButton.tsx
 // =====================================
 import type { ReactNode } from "react";
 

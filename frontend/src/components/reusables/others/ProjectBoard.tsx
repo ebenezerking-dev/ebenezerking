@@ -1,20 +1,23 @@
-// src/Components/Reusables/ProjectBoard.tsx
+// src/components/reusables/others/ProjectBoard.tsx
 // this is a reusable component that renders a board of project cards with animation
+
 // ================== IMPORTS
 import { motion, AnimatePresence } from "framer-motion";
 import { Fragment } from "react";
-import RippleButton from "../reusables/RippleButton";
-import type { Project } from "../../types/career";
+import RippleButton from "./RippleButton";
+import type { Project } from "../../../types/career";
 import {
 	sectionContainerVariants,
 	projectCardVariants,
+	imageContainerVariants,
 	deviceImageVariants,
 	fadeInUpVariants,
+	// techTagContainerVariants,
 	techTagVariants,
 	hrVariants,
 	scaleVariants,
 	viewportRepeat,
-} from "../reusables/animations";
+} from "../animations";
 
 // ================== INTERFACE
 type ProjectBoardProps = {
@@ -35,7 +38,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 				{items.map((project, index) => (
 					<Fragment key={index}>
 						<motion.div
-							variants={projectCardVariants}
+							variants={imageContainerVariants}
 							className="overflow-hidden"
 						>
 							{/* ================= IMAGES SECTION */}
@@ -123,9 +126,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</motion.p>
 
 								<motion.div
-									variants={projectCardVariants}
-									initial="hidden"
-									whileInView="visible"
+									// variants={techTagContainerVariants}
 									viewport={viewportRepeat}
 									className="flex flex-wrap gap-2 text-sm sm:text-md"
 								>
@@ -142,8 +143,6 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 								<motion.div
 									variants={projectCardVariants}
-									initial="hidden"
-									whileInView="visible"
 									viewport={viewportRepeat}
 									className="flex gap-4 pt-2"
 								>

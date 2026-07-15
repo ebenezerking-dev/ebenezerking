@@ -3,10 +3,10 @@
 
 // ================== IMPORTS
 import {
-	heroFullStackVariants,
-	heroFitnessVariants,
-	heroCustomerVariants,
-} from "../components/reusables/animations";
+	developerCareer,
+	fitnessCareer,
+	customerServiceCareer,
+} from "../components/reusables/animations/developerSc";
 // ================== HOME PAGE SELECTION
 export const homePageSelection = [
 	{
@@ -14,20 +14,20 @@ export const homePageSelection = [
 		title: "full-stack developer",
 		href: "full-stack",
 		className: "developer",
-		variants: heroFullStackVariants,
+		variants: developerCareer,
 	},
 	{
 		id: 2,
 		title: "fitness instructor",
 		href: "fitness-instructor",
 		className: "fitnessInstructor",
-		variants: heroFitnessVariants,
+		variants: fitnessCareer,
 	},
 	{
 		id: 3,
 		title: "customer service & administration",
 		href: "customer-service",
 		className: "customerService",
-		variants: heroCustomerVariants,
+		variants: customerServiceCareer,
 	},
 ];

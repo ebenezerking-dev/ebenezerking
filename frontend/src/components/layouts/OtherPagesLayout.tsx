@@ -5,9 +5,9 @@ import { Navigate, Outlet, useParams } from "react-router-dom";
 import { NAVBAR_HEIGHT } from "../../constants/layout";
 import { careers } from "../../data/careers";
 import type { CareerData } from "../../types/career";
-import Navbar from "../reusables/Navbar";
-import Footer from "../reusables/Footer";
-import BackToTop from "../reusables/BackToTop";
+import Navbar from "../reusables/others/Navbar";
+import Footer from "../reusables/others/Footer";
+import BackToTop from "../reusables/others/BackToTop";
 
 // ================== OTHER PAGES LAYOUT
 const OtherPagesLayout = () => {

@@ -1,7 +1,7 @@
 // src/components/sections/developer/ContactSection.tsx
 // ================== IMPORTS
 import { useState } from "react";
-import DeveloperFrame from "../frames/developer/DeveloperFrame";
+import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import { useToast } from "../../../hooks/useToast";
 import { Toast } from "../../ui/Toast";
 import { LiquidButton } from "../../ui/LiquidButton";
@@ -119,7 +119,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 	};
 
 	return (
-		<DeveloperFrame id="contact" theme={theme}>
+		<CareerSectionFrame id="contact" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -252,7 +252,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
-		</DeveloperFrame>
+		</CareerSectionFrame>
 	);
 };
 

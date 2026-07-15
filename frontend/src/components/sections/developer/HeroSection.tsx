@@ -3,16 +3,17 @@
 // ================== IMPORTS
 import { motion } from "framer-motion";
 import { NAVBAR_HEIGHT } from "../../../constants/layout";
-import TimeDate from "../../reusables/TimeDate";
+import TimeDate from "../../reusables/others/TimeDate";
+import CareerHeroFrame from "../frames/shared/CareerHeroFrame";
 import type { Hero, Theme } from "../../../types/career";
-import RippleButton from "../../reusables/RippleButton";
+import RippleButton from "../../reusables/others/RippleButton";
 import {
-	developerHeroImageVariants,
-	heroTitleVariants,
-	heroSubTitleVariants,
-	heroDateVariants,
-	buttonEntranceVariants,
-} from "../../reusables/animations";
+	homepageHeroTitle,
+	heroSubTitle,
+	developerCareerImage,
+	dateHero,
+	heroButton,
+} from "../../reusables/animations/developerSc";
 
 // ================== PROPS
 type HeroSectionProps = {
@@ -23,7 +24,7 @@ type HeroSectionProps = {
 // ================== HERO SECTION
 const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 	return (
-		<section className="parent w-full">
+		<CareerHeroFrame theme={theme} className="parent w-full">
 			{/* ============================== HERO WRAPPER */}
 			<div
 				className="wrapper__theme relative overflow-hidden flex items-center justify-center w-full"
@@ -36,7 +37,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 				{/* ====================== HERO CONTENT BODY */}
 				<div className="wrapper__backgroundImage h-150 w-[90%] lg:w-[70%] rounded-4xl">
 					<motion.div
-						variants={developerHeroImageVariants}
+						variants={developerCareerImage}
 						initial="hidden"
 						animate="visible"
 						className="relative w-full h-full bg-cover bg-center flex flex-col items-center justify-between rounded-tl-[5rem] rounded-tr-[5rem] rounded-bl-[5rem]"
@@ -48,7 +49,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 						<div className="absolute inset-0 bg-black/20 rounded-tl-[5rem] rounded-tr-[5rem] rounded-bl-[5rem]" />
 						{/* ======================== HERO HEADER */}
 						<motion.div
-							variants={heroTitleVariants}
+							variants={homepageHeroTitle}
 							initial="hidden"
 							animate="visible"
 							className="header relative z-10 inline-flex bg-[#000000] px-3 pt-1 pb-3 rounded-2xl"
@@ -61,7 +62,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 						{/* ======================== HERO BODY */}
 						<motion.div className="body__wrapper w-full flex flex-col items-center justify-center gap-6 text-center">
 							<motion.div
-								variants={heroSubTitleVariants}
+								variants={heroSubTitle}
 								initial="hidden"
 								animate="visible"
 								className="body__subtitle relative z-10 inline-flex bg-[#000000]/90 px-6 py-3 rounded-2xl"
@@ -74,7 +75,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 							</motion.div>
 							{/* ======================= DOWNLOAD RESUME BUTTON */}
 							<motion.div
-								variants={buttonEntranceVariants}
+								variants={heroButton}
 								initial="hidden"
 								animate="visible"
 							>
@@ -89,7 +90,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 
 						{/* ======================= HERO DATE */}
 						<motion.div
-							variants={heroDateVariants}
+							variants={dateHero}
 							initial="hidden"
 							animate="visible"
 							className="dateWrapper relative z-10 w-full"
@@ -104,7 +105,7 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
 				<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-[#000AFD] to-transparent"></div>
 			</div>
-		</section>
+		</CareerHeroFrame>
 	);
 };
 

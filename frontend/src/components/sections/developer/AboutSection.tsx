@@ -1,17 +1,18 @@
 // src/components/sections/developer/AboutSection.tsx
 // this is a section that renders the about data for a career page
 // ================== IMPORTS
-import DeveloperFrame from "../frames/developer/DeveloperFrame";
+import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import { motion } from "framer-motion";
 import type { About, Theme } from "../../../types/career";
 import {
-	sectionContainerVariants,
-	fadeInUpVariants,
-	headerVariants,
-	underlineVariants,
-	dividerVariants,
 	viewportRepeat,
-} from "../../reusables/animations";
+	headerContainer,
+	header,
+	headerUnderline,
+	bodyContainer,
+	fadeUpThree,
+	bottomDivider,
+} from "../../reusables/animations/developerSc";
 
 // ================== PROPS
 type AboutSectionProps = {
@@ -22,28 +23,23 @@ type AboutSectionProps = {
 // ================== ABOUT SECTION
 const AboutSection = ({ about, theme }: AboutSectionProps) => {
 	return (
-		<DeveloperFrame id="about" theme={theme}>
+		<CareerSectionFrame id="about" theme={theme}>
 			<motion.div
+				variants={headerContainer}
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
 				className="parent relative h-auto w-full flex flex-col overflow-hidden px-4"
 			>
 				{/* ============================== ABOUT WRAPPER */}
-				<motion.div
-					variants={sectionContainerVariants}
-					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
-				>
+				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
 					{/* ============================== ABOUT HEADER */}
-					<motion.div
-						variants={headerVariants}
-						className="header text-left px-4"
-					>
+					<motion.div variants={header} className="header text-left px-4">
 						<div className="inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h3 className="header relative inline-block">
 								{about.title}
 								<motion.span
-									variants={underlineVariants}
+									variants={headerUnderline}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -55,12 +51,12 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 
 					{/* ============================== ABOUT BODY */}
 					<motion.div
-						variants={sectionContainerVariants}
+						variants={bodyContainer}
 						className="body flex flex-col justify-center gap-4 lg:gap-3 w-full md:p-4 text-lg"
 					>
 						{/* ============================== ABOUT INTRO */}
 						{about.intro && (
-							<motion.p variants={fadeInUpVariants} className="font-bold">
+							<motion.p variants={fadeUpThree} className="font-bold">
 								<span className="inline-block xl:inline">
 									{about.intro.split(",").map((part, index, array) => (
 										<span key={index}>
@@ -77,7 +73,7 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 
 						{/* ============================== PARAGRAPHS */}
 						{about.paragraphs.map((paragraph, index) => (
-							<motion.p key={index} variants={fadeInUpVariants}>
+							<motion.p key={index} variants={fadeUpThree}>
 								{paragraph}
 							</motion.p>
 						))}
@@ -86,14 +82,14 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
 				<motion.div
-					variants={dividerVariants}
+					variants={bottomDivider}
 					initial="hidden"
 					whileInView="visible"
 					viewport={viewportRepeat}
 					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 				/>
 			</motion.div>
-		</DeveloperFrame>
+		</CareerSectionFrame>
 	);
 };
 

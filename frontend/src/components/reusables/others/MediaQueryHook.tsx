@@ -1,6 +1,6 @@
-// =====================================
-// src/Components/Reusables/MediaQueryHook.tsx
-// =====================================
+
+// src/components/reusables/others/MediaQueryHook.tsx
+// ================== IMPORTS
 import { useState, useEffect } from "react";
 
 // ===================================== MEDIA QUERY HOOK

@@ -4,7 +4,7 @@
 // ================== IMPORTS
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { homeHeroSpanOneVariants } from "../reusables/animations";
+import { homeCareerSpan } from "../reusables/animations/developerSc";
 import { homePageSelection } from "../../data/homePageSelection";
 
 // ================== HOME SELECTION
@@ -29,7 +29,7 @@ const HomeSelection = () => {
 							whileHover="hover"
 						>
 							<motion.span
-								variants={homeHeroSpanOneVariants}
+								variants={homeCareerSpan}
 								className="inline-flex mr-2"
 							>
 								❖

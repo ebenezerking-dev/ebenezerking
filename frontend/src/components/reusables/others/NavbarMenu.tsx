@@ -1,13 +1,13 @@
 // src/Components/reusables/NavbarMenu.tsx
 // ================== IMPORTS
 import { motion, AnimatePresence } from "framer-motion";
-import { NAVBAR_HEIGHT } from "../../constants/layout";
+import { NAVBAR_HEIGHT } from "../../../constants/layout";
 import {
 	backdropVariants,
 	mobileMenuVariants,
 	mobileMenuItemVariants,
-} from "../reusables/animations";
-import type { NavigationItem } from "../../types/career";
+} from "../../reusables/animations/mobileMenuVariants";
+import type { NavigationItem } from "../../../types/career";
 // ================== PROPS
 interface NavbarMenuProps {
 	navigation: NavigationItem[];
@@ -56,6 +56,12 @@ export default function NavbarMenu({
 								>
 									<a
 										href={item.href}
+										target={item.target}
+										rel={
+											item.target === "_blank"
+												? "noopener noreferrer"
+												: undefined
+										}
 										onClick={toggleMenu}
 										className="nav-link block py-2 px-6 transition-colors duration-300 group-hover:text-[#00ff91]"
 									>

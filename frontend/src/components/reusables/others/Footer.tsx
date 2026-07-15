@@ -1,11 +1,10 @@
-// =====================================
-// src/Components/Reusables/Footer.jsx
-// ===================================== ANIMATION CONFIG
+// src/components/reusables/others/Footer.jsx
+// ================== IMPORTS
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaLinkedin, FaGithub, FaWhatsappSquare } from "react-icons/fa";
-import { footerCareerLinks } from "../../data/footerCareerLinks";
+import { footerCareerLinks } from "../../../data/footerCareerLinks";
 import {
 	leftFooterVariants,
 	centerFooterVariants,
@@ -13,7 +12,7 @@ import {
 	hoverUnderlineVariants,
 	viewportRepeat,
 	homeHeroSpanOneVariants,
-} from "../reusables/animations";
+} from "../../reusables/animations";
 
 // =====================================
 const footerMotion = {

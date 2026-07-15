@@ -1,10 +1,10 @@
-// src/pages/components/sections/frames/shared/SectionFrame.tsx
+// src/pages/components/sections/frames/shared/CareerSectionFrame.tsx
 // ================== IMPORTS
 import type { ReactNode } from "react";
 import type { Theme } from "../../../../types/career";
 
 // ================== PROPS
-type SectionFrameProps = {
+type CareerSectionFrameProps = {
 	id?: string;
 	children: ReactNode;
 	className?: string;
@@ -12,12 +12,12 @@ type SectionFrameProps = {
 };
 
 // ================== SECTION FRAME COMPONENT
-export default function SectionFrame({
+export default function CareerSectionFrame({
 	id,
 	children,
 	className = "",
 	theme,
-}: SectionFrameProps) {
+}: CareerSectionFrameProps) {
 	return (
 		<section
 			id={id}

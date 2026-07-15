@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import HomeSelection from "../components/home/HomeSelection";
 import {
-	heroTitleVariants,
-	HomeHeroImageVariants,
-} from "../components/reusables/animations";
+	homepageHeroTitle,
+	developerImage,
+} from "../components/reusables/animations/developerSc";
 import HeroVideo from "../components/ui/HeroVideo";
 import { images } from "../data/media";
 // ================= HOME PAGE
@@ -28,7 +28,7 @@ const HomePage = () => {
 					<div className="h-160 flex flex-col gap-8">
 						{/* ======================== HEADER */}
 						<motion.div
-							variants={heroTitleVariants}
+							variants={homepageHeroTitle}
 							initial="hidden"
 							animate="visible"
 							className="bg-black w-fit mx-auto px-3 pt-1 pb-3 rounded-2xl"
@@ -57,7 +57,7 @@ const HomePage = () => {
 						{/* ======================== HEADER */}
 						<HeroVideo className="w-full flex-1 h-80 rounded-xl rounded-tl-[10rem]">
 							<motion.div
-								variants={heroTitleVariants}
+								variants={homepageHeroTitle}
 								initial="hidden"
 								animate="visible"
 								className="bg-[#000000] w-fit mx-auto px-3 pt-1 pb-3 rounded-2xl"
@@ -76,7 +76,7 @@ const HomePage = () => {
 
 						{/* ============= HERO DEV IMAGE */}
 						<motion.div
-							variants={HomeHeroImageVariants}
+							variants={developerImage}
 							initial="hidden"
 							animate="visible"
 							className="parent__image absolute z-0 -top-2 right-0 w-80"

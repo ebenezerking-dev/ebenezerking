@@ -1,4 +1,4 @@
-// src/Components/Reusables/ServiceCardSlider.tsx
+// src/components/reusables/others/ServiceCardSlider.tsx
 // this is a reusable component that renders a slider of service cards with animation
 
 // ================== IMPORTS
@@ -9,7 +9,7 @@ import {
 	getCardVariants,
 	type CardAnimation,
 	viewportRepeat,
-} from "../reusables/animations";
+} from "../animations";
 
 // ================== PROPS
 type ServiceCardSliderProps<T> = {

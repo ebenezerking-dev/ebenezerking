@@ -3,7 +3,7 @@
 
 // ================== IMPORTS
 import { motion } from "framer-motion";
-import DeveloperFrame from "../frames/developer/DeveloperFrame";
+import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import type { SkillsData, Theme } from "../../../types/career";
 import {
 	sectionContainerVariants,
@@ -13,7 +13,7 @@ import {
 	dividerVariants,
 	cardContainerVariants,
 	getCardVariants,
-} from "../../reusables/animations";
+} from "../../reusables/animations/developerSc";
 
 // ================== PROPS
 type SkillsSectionProps = {
@@ -24,7 +24,7 @@ type SkillsSectionProps = {
 // ================== SKILLS SECTION
 const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 	return (
-		<DeveloperFrame id="skills" theme={theme}>
+		<CareerSectionFrame id="skills" theme={theme}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
@@ -78,9 +78,7 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 									}}
 									className="flex flex-col items-center justify-center rounded-xl border border-[#000AFD]/80 bg-[#000000]/20 px-4 py-6 text-center transition-all duration-300 hover:border-[#00FF91] hover:bg-[#000000] hover:text-[#00FF91]"
 								>
-									{Icon && (
-										<Icon className="mb-3 text-3xl" />
-									)}
+									{Icon && <Icon className="mb-3 text-3xl" />}
 									<h3 className="font-unna text-xl">{skill.name}</h3>
 								</motion.div>
 							);
@@ -96,7 +94,7 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 				viewport={{ once: false, amount: 0.2 }}
 				className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
 			/>
-		</DeveloperFrame>
+		</CareerSectionFrame>
 	);
 };
 

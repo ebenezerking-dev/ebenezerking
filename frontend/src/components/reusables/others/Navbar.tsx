@@ -1,15 +1,15 @@
-// src/Components/Navbar.tsx
+// src/components/reusables/others/Navbar.tsx
 // ================== IMPORTS
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { NAVBAR_HEIGHT } from "../../constants/layout";
-import NavbarMenu from "./NavbarMenu";
-import RippleButton from "../reusables/RippleButton";
+import { NAVBAR_HEIGHT } from "../../../constants/layout";
+import NavbarMenu from "../others/NavbarMenu";
+import RippleButton from "../others/RippleButton";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { easeInOut } from "framer-motion";
-import type { NavigationItem } from "../../types/career";
+import type { NavigationItem } from "../../../types/career";
 
 // ================== PROPS
 interface NavbarProps {
