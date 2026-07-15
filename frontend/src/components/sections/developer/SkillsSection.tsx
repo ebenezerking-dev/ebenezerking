@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import type { SkillsData, Theme } from "../../../types/career";
 import {
-	sectionContainerVariants,
-	headerVariants,
-	underlineVariants,
 	viewportRepeat,
-	dividerVariants,
-	cardContainerVariants,
-	getCardVariants,
+	developer,
+	header,
+	headerUnderline,
+	developerBody,
+	cardVariants,
+	bottomDivider,
 } from "../../reusables/animations/developerSc";
 
 // ================== PROPS
@@ -26,26 +26,21 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 	return (
 		<CareerSectionFrame id="skills" theme={theme}>
 			<motion.div
+				variants={developer}
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
 				className="parent relative flex w-full flex-col overflow-hidden px-4"
 			>
 				{/* ============================== SKILLS WRAPPER */}
-				<motion.div
-					variants={sectionContainerVariants}
-					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
-				>
+				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
 					{/* ============================== SKILLS HEADER */}
-					<motion.div
-						variants={headerVariants}
-						className="header text-left px-4"
-					>
+					<motion.div variants={header} className="header text-left px-4">
 						<div className="inline-block rounded-2xl bg-[#000000] p-3 font-unna text-[1rem] font-bold uppercase mb-56">
 							<h2 className="relative inline-block">
 								{skills.title}
 								<motion.span
-									variants={underlineVariants}
+									variants={headerUnderline}
 									className="absolute left-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] -translate-x-1/2 rounded-full bg-orange-500"
 								/>
 							</h2>
@@ -54,7 +49,7 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 
 					{/* ============================== SKILLS BODY */}
 					<motion.div
-						variants={cardContainerVariants(0.08)}
+						variants={developerBody}
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportRepeat}
@@ -67,7 +62,7 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 							return (
 								<motion.div
 									key={skill.name}
-									variants={getCardVariants("scale")}
+									variants={cardVariants("scale")}
 									whileHover={{
 										y: -5,
 										scale: 1.02,
@@ -88,7 +83,7 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 			</motion.div>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
 			<motion.div
-				variants={dividerVariants}
+				variants={bottomDivider}
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: false, amount: 0.2 }}

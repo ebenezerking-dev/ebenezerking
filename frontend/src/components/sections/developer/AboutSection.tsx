@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import type { About, Theme } from "../../../types/career";
 import {
 	viewportRepeat,
-	headerContainer,
+	developer,
 	header,
 	headerUnderline,
-	bodyContainer,
+	developerBody,
 	fadeUpThree,
 	bottomDivider,
 } from "../../reusables/animations/developerSc";
@@ -25,7 +25,7 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 	return (
 		<CareerSectionFrame id="about" theme={theme}>
 			<motion.div
-				variants={headerContainer}
+				variants={developer}
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
@@ -40,9 +40,6 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 								{about.title}
 								<motion.span
 									variants={headerUnderline}
-									initial="hidden"
-									whileInView="visible"
-									viewport={viewportRepeat}
 									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full"
 								/>
 							</h3>
@@ -51,7 +48,7 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 
 					{/* ============================== ABOUT BODY */}
 					<motion.div
-						variants={bodyContainer}
+						variants={developerBody}
 						className="body flex flex-col justify-center gap-4 lg:gap-3 w-full md:p-4 text-lg"
 					>
 						{/* ============================== ABOUT INTRO */}

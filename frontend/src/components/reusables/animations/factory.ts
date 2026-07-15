@@ -31,11 +31,15 @@ export const buildHomeSpanOneVariants = {
 
 // ===================================== FADE VERTICAL
 // ===================================== Role: fade up animation
-export const buildFadeYVariant = (
-	y = 0,
+export const buildFadeYVariant = ({
+	y = 30,
 	duration = 0.6,
-	delay = 0.3,
-): Variants => ({
+	delay = 0,
+}: {
+	y?: number;
+	duration?: number;
+	delay?: number;
+} = {}): Variants => ({
 	hidden: {
 		opacity: 0,
 		y,
@@ -71,7 +75,13 @@ export const buildFadeXVariant = ({
 
 // ===================================== FADE OUT
 // ===================================== Role: fade out animation
-export const buildFadeOutVariant = (duration = 0.6, delay = 0.8): Variants => ({
+export const buildFadeOutVariant = ({
+	duration = 0.6,
+	delay = 0.8,
+}: {
+	duration?: number;
+	delay?: number;
+} = {}): Variants => ({
 	hidden: {
 		opacity: 0,
 		scale: 0,
@@ -102,8 +112,8 @@ export const buildHomepageDeveloperImageVariants: Variants = {
 // ===================================== HOME
 // =====================================
 
-// ===================================== SECTIONS CONTAINER
-// ===================================== Role: for every section container
+// ===================================== DEVELOPER
+// ===================================== Role: for every developer career parent container
 export const buildContainerVariant = (
 	animateSelf: boolean,
 	delayChildren = 0.2,
@@ -286,18 +296,19 @@ export const buildPopUpVariant = (
 export type CardAnimation = "fadeY" | "fadeX" | "scale" | "pop";
 
 // ===================================== VARIANTS
-export const getCardVariants = (
+export const buildCardVariants = (
 	animation: CardAnimation = "fadeY",
 ): Variants => {
 	switch (animation) {
 		case "fadeX":
-			return buildFadeXVariant();
+			return buildFadeXVariant({ x: -30 });
 		case "scale":
 			return buildScaleVariant();
 		case "pop":
 			return buildPopVariant();
+		case "fadeY":
 		default:
-			return buildFadeYVariant();
+			return buildFadeYVariant({ y: 30 });
 	}
 };
 

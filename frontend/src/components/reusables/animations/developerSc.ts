@@ -12,6 +12,7 @@ import {
 	buildFadeOutVariant,
 	buildHeaderVariant,
 	buildUnderlineVariant,
+	buildCardVariants,
 	buildDividerVariant,
 	buildRowStaggerVariant,
 } from "./factory";
@@ -28,15 +29,23 @@ export const viewportRepeat = {
 
 // =====================================
 // ===================================== HOMEPAGE & HERO TITLE
-export const homepageHeroTitle = buildFadeYVariant(-100, undefined, 0.3);
+export const homepageHeroTitle = buildFadeYVariant({
+	y: -100,
+	delay: 0.3,
+});
 
-export const developerCareerImage = buildFadeYVariant(100, 0.8, 0);
+export const developerCareerImage = buildFadeYVariant({
+	y: 100,
+	duration: 0.8,
+});
 
 // ===================================== HERO SUBTITLE
 export const heroSubTitle = buildFadeOutVariant();
 
 // ===================================== HERO BUTTON
-export const heroButton = buildFadeOutVariant(0.6, 1.0);
+export const heroButton = buildFadeOutVariant({
+	delay: 1.0,
+});
 
 // ===================================== HOMEPAGE HERO VARIANTS
 export const developerImage = buildHomepageDeveloperImageVariants;
@@ -68,7 +77,7 @@ export const dateHero = buildFadeXVariant({
 // =====================================
 // ===================================== HEADER CONTAINER
 // ===================================== Role: Main section container
-export const headerContainer = buildContainerVariant(true);
+export const developer = buildContainerVariant(true);
 
 // ===================================== HEADER
 export const header = buildHeaderVariant();
@@ -78,20 +87,35 @@ export const headerUnderline = buildUnderlineVariant();
 
 // ===================================== BODY CONTAINER
 // ===================================== Role: Body content container
-export const bodyContainer = buildContainerVariant(true, 0.4, 0.25);
+export const developerBody = buildContainerVariant(true, 0.4, 0.25);
 
 // ===================================== DIVIDER
 export const bottomDivider = buildDividerVariant();
 
 // ===================================== ABOUT -
-// ===================================== FADE UPS
-export const fadeUpThree = buildFadeYVariant(30, 0.6, 0.3);
+// ===================================== FADE Y
+export const fadeUpThree = buildFadeYVariant({
+	y: 40,
+	duration: 0.6,
+	delay: 0.3,
+});
 
-// ===================================== FADE LEFT
-export const fadeLeft = buildFadeXVariant({
+// ===================================== FADE X
+export const footerLeft = buildFadeXVariant({
 	x: -100,
 	delay: 0.4,
 });
+export const footerRight = buildFadeXVariant({
+	x: 100,
+	delay: 0.4,
+});
+export const footerCenter = buildFadeYVariant({
+	y: 100,
+	delay: 0.3,
+});
+
+// ===================================== CARD UP
+export const cardVariants = buildCardVariants;
 
 // ===================================== EXPERIENCE ITEMS CONTAINER
 // ===================================== Role: Stagger each experience item one at a time

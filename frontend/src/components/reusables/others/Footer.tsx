@@ -6,13 +6,13 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { FaLinkedin, FaGithub, FaWhatsappSquare } from "react-icons/fa";
 import { footerCareerLinks } from "../../../data/footerCareerLinks";
 import {
-	leftFooterVariants,
-	centerFooterVariants,
-	rightFooterVariants,
-	hoverUnderlineVariants,
 	viewportRepeat,
-	homeHeroSpanOneVariants,
-} from "../../reusables/animations";
+	footerLeft,
+	footerRight,
+	footerCenter,
+	headerUnderline,
+	homeCareerSpan,
+} from "../../reusables/animations/developerSc";
 
 // =====================================
 const footerMotion = {
@@ -44,7 +44,7 @@ function Footer() {
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-8">
 					{/* COLUMN ONE */}
 					<motion.div
-						variants={leftFooterVariants}
+						variants={footerLeft}
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportRepeat}
@@ -60,7 +60,7 @@ function Footer() {
 							>
 								contact@ebenezerking.com
 								<motion.span
-									variants={hoverUnderlineVariants}
+									variants={headerUnderline}
 									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-[#00FF91] rounded-full"
 								/>
 							</motion.a>
@@ -69,7 +69,7 @@ function Footer() {
 
 					{/* ==================== COLUMN TWO - QUICK LINKS */}
 					<motion.div
-						variants={centerFooterVariants}
+						variants={footerCenter}
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportRepeat}
@@ -90,7 +90,7 @@ function Footer() {
 											className="group flex items-center gap-2"
 										>
 											<motion.span
-												variants={homeHeroSpanOneVariants}
+												variants={homeCareerSpan}
 												className="text-orange-500 group-hover:text-[#00FF91]"
 											>
 												❖
@@ -107,7 +107,7 @@ function Footer() {
 
 					{/* ==================== COLUMN THREE: CONTACT */}
 					<motion.div
-						variants={rightFooterVariants}
+						variants={footerRight}
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportRepeat}

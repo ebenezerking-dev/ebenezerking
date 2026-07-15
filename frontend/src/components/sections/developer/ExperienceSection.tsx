@@ -5,13 +5,14 @@ import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import { motion } from "framer-motion";
 import type { ExperienceData, Theme } from "../../../types/career";
 import {
-	sectionContainerVariants,
-	headerVariants,
-	underlineVariants,
 	viewportRepeat,
-	dividerVariants,
-	fadeInUpVariants,
-} from "../../reusables/animations";
+	developer,
+	header,
+	headerUnderline,
+	developerBody,
+	fadeUpThree,
+	bottomDivider,
+} from "../../reusables/animations/developerSc";
 
 // ================== PROPS
 type ExperienceSectionProps = {
@@ -24,26 +25,21 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 	return (
 		<CareerSectionFrame id="experience" theme={theme}>
 			<motion.div
+				variants={developer}
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
 				className="parent relative h-auto w-full flex flex-col overflow-hidden px-4"
 			>
 				{/* ============================== EXPERIENCE WRAPPER */}
-				<motion.div
-					variants={sectionContainerVariants}
-					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
-				>
+				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
 					{/* ============================== EXPERIENCE HEADER */}
-					<motion.div
-						variants={headerVariants}
-						className="header text-left px-4"
-					>
+					<motion.div variants={header} className="header text-left px-4">
 						<div className="header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="relative inline-block">
 								{experience.title}
 								<motion.span
-									variants={underlineVariants}
+									variants={headerUnderline}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -54,7 +50,7 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 					</motion.div>
 					{/* ============================== EXPERIENCE BODY */}
 					<motion.div
-						variants={sectionContainerVariants}
+						variants={developerBody}
 						className="body flex flex-col gap-8 w-full md:p-4 text-lg"
 					>
 						{experience.items.map((item) => (
