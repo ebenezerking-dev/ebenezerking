@@ -6,15 +6,15 @@ import {
 	buildHomeSpanOneVariants,
 	buildHomepageDeveloperImageVariants,
 	buildContainerVariant,
-	buildItemVisibleVariant,
 	buildFadeYVariant,
 	buildFadeXVariant,
-	buildFadeOutVariant,
-	buildHeaderVariant,
+	buildFadeInVariant,
 	buildUnderlineVariant,
-	buildCardVariants,
-	buildDividerVariant,
-	buildRowStaggerVariant,
+	buildScaleVariant,
+	buildIndexedFadeYVariant,
+	buildPopToastVariants,
+	buildCardHover,
+	buildScaleXVariant,
 } from "./factory";
 
 // ================== VIEWPORT EXPORTS
@@ -30,20 +30,20 @@ export const viewportRepeat = {
 // =====================================
 // ===================================== HOMEPAGE & HERO TITLE
 export const homepageHeroTitle = buildFadeYVariant({
-	y: -100,
+	y: -300,
 	delay: 0.3,
 });
-
 export const developerCareerImage = buildFadeYVariant({
 	y: 100,
 	duration: 0.8,
 });
 
+// =====================================
 // ===================================== HERO SUBTITLE
-export const heroSubTitle = buildFadeOutVariant();
+export const heroSubTitle = buildFadeInVariant();
 
 // ===================================== HERO BUTTON
-export const heroButton = buildFadeOutVariant({
+export const heroButton = buildFadeInVariant({
 	delay: 1.0,
 });
 
@@ -55,49 +55,51 @@ export const homeCareerSpan = buildHomeSpanOneVariants;
 
 // ===================================== HOME CAREER TITLE CONTAINER
 export const developerCareer = buildFadeXVariant({
-	x: -100,
+	x: -300,
 	delay: 0.4,
 });
 export const fitnessCareer = buildFadeXVariant({
-	x: -100,
-	delay: 0.6,
+	x: -300,
+	delay: 0.8,
 });
 export const customerServiceCareer = buildFadeXVariant({
-	x: -100,
-	delay: 0.8,
+	x: -300,
+	delay: 1.2,
 });
 
 // ===================================== HERO DATE CONTAINER
 export const dateHero = buildFadeXVariant({
 	x: 100,
-	delay: 0.6,
+	delay: 1.5,
 	duration: 0.6,
 });
 
 // =====================================
-// ===================================== HEADER CONTAINER
-// ===================================== Role: Main section container
-export const developer = buildContainerVariant(true);
+// ===================================== SECTION CONTAINER
+export const developer = buildContainerVariant({
+	animateSelf: true,
+});
+
+export const developerBody = buildContainerVariant({
+	animateSelf: false,
+	delayChildren: 0.2,
+	staggerChildren: 0.8,
+});
 
 // ===================================== HEADER
-export const header = buildHeaderVariant();
+export const header = buildFadeYVariant({ y: 15, duration: 0.15 });
 
 // ===================================== HEADER UNDERLINE
 export const headerUnderline = buildUnderlineVariant();
 
-// ===================================== BODY CONTAINER
-// ===================================== Role: Body content container
-export const developerBody = buildContainerVariant(true, 0.4, 0.25);
-
 // ===================================== DIVIDER
-export const bottomDivider = buildDividerVariant();
+export const bottomDivider = buildScaleXVariant();
 
 // ===================================== ABOUT -
 // ===================================== FADE Y
-export const fadeUpThree = buildFadeYVariant({
-	y: 40,
+export const paragraphUp = buildFadeYVariant({
+	y: 50,
 	duration: 0.6,
-	delay: 0.3,
 });
 
 // ===================================== FADE X
@@ -115,20 +117,66 @@ export const footerCenter = buildFadeYVariant({
 });
 
 // ===================================== CARD UP
-export const cardVariants = buildCardVariants;
+export const cardUpScale = buildScaleVariant({ duration: 0.6 });
+export const skillCard = buildFadeYVariant({
+	y: 50,
+	duration: 0.6,
+	// delay: 0.3,
+});
+export const cardFadeX = buildFadeXVariant({ x: -50 });
 
-// ===================================== EXPERIENCE ITEMS CONTAINER
-// ===================================== Role: Stagger each experience item one at a time
-export const experienceItemsContainerVariant = buildContainerVariant(
-	true, // animate self
-	0.3, // delay children
-	0.25, // stagger children - adjust this to control timing between items
-);
+// ===================================== CARD HOVER
+export const cardHover = buildCardHover;
 
-// ===================================== EXPERIENCE ITEM
-// ===================================== Role: Individual experience item fade up animation
-export const experienceItemVariant = buildItemVisibleVariant(30, 0.6);
+// ===================================== EXPERIENCE SECTION
 
-// ===================================== SKILLS (if needed elsewhere)
-export const skillsRowStaggerVariant = buildRowStaggerVariant();
-export const skillItemVisibleVariant = buildItemVisibleVariant();
+// ===================================== SKILLS
+export const skillsRowStagger = buildContainerVariant({
+	animateSelf: false,
+	staggerChildren: 0.6,
+});
+export const skillItem = buildIndexedFadeYVariant();
+
+// ===================================== PROJECT BOARD
+export const projectBoardContainer = buildFadeYVariant({
+	y: 40,
+});
+// ===================================== PROJECT BOARD IMAGES
+export const deskTopImage = buildScaleVariant();
+export const smMdImage = buildScaleVariant({ delay: 3 });
+// ===================================== PROJECT BOARD DETAILS
+export const paragraphScale = buildScaleVariant({ delay: 2 });
+export const techTag = buildScaleVariant({
+	scale: 0.8,
+	duration: 0.35,
+	delay: 2,
+});
+// ===================================== PROJECT HR
+export const projectHr = buildScaleXVariant(0, 0);
+
+// ===================================== SERVICE CARD
+export const serviceCardContainer = buildScaleVariant({});
+
+// ===================================== CERTIFICATES
+export const certificatesImage = buildScaleVariant({
+	delay: 0.3,
+});
+
+// ===================================== FORM SECTION
+export const formContainer = buildContainerVariant({
+	animateSelf: false,
+	delayChildren: 0.2,
+	staggerChildren: 0.2,
+});
+export const formField = buildFadeXVariant({
+	x: -30,
+	duration: 0.4,
+});
+
+// ===================================== FORM SUBMIT BUTTON
+export const formSubmitButton = buildScaleVariant({
+	delay: 0.3,
+});
+
+// ===================================== FORM POP TOAST
+export const contactToast = buildPopToastVariants();

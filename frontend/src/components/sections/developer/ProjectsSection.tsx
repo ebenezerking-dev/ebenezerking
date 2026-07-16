@@ -6,12 +6,12 @@ import ProjectBoard from "../../reusables/others/ProjectBoard";
 import { motion } from "framer-motion";
 import type { ProjectData, Theme } from "../../../types/career";
 import {
-	sectionContainerVariants,
-	headerVariants,
-	underlineVariants,
-	dividerVariants,
 	viewportRepeat,
-} from "../../reusables/animations";
+	developer,
+	header,
+	headerUnderline,
+	bottomDivider,
+} from "../../reusables/animations/developerSc";
 
 // ================== PROPS
 type ProjectsSectionProps = {
@@ -24,23 +24,21 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 	return (
 		<CareerSectionFrame id="projects" theme={theme}>
 			<motion.div
+				variants={developer}
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
 				className="parent relative h-auto w-full flex flex-col overflow-hidden"
 			>
 				{/* ============================== PROJECTS WRAPPER */}
-				<motion.div
-					variants={sectionContainerVariants}
-					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
-				>
+				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 					{/* ============================== PROJECTS HEADER */}
-					<motion.div variants={headerVariants} className="text-left px-4">
+					<motion.div variants={header} className="header text-left px-4">
 						<div className="header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="header relative inline-block">
 								{projects.title}
 								<motion.span
-									variants={underlineVariants}
+									variants={headerUnderline}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -58,7 +56,7 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
 				<motion.div
-					variants={dividerVariants}
+					variants={bottomDivider}
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: false, amount: 0.2 }}

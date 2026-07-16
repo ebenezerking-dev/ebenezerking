@@ -5,14 +5,15 @@ import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import { motion } from "framer-motion";
 import type { CertificationData, Theme } from "../../../types/career";
 import {
-	sectionContainerVariants,
-	headerVariants,
-	underlineVariants,
 	viewportRepeat,
-	dividerVariants,
-	fadeInUpVariants,
-	deviceImageVariants,
-} from "../../reusables/animations";
+	developer,
+	header,
+	headerUnderline,
+	developerBody,
+	paragraphUp,
+	certificatesImage,
+	bottomDivider,
+} from "../../reusables/animations/developerSc";
 
 // ================== PROPS
 type CertificationSectionProps = {
@@ -28,6 +29,7 @@ const CertificationSection = ({
 	return (
 		<CareerSectionFrame id="certifications" theme={theme}>
 			<motion.div
+				variants={developer}
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
@@ -35,17 +37,14 @@ const CertificationSection = ({
 			>
 				{" "}
 				{/* ============================== CERTIFICATIONS WRAPPER */}
-				<motion.div
-					variants={sectionContainerVariants}
-					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20"
-				>
+				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
 					{/* ============================== CERTIFICATIONS HEADER */}
-					<motion.div variants={headerVariants} className="text-left px-4">
+					<motion.div variants={header} className="text-left px-4">
 						<div className="header inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
 							<h2 className="relative inline-block">
 								{certifications.title}
 								<motion.span
-									variants={underlineVariants}
+									variants={headerUnderline}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -56,21 +55,16 @@ const CertificationSection = ({
 					</motion.div>
 					{/* ============================== CERTIFICATIONS BODY */}
 					<motion.div
-						variants={sectionContainerVariants}
+						variants={developerBody}
 						className="body flex flex-col gap-8 w-full md:p-4 text-lg"
 					>
-						{/* title: string; issuer: string; date: string; credentialId?: string;
-						image?: string; */}
 						{certifications.items.map((item) => (
 							<div
 								key={`${item.title}-${item.issuer}`}
 								className="w-full max-w-2xl mx-auto"
 							>
 								{/* ========== TITLE */}
-								<motion.div
-									variants={headerVariants}
-									className="flex justify-center"
-								>
+								<motion.div variants={header} className="flex justify-center">
 									<div className="relative z-10 inline-flex bg-[#000000] px-3 pt-1 pb-3 rounded-2xl">
 										<h3 className="relative inline-block">
 											{item.title}
@@ -79,29 +73,26 @@ const CertificationSection = ({
 									</div>
 								</motion.div>
 								{/* ========== ISSUER */}
-								<motion.p
-									variants={fadeInUpVariants}
-									className="mt-4 font-semibold"
-								>
+								<motion.p variants={paragraphUp} className="mt-4 font-semibold">
 									{item.issuer}
 								</motion.p>
 								{/* ========== DATE ISSUED */}
 								<motion.p
-									variants={fadeInUpVariants}
+									variants={paragraphUp}
 									className="text-sm text-white/70 mb-4"
 								>
 									{item.issuedDate}
 								</motion.p>
 								{/* ========== CREDENTIAL ID */}
 								<motion.p
-									variants={fadeInUpVariants}
+									variants={paragraphUp}
 									className="text-sm opacity-70 mb-4"
 								>
 									{item.credentialId}
 								</motion.p>
 								{/* ========== CERTIFICATE IMAGE */}
 								<motion.div
-									variants={deviceImageVariants}
+									variants={certificatesImage}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -124,7 +115,7 @@ const CertificationSection = ({
 			</motion.div>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
 			<motion.div
-				variants={dividerVariants}
+				variants={bottomDivider}
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: false, amount: 0.2 }}

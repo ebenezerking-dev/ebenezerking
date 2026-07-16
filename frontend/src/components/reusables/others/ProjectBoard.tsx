@@ -7,17 +7,14 @@ import { Fragment } from "react";
 import RippleButton from "./RippleButton";
 import type { Project } from "../../../types/career";
 import {
-	sectionContainerVariants,
-	projectCardVariants,
-	imageContainerVariants,
-	deviceImageVariants,
-	fadeInUpVariants,
-	// techTagContainerVariants,
-	techTagVariants,
-	hrVariants,
-	scaleVariants,
 	viewportRepeat,
-} from "../animations";
+	projectBoardContainer,
+	deskTopImage,
+	smMdImage,
+	paragraphScale,
+	techTag,
+	projectHr,
+} from "../../reusables/animations/developerSc";
 
 // ================== INTERFACE
 type ProjectBoardProps = {
@@ -28,7 +25,7 @@ type ProjectBoardProps = {
 const ProjectBoard = ({ items }: ProjectBoardProps) => {
 	return (
 		<motion.div
-			variants={sectionContainerVariants}
+			variants={projectBoardContainer}
 			initial="hidden"
 			whileInView="visible"
 			viewport={viewportRepeat}
@@ -37,20 +34,16 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 			<AnimatePresence>
 				{items.map((project, index) => (
 					<Fragment key={index}>
-						<motion.div
-							variants={imageContainerVariants}
-							className="overflow-hidden"
-						>
+						<motion.div className="overflow-hidden">
 							{/* ================= IMAGES SECTION */}
 							<div className="relative w-full h-60 sm:h-88 lg:h-90 flex justify-center overflow-hidden">
 								{/* ================= DESKTOP */}
 								{project.images.desktop && (
 									<motion.div
-										variants={deviceImageVariants}
+										variants={deskTopImage}
 										initial="hidden"
 										whileInView="visible"
 										viewport={viewportRepeat}
-										transition={{ delay: 0.2 }}
 										className="absolute z-10 w-full h-full flex justify-center bottom-0"
 									>
 										<img
@@ -64,11 +57,10 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								{/* ================= MOBILE */}
 								{project.images.mobile && (
 									<motion.div
-										variants={deviceImageVariants}
+										variants={smMdImage}
 										initial="hidden"
 										whileInView="visible"
 										viewport={viewportRepeat}
-										transition={{ delay: 0.3 }}
 										className="absolute z-20 left-1 sm:left-8 bottom-11 sm:bottom-24 h-32 w-20 sm:h-40 sm:w-30 lg:h-60 lg:w-30 lg:left-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
 									>
 										<img
@@ -82,11 +74,10 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								{/* ================= TABLET */}
 								{project.images.tablet && (
 									<motion.div
-										variants={deviceImageVariants}
+										variants={smMdImage}
 										initial="hidden"
 										whileInView="visible"
 										viewport={viewportRepeat}
-										transition={{ delay: 0.3 }}
 										className="absolute z-20 right-1 sm:right-8 bottom-3 sm:bottom-9 h-36 w-26 sm:h-50 sm:w-40 lg:h-55 lg:w-40 lg:right-44 lg:bottom-4 bg-linear-to-r from-[#22050c] via-[#ABE0F0] to-[#22050c] rounded-2xl"
 									>
 										<img
@@ -99,14 +90,8 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 							</div>
 
 							{/* ================= PROJECT DETAILS */}
-							<motion.div
-								variants={projectCardVariants}
-								initial="hidden"
-								whileInView="visible"
-								viewport={viewportRepeat}
-								className="py-4 px-2 flex flex-col items-start sm:items-center gap-[1.4rem]"
-							>
-								<motion.div variants={fadeInUpVariants}>
+							<motion.div className="py-4 px-2 flex flex-col items-start sm:items-center gap-[1.4rem]">
+								<motion.div variants={paragraphScale}>
 									<div className="bg-[#000000]/20 p-2 rounded-lg">
 										<h3 className="relative text-2xl font-unna font-bold">
 											{project.title}
@@ -116,7 +101,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</motion.div>
 
 								<motion.p
-									variants={fadeInUpVariants}
+									variants={paragraphScale}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -126,14 +111,16 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</motion.p>
 
 								<motion.div
-									// variants={techTagContainerVariants}
+									variants={paragraphScale}
+									initial="hidden"
+									whileInView="visible"
 									viewport={viewportRepeat}
 									className="flex flex-wrap gap-2 text-sm sm:text-md"
 								>
 									{project.technologies.map((tech) => (
 										<motion.span
 											key={tech}
-											variants={techTagVariants}
+											variants={techTag}
 											className="rounded-lg border border-[#000AFD]/80 bg-[#000000]/20 p-2"
 										>
 											{tech}
@@ -142,12 +129,19 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</motion.div>
 
 								<motion.div
-									variants={projectCardVariants}
+									variants={paragraphScale}
+									initial="hidden"
+									whileInView="visible"
 									viewport={viewportRepeat}
 									className="flex gap-4 pt-2"
 								>
 									{project.live && (
-										<motion.div variants={scaleVariants}>
+										<motion.div
+											variants={paragraphScale}
+											initial="hidden"
+											whileInView="visible"
+											viewport={viewportRepeat}
+										>
 											<RippleButton
 												href={project.live}
 												size="md"
@@ -159,7 +153,12 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 									)}
 
 									{project.github && (
-										<motion.div variants={scaleVariants}>
+										<motion.div
+											variants={paragraphScale}
+											initial="hidden"
+											whileInView="visible"
+											viewport={viewportRepeat}
+										>
 											<RippleButton
 												href={project.github}
 												size="md"
@@ -175,7 +174,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 						{index < items.length - 1 && (
 							<motion.hr
-								variants={hrVariants}
+								variants={projectHr}
 								initial="hidden"
 								whileInView="visible"
 								viewport={viewportRepeat}

@@ -10,7 +10,7 @@ import {
 	header,
 	headerUnderline,
 	developerBody,
-	fadeUpThree,
+	paragraphUp,
 	bottomDivider,
 } from "../../reusables/animations/developerSc";
 
@@ -59,10 +59,7 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 								className="w-full max-w-2xl mx-auto"
 							>
 								{/* ========== COMPANY */}
-								<motion.div
-									variants={headerVariants}
-									className="flex justify-center"
-								>
+								<motion.div variants={header} className="flex justify-center">
 									<div className="relative z-10 inline-flex bg-[#000000] px-3 pt-1 pb-3 rounded-2xl">
 										<h3 className="relative inline-block">
 											{item.company}
@@ -72,16 +69,13 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 								</motion.div>
 
 								{/* ========== ROLE */}
-								<motion.p
-									variants={fadeInUpVariants}
-									className="mt-4 font-semibold"
-								>
+								<motion.p variants={paragraphUp} className="mt-4 font-semibold">
 									{item.role}
 								</motion.p>
 
 								{/* ========== DURATION */}
 								<motion.p
-									variants={fadeInUpVariants}
+									variants={paragraphUp}
 									className="text-sm text-white/70 mb-4"
 								>
 									{item.duration}
@@ -89,7 +83,7 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 
 								{/* ========== DESCRIPTION */}
 								<motion.ul
-									variants={fadeInUpVariants}
+									variants={paragraphUp}
 									className="list-disc pl-5 space-y-2"
 								>
 									{item.description.map((desc) => (
@@ -103,7 +97,7 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 			</motion.div>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
 			<motion.div
-				variants={dividerVariants}
+				variants={bottomDivider}
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: false, amount: 0.2 }}

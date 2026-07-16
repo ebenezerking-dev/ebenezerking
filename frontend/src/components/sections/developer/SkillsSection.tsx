@@ -1,17 +1,19 @@
 // src/components/sections/developer/SkillsSection.tsx
-// this is a section that renders the skills data for a career page
 
 // ================== IMPORTS
 import { motion } from "framer-motion";
+import { useState } from "react";
 import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import type { SkillsData, Theme } from "../../../types/career";
+import RippleButton from "../../reusables/others/RippleButton";
 import {
 	viewportRepeat,
 	developer,
 	header,
 	headerUnderline,
-	developerBody,
-	cardVariants,
+	skillsRowStagger,
+	skillItem,
+	cardHover,
 	bottomDivider,
 } from "../../reusables/animations/developerSc";
 
@@ -23,6 +25,19 @@ type SkillsSectionProps = {
 
 // ================== SKILLS SECTION
 const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
+	const [showAll, setShowAll] = useState(false);
+
+	const getVisibleCount = () => {
+		const columns = 4;
+		const rows = 3;
+		return columns * rows;
+	};
+
+	const visibleSkills = showAll
+		? skills.items
+		: skills.items.slice(0, getVisibleCount());
+	const hasMoreSkills = skills.items.length > getVisibleCount();
+
 	return (
 		<CareerSectionFrame id="skills" theme={theme}>
 			<motion.div
@@ -49,29 +64,27 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 
 					{/* ============================== SKILLS BODY */}
 					<motion.div
-						variants={developerBody}
+						variants={skillsRowStagger}
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportRepeat}
-						className="body grid grid-cols-2 gap-4 px-4 pb-20 sm:grid-cols-3 lg:grid-cols-4"
+						className="body grid grid-cols-2 gap-4 px-4 pb-10 sm:grid-cols-3 lg:grid-cols-4"
 					>
 						{/* ============================== SKILLS GRID */}
-						{skills.items.map((skill) => {
+						{visibleSkills.map((skill, index) => {
 							const Icon = skill.icon;
-
 							return (
 								<motion.div
 									key={skill.name}
-									variants={cardVariants("scale")}
-									whileHover={{
-										y: -5,
-										scale: 1.02,
-										transition: {
-											duration: 0.2,
-											ease: "easeOut",
-										},
-									}}
+									custom={index}
+									variants={skillItem}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									whileHover={cardHover}
 									className="flex flex-col items-center justify-center rounded-xl border border-[#000AFD]/80 bg-[#000000]/20 px-4 py-6 text-center transition-all duration-300 hover:border-[#00FF91] hover:bg-[#000000] hover:text-[#00FF91]"
+									data-skill-name={skill.name}
+									data-skill-index={index}
 								>
 									{Icon && <Icon className="mb-3 text-3xl" />}
 									<h3 className="font-unna text-xl">{skill.name}</h3>
@@ -79,6 +92,21 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 							);
 						})}
 					</motion.div>
+
+					{/* ============================== SEE MORE BUTTON */}
+					{hasMoreSkills && (
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={viewportRepeat}
+							transition={{ delay: 0.3 }}
+							className="flex justify-center px-4"
+						>
+							<RippleButton onClick={() => setShowAll(!showAll)} size="lg">
+								{showAll ? "Show Less" : "See More"}
+							</RippleButton>
+						</motion.div>
+					)}
 				</motion.div>
 			</motion.div>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}

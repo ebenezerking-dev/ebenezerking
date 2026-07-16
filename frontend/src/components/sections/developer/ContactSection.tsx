@@ -8,17 +8,16 @@ import { LiquidButton } from "../../ui/LiquidButton";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Contact, Theme } from "../../../types/career";
 import {
-	sectionContainerVariants,
-	headerVariants,
-	underlineVariants,
-	dividerVariants,
 	viewportRepeat,
-	fadeInUpVariants,
-	formContainerVariants,
-	formFieldVariants,
-	formButtonVariants,
-	toastVariants,
-} from "../../reusables/animations";
+	developer,
+	header,
+	headerUnderline,
+	formContainer,
+	formField,
+	formSubmitButton,
+	contactToast,
+	bottomDivider,
+} from "../../reusables/animations/developerSc";
 
 // ================== PROPS
 type ContactSectionProps = {
@@ -121,21 +120,19 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 	return (
 		<CareerSectionFrame id="contact" theme={theme}>
 			<motion.div
+				variants={developer}
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
 				className="parent relative h-auto w-full flex flex-col overflow-hidden"
 			>
 				{/* ============================== CONTACT WRAPPER */}
-				<motion.div
-					variants={sectionContainerVariants}
-					className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto"
-				>
+				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 					{/* =========================== CONTACT TOAST */}
 					<AnimatePresence>
 						{toast && (
 							<motion.div
-								variants={toastVariants}
+								variants={contactToast}
 								initial="hidden"
 								animate="visible"
 								exit="hidden"
@@ -148,7 +145,10 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 
 					{/* =========================== CONTACT HEADER */}
 					<motion.div
-						variants={headerVariants}
+						variants={header}
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportRepeat}
 						className="header text-left px-4"
 					>
 						<div className="inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
@@ -156,7 +156,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 							<h3 className="relative inline-block">
 								Let's connect.
 								<motion.span
-									variants={underlineVariants}
+									variants={headerUnderline}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -180,23 +180,25 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 
 					{/* ========================= CONTACT FORM WRAPPER ======================== */}
 					<motion.div
-						variants={fadeInUpVariants}
+						variants={formContainer}
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportRepeat}
 						className="form__wrapper flex flex-1 flex-col justify-center items-center px-2 pb-20"
 					>
-						<motion.div
-							variants={formContainerVariants}
-							initial="hidden"
-							whileInView="visible"
-							viewport={viewportRepeat}
-							className="w-full py-4 mx-auto"
-						>
+						<motion.div className="w-full py-4 mx-auto">
 							{/* =========================== FORM */}
 							<form
 								onSubmit={handleSubmit}
 								className="form flex flex-col gap-4 text-lg"
 							>
 								{/* NAME FIELD */}
-								<motion.div variants={formFieldVariants}>
+								<motion.div
+									variants={formField}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+								>
 									<input
 										type="text"
 										name="name"
@@ -209,7 +211,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 								</motion.div>
 
 								{/* EMAIL FIELD */}
-								<motion.div variants={formFieldVariants}>
+								<motion.div variants={formField}>
 									<input
 										type="email"
 										name="email"
@@ -222,7 +224,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 								</motion.div>
 
 								{/* MESSAGE FIELD */}
-								<motion.div variants={formFieldVariants}>
+								<motion.div variants={formField}>
 									<textarea
 										name="message"
 										rows={4}
@@ -235,7 +237,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 								</motion.div>
 
 								{/* SUBMIT BUTTON */}
-								<motion.div variants={formButtonVariants}>
+								<motion.div variants={formSubmitButton}>
 									<LiquidButton status={status}>Send Message</LiquidButton>
 								</motion.div>
 							</form>
@@ -245,7 +247,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
 				<motion.div
-					variants={dividerVariants}
+					variants={bottomDivider}
 					initial="hidden"
 					whileInView="visible"
 					viewport={viewportRepeat}

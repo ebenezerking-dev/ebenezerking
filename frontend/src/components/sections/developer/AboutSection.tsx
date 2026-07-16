@@ -10,7 +10,7 @@ import {
 	header,
 	headerUnderline,
 	developerBody,
-	fadeUpThree,
+	paragraphUp,
 	bottomDivider,
 } from "../../reusables/animations/developerSc";
 
@@ -53,7 +53,13 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 					>
 						{/* ============================== ABOUT INTRO */}
 						{about.intro && (
-							<motion.p variants={fadeUpThree} className="font-bold">
+							<motion.p
+								variants={paragraphUp}
+								initial="hidden"
+								whileInView="visible"
+								viewport={viewportRepeat}
+								className="font-bold"
+							>
 								<span className="inline-block xl:inline">
 									{about.intro.split(",").map((part, index, array) => (
 										<span key={index}>
@@ -70,7 +76,13 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 
 						{/* ============================== PARAGRAPHS */}
 						{about.paragraphs.map((paragraph, index) => (
-							<motion.p key={index} variants={fadeUpThree}>
+							<motion.p
+								key={index}
+								variants={paragraphUp}
+								initial="hidden"
+								whileInView="visible"
+								viewport={viewportRepeat}
+							>
 								{paragraph}
 							</motion.p>
 						))}

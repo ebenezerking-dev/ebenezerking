@@ -5,33 +5,26 @@
 import { motion } from "framer-motion";
 import type { ReactElement } from "react";
 import {
-	cardContainerVariants,
-	getCardVariants,
-	type CardAnimation,
+	serviceCardContainer,
+	cardUpScale,
+	cardHover,
 	viewportRepeat,
-} from "../animations";
+} from "../animations/developerSc";
 
 // ================== PROPS
 type ServiceCardSliderProps<T> = {
 	items: T[];
 	renderItem: (item: T, index: number) => ReactElement;
-	staggerDelay?: number;
-	cardAnimation?: CardAnimation;
 };
 
 // ================== SERVICE CARD SLIDER
 const ServiceCardSlider = <T,>({
 	items,
 	renderItem,
-	staggerDelay = 0.1,
-	cardAnimation = "fadeUp",
 }: ServiceCardSliderProps<T>) => {
-	const containerVariants = cardContainerVariants(staggerDelay);
-	const cardItemVariants = getCardVariants(cardAnimation);
-
 	return (
 		<motion.div
-			variants={containerVariants}
+			variants={serviceCardContainer}
 			initial="hidden"
 			whileInView="visible"
 			viewport={viewportRepeat}
@@ -41,15 +34,8 @@ const ServiceCardSlider = <T,>({
 				{items.map((item, index) => (
 					<motion.div
 						key={index}
-						variants={cardItemVariants}
-						whileHover={{
-							y: -5,
-							scale: 1.02,
-							transition: {
-								duration: 0.2,
-								ease: "easeOut",
-							},
-						}}
+						variants={cardUpScale}
+						whileHover={cardHover}
 						className="w-full flex flex-col"
 					>
 						{renderItem(item, index)}
