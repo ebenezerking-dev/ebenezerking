@@ -10,6 +10,7 @@ import {
 	developer,
 	header,
 	headerUnderline,
+	// developerBody,
 	bottomDivider,
 } from "../../reusables/animations/developerSc";
 
@@ -49,7 +50,13 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 					</motion.div>
 
 					{/* ============================== PROJECTS BODY */}
-					<motion.div className="body flex flex-col justify-center px-2 gap-4 lg:gap-3 w-full pb-20">
+					<motion.div
+						// variants={developerBody}
+						// initial="hidden"
+						// whileInView="visible"
+						// viewport={viewportRepeat}
+						className="body flex flex-col justify-center px-2 gap-4 lg:gap-3 w-full pb-20"
+					>
 						<ProjectBoard items={projects.items} />
 					</motion.div>
 				</motion.div>

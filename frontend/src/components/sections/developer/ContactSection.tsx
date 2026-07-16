@@ -192,7 +192,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 								onSubmit={handleSubmit}
 								className="form flex flex-col gap-4 text-lg"
 							>
-								{/* NAME FIELD */}
+								{/* =========================== NAME FIELD */}
 								<motion.div
 									variants={formField}
 									initial="hidden"
@@ -210,8 +210,13 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 									/>
 								</motion.div>
 
-								{/* EMAIL FIELD */}
-								<motion.div variants={formField}>
+								{/* =========================== EMAIL FIELD */}
+								<motion.div
+									variants={formField}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+								>
 									<input
 										type="email"
 										name="email"
@@ -223,8 +228,13 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 									/>
 								</motion.div>
 
-								{/* MESSAGE FIELD */}
-								<motion.div variants={formField}>
+								{/* =========================== MESSAGE FIELD */}
+								<motion.div
+									variants={formField}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+								>
 									<textarea
 										name="message"
 										rows={4}

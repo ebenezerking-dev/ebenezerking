@@ -9,7 +9,8 @@ import {
 	developer,
 	header,
 	headerUnderline,
-	developerBody,
+	bodyUnderline,
+	experimentBodyStagger,
 	paragraphUp,
 	bottomDivider,
 } from "../../reusables/animations/developerSc";
@@ -49,33 +50,52 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 						</div>
 					</motion.div>
 					{/* ============================== EXPERIENCE BODY */}
-					<motion.div
-						variants={developerBody}
-						className="body flex flex-col gap-8 w-full md:p-4 text-lg"
-					>
+					<motion.div className="body flex flex-col gap-8 w-full md:p-4 text-lg">
 						{experience.items.map((item) => (
-							<div
+							<motion.div
 								key={`${item.company}-${item.role}`}
+								variants={experimentBodyStagger}
+								initial="hidden"
+								whileInView="visible"
+								viewport={viewportRepeat}
 								className="w-full max-w-2xl mx-auto"
 							>
 								{/* ========== COMPANY */}
-								<motion.div variants={header} className="flex justify-center">
+								<motion.div
+									variants={paragraphUp}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									className="flex justify-center"
+								>
 									<div className="relative z-10 inline-flex bg-[#000000] px-3 pt-1 pb-3 rounded-2xl">
 										<h3 className="relative inline-block">
 											{item.company}
-											<span className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full" />
+											<motion.span
+												variants={bodyUnderline}
+												className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full"
+											/>
 										</h3>
 									</div>
 								</motion.div>
 
 								{/* ========== ROLE */}
-								<motion.p variants={paragraphUp} className="mt-4 font-semibold">
+								<motion.p
+									variants={paragraphUp}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									className="mt-4 font-semibold"
+								>
 									{item.role}
 								</motion.p>
 
 								{/* ========== DURATION */}
 								<motion.p
 									variants={paragraphUp}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
 									className="text-sm text-white/70 mb-4"
 								>
 									{item.duration}
@@ -84,13 +104,16 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 								{/* ========== DESCRIPTION */}
 								<motion.ul
 									variants={paragraphUp}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
 									className="list-disc pl-5 space-y-2"
 								>
 									{item.description.map((desc) => (
 										<li key={desc}>{desc}</li>
 									))}
 								</motion.ul>
-							</div>
+							</motion.div>
 						))}
 					</motion.div>
 				</motion.div>

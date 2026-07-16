@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import type { ReactElement } from "react";
 import {
 	serviceCardContainer,
-	cardUpScale,
+	serviceCardItem,
 	cardHover,
 	viewportRepeat,
 } from "../animations/developerSc";
@@ -34,7 +34,11 @@ const ServiceCardSlider = <T,>({
 				{items.map((item, index) => (
 					<motion.div
 						key={index}
-						variants={cardUpScale}
+						custom={index}
+						variants={serviceCardItem}
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportRepeat}
 						whileHover={cardHover}
 						className="w-full flex flex-col"
 					>

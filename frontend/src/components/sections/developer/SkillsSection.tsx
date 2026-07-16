@@ -6,6 +6,7 @@ import { useState } from "react";
 import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import type { SkillsData, Theme } from "../../../types/career";
 import RippleButton from "../../reusables/others/RippleButton";
+import useBreakpoint from "../../../hooks/useBreakpoint";
 import {
 	viewportRepeat,
 	developer,
@@ -14,6 +15,8 @@ import {
 	skillsRowStagger,
 	skillItem,
 	cardHover,
+	seeMoreButton,
+	buttonLayout,
 	bottomDivider,
 } from "../../reusables/animations/developerSc";
 
@@ -25,12 +28,21 @@ type SkillsSectionProps = {
 
 // ================== SKILLS SECTION
 const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
+	const breakpoint = useBreakpoint();
 	const [showAll, setShowAll] = useState(false);
 
 	const getVisibleCount = () => {
-		const columns = 4;
 		const rows = 3;
-		return columns * rows;
+		switch (breakpoint) {
+			case "mobile":
+				return 2 * rows;
+			case "sm":
+				return 3 * rows;
+			case "lg":
+				return 4 * rows;
+			default:
+				return 4 * rows;
+		}
 	};
 
 	const visibleSkills = showAll
@@ -64,6 +76,8 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 
 					{/* ============================== SKILLS BODY */}
 					<motion.div
+						layout
+						transition={buttonLayout}
 						variants={skillsRowStagger}
 						initial="hidden"
 						whileInView="visible"
@@ -75,6 +89,8 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 							const Icon = skill.icon;
 							return (
 								<motion.div
+									layout
+									transition={buttonLayout}
 									key={skill.name}
 									custom={index}
 									variants={skillItem}
@@ -96,10 +112,12 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 					{/* ============================== SEE MORE BUTTON */}
 					{hasMoreSkills && (
 						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
+							layout
+							transition={buttonLayout}
+							variants={seeMoreButton}
+							initial="hidden"
+							whileInView="visible"
 							viewport={viewportRepeat}
-							transition={{ delay: 0.3 }}
 							className="flex justify-center px-4"
 						>
 							<RippleButton onClick={() => setShowAll(!showAll)} size="lg">

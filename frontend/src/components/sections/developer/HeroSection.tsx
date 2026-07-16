@@ -13,6 +13,8 @@ import {
 	developerCareerImage,
 	dateHero,
 	heroButton,
+	viewportOnce,
+	bottomDivider,
 } from "../../reusables/animations/developerSc";
 
 // ================== PROPS
@@ -103,7 +105,13 @@ const HeroSection = ({ hero, theme }: HeroSectionProps) => {
 					</motion.div>
 				</div>
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-				<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-[#000AFD] to-transparent"></div>
+				<motion.div
+					variants={bottomDivider}
+					initial="hidden"
+					whileInView="visible"
+					viewport={viewportOnce}
+					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-1.5 bg-linear-to-r from-transparent via-orange-500 to-transparent"
+				/>
 			</div>
 		</CareerHeroFrame>
 	);

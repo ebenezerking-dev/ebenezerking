@@ -11,8 +11,10 @@ import {
 	projectBoardContainer,
 	deskTopImage,
 	smMdImage,
-	paragraphScale,
+	paragraphUp,
+	bodyUnderline,
 	techTag,
+	projectActionButton,
 	projectHr,
 } from "../../reusables/animations/developerSc";
 
@@ -91,17 +93,27 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 
 							{/* ================= PROJECT DETAILS */}
 							<motion.div className="py-4 px-2 flex flex-col items-start sm:items-center gap-[1.4rem]">
-								<motion.div variants={paragraphScale}>
-									<div className="bg-[#000000]/20 p-2 rounded-lg">
-										<h3 className="relative text-2xl font-unna font-bold">
-											{project.title}
-											<motion.span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full" />
-										</h3>
-									</div>
+								<motion.div
+									variants={paragraphUp}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									className="bg-[#000000]/20 p-2 rounded-lg"
+								>
+									<h3 className="relative text-2xl font-unna font-bold">
+										{project.title}
+										<motion.span
+											variants={bodyUnderline}
+											initial="hidden"
+											whileInView="visible"
+											viewport={viewportRepeat}
+											className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"
+										/>
+									</h3>
 								</motion.div>
 
 								<motion.p
-									variants={paragraphScale}
+									variants={paragraphUp}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
@@ -111,16 +123,20 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</motion.p>
 
 								<motion.div
-									variants={paragraphScale}
+									variants={paragraphUp}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
 									className="flex flex-wrap gap-2 text-sm sm:text-md"
 								>
-									{project.technologies.map((tech) => (
+									{project.technologies.map((tech, techIndex) => (
 										<motion.span
 											key={tech}
+											custom={techIndex}
 											variants={techTag}
+											initial="hidden"
+											whileInView="visible"
+											viewport={viewportRepeat}
 											className="rounded-lg border border-[#000AFD]/80 bg-[#000000]/20 p-2"
 										>
 											{tech}
@@ -129,19 +145,14 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 								</motion.div>
 
 								<motion.div
-									variants={paragraphScale}
+									variants={projectActionButton}
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
 									className="flex gap-4 pt-2"
 								>
 									{project.live && (
-										<motion.div
-											variants={paragraphScale}
-											initial="hidden"
-											whileInView="visible"
-											viewport={viewportRepeat}
-										>
+										<motion.div>
 											<RippleButton
 												href={project.live}
 												size="md"
@@ -153,12 +164,7 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 									)}
 
 									{project.github && (
-										<motion.div
-											variants={paragraphScale}
-											initial="hidden"
-											whileInView="visible"
-											viewport={viewportRepeat}
-										>
+										<motion.div>
 											<RippleButton
 												href={project.github}
 												size="md"

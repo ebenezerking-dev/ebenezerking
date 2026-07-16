@@ -8,17 +8,19 @@ import {
 	type TargetAndTransition,
 } from "framer-motion";
 
-// ===================================== DEFAULT EASING
-// ===================================== Role: transition ease
+// ===================================== DEFAULT EASING & DEFAULT TRANSITION & LAYOUT TRANSITION
 export const defaultEase = [0.25, 0.1, 0.25, 1] as const;
-
-// ===================================== DEFAULT TRANSITION
-// ===================================== Role: transition duration
+// =====================================
 export const buildTransition = (duration = 0.6, delay = 0): Transition => ({
 	duration,
 	delay,
 	ease: defaultEase,
 });
+// =====================================
+export const buildLayoutTransition = (duration = 0.6, delay = 0) => ({
+	layout: buildTransition(duration, delay),
+});
+// =====================================
 
 // ===================================== HOME CAREER SPAN CONTAINER
 export const buildHomeSpanOneVariants: Variants = {
@@ -31,6 +33,28 @@ export const buildHomeSpanOneVariants: Variants = {
 	},
 };
 
+// =====================================
+// ===================================== HEADER UNDERLINE DECORATION VARIANT
+type UnderlineVariantOptions = {
+	width?: string;
+	duration?: number;
+	delay?: number;
+};
+export const buildUnderlineVariant = ({
+	width = "30%",
+	duration = 0.6,
+	delay = 0.3,
+}: UnderlineVariantOptions = {}): Variants => ({
+	hidden: {
+		width: "0%",
+		opacity: 0,
+	},
+	visible: {
+		width,
+		opacity: 1,
+		transition: buildTransition(duration, delay),
+	},
+});
 // ===================================== FADE
 // ===================================== FADE & SCALE VARIANT OPTIONS
 type AnimationOptions = {
@@ -128,16 +152,22 @@ type ScaleVariantOptions = AnimationOptions & {
 	scale?: number;
 	scaleX?: number;
 	scaleY?: number;
+	y?: number;
+	x?: number;
 };
 export const buildScaleVariant = ({
 	scale = 0.95,
 	scaleX,
 	scaleY,
+	y = 0,
+	x = 0,
 	duration = 0.6,
 	delay = 0,
 }: ScaleVariantOptions = {}): Variants => ({
 	hidden: {
 		opacity: 0,
+		y,
+		x,
 		scale,
 		...(scaleX !== undefined && { scaleX }),
 		...(scaleY !== undefined && { scaleY }),
@@ -145,12 +175,14 @@ export const buildScaleVariant = ({
 	visible: {
 		opacity: 1,
 		y: 0,
+		x: 0,
 		scale: 1,
 		...(scaleX !== undefined && { scaleX: 1 }),
 		...(scaleY !== undefined && { scaleY: 1 }),
 		transition: buildTransition(duration, delay),
 	},
 });
+
 // ===================================== INDEX FADE Y
 export const buildIndexedFadeYVariant = ({
 	y = 20,
@@ -220,21 +252,6 @@ export const buildHomepageDeveloperImageVariants: Variants = {
 	},
 };
 
-// ===================================== HEADER UNDERLINE DECORATION VARIANT
-export const buildUnderlineVariant = (
-	width = "30%",
-	delay = 0.3,
-): Variants => ({
-	hidden: {
-		width: "0%",
-		opacity: 0,
-	},
-	visible: {
-		width,
-		opacity: 1,
-		transition: buildTransition(0.6, delay),
-	},
-});
 // ===================================== DIVIDER
 export const buildScaleXVariant = (duration = 0.8, delay = 0.6): Variants => ({
 	hidden: {

@@ -9,9 +9,10 @@ import {
 	developer,
 	header,
 	headerUnderline,
-	developerBody,
+	bodyUnderline,
 	paragraphUp,
 	certificatesImage,
+	certificatesBodyStagger,
 	bottomDivider,
 } from "../../reusables/animations/developerSc";
 
@@ -53,22 +54,33 @@ const CertificationSection = ({
 							</h2>
 						</div>
 					</motion.div>
+
 					{/* ============================== CERTIFICATIONS BODY */}
-					<motion.div
-						variants={developerBody}
-						className="body flex flex-col gap-8 w-full md:p-4 text-lg"
-					>
+					<motion.div className="body flex flex-col gap-8 w-full md:p-4 text-lg">
 						{certifications.items.map((item) => (
-							<div
+							<motion.div
 								key={`${item.title}-${item.issuer}`}
+								variants={certificatesBodyStagger}
+								initial="hidden"
+								whileInView="visible"
+								viewport={viewportRepeat}
 								className="w-full max-w-2xl mx-auto"
 							>
 								{/* ========== TITLE */}
-								<motion.div variants={header} className="flex justify-center">
+								<motion.div
+									variants={paragraphUp}
+									initial="hidden"
+									whileInView="visible"
+									viewport={viewportRepeat}
+									className="flex justify-center"
+								>
 									<div className="relative z-10 inline-flex bg-[#000000] px-3 pt-1 pb-3 rounded-2xl">
 										<h3 className="relative inline-block">
 											{item.title}
-											<span className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full" />
+											<motion.span
+												variants={bodyUnderline}
+												className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full"
+											/>
 										</h3>
 									</div>
 								</motion.div>
@@ -108,7 +120,7 @@ const CertificationSection = ({
 									<div className="absolute inset-0 rounded-xl bg-linear-to-t from-black/30 via-black/10 to-transparent transition-opacity duration-300 group-hover:opacity-5" />
 									{/* <div className="absolute inset-0 rounded-xl bg-linear-to-t from-black/40 via-black/20 to-transparent" /> */}
 								</motion.div>
-							</div>
+							</motion.div>
 						))}
 					</motion.div>
 				</motion.div>

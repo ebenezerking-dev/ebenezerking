@@ -5,6 +5,8 @@ import HomeSelection from "../components/home/HomeSelection";
 import {
 	homepageHeroTitle,
 	developerImage,
+	viewportOnce,
+	bottomDivider,
 } from "../components/reusables/animations/developerSc";
 import HeroVideo from "../components/ui/HeroVideo";
 import { images } from "../data/media";
@@ -91,7 +93,13 @@ const HomePage = () => {
 				</div>
 
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-				<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-1.5 bg-linear-to-r from-transparent via-orange-500 to-transparent"></div>
+				<motion.div
+					variants={bottomDivider}
+					initial="hidden"
+					whileInView="visible"
+					viewport={viewportOnce}
+					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-1.5 bg-linear-to-r from-transparent via-orange-500 to-transparent"
+				/>
 			</div>
 		</div>
 	);
