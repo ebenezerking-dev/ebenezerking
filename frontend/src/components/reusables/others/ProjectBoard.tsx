@@ -16,7 +16,7 @@ import {
 	techTag,
 	projectActionButton,
 	projectHr,
-} from "../../reusables/animations/developerSc";
+} from "../animations";
 
 // ================== INTERFACE
 type ProjectBoardProps = {

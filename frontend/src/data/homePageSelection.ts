@@ -6,7 +6,7 @@ import {
 	developerCareer,
 	fitnessCareer,
 	customerServiceCareer,
-} from "../components/reusables/animations/developerSc";
+} from "../components/reusables/animations/developer";
 // ================== HOME PAGE SELECTION
 export const homePageSelection = [
 	{

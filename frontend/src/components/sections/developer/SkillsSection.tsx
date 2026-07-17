@@ -7,18 +7,17 @@ import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import type { SkillsData, Theme } from "../../../types/career";
 import RippleButton from "../../reusables/others/RippleButton";
 import useBreakpoint from "../../../hooks/useBreakpoint";
+import SectionHeader from "../../reusables/others/SectionHeader";
+import BottomDivider from "../../reusables/others/BottomDivider";
 import {
 	viewportRepeat,
 	developer,
-	header,
-	headerUnderline,
 	skillsRowStagger,
 	skillItem,
 	cardHover,
 	seeMoreButton,
 	buttonLayout,
-	bottomDivider,
-} from "../../reusables/animations/developerSc";
+} from "../../reusables/animations";
 
 // ================== PROPS
 type SkillsSectionProps = {
@@ -61,18 +60,9 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 			>
 				{/* ============================== SKILLS WRAPPER */}
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
+					{/* === */}
 					{/* ============================== SKILLS HEADER */}
-					<motion.div variants={header} className="header text-left px-4">
-						<div className="inline-block rounded-2xl bg-[#000000] p-3 font-unna text-[1rem] font-bold uppercase mb-56">
-							<h2 className="relative inline-block">
-								{skills.title}
-								<motion.span
-									variants={headerUnderline}
-									className="absolute left-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] -translate-x-1/2 rounded-full bg-orange-500"
-								/>
-							</h2>
-						</div>
-					</motion.div>
+					<SectionHeader title={skills.title} />
 
 					{/* ============================== SKILLS BODY */}
 					<motion.div
@@ -128,13 +118,7 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 				</motion.div>
 			</motion.div>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<motion.div
-				variants={bottomDivider}
-				initial="hidden"
-				whileInView="visible"
-				viewport={{ once: false, amount: 0.2 }}
-				className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
-			/>
+			<BottomDivider />
 		</CareerSectionFrame>
 	);
 };

@@ -5,13 +5,13 @@ import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import ServiceCardSlider from "../../reusables/others/ServiceCardSlider";
 import { motion } from "framer-motion";
 import type { Service, ServiceData, Theme } from "../../../types/career";
+import SectionHeader from "../../reusables/others/SectionHeader";
+import BottomDivider from "../../reusables/others/BottomDivider";
 import {
 	viewportRepeat,
 	developer,
-	header,
 	headerUnderline,
-	bottomDivider,
-} from "../../reusables/animations/developerSc";
+} from "../../reusables/animations";
 
 // ================== PROPS
 interface ServicesSectionProps {
@@ -32,20 +32,7 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 				{/* ============================== SERVICES WRAPPER */}
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 					{/* ============================== SERVICES HEADER */}
-					<motion.div variants={header} className="header text-left px-4">
-						<div className="inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
-							<h3 className="relative inline-block">
-								{services.title}
-								<motion.span
-									variants={headerUnderline}
-									initial="hidden"
-									whileInView="visible"
-									viewport={viewportRepeat}
-									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-red-500 rounded-full"
-								/>
-							</h3>
-						</div>
-					</motion.div>
+					<SectionHeader title={services.title} />
 
 					{/* ============================== SERVICES BODY */}
 					{/* ============================== SERVICE CARDS SLIDER */}
@@ -71,13 +58,7 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 				</motion.div>
 
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-				<motion.div
-					variants={bottomDivider}
-					initial="hidden"
-					whileInView="visible"
-					viewport={viewportRepeat}
-					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
-				/>
+				<BottomDivider />
 			</motion.div>
 		</CareerSectionFrame>
 	);

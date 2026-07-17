@@ -93,8 +93,10 @@ export const customerServiceData = {
 	],
 
 	contact: {
-		email: "",
-		linkedin: "",
-		github: "",
+		title: "Let's Connect",
+		formTitle: "Get in Touch",
+		description:
+			"I'm available for customer service and administrative opportunities.",
+		submitLabel: "Send Inquiry",
 	},
 };

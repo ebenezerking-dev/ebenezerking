@@ -9,7 +9,7 @@ import {
 	serviceCardItem,
 	cardHover,
 	viewportRepeat,
-} from "../animations/developerSc";
+} from "../animations";
 
 // ================== PROPS
 type ServiceCardSliderProps<T> = {

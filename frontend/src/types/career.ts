@@ -18,7 +18,7 @@ export interface CareerData {
 	projects?: ProjectData;
 	services?: ServiceData;
 	certifications: CertificationData;
-	contact: Contact;
+	contact: ContactData;
 }
 
 export interface NavigationItem {
@@ -117,9 +117,9 @@ export interface Certification {
 	image: string;
 }
 
-export interface Contact {
+export interface ContactData {
 	title: string;
-	email: string;
-	linkedin?: string;
-	github?: string;
+	formTitle: string;
+	description?: string;
+	submitLabel?: string;
 }

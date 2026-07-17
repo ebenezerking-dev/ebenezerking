@@ -7,7 +7,7 @@ import {
 	developerImage,
 	viewportOnce,
 	bottomDivider,
-} from "../components/reusables/animations/developerSc";
+} from "../components/reusables/animations/shared";
 import HeroVideo from "../components/ui/HeroVideo";
 import { images } from "../data/media";
 // ================= HOME PAGE

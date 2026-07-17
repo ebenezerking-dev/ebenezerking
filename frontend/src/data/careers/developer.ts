@@ -304,6 +304,9 @@ export const developerData: CareerData = {
 
 	contact: {
 		title: "Let's Connect",
-		email: "",
+		formTitle: "Send Me a Message",
+		description:
+			"Have a project, opportunity, or idea you'd like to discuss? I'd love to hear from you.",
+		submitLabel: "Send Message",
 	},
 };

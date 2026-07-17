@@ -1,4 +1,4 @@
-// src/components/sections/developer/ContactSection.tsx
+// src/components/sections/shared/ContactSection.tsx
 // ================== IMPORTS
 import { useState } from "react";
 import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
@@ -6,22 +6,23 @@ import { useToast } from "../../../hooks/useToast";
 import { Toast } from "../../ui/Toast";
 import { LiquidButton } from "../../ui/LiquidButton";
 import { motion, AnimatePresence } from "framer-motion";
-import type { Contact, Theme } from "../../../types/career";
+import type { ContactData, Theme } from "../../../types/career";
+import SectionHeader from "../../reusables/others/SectionHeader";
+import BottomDivider from "../../reusables/others/BottomDivider";
 import {
 	viewportRepeat,
 	developer,
-	header,
-	headerUnderline,
+	paragraphUp,
+	bodyUnderline,
 	formContainer,
 	formField,
 	formSubmitButton,
 	contactToast,
-	bottomDivider,
-} from "../../reusables/animations/developerSc";
+} from "../../reusables/animations";
 
 // ================== PROPS
 type ContactSectionProps = {
-	contact: Contact;
+	contact: ContactData;
 	career: string;
 	theme: Theme;
 };
@@ -124,59 +125,45 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={viewportRepeat}
-				className="parent relative h-auto w-full flex flex-col overflow-hidden"
+				className="parent relative h-auto w-full flex flex-col overflow-hidden text-lg"
 			>
 				{/* ============================== CONTACT WRAPPER */}
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
-					{/* =========================== CONTACT TOAST */}
-					<AnimatePresence>
-						{toast && (
-							<motion.div
-								variants={contactToast}
-								initial="hidden"
-								animate="visible"
-								exit="hidden"
-								className="toast fixed top-4 right-4 z-50"
-							>
-								<Toast message={toast.message} type={toast.type} />
-							</motion.div>
-						)}
-					</AnimatePresence>
-
+					{/* ===*/}
 					{/* =========================== CONTACT HEADER */}
+					<SectionHeader title={contact.title} />
+
+					{/* =========================== CONTACT BODY */}
+					{/* ========== TITLE */}
 					<motion.div
-						variants={header}
+						variants={paragraphUp}
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportRepeat}
-						className="header text-left px-4"
+						className="flex justify-center"
 					>
-						<div className="inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
-							<h2 className="sr-only contactSection__header">Contact</h2>
+						<div className="relative z-10 inline-flex bg-[#000000] px-3 pt-1 pb-3 rounded-2xl">
 							<h3 className="relative inline-block">
-								Let's connect.
+								{contact.formTitle}
 								<motion.span
-									variants={headerUnderline}
-									initial="hidden"
-									whileInView="visible"
-									viewport={viewportRepeat}
-									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"
+									variants={bodyUnderline}
+									className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full"
 								/>
 							</h3>
 						</div>
 					</motion.div>
 
-					{/* =========================== CONTACT BODY */}
-					<div className="body px-4 mb-6 text-center">
-						<p className="text-lg">
-							<a
-								href={`mailto:${contact.email}`}
-								className="text-orange-500 hover:underline"
-							>
-								{contact.email}
-							</a>
-						</p>
-					</div>
+					{/* ========== DESCRIPTION */}
+					<motion.p
+						variants={paragraphUp}
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportRepeat}
+						className="relative flex justify-start pl-8 mb-4 mt-6"
+					>
+						{contact.description}
+						<span className="absolute w-1.5 left-5 top-1/2 -translate-y-1/2 h-full bg-orange-500 rounded-full" />
+					</motion.p>
 
 					{/* ========================= CONTACT FORM WRAPPER ======================== */}
 					<motion.div
@@ -248,21 +235,32 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 
 								{/* SUBMIT BUTTON */}
 								<motion.div variants={formSubmitButton}>
-									<LiquidButton status={status}>Send Message</LiquidButton>
+									<LiquidButton status={status}>
+										{contact.submitLabel}
+									</LiquidButton>
 								</motion.div>
+
+								{/* =========================== CONTACT TOAST */}
+								<AnimatePresence>
+									{toast && (
+										<motion.div
+											variants={contactToast}
+											initial="hidden"
+											animate="visible"
+											exit="hidden"
+											className="toast fixed top-4 right-4 z-50"
+										>
+											<Toast message={toast.message} type={toast.type} />
+										</motion.div>
+									)}
+								</AnimatePresence>
 							</form>
 						</motion.div>
 					</motion.div>
 				</motion.div>
 
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-				<motion.div
-					variants={bottomDivider}
-					initial="hidden"
-					whileInView="visible"
-					viewport={viewportRepeat}
-					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
-				/>
+				<BottomDivider />
 			</motion.div>
 		</CareerSectionFrame>
 	);

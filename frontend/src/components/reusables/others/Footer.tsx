@@ -12,7 +12,7 @@ import {
 	footerCenter,
 	headerUnderline,
 	homeCareerSpan,
-} from "../../reusables/animations/developerSc";
+} from "../animations";
 
 // =====================================
 const footerMotion = {

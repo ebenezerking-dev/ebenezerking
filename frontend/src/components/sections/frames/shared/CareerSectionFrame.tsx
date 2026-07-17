@@ -29,7 +29,7 @@ export default function CareerSectionFrame({
             ${theme.gradientTo}
         )`,
 			}}
-			className={`relative pt-16 pb-4 px-4 text-2xl md:text-2xl lg:text-xl overflow-hidden ${className}`}
+			className={`relative pt-16 pb-4 px-4 text-lg overflow-hidden ${className}`}
 		>
 			{children}
 		</section>

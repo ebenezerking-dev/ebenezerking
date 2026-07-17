@@ -4,15 +4,14 @@
 import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
 import { motion } from "framer-motion";
 import type { About, Theme } from "../../../types/career";
+import SectionHeader from "../../reusables/others/SectionHeader";
+import BottomDivider from "../../reusables/others/BottomDivider";
 import {
 	viewportRepeat,
 	developer,
-	header,
-	headerUnderline,
 	developerBody,
 	paragraphUp,
-	bottomDivider,
-} from "../../reusables/animations/developerSc";
+} from "../../reusables/animations";
 
 // ================== PROPS
 type AboutSectionProps = {
@@ -33,18 +32,9 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 			>
 				{/* ============================== ABOUT WRAPPER */}
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
+					{/* === */}
 					{/* ============================== ABOUT HEADER */}
-					<motion.div variants={header} className="header text-left px-4">
-						<div className="inline-block uppercase font-unna font-bold text-[1rem] mb-56 bg-[#000000] p-3 rounded-2xl">
-							<h3 className="header relative inline-block">
-								{about.title}
-								<motion.span
-									variants={headerUnderline}
-									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full"
-								/>
-							</h3>
-						</div>
-					</motion.div>
+					<SectionHeader title={about.title} />
 
 					{/* ============================== ABOUT BODY */}
 					<motion.div
@@ -90,13 +80,7 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 				</motion.div>
 
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-				<motion.div
-					variants={bottomDivider}
-					initial="hidden"
-					whileInView="visible"
-					viewport={viewportRepeat}
-					className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-linear-to-r from-transparent via-orange-500 to-transparent origin-left"
-				/>
+				<BottomDivider />
 			</motion.div>
 		</CareerSectionFrame>
 	);

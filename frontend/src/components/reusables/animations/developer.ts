@@ -1,15 +1,11 @@
 // src/animations/developerSc.ts
 
 // ================== IMPORTS
-// import type { Variants } from "framer-motion";
 import {
 	buildHomeSpanOneVariants,
-	buildHomepageDeveloperImageVariants,
 	buildContainerVariant,
 	buildFadeYVariant,
 	buildFadeXVariant,
-	buildFadeInVariant,
-	buildUnderlineVariant,
 	buildScaleVariant,
 	buildIndexedFadeYVariant,
 	buildPopToastVariants,
@@ -18,38 +14,9 @@ import {
 	buildLayoutTransition,
 } from "./factory";
 
-// ================== VIEWPORT EXPORTS
-export const viewportOnce = {
-	once: true,
-	amount: 0.2,
-};
-export const viewportRepeat = {
-	once: false,
-	amount: 0.2,
-};
+// =====================================
 
 // =====================================
-// ===================================== HOMEPAGE & HERO TITLE
-export const homepageHeroTitle = buildFadeYVariant({
-	y: -300,
-	delay: 0.3,
-});
-export const developerCareerImage = buildFadeYVariant({
-	y: 100,
-	duration: 0.8,
-});
-
-// =====================================
-// ===================================== HERO SUBTITLE
-export const heroSubTitle = buildFadeInVariant();
-
-// ===================================== HERO BUTTON
-export const heroButton = buildFadeInVariant({
-	delay: 1.0,
-});
-
-// ===================================== HOMEPAGE HERO VARIANTS
-export const developerImage = buildHomepageDeveloperImageVariants;
 
 // ===================================== HOME CAREER SPAN
 export const homeCareerSpan = buildHomeSpanOneVariants;
@@ -68,13 +35,6 @@ export const customerServiceCareer = buildFadeXVariant({
 	delay: 1.2,
 });
 
-// ===================================== HERO DATE CONTAINER
-export const dateHero = buildFadeXVariant({
-	x: 100,
-	delay: 1.5,
-	duration: 0.6,
-});
-
 // =====================================
 // ===================================== SECTION CONTAINER
 export const developer = buildContainerVariant({
@@ -87,32 +47,9 @@ export const developerBody = buildContainerVariant({
 	staggerChildren: 0.8,
 });
 
-// ===================================== HEADER
-export const header = buildFadeYVariant({ y: 15, duration: 0.15 });
-
-// ===================================== HEADER UNDERLINE
-export const headerUnderline = buildUnderlineVariant();
-
-// ===================================== BODY HEADER UNDERLINE
-export const bodyUnderline = buildUnderlineVariant({
-	width: "80%",
-});
-
-// ===================================== DIVIDER
-export const bottomDivider = buildScaleXVariant();
-// =====================================
-// =====================================
-
 // ===================================== ABOUT -
 // =====================================
 export const aboutItem = buildIndexedFadeYVariant();
-// ===================================== PARAGRAPH UP
-export const paragraphUp = buildFadeYVariant({
-	y: 50,
-	duration: 0.6,
-});
-// =====================================
-// =====================================
 
 // ===================================== CARD UP
 export const cardUpScale = buildScaleVariant({ duration: 0.6 });
@@ -150,7 +87,6 @@ export const experimentBodyStagger = buildContainerVariant({
 });
 // =====================================
 // =====================================
-
 
 // ===================================== PROJECT SECTION
 export const projectBoardContainer = buildFadeYVariant({

@@ -249,7 +249,9 @@ export const fitnessData = {
 	},
 
 	contact: {
-		title: "Let's Connect",
-		email: "",
+		title: "Let's Get Started",
+		formTitle: "Book a Session",
+		description: "Ready to improve your fitness? Let's discuss your goals.",
+		submitLabel: "Book Session",
 	},
 };
