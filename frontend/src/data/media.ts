@@ -55,17 +55,26 @@ export const images = {
 			},
 		},
 
-		designer: {
-			heroPoster: "...",
+		fitness: {
+			heroPoster:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784400187/Weights_p7cw0w.jpg",
+
+			certificates: {
+				PersonalTrainer:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784389816/QUALIFICATION_CERTIFICATES_PersonalTrainer.jpg",
+				FitnessInstructor:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784389816/QUALIFICATION_CERTIFICATES_FitnessInstructing.jpg",
+				CircuitTraining:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784389816/QUALIFICATION_CERTIFICATES_CircuitInstructor.jpg",
+				StudioCycling:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784389816/QUALIFICATION_CERTIFICATES_Spinning.jpg",
+				LifeStyleManagement:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784389825/QUALIFICATION_CERTIFICATES_LifeStyleManagement.jpg",
+			},
 		},
-	},
-
-	ui: {
-		logo: "...",
-		favicon: "...",
-
-		backgrounds: {
-			footer: "...",
+		customerService: {
+			heroPoster:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784400187/Weights_p7cw0w.jpg",
 		},
 	},
 };
@@ -75,5 +84,18 @@ export const videos = {
 	homePage: {
 		heroVideo:
 			"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1783392844/homePageV.mp4",
+	},
+
+	careers: {
+		fitness: {
+			heroVideo1:
+				"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1784399216/HeroVideo1_fo0ues.mp4",
+
+			heroVideo2:
+				"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1784399223/HeroVideo2_bqjwbx.mp4",
+
+			heroVideo3:
+				"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1784399223/HeroVideo3_wq43hp.mp4",
+		},
 	},
 };

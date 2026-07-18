@@ -95,9 +95,10 @@ export const projectBoardContainer = buildFadeYVariant({
 // =====================================
 export const deskTopImage = buildScaleVariant({
 	y: 30,
+	delay: 0.3,
 	duration: 0.5,
 });
-export const smMdImage = buildScaleVariant({ scaleY: 0.5, delay: 0.4 });
+export const smMdImage = buildScaleVariant({ scaleY: 0.5, delay: 0.5 });
 // ===================================== BOARD DETAILS
 export const techTag = buildIndexedFadeYVariant({ stepDelay: 0.09 });
 // ===================================== HR

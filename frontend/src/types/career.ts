@@ -17,7 +17,7 @@ export interface CareerData {
 	experience: ExperienceData;
 	projects?: ProjectData;
 	services?: ServiceData;
-	certifications: CertificationData;
+	certifications?: CertificationData;
 	contact: ContactData;
 }
 
@@ -33,6 +33,7 @@ export interface Theme {
 	accent: string;
 	background: string;
 	surface: string;
+	gradientAngle: string;
 	gradientFrom: string;
 	gradientVia: string;
 	gradientTo: string;
@@ -43,8 +44,12 @@ export interface Theme {
 export interface Hero {
 	title: string;
 	subtitle: string;
-	heroImage: string;
+	heroMedia: HeroMedia[];
 	button: HeroButton;
+}
+export interface HeroMedia {
+	type: "image" | "video";
+	src: string;
 }
 export interface HeroButton {
 	label: string;

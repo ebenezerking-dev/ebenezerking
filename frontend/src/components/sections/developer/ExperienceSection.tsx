@@ -91,7 +91,7 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 				</motion.div>
 			</motion.div>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<BottomDivider />
+			<BottomDivider theme={theme} />
 		</CareerSectionFrame>
 	);
 };

@@ -80,7 +80,7 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 				</motion.div>
 
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-				<BottomDivider />
+				<BottomDivider theme={theme} />
 			</motion.div>
 		</CareerSectionFrame>
 	);

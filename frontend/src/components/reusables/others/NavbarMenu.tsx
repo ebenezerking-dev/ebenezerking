@@ -41,7 +41,7 @@ export default function NavbarMenu({
 						initial="hidden"
 						animate="visible"
 						exit="exit"
-						className="fixed left-0 w-full z-40 bg-[linear-gradient(135deg,#020617,#000AFD,#020617)] text-lg font-bold shadow-2xl overflow-hidden"
+						className="fixed left-0 w-full z-40 bg-[linear-gradient(142deg,#7a19ff,#000AFD,#f34ef3)] text-lg font-bold shadow-2xl overflow-hidden"
 						style={{
 							top: `${NAVBAR_HEIGHT}px`,
 						}}

@@ -118,7 +118,7 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 				</motion.div>
 			</motion.div>
 			{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-			<BottomDivider />
+			<BottomDivider theme={theme} />
 		</CareerSectionFrame>
 	);
 };

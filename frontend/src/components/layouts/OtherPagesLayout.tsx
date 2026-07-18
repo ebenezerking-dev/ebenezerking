@@ -8,6 +8,7 @@ import type { CareerData } from "../../types/career";
 import Navbar from "../reusables/others/Navbar";
 import Footer from "../reusables/others/Footer";
 import BackToTop from "../reusables/others/BackToTop";
+import ScrollToTop from "../reusables/others/ScrollToTop";
 
 // ================== OTHER PAGES LAYOUT
 const OtherPagesLayout = () => {
@@ -21,6 +22,8 @@ const OtherPagesLayout = () => {
 
 	return (
 		<div className="flex flex-col min-h-dvh relative">
+			{/* =================== SCROLL TO TOP */}
+			<ScrollToTop />
 			{/* =================== HEADER */}
 			<header>
 				<Navbar navigation={selectedCareer.navigation} />

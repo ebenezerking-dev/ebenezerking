@@ -19,6 +19,7 @@ export const router = createBrowserRouter([
 		],
 	},
 
+	// OTHER PAGES LAYOUT
 	{
 		element: <OtherPagesLayout />,
 		children: [

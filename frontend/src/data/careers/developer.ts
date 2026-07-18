@@ -1,5 +1,5 @@
 // src/data/careers/developer.ts
-// this is a data file that contains the career data for the developer career page
+// This data file that contains the career data for the developer career
 
 // ================== IMPORTS
 import type { CareerData } from "../../types/career";
@@ -56,6 +56,7 @@ export const developerData: CareerData = {
 		accent: "#ffffff",
 		background: "#020617",
 		surface: "#000000",
+		gradientAngle: "160deg",
 		gradientFrom: "#020617",
 		gradientVia: "#000AFD",
 		gradientTo: "#020617",
@@ -66,7 +67,12 @@ export const developerData: CareerData = {
 	hero: {
 		title: "Full-Stack Developer",
 		subtitle: "Building responsive, accessible and scalable web applications",
-		heroImage: images.careers.developer.heroPoster,
+		heroMedia: [
+			{
+				type: "image",
+				src: images.careers.developer.heroPoster,
+			},
+		],
 		button: {
 			label: "Download Resume",
 			href: "/resume/developer.pdf",
@@ -266,11 +272,6 @@ export const developerData: CareerData = {
 				title: "Deployment & Maintenance",
 				description:
 					"Deploy on AWS, Vercel, Netlify, or custom domains, optimize performance, and maintain your apps.",
-			},
-			{
-				title: "Consulting & Advanced Services",
-				description:
-					"Technical guidance, API integration, serverless functions, testing strategies, and architecture planning.",
 			},
 		],
 	},

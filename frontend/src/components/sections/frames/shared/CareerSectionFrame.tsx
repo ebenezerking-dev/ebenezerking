@@ -23,7 +23,7 @@ export default function CareerSectionFrame({
 			id={id}
 			style={{
 				background: `linear-gradient(
-            135deg,
+            ${theme.gradientAngle},
             ${theme.gradientFrom},
             ${theme.gradientVia},
             ${theme.gradientTo}

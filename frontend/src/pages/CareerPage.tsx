@@ -22,31 +22,40 @@ const CareerPage = () => {
 				hero={selectedCareer.hero}
 				theme={selectedCareer.theme}
 			/>
+
 			<AboutSection about={selectedCareer.about} theme={selectedCareer.theme} />
+
 			<SkillsSection
 				skills={selectedCareer.skills}
 				theme={selectedCareer.theme}
 			/>
+
 			<ExperienceSection
 				experience={selectedCareer.experience}
 				theme={selectedCareer.theme}
 			/>
+
 			{selectedCareer.projects && (
 				<ProjectsSection
 					projects={selectedCareer.projects}
 					theme={selectedCareer.theme}
 				/>
 			)}
+
 			{selectedCareer.services && (
 				<ServicesSection
 					services={selectedCareer.services}
 					theme={selectedCareer.theme}
 				/>
 			)}
-			<CertificationSection
-				certifications={selectedCareer.certifications}
-				theme={selectedCareer.theme}
-			/>
+
+			{selectedCareer.certifications && (
+				<CertificationSection
+					certifications={selectedCareer.certifications}
+					theme={selectedCareer.theme}
+				/>
+			)}
+
 			<ContactSection
 				contact={selectedCareer.contact}
 				career={selectedCareer.slug}

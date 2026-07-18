@@ -67,7 +67,7 @@ function Footer() {
 						</p>
 					</motion.div>
 
-					{/* ==================== COLUMN TWO - QUICK LINKS */}
+					{/* ==================== COLUMN TWO - CAREER PATHS */}
 					<motion.div
 						variants={footerCenter}
 						initial="hidden"

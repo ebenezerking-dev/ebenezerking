@@ -58,7 +58,7 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 				</motion.div>
 
 				{/* ===================== GLOWING BOTTOM DIVIDER ===================== */}
-				<BottomDivider />
+				<BottomDivider theme={theme} />
 			</motion.div>
 		</CareerSectionFrame>
 	);

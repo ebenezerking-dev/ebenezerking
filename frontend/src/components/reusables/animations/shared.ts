@@ -42,18 +42,37 @@ export const header = buildFadeYVariant({ y: 20, duration: 0.15 });
 export const headerUnderline = buildUnderlineVariant();
 
 // ===================================== HERO SUBTITLE
-export const heroSubTitle = buildFadeInVariant();
+export const heroSubTitle = buildFadeInVariant({
+	delay: 1.2,
+});
 
 // ===================================== HERO BUTTON
 export const heroButton = buildFadeInVariant({
-	delay: 1.0,
+	delay: 1.4,
 });
 
 // ===================================== HERO DATE
 export const dateHero = buildFadeXVariant({
 	x: 100,
-	delay: 1.5,
+	delay: 1.6,
 	duration: 0.6,
+});
+
+// ===================================== FITNESS HERO VIDEOS
+export const video1 = buildFadeXVariant({
+	x: -500,
+	delay: 0.6,
+	duration: 0.9,
+});
+export const video2 = buildFadeYVariant({
+	y: 300,
+	delay: 0.3,
+	duration: 0.9,
+});
+export const video3 = buildFadeXVariant({
+	x: 500,
+	delay: 0.6,
+	duration: 0.9,
 });
 
 // ===================================== DIVIDER

@@ -1,4 +1,4 @@
-// src/components/sections/shared/CareerHero.tsx
+// src/components/sections/shared/CareersHeroSection.tsx
 // Reusable hero section for all career pages
 
 // ================== IMPORTS
@@ -18,6 +18,9 @@ import {
 	dateHero,
 	viewportRepeat,
 	viewportOnce,
+	video1,
+	video2,
+	video3,
 } from "../../reusables/animations";
 
 // ================== PROPS
@@ -28,15 +31,22 @@ type CareersHeroSectionProps = {
 
 // ================== CAREER HERO
 const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
+	const cols = hero.heroMedia.length;
+
+	const animationVariants = [video1, video2, video3];
+	const overlays = ["bg-black/2", "bg-black/2", "bg-black/2"];
+	const playbackRates = [0.6, 0.6, 0.6];
+	const scales = ["scale-100", "scale-150", "scale-100"];
+
 	return (
 		<CareerHeroFrame theme={theme} className="parent w-full">
 			{/* ============================== HERO WRAPPER */}
 			<div
-				className="wrapper__theme relative overflow-hidden flex items-center justify-center w-full"
+				className="wrapper__theme relative flex w-full items-center justify-center overflow-hidden"
 				style={{
 					minHeight: `calc(100dvh - ${NAVBAR_HEIGHT}px)`,
 					background: `linear-gradient(
-						135deg,
+						${theme.gradientAngle},
 						${theme.gradientFrom},
 						${theme.gradientVia},
 						${theme.gradientTo}
@@ -44,18 +54,67 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 				}}
 			>
 				{/* ====================== HERO CONTENT */}
-				<div className="wrapper__backgroundImage h-150 w-[90%] lg:w-[70%] rounded-4xl">
+				<div className="wrapper__backgroundImage h-150 w-[90%] rounded-4xl lg:w-[70%]">
 					<motion.div
 						variants={developerCareerImage}
 						initial="hidden"
 						animate="visible"
-						className="relative w-full h-full bg-cover bg-center flex flex-col items-center justify-between rounded-tl-[5rem] rounded-tr-[5rem] rounded-bl-[5rem]"
-						style={{
-							backgroundImage: `url(${hero.heroImage})`,
-						}}
+						className="relative flex h-full w-full flex-col items-center justify-between overflow-hidden rounded-tl-sm rounded-tr-[5rem] rounded-bl-[5rem] rounded-br-sm"
 					>
-						{/* ================= OVERLAY */}
-						<div className="absolute inset-0 bg-black/20 rounded-tl-[5rem] rounded-tr-[5rem] rounded-bl-[5rem]" />
+						{/* ====================== HERO MEDIA */}
+						<div
+							className="absolute inset-0 grid"
+							style={{
+								gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+							}}
+						>
+							{hero.heroMedia.map((media, index) => (
+								<motion.div
+									key={index}
+									variants={animationVariants[index % animationVariants.length]}
+									initial="hidden"
+									animate="visible"
+									className="relative h-full w-full overflow-hidden"
+								>
+									{/* ====================== HERO VIDEO OR IMAGE */}
+									{media.type === "video" ? (
+										<video
+											className={`h-full w-full object-cover ${
+												scales[index % scales.length]
+											}`}
+											autoPlay
+											muted
+											loop
+											playsInline
+											ref={(el) => {
+												if (el) {
+													el.playbackRate =
+														playbackRates[index % playbackRates.length];
+												}
+											}}
+										>
+											<source src={media.src} type="video/mp4" />
+										</video>
+									) : (
+										<div className="flex h-full w-full items-start justify-center overflow-hidden">
+											<img
+												src={media.src}
+												alt={hero.title}
+												className={`max-h-full w-full object-contain ${
+													scales[index % scales.length]
+												}`}
+											/>
+										</div>
+									)}
+
+									<div
+										className={`absolute inset-0 ${
+											overlays[index % overlays.length]
+										}`}
+									/>
+								</motion.div>
+							))}
+						</div>
 
 						{/* ================= HERO HEADER */}
 						<motion.div
@@ -65,7 +124,7 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 							viewport={viewportOnce}
 							className="relative z-10 px-4"
 						>
-							<div className="inline-block uppercase font-unna font-bold text-[1rem] bg-[#000000] p-3 rounded-2xl">
+							<div className="inline-block rounded-2xl bg-black p-3 font-unna text-[1rem] font-bold uppercase">
 								<h2 className="relative inline-block">
 									{hero.title}
 
@@ -74,7 +133,8 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 										initial="hidden"
 										whileInView="visible"
 										viewport={viewportRepeat}
-										className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"
+										className="absolute bottom-[-0.2rem] left-1/2 h-[0.2rem] w-[30%] -translate-x-1/2 rounded-full"
+										style={{ backgroundColor: theme.underline }}
 									/>
 								</h2>
 							</div>
@@ -82,22 +142,28 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 
 						{/* ================= HERO BODY */}
 						<div className="relative z-10 flex flex-col items-center justify-center gap-6 text-center">
-							{/* SUBTITLE */}
+							{/* ================= SUBTITLE */}
 							<motion.div
 								variants={heroSubTitle}
 								initial="hidden"
 								animate="visible"
-								className="relative inline-flex bg-[#000000]/90 px-6 py-3 rounded-2xl"
+								className="relative inline-flex rounded-2xl bg-black px-4 py-1"
 							>
-								<h2 className="relative inline-block lg:text-4xl">
+								<h2 className="relative inline-block text-lg lg:text-2xl">
 									{hero.subtitle}
 								</h2>
 
-								<span className="absolute w-1.5 left-3 top-1/2 -translate-y-1/2 h-8 bg-orange-500 rounded-full" />
-								<span className="absolute w-1.5 right-3 top-1/2 -translate-y-1/2 h-8 bg-orange-500 rounded-full" />
+								<span
+									className="absolute left-0 top-1/2 h-full w-1.5 -translate-y-1/2 rounded-full"
+									style={{ backgroundColor: theme.underline }}
+								/>
+								<span
+									className="absolute right-0 top-1/2 h-full w-1.5 -translate-y-1/2 rounded-full"
+									style={{ backgroundColor: theme.underline }}
+								/>
 							</motion.div>
 
-							{/* DOWNLOAD BUTTON */}
+							{/* ================= DOWNLOAD BUTTON */}
 							<motion.div
 								variants={heroButton}
 								initial="hidden"
@@ -121,14 +187,14 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 						>
 							<TimeDate
 								showTime={false}
-								className="date text-1xl text-white text-end font-semibold hover:text-[#00FF91] transition-colors duration-300"
+								className="date text-1xl text-end font-semibold text-white transition-colors duration-300 hover:text-[#00FF91]"
 							/>
 						</motion.div>
 					</motion.div>
 				</div>
 
 				{/* ================= BOTTOM DIVIDER */}
-				<BottomDivider />
+				<BottomDivider theme={theme} />
 			</div>
 		</CareerHeroFrame>
 	);
