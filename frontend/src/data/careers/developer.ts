@@ -75,7 +75,7 @@ export const developerData: CareerData = {
 		],
 		button: {
 			label: "Download Resume",
-			href: "/resume/developer.pdf",
+			href: "/resume/Developer.pdf",
 			download: true,
 		},
 	},

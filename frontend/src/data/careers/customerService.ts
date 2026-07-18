@@ -3,7 +3,7 @@
 
 // ================== IMPORTS
 import type { CareerData } from "../../types/career";
-import { images } from "../../data/media";
+import { videos, images } from "../../data/media";
 
 // ================== CAREER DATA EXPORTS
 export const customerServiceData: CareerData = {
@@ -41,7 +41,7 @@ export const customerServiceData: CareerData = {
 		background: "#020617",
 		surface: "#000000",
 		gradientAngle: "160deg",
-		gradientFrom: "#150036",
+		gradientFrom: "#008000",
 		gradientVia: "#150036",
 		gradientTo: "#f34ef3",
 		divider: "#000AFD",
@@ -53,13 +53,21 @@ export const customerServiceData: CareerData = {
 		subtitle: "Providing exceptional support and administrative solutions.",
 		heroMedia: [
 			{
+				type: "video",
+				src: videos.careers.customerService.heroVideo1,
+			},
+			{
 				type: "image",
 				src: images.careers.customerService.heroPoster,
+			},
+			{
+				type: "video",
+				src: videos.careers.customerService.heroVideo2,
 			},
 		],
 		button: {
 			label: "Download Resume",
-			href: "/resume/customerService.pdf",
+			href: "/resume/CustomerService.pdf",
 			download: true,
 		},
 	},

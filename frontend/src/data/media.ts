@@ -74,7 +74,7 @@ export const images = {
 		},
 		customerService: {
 			heroPoster:
-				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784400187/Weights_p7cw0w.jpg",
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784411132/CSHeroImage_gpyx2p.jpg",
 		},
 	},
 };
@@ -96,6 +96,14 @@ export const videos = {
 
 			heroVideo3:
 				"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1784399223/HeroVideo3_wq43hp.mp4",
+		},
+
+		customerService: {
+			heroVideo1:
+				"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1784410504/CSHeroVideo1_x95zez.mp4",
+
+			heroVideo2:
+				"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1784410480/CSHeroVideo2_p72fql.mp4",
 		},
 	},
 };

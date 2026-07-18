@@ -35,7 +35,7 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 
 	const animationVariants = [video1, video2, video3];
 	const overlays = ["bg-black/2", "bg-black/2", "bg-black/2"];
-	const playbackRates = [0.6, 0.6, 0.6];
+	const playbackRates = [0.7, 0.9, 0.7];
 	const scales = ["scale-100", "scale-150", "scale-100"];
 
 	return (
@@ -70,7 +70,7 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 						>
 							{hero.heroMedia.map((media, index) => (
 								<motion.div
-									key={index}
+									key={`${hero.title}-${media.src}`}
 									variants={animationVariants[index % animationVariants.length]}
 									initial="hidden"
 									animate="visible"
@@ -79,6 +79,7 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 									{/* ====================== HERO VIDEO OR IMAGE */}
 									{media.type === "video" ? (
 										<video
+											key={`${hero.title}-${media.src}`}
 											className={`h-full w-full object-cover ${
 												scales[index % scales.length]
 											}`}
@@ -96,11 +97,11 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 											<source src={media.src} type="video/mp4" />
 										</video>
 									) : (
-										<div className="flex h-full w-full items-start justify-center overflow-hidden">
+										<div className="flex h-full w-full items-end justify-center overflow-hidden">
 											<img
 												src={media.src}
 												alt={hero.title}
-												className={`max-h-full w-full object-contain ${
+												className={`h-full w-full object-cover ${
 													scales[index % scales.length]
 												}`}
 											/>

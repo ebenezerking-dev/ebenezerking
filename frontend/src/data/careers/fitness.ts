@@ -68,7 +68,7 @@ export const fitnessData: CareerData = {
 		],
 		button: {
 			label: "Download Resume",
-			href: "/resume/fitness.pdf",
+			href: "/resume/Fitness.pdf",
 			download: true,
 		},
 	},
