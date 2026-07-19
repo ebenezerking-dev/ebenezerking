@@ -2,15 +2,16 @@
 // CONTACT CONTROLLER
 // src/controllers/contactController.js
 // =====================================
+import { uploadImage } from "../services/cloudinaryService.js";
+import { careerConfig } from "../utils/careerConfig.js";
 import { sendEmail } from "../services/emailService.js";
 // import { sendEmail } from "../services/mailtrapService.js";
-import { uploadImage } from "../services/cloudinaryService.js";
 
 // =====================================
 export const sendContact = async (req, res) => {
 	const requestId = Math.random().toString(36).substring(2, 10);
 
-	const { name, email, message } = req.body;
+	const { name, email, message, career } = req.body;
 
 	try {
 		console.log(`📩 [${requestId}] Incoming contact request`);
@@ -51,7 +52,7 @@ export const sendContact = async (req, res) => {
 		}
 
 		// ================= NON-BLOCKING EMAIL =================
-		sendEmail({ name, email, message, imageUrl })
+		sendEmail({ career, name, email, message, imageUrl })
 			.then(() => {
 				console.log(`✅ [${requestId}] Email sent`);
 			})

@@ -10,15 +10,17 @@ import { adminTemplate } from "./templates/adminTemplate.js";
 // Generate email HTML
 // ===================================
 const html = adminTemplate({
+	career: "full-stack",
 	name: "John Doe",
 	email: "john@example.com",
 	message: "Hello there!",
 });
 
 // const html = autoReplyTemplate({
-// 	name: "John Doe",
-// 	email: "john@example.com",
-// 	message: "Hello there!",
+// 	career: "full-stack",
+// 	name: "Jane Doe",
+// 	email: "jane@example.com",
+// 	message: "How are you boo?",
 // });
 
 // ===================================
