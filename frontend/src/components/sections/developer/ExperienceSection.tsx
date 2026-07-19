@@ -35,7 +35,7 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
 					{/* === */}
 					{/* ============================== EXPERIENCE HEADER */}
-					<SectionHeader title={experience.title} />
+					<SectionHeader title={experience.title} theme={theme} />
 
 					{/* ============================== EXPERIENCE BODY */}
 					<motion.div className="body flex flex-col gap-8 w-full md:p-4 text-lg">
@@ -49,7 +49,7 @@ const ExperienceSection = ({ experience, theme }: ExperienceSectionProps) => {
 								className="w-full max-w-2xl mx-auto"
 							>
 								{/* ========== COMPANY NAME */}
-								<SectionSubtitle title={item.company} />
+								<SectionSubtitle title={item.company} theme={theme} />
 
 								{/* ========== ROLE */}
 								<motion.p

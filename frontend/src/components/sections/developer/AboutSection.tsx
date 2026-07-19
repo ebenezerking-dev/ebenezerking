@@ -34,7 +34,7 @@ const AboutSection = ({ about, theme }: AboutSectionProps) => {
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
 					{/* === */}
 					{/* ============================== ABOUT HEADER */}
-					<SectionHeader title={about.title} />
+					<SectionHeader title={about.title} theme={theme} />
 
 					{/* ============================== ABOUT BODY */}
 					<motion.div

@@ -47,7 +47,7 @@ const CertificationSection = ({
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
 					{/* ==== */}
 					{/* ============================== CERTIFICATIONS HEADER */}
-					<SectionHeader title={certifications.title} />
+					<SectionHeader title={certifications.title} theme={theme} />
 
 					{/* ============================== CERTIFICATIONS BODY */}
 					<motion.div className="body flex flex-col gap-8 w-full md:p-4 text-lg">
@@ -62,7 +62,7 @@ const CertificationSection = ({
 									className="w-full max-w-2xl mx-auto"
 								>
 									{/* ========== TITLE */}
-									<SectionSubtitle title={item.title} />
+									<SectionSubtitle title={item.title} theme={theme} />
 
 									{/* ========== ISSUER */}
 									<motion.p
@@ -95,12 +95,12 @@ const CertificationSection = ({
 										whileInView="visible"
 										viewport={viewportRepeat}
 										onClick={() => setSelectedCertificate(item)}
-										className="group relative h-[300px] cursor-pointer overflow-hidden rounded-xl border-8 border-black"
+										className="group relative h-50 md:h-60 cursor-pointer overflow-hidden rounded-xl border-8 border-black"
 									>
 										<img
 											src={item.image}
 											alt={item.title}
-											className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-102"
+											className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-102"
 										/>
 
 										{/* ========== CERTIFICATE IMAGE OVERLAY */}

@@ -2,7 +2,6 @@
 
 // ================== IMPORTS
 import {
-	buildHomeSpanOneVariants,
 	buildContainerVariant,
 	buildFadeYVariant,
 	buildFadeXVariant,
@@ -13,27 +12,6 @@ import {
 	buildScaleXVariant,
 	buildLayoutTransition,
 } from "./factory";
-
-// =====================================
-
-// =====================================
-
-// ===================================== HOME CAREER SPAN
-export const homeCareerSpan = buildHomeSpanOneVariants;
-
-// ===================================== HOME CAREER TITLE CONTAINER
-export const developerCareer = buildFadeXVariant({
-	x: -300,
-	delay: 0.4,
-});
-export const fitnessCareer = buildFadeXVariant({
-	x: -300,
-	delay: 0.8,
-});
-export const customerServiceCareer = buildFadeXVariant({
-	x: -300,
-	delay: 1.2,
-});
 
 // =====================================
 // ===================================== SECTION CONTAINER

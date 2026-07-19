@@ -70,7 +70,7 @@ export const developerData: CareerData = {
 		heroMedia: [
 			{
 				type: "image",
-				src: images.careers.developer.heroPoster,
+				src: images.careers.developer.heroImagePoster,
 			},
 		],
 		button: {

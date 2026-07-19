@@ -56,14 +56,16 @@ export const fitnessData: CareerData = {
 			{
 				type: "video",
 				src: videos.careers.fitness.heroVideo3,
+				poster: images.careers.fitness.heroVideo3Poster,
 			},
 			{
 				type: "image",
-				src: images.careers.fitness.heroPoster,
+				src: images.careers.fitness.heroImagePoster,
 			},
 			{
 				type: "video",
 				src: videos.careers.fitness.heroVideo1,
+				poster: images.careers.fitness.heroVideo1Poster,
 			},
 		],
 		button: {

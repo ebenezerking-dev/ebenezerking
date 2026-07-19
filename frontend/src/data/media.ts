@@ -5,15 +5,15 @@
 // ================== IMAGE ASSETS
 export const images = {
 	homePage: {
-		mobileHeroPoster:
+		mobileHeroProfilePic:
 			"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1783603380/kingAnimePp_qgaimc.png",
-		mediumHeroPoster:
+		videoImagePoster:
 			"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1783428821/homePageV_poster.jpg",
 	},
 
 	careers: {
 		developer: {
-			heroPoster:
+			heroImagePoster:
 				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1783433951/developerHeroLg.jpg",
 
 			projects: {
@@ -56,8 +56,14 @@ export const images = {
 		},
 
 		fitness: {
-			heroPoster:
+			heroVideo1Poster:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784442242/HeroVideo1_fo0ues_poster.jpg",
+
+			heroImagePoster:
 				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784400187/Weights_p7cw0w.jpg",
+
+			heroVideo3Poster:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784441765/HeroVideo3_wq43hp_poster.jpg",
 
 			certificates: {
 				PersonalTrainer:
@@ -73,12 +79,19 @@ export const images = {
 			},
 		},
 		customerService: {
-			heroPoster:
+			heroVideo1Poster:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784442542/CSHeroVideo1_x95zez_poster.jpg",
+
+			heroImagePoster:
 				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784411132/CSHeroImage_gpyx2p.jpg",
+
+			heroVideo2Poster:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784442639/CSHeroVideo2_p72fql_poster.jpg",
 		},
 	},
 };
 
+// ==================
 // ================== VIDEO ASSETS
 export const videos = {
 	homePage: {
@@ -90,9 +103,6 @@ export const videos = {
 		fitness: {
 			heroVideo1:
 				"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1784399216/HeroVideo1_fo0ues.mp4",
-
-			heroVideo2:
-				"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1784399223/HeroVideo2_bqjwbx.mp4",
 
 			heroVideo3:
 				"https://res.cloudinary.com/zqrsa9rd/video/upload/ac_none,f_auto,q_auto:good,w_1280/v1784399223/HeroVideo3_wq43hp.mp4",

@@ -50,6 +50,7 @@ export interface Hero {
 export interface HeroMedia {
 	type: "image" | "video";
 	src: string;
+	poster?: string;
 }
 export interface HeroButton {
 	label: string;

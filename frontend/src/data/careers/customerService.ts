@@ -41,11 +41,11 @@ export const customerServiceData: CareerData = {
 		background: "#020617",
 		surface: "#000000",
 		gradientAngle: "160deg",
-		gradientFrom: "#008000",
+		gradientFrom: "#bde0fe",
 		gradientVia: "#150036",
 		gradientTo: "#f34ef3",
 		divider: "#000AFD",
-		underline: "#f97316",
+		underline: "#fee440",
 	},
 
 	hero: {
@@ -55,14 +55,16 @@ export const customerServiceData: CareerData = {
 			{
 				type: "video",
 				src: videos.careers.customerService.heroVideo1,
+				poster: images.careers.customerService.heroVideo1Poster,
 			},
 			{
 				type: "image",
-				src: images.careers.customerService.heroPoster,
+				src: images.careers.customerService.heroImagePoster,
 			},
 			{
 				type: "video",
 				src: videos.careers.customerService.heroVideo2,
+				poster: images.careers.customerService.heroVideo2Poster,
 			},
 		],
 		button: {

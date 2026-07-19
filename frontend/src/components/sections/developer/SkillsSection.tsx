@@ -62,7 +62,7 @@ const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto pb-20">
 					{/* === */}
 					{/* ============================== SKILLS HEADER */}
-					<SectionHeader title={skills.title} />
+					<SectionHeader title={skills.title} theme={theme} />
 
 					{/* ============================== SKILLS BODY */}
 					<motion.div

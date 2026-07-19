@@ -4,7 +4,7 @@
 // ================== IMPORTS
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { homeCareerSpan } from "../reusables/animations/developer";
+import { homeCareerSpan } from "../reusables/animations";
 import { homePageSelection } from "../../data/homePageSelection";
 
 // ================== HOME SELECTION

@@ -131,7 +131,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 					{/* ===*/}
 					{/* =========================== CONTACT HEADER */}
-					<SectionHeader title={contact.title} />
+					<SectionHeader title={contact.title} theme={theme} />
 
 					{/* =========================== CONTACT BODY */}
 					{/* ========== TITLE */}
@@ -147,7 +147,8 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 								{contact.formTitle}
 								<motion.span
 									variants={bodyUnderline}
-									className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full"
+									className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] rounded-full"
+									style={{ backgroundColor: theme.underline }}
 								/>
 							</h3>
 						</div>
@@ -190,7 +191,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 										type="text"
 										name="name"
 										placeholder="Your Name"
-										className="w-full px-4 py-2 border-b border-[#000AFD]/80 rounded-lg bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-orange-500 transition-colors duration-300"
+										className="w-full px-4 py-2 border-b border-orange-500/60 rounded-lg bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-[#00ff91]/60 transition-colors duration-300 resize-none"
 										value={formData.name}
 										onChange={handleChange}
 										required
@@ -208,7 +209,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 										type="email"
 										name="email"
 										placeholder="Your Email"
-										className="w-full px-4 py-2 border-b border-[#000AFD]/80 rounded-lg bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-orange-500 transition-colors duration-300"
+										className="w-full px-4 py-2 border-b border-orange-500/60 rounded-lg bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-[#00ff91]/60 transition-colors duration-300 resize-none"
 										value={formData.email}
 										onChange={handleChange}
 										required
@@ -226,7 +227,7 @@ const ContactSection = ({ contact, career, theme }: ContactSectionProps) => {
 										name="message"
 										rows={4}
 										placeholder="Your Message"
-										className="w-full px-4 py-2 border-b border-[#000AFD]/80 rounded-lg bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-orange-500 transition-colors duration-300 resize-none"
+										className="w-full px-4 py-2 border-b border-orange-500/60 rounded-lg bg-transparent placeholder:text-white placeholder:opacity-80 focus:outline-none focus:border-[#00ff91]/60 transition-colors duration-300 resize-none"
 										value={formData.message}
 										onChange={handleChange}
 										required

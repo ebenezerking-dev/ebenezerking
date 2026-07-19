@@ -32,7 +32,7 @@ const ServicesSection = ({ services, theme }: ServicesSectionProps) => {
 				{/* ============================== SERVICES WRAPPER */}
 				<motion.div className="wrapper w-full md:w-[90%] lg:w-[70%] mx-auto">
 					{/* ============================== SERVICES HEADER */}
-					<SectionHeader title={services.title} />
+					<SectionHeader title={services.title} theme={theme} />
 
 					{/* ============================== SERVICES BODY */}
 					{/* ============================== SERVICE CARDS SLIDER */}

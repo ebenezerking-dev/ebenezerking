@@ -3,16 +3,22 @@
 
 // ================== IMPORTS
 import { motion } from "framer-motion";
+import type { Theme } from "../../../types/career";
 import { header, headerUnderline, viewportRepeat } from "../animations/shared";
 
 // ================== PROPS
 type SectionHeaderProps = {
 	title: string;
+	theme: Theme;
 	className?: string;
 };
 
 // ================== SECTION HEADER
-const SectionHeader = ({ title, className = "" }: SectionHeaderProps) => {
+const SectionHeader = ({
+	title,
+	theme,
+	className = "",
+}: SectionHeaderProps) => {
 	return (
 		<motion.div
 			variants={header}
@@ -21,7 +27,7 @@ const SectionHeader = ({ title, className = "" }: SectionHeaderProps) => {
 			viewport={viewportRepeat}
 			className={`header text-left px-4 mb-40 ${className}`}
 		>
-			<div className="inline-block uppercase font-unna font-bold text-[1rem] bg-[#000000] p-3 rounded-2xl">
+			<div className="inline-block uppercase font-unna font-bold text-[1rem] bg-[#000000] px-3 pt-1 pb-3 rounded-2xl">
 				<h2 className="relative inline-block">
 					{title}
 
@@ -30,7 +36,8 @@ const SectionHeader = ({ title, className = "" }: SectionHeaderProps) => {
 						initial="hidden"
 						whileInView="visible"
 						viewport={viewportRepeat}
-						className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"
+						className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] rounded-full"
+						style={{ backgroundColor: theme.underline }}
 					/>
 				</h2>
 			</div>

@@ -5,14 +5,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Fragment } from "react";
 import RippleButton from "./RippleButton";
-import type { Project } from "../../../types/career";
+import type { Project, Theme } from "../../../types/career";
+import SectionSubtitle from "../../reusables/others/SectionSubtitle";
 import {
 	viewportRepeat,
 	projectBoardContainer,
 	deskTopImage,
 	smMdImage,
 	paragraphUp,
-	bodyUnderline,
+	// bodyUnderline,
 	techTag,
 	projectActionButton,
 	projectHr,
@@ -21,10 +22,11 @@ import {
 // ================== INTERFACE
 type ProjectBoardProps = {
 	items: Project[];
+	theme: Theme;
 };
 
 // ================== PROJECT BOARD
-const ProjectBoard = ({ items }: ProjectBoardProps) => {
+const ProjectBoard = ({ items, theme }: ProjectBoardProps) => {
 	return (
 		<motion.div
 			variants={projectBoardContainer}
@@ -98,17 +100,9 @@ const ProjectBoard = ({ items }: ProjectBoardProps) => {
 									initial="hidden"
 									whileInView="visible"
 									viewport={viewportRepeat}
-									className="bg-[#000000]/20 p-2 rounded-lg"
 								>
-									<h3 className="relative text-2xl font-unna font-bold">
-										{project.title}
-										<motion.span
-											variants={bodyUnderline}
-											initial="hidden"
-											whileInView="visible"
-											viewport={viewportRepeat}
-											className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[30%] bg-orange-500 rounded-full"
-										/>
+									<h3 className="relative text-lg font-unna font-bold">
+										<SectionSubtitle title={project.title} theme={theme} />
 									</h3>
 								</motion.div>
 
