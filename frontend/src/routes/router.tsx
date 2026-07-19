@@ -2,11 +2,14 @@
 // this file contains the router configuration for the application
 
 // ================== IMPORTS
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import HomePageLayout from "../components/layouts/HomePageLayout";
 import OtherPagesLayout from "../components/layouts/OtherPagesLayout";
 import HomePage from "../pages/HomePage";
-import CareerPage from "../pages/CareerPage";
+// ================== LAZY LOAD PAGES
+const CareerPage = lazy(() => import("../pages/CareerPage"));
+
 // ================== ROUTER
 export const router = createBrowserRouter([
 	{
@@ -25,7 +28,17 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: "/careers/:career",
-				element: <CareerPage />,
+				element: (
+					<Suspense
+						fallback={
+							<div className="flex min-h-screen items-center justify-center">
+								<div className="text-white">Loading...</div>
+							</div>
+						}
+					>
+						<CareerPage />
+					</Suspense>
+				),
 			},
 		],
 	},

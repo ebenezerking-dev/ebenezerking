@@ -51,6 +51,16 @@ export interface HeroMedia {
 	type: "image" | "video";
 	src: string;
 	poster?: string;
+	mediaVisibility?: {
+		mobile?: boolean;
+		tablet?: boolean;
+		desktop?: boolean;
+	};
+	scale?: {
+		mobile?: number;
+		tablet?: number;
+		desktop?: number;
+	};
 }
 export interface HeroButton {
 	label: string;

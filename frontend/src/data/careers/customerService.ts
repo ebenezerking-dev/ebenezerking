@@ -56,15 +56,40 @@ export const customerServiceData: CareerData = {
 				type: "video",
 				src: videos.careers.customerService.heroVideo1,
 				poster: images.careers.customerService.heroVideo1Poster,
+				mediaVisibility: {
+					mobile: true,
+					tablet: true,
+					desktop: true,
+				},
+				scale: {
+					mobile: 1,
+					tablet: 1,
+					desktop: 1,
+				},
 			},
 			{
 				type: "image",
 				src: images.careers.customerService.heroImagePoster,
+				mediaVisibility: {
+					mobile: false,
+					tablet: true,
+					desktop: true,
+				},
 			},
 			{
 				type: "video",
 				src: videos.careers.customerService.heroVideo2,
 				poster: images.careers.customerService.heroVideo2Poster,
+				mediaVisibility: {
+					mobile: true,
+					tablet: true,
+					desktop: true,
+				},
+				scale: {
+					mobile: 1,
+					tablet: 1,
+					desktop: 1,
+				},
 			},
 		],
 		button: {

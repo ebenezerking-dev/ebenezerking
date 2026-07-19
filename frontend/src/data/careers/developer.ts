@@ -71,6 +71,11 @@ export const developerData: CareerData = {
 			{
 				type: "image",
 				src: images.careers.developer.heroImagePoster,
+				mediaVisibility: {
+					mobile: true,
+					tablet: true,
+					desktop: true,
+				},
 			},
 		],
 		button: {

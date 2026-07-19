@@ -57,15 +57,30 @@ export const fitnessData: CareerData = {
 				type: "video",
 				src: videos.careers.fitness.heroVideo3,
 				poster: images.careers.fitness.heroVideo3Poster,
+				mediaVisibility: {
+					mobile: true,
+					tablet: true,
+					desktop: true,
+				},
 			},
 			{
 				type: "image",
 				src: images.careers.fitness.heroImagePoster,
+				mediaVisibility: {
+					mobile: false,
+					tablet: true,
+					desktop: true,
+				},
 			},
 			{
 				type: "video",
 				src: videos.careers.fitness.heroVideo1,
 				poster: images.careers.fitness.heroVideo1Poster,
+				mediaVisibility: {
+					mobile: true,
+					tablet: true,
+					desktop: true,
+				},
 			},
 		],
 		button: {

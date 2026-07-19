@@ -23,6 +23,12 @@ import {
 	heroVideo2,
 	heroVideo3,
 } from "../../reusables/animations/shared";
+import useBreakpoint from "../../../hooks/useBreakpoint";
+import {
+	buildVisibilityClasses,
+	isVisibleAtBreakpoint,
+	getScaleForBreakpoint,
+} from "../../../utils/visibilityHelpers";
 
 // ================== PROPS
 type CareersHeroSectionProps = {
@@ -32,8 +38,7 @@ type CareersHeroSectionProps = {
 
 // ================== CAREER HERO
 const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
-	const cols = hero.heroMedia.length;
-
+	const breakpoint = useBreakpoint();
 	const animationVariants = [heroVideo1, heroVideo2, heroVideo3];
 	const overlays = ["bg-black/2", "bg-black/2", "bg-black/2"];
 	const playbackRates = [0.7, 0.9, 0.7];
@@ -61,33 +66,43 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 						animate="visible"
 						className="relative flex h-full w-full flex-col items-center justify-between overflow-hidden rounded-tl-sm rounded-tr-[5rem] rounded-bl-[5rem] rounded-br-sm"
 					>
-						{/* ====================== HERO MEDIA SECTION */}
-						<div
-							className="absolute inset-0 grid "
-							style={{
-								gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-							}}
-						>
-							{hero.heroMedia.map((media, index) => (
-								<motion.div
-									key={`${hero.title}-${media.src}`}
-									variants={animationVariants[index % animationVariants.length]}
-									initial="hidden"
-									animate="visible"
-									className="relative h-full w-full overflow-hidden"
-								>
-									<MediaBackground
-										type={media.type}
-										src={media.src}
-										poster={media.poster}
-										alt={hero.title}
-										playbackRate={playbackRates[index % playbackRates.length]}
-										overlayClassName={overlays[index % overlays.length]}
-										className="h-full w-full"
-										mediaClassName="scale-100"
-									/>
-								</motion.div>
-							))}
+						{/* ====================== HERO MEDIA SECTION - FLEX ROW */}
+						<div className="absolute inset-0 flex h-full w-full">
+							{hero.heroMedia.map((media, index) => {
+								const visibility = media.mediaVisibility || {};
+								const visibilityClasses = buildVisibilityClasses(visibility);
+								const scale = getScaleForBreakpoint(
+									media.scale || {},
+									breakpoint,
+								);
+								const isVisible = isVisibleAtBreakpoint(visibility, breakpoint);
+
+								if (!isVisible) return null;
+
+								return (
+									<motion.div
+										key={`${hero.title}-${media.src}`}
+										variants={
+											animationVariants[index % animationVariants.length]
+										}
+										initial="hidden"
+										animate="visible"
+										className={`relative flex-1 h-full overflow-hidden ${visibilityClasses}`}
+									>
+										<MediaBackground
+											type={media.type}
+											src={media.src}
+											poster={media.poster}
+											alt={hero.title}
+											playbackRate={playbackRates[index % playbackRates.length]}
+											overlayClassName={overlays[index % overlays.length]}
+											className="h-full w-full"
+											mediaClassName="scale-100"
+											scale={scale}
+										/>
+									</motion.div>
+								);
+							})}
 						</div>
 
 						{/* ================= HERO HEADER */}

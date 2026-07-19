@@ -13,6 +13,7 @@ type MediaBackgroundProps = {
 	mediaClassName?: string;
 	overlayClassName?: string;
 	playbackRate?: number;
+	scale?: number; 
 	children?: React.ReactNode;
 };
 
@@ -26,6 +27,7 @@ export default function MediaBackground({
 	mediaClassName = "",
 	overlayClassName = "bg-black/20",
 	playbackRate = 1,
+	scale = 1,
 	children,
 }: MediaBackgroundProps) {
 	const [mediaReady, setMediaReady] = useState(type === "image");
@@ -48,6 +50,9 @@ export default function MediaBackground({
 					className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
 						mediaReady ? "opacity-0" : "opacity-100"
 					}`}
+					style={{
+						transform: `scale(${scale})`, // NEW: Apply scale to poster
+					}}
 				/>
 			)}
 
@@ -63,15 +68,22 @@ export default function MediaBackground({
 					poster={poster}
 					onCanPlay={() => setMediaReady(true)}
 					className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${mediaClassName} ${mediaReady ? "opacity-100" : "opacity-0"}`}
+					style={{
+						transform: `scale(${scale})`,
+					}}
 				>
 					<source src={src} type="video/mp4" />
 				</video>
 			) : (
-				<div className="absolute inset-0 flex overflow-hidden">
+				<div className="flex absolute inset-0 overflow-hidden">
+					{/* ================= IMAGE */}
 					<img
 						src={src}
 						alt={alt}
 						className={`h-full w-full object-cover ${mediaClassName}`}
+						style={{
+							transform: `scale(${scale})`,
+						}}
 					/>
 				</div>
 			)}
