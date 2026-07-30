@@ -1,6 +1,9 @@
 // src/utils/visibilityHelpers.ts
 // Helper functions for managing responsive visibility
 
+// ================== IMPORTS
+import type { Breakpoint } from "../hooks/useBreakpoint";
+
 // ================== TYPES
 type VisibilityConfig = {
 	mobile?: boolean;
@@ -14,16 +17,15 @@ type ScaleConfig = {
 	desktop?: number;
 };
 
-// ================== HELPERS
 // ================== DEFAULT VISIBILITY
-export const getDefaultVisibility = () => ({
+export const getDefaultVisibility = (): Required<VisibilityConfig> => ({
 	mobile: true,
 	tablet: true,
 	desktop: true,
 });
 
 // ================== DEFAULT SCALE
-export const getDefaultScale = () => ({
+export const getDefaultScale = (): Required<ScaleConfig> => ({
 	mobile: 1,
 	tablet: 1,
 	desktop: 1,
@@ -33,26 +35,21 @@ export const getDefaultScale = () => ({
 export const buildVisibilityClasses = (
 	visibility: VisibilityConfig,
 ): string => {
-	const defaultVis = getDefaultVisibility();
-	const vis = { ...defaultVis, ...visibility };
+	const vis = { ...getDefaultVisibility(), ...visibility };
 
 	let classes = "";
 
 	// Mobile
-	if (vis.mobile === false) {
-		classes += "hidden ";
-	} else {
-		classes += "block ";
-	}
+	classes += vis.mobile ? "block " : "hidden ";
 
-	// Tablet (sm: 640px and up)
+	// Tablet
 	if (vis.tablet === false) {
 		classes += "sm:hidden ";
 	} else if (vis.mobile === false) {
 		classes += "sm:block ";
 	}
 
-	// Desktop (lg: 1024px and up)
+	// Desktop
 	if (vis.desktop === false) {
 		classes += "lg:hidden ";
 	} else if (vis.mobile === false || vis.tablet === false) {
@@ -65,56 +62,60 @@ export const buildVisibilityClasses = (
 // ================== SCALE FOR BREAKPOINT
 export const getScaleForBreakpoint = (
 	scale: ScaleConfig = {},
-	breakpoint: "mobile" | "sm" | "lg",
+	breakpoint: Breakpoint,
 ): number => {
-	const defaultScale = getDefaultScale();
-	const s = { ...defaultScale, ...scale };
+	const s = { ...getDefaultScale(), ...scale };
 
 	switch (breakpoint) {
 		case "mobile":
-			return s.mobile ?? 1;
-		case "sm":
-			return s.tablet ?? 1;
-		case "lg":
-			return s.desktop ?? 1;
+			return s.mobile;
+
+		case "tablet":
+			return s.tablet;
+
+		case "desktop":
+			return s.desktop;
+
 		default:
 			return 1;
 	}
 };
 
-// ================== Helper to count visible items on mobile
+// ================== COUNT VISIBLE ON MOBILE
 export const countVisibleOnMobile = (
 	items: Array<{ mediaVisibility?: VisibilityConfig }>,
 ): number => {
 	return items.filter((item) => item.mediaVisibility?.mobile !== false).length;
 };
 
-// ================== Helper to check if item is visible at breakpoint
+// ================== CHECK VISIBILITY AT BREAKPOINT
 export const isVisibleAtBreakpoint = (
 	visibility: VisibilityConfig,
-	breakpoint: "mobile" | "sm" | "lg",
+	breakpoint: Breakpoint,
 ): boolean => {
-	const defaultVis = getDefaultVisibility();
-	const vis = { ...defaultVis, ...visibility };
+	const vis = { ...getDefaultVisibility(), ...visibility };
 
 	switch (breakpoint) {
 		case "mobile":
 			return vis.mobile !== false;
-		case "sm":
+
+		case "tablet":
 			return vis.tablet !== false;
-		case "lg":
+
+		case "desktop":
 			return vis.desktop !== false;
+
 		default:
 			return true;
 	}
 };
 
-// ================== Helper to filter visible items at breakpoint
+// ================== FILTER VISIBLE ITEMS AT BREAKPOINT
 export const filterVisibleAtBreakpoint = <
 	T extends { mediaVisibility?: VisibilityConfig },
 >(
 	items: T[],
-	breakpoint: "mobile" | "sm" | "lg",
+	breakpoint: Breakpoint,
 ): T[] => {
 	return items.filter((item) =>
 		isVisibleAtBreakpoint(item.mediaVisibility || {}, breakpoint),

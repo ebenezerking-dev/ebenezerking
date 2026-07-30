@@ -16,10 +16,6 @@ export const customerServiceData: CareerData = {
 			href: "#about",
 		},
 		{
-			label: "Projects",
-			href: "#projects",
-		},
-		{
 			label: "Services",
 			href: "#services",
 		},
@@ -46,6 +42,7 @@ export const customerServiceData: CareerData = {
 		gradientTo: "#f34ef3",
 		divider: "#000AFD",
 		underline: "#fee440",
+		borderHover: "#00FF91",
 	},
 
 	hero: {
@@ -101,7 +98,7 @@ export const customerServiceData: CareerData = {
 
 	about: {
 		title: "I am Ebenezer.",
-		intro: "I listen. I solve. I support.",
+		intro: "listen, solve, support",
 		paragraphs: [
 			"I believe great customer service begins with listening. Every interaction is an opportunity to understand a customer's needs, provide clear solutions, and create a positive experience built on professionalism, patience, and respect.",
 

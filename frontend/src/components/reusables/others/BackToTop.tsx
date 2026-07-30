@@ -49,7 +49,7 @@ const BackToTop = () => {
 				className="fixed bottom-16 lg:bottom-28 right-10 lg:right-12 z-9999 border-2 border-[#00ff91] rounded-l-4xl p-2 bg-transparent backdrop-blur-md transition-all duration-300 cursor-pointer hover:opacity-100 opacity-80"
 				aria-label="Back to top"
 			>
-				<RiArrowUpDoubleLine className="text-[#00ff91] text-2xl sm:text-3xl md:text-4xl font-bold" />
+				<RiArrowUpDoubleLine className="text-[#00ff91] text-2xl sm:text-3xl md:text-2xl font-bold" />
 			</button>
 		)
 	);

@@ -20,9 +20,9 @@ const HomePage = () => {
 			<div className="smallScreens relative min-h-dvh w-full overflow-hidden md:hidden">
 				{/* ================= HERO BACKGROUND */}
 				<img
-					src={images.homePage.mobileHeroProfilePic}
+					src={images.homePage.mobileHeroProfilePicM}
 					alt="Background"
-					className="absolute inset-0 z-0 h-full w-full origin-top scale-200 object-cover object-center sm:scale-100"
+					className="absolute inset-0 z-0 h-full w-full origin-top scale-170 -translate-x-20 object-cover object-center"
 				/>
 
 				{/* ================= HERO CONTENT */}
@@ -87,7 +87,7 @@ const HomePage = () => {
 							className="parent__image absolute -top-2 right-0 z-0 w-80"
 						>
 							<img
-								src={images.homePage.mobileHeroProfilePic}
+								src={images.homePage.largeHeroProfilePicL}
 								alt="King"
 								className="h-auto w-full scale-x-[-1] rounded-br-[5rem] border-b-6 border-orange-500 object-cover transition-all duration-500 group-hover:border-[#00ff91]"
 							/>

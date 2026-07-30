@@ -1,9 +1,9 @@
-// src/components/sections/developer/SkillsSection.tsx
+// src/components/sections/shared/SkillsSection.tsx
 
 // ================== IMPORTS
 import { motion } from "framer-motion";
 import { useState } from "react";
-import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
+import CareerSectionFrame from "../frames/CareerSectionFrame";
 import type { SkillsData, Theme } from "../../../types/career";
 import RippleButton from "../../reusables/others/RippleButton";
 import useBreakpoint from "../../../hooks/useBreakpoint";
@@ -29,25 +29,19 @@ type SkillsSectionProps = {
 const SkillsSection = ({ skills, theme }: SkillsSectionProps) => {
 	const breakpoint = useBreakpoint();
 	const [showAll, setShowAll] = useState(false);
-
-	const getVisibleCount = () => {
-		const rows = 3;
-		switch (breakpoint) {
-			case "mobile":
-				return 2 * rows;
-			case "sm":
-				return 3 * rows;
-			case "lg":
-				return 4 * rows;
-			default:
-				return 4 * rows;
-		}
-	};
+	const rows = 3;
+	const visibleCount =
+		breakpoint === "mobile"
+			? 2 * rows
+			: breakpoint === "tablet"
+				? 3 * rows
+				: 4 * rows;
 
 	const visibleSkills = showAll
 		? skills.items
-		: skills.items.slice(0, getVisibleCount());
-	const hasMoreSkills = skills.items.length > getVisibleCount();
+		: skills.items.slice(0, visibleCount);
+
+	const hasMoreSkills = skills.items.length > visibleCount;
 
 	return (
 		<CareerSectionFrame id="skills" theme={theme}>

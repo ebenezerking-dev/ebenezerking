@@ -16,10 +16,6 @@ export const fitnessData: CareerData = {
 			href: "#about",
 		},
 		{
-			label: "Projects",
-			href: "#projects",
-		},
-		{
 			label: "Services",
 			href: "#services",
 		},
@@ -46,6 +42,7 @@ export const fitnessData: CareerData = {
 		gradientTo: "#f34ef3",
 		divider: "#000AFD",
 		underline: "#f34ef3",
+		borderHover: "#00FF91",
 	},
 
 	hero: {
@@ -92,7 +89,7 @@ export const fitnessData: CareerData = {
 
 	about: {
 		title: "I am Ebenezer.",
-		intro: "I coach. I motivate. I transform.",
+		intro: "coach, motivate, transform",
 		paragraphs: [
 			"Fitness is more than exercise to me—it's about helping people build confidence, improve their health, and develop habits that create lasting change. I enjoy creating a supportive environment where every client feels encouraged to challenge themselves and celebrate their progress.",
 
@@ -159,31 +156,159 @@ export const fitnessData: CareerData = {
 				title: "Personal Training",
 				description:
 					"One-to-one coaching tailored to your fitness level, goals, and lifestyle. Every programme is designed to help you build strength, improve fitness, and achieve sustainable results.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.fitness.services.personalTrainer,
+						scale: {
+							mobile: 1.1,
+							tablet: 1.1,
+							desktop: 1.3,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
+				preview: {
+					buttonLabel: "Watch Demo",
+					title: "Personal Training",
+					media: [
+						{
+							type: "video",
+							src: videos.careers.fitness.servicePersonTrainerV1,
+							poster:
+								images.careers.fitness.services.servicesPersonalTrainerV1P,
+						},
+						{
+							type: "video",
+							src: videos.careers.fitness.servicePersonTrainerV2,
+							poster:
+								images.careers.fitness.services.servicesPersonalTrainerV2P,
+						},
+					],
+				},
 			},
 			{
 				title: "Group Fitness Classes",
 				description:
 					"High-energy group workouts that keep participants motivated, engaged, and challenged in a safe, supportive environment suitable for all fitness levels.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.fitness.services.groupFitness,
+						scale: {
+							mobile: 1.1,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
+				preview: {
+					buttonLabel: "Watch Demo",
+					title: "Group Fitness Classes",
+					media: [
+						{
+							type: "video",
+							src: videos.careers.fitness.serviceGroupFitnessV1,
+							poster: images.careers.fitness.services.groupFitnessV1P,
+						},
+						{
+							type: "video",
+							src: videos.careers.fitness.serviceGroupFitnessV2,
+							poster: images.careers.fitness.services.groupFitnessV2P,
+						},
+					],
+				},
 			},
 			{
 				title: "Circuit Training",
 				description:
 					"Structured circuit sessions focused on improving strength, endurance, cardiovascular fitness, and overall body conditioning through dynamic functional exercises.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.fitness.services.circuitTraining,
+						scale: {
+							mobile: 1.1,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
+				preview: {
+					buttonLabel: "Watch Demo",
+					title: "Circuit Training",
+					media: [
+						{
+							type: "video",
+							src: videos.careers.fitness.serviceCircuitTrainingV1,
+							poster: images.careers.fitness.services.circuitTrainingV1P,
+						},
+						{
+							type: "video",
+							src: videos.careers.fitness.serviceCircuitTrainingV2,
+							poster: images.careers.fitness.services.circuitTrainingV2P,
+						},
+					],
+				},
 			},
 			{
 				title: "Spinning Classes",
 				description:
 					"Engaging indoor cycling sessions designed to improve cardiovascular fitness, build lower-body strength, increase endurance, and help participants achieve their fitness goals in an effective and enjoyable workout experience.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.fitness.services.spinningClasses,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
+				preview: {
+					buttonLabel: "Watch Demo",
+					title: "Spinning Classes",
+					media: [
+						{
+							type: "video",
+							src: videos.careers.fitness.serviceSpinningClassV1,
+							poster: images.careers.fitness.services.spinningClassesV1P,
+						},
+						{
+							type: "video",
+							src: videos.careers.fitness.serviceSpinningClassV2,
+							poster: images.careers.fitness.services.spinningClassesV2P,
+						},
+					],
+				},
 			},
 			{
 				title: "Fitness Assessments & Programme Design",
 				description:
 					"Comprehensive fitness assessments followed by personalised training plans that align with your goals, abilities, and long-term health objectives.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.fitness.services.fitnessAssessment,
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Member Support & Motivation",
 				description:
 					"Continuous encouragement, accountability, and professional coaching to help clients stay motivated, build confidence, and remain committed throughout their fitness journey.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.fitness.services.memberSupport,
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 		],
 	},

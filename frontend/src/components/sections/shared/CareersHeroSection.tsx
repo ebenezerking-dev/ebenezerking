@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { NAVBAR_HEIGHT } from "../../../constants/layout";
 import MediaBackground from "../../ui/MediaBackground";
 import type { Hero, Theme } from "../../../types/career";
-import CareerHeroFrame from "../frames/shared/CareerHeroFrame";
+import CareerHeroFrame from "../frames/CareerHeroFrame";
 import RippleButton from "../../reusables/others/RippleButton";
 import TimeDate from "../../reusables/others/TimeDate";
 import BottomDivider from "../../reusables/others/BottomDivider";
@@ -40,8 +40,8 @@ type CareersHeroSectionProps = {
 const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 	const breakpoint = useBreakpoint();
 	const animationVariants = [heroVideo1, heroVideo2, heroVideo3];
-	const overlays = ["bg-black/2", "bg-black/2", "bg-black/2"];
-	const playbackRates = [0.7, 0.9, 0.7];
+	const overlays = ["bg-black/2", "bg-black/5", "bg-black/2"];
+	const playbackRates = [0.7, 0.1, 0.7];
 
 	return (
 		<CareerHeroFrame theme={theme} className="parent w-full">
@@ -113,7 +113,7 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 							viewport={viewportOnce}
 							className="relative z-10 px-4"
 						>
-							<div className="inline-block rounded-2xl bg-black px-3 pt-1 pb-3 font-unna text-[1rem] font-bold uppercase">
+							<div className="inline-block rounded-2xl bg-black px-3 pt-1 pb-3 font-unna text-sm font-bold uppercase">
 								<h2 className="relative inline-block">
 									{hero.title}
 
@@ -130,7 +130,7 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 						</motion.div>
 
 						{/* ================= HERO BODY */}
-						<div className="relative z-10 flex flex-col items-center justify-center gap-6 text-center">
+						<div className="relative z-10 flex flex-col items-center justify-center gap-10 text-center lg:w-140">
 							{/* ================= HERO SUBTITLE */}
 							<motion.div
 								variants={heroSubTitle}
@@ -152,11 +152,12 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 								/>
 							</motion.div>
 
-							{/* ================= DOWNLOAD BUTTON */}
+							{/* ================= DOWNLOAD BUTTON & HERO DATE */}
 							<motion.div
 								variants={heroButton}
 								initial="hidden"
 								animate="visible"
+								className="relative z-10 w-full"
 							>
 								<RippleButton
 									href={hero.button.href}
@@ -164,21 +165,21 @@ const CareersHeroSection = ({ hero, theme }: CareersHeroSectionProps) => {
 								>
 									{hero.button.label}
 								</RippleButton>
+
+								{/* ================= HERO DATE */}
+								<motion.div
+									variants={dateHero}
+									initial="hidden"
+									animate="visible"
+									className="date_container flex justify-end"
+								>
+									<TimeDate
+										showTime={false}
+										className="date text-[0.7rem] font-semibold text-white bg-black inline-flex rounded-2xl"
+									/>
+								</motion.div>
 							</motion.div>
 						</div>
-
-						{/* ================= HERO DATE */}
-						<motion.div
-							variants={dateHero}
-							initial="hidden"
-							animate="visible"
-							className="relative z-10 w-full"
-						>
-							<TimeDate
-								showTime={false}
-								className="date text-1xl text-end font-semibold text-white transition-colors duration-300 hover:text-[#00FF91]"
-							/>
-						</motion.div>
 					</motion.div>
 				</div>
 

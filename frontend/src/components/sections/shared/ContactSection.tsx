@@ -1,7 +1,7 @@
 // src/components/sections/shared/ContactSection.tsx
 // ================== IMPORTS
 import { useState } from "react";
-import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
+import CareerSectionFrame from "../frames/CareerSectionFrame";
 import { useToast } from "../../../hooks/useToast";
 import { Toast } from "../../ui/Toast";
 import { LiquidButton } from "../../ui/LiquidButton";

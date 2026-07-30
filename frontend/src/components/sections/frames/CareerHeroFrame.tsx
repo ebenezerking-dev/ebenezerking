@@ -2,8 +2,8 @@
 
 // ================== IMPORTS
 import type { ReactNode } from "react";
-import { NAVBAR_HEIGHT } from "../../../../constants/layout";
-import type { Theme } from "../../../../types/career";
+import { NAVBAR_HEIGHT } from "../../../constants/layout";
+import type { Theme } from "../../../types/career";
 
 // ================== PROPS
 type CareerHeroFrameProps = {

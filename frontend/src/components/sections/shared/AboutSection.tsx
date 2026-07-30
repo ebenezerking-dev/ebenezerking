@@ -1,7 +1,7 @@
-// src/components/sections/developer/AboutSection.tsx
+// src/components/sections/shared/AboutSection.tsx
 // this is a section that renders the about data for a career page
 // ================== IMPORTS
-import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
+import CareerSectionFrame from "../frames/CareerSectionFrame";
 import { motion } from "framer-motion";
 import type { About, Theme } from "../../../types/career";
 import SectionHeader from "../../reusables/others/SectionHeader";

@@ -1,3 +1,4 @@
-// src/constants/layout.ts
-// ================== EXPORT NAVBAR HEIGHT
+// ================== NAVBAR CONSTANT HEIGHT
+// // src/constants/layout.ts
+// ================== EXPORT
 export const NAVBAR_HEIGHT = 48;

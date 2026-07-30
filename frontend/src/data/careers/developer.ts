@@ -62,6 +62,7 @@ export const developerData: CareerData = {
 		gradientTo: "#020617",
 		divider: "#000AFD",
 		underline: "#f97316",
+		borderHover: "#00FF91",
 	},
 
 	hero: {
@@ -87,7 +88,7 @@ export const developerData: CareerData = {
 
 	about: {
 		title: "I am Ebenezer.",
-		intro: "I think, I visualise, I code.",
+		intro: "think, visualise, code",
 		paragraphs: [
 			"I turn my ideas into modern digital experiences by combining thoughtful design, clean code architecture, and problem-solving to build products people enjoy using.",
 
@@ -249,7 +250,7 @@ export const developerData: CareerData = {
 		title: "Services i offer.",
 		items: [
 			{
-				title: "Web Development",
+				title: "Front-End Development",
 				description:
 					"Build responsive, modern React apps with reusable components and smooth animations.",
 			},

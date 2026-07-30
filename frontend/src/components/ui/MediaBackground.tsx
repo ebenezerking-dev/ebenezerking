@@ -13,7 +13,7 @@ type MediaBackgroundProps = {
 	mediaClassName?: string;
 	overlayClassName?: string;
 	playbackRate?: number;
-	scale?: number; 
+	scale?: number;
 	children?: React.ReactNode;
 };
 
@@ -43,17 +43,20 @@ export default function MediaBackground({
 		<div className={`relative overflow-hidden ${className}`}>
 			{/* ================= POSTER */}
 			{type === "video" && poster && (
-				<img
-					src={poster}
-					alt=""
-					aria-hidden="true"
-					className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-						mediaReady ? "opacity-0" : "opacity-100"
-					}`}
-					style={{
-						transform: `scale(${scale})`, // NEW: Apply scale to poster
-					}}
-				/>
+				<div className="flex absolute inset-0 overflow-hidden">
+					{/* ================= IMAGE FOR VIDEO */}
+					<img
+						src={poster}
+						alt=""
+						aria-hidden="true"
+						className={`object-cover transition-opacity duration-700 border ${
+							mediaReady ? "opacity-0" : "opacity-100"
+						}`}
+						style={{
+							transform: `scale(${scale})`,
+						}}
+					/>
+				</div>
 			)}
 
 			{/* ================= VIDEO */}
@@ -76,7 +79,7 @@ export default function MediaBackground({
 				</video>
 			) : (
 				<div className="flex absolute inset-0 overflow-hidden">
-					{/* ================= IMAGE */}
+					{/* ================= IMAGE WITHOUT VIDEO */}
 					<img
 						src={src}
 						alt={alt}

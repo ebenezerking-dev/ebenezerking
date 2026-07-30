@@ -1,8 +1,8 @@
-// src/components/sections/developer/CertificationSection.tsx
+// src/components/sections/shared/CertificationSection.tsx
 // this is a section that renders the certification data for a career page
 // ================== IMPORTS
 import { useState } from "react";
-import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
+import CareerSectionFrame from "../frames/CareerSectionFrame";
 import { motion } from "framer-motion";
 import type { CertificationData, Theme } from "../../../types/career";
 import SectionHeader from "../../reusables/others/SectionHeader";

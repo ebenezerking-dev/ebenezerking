@@ -1,7 +1,7 @@
-// src/components/sections/developer/ExperienceSection.tsx
+// src/components/sections/shared/ExperienceSection.tsx
 // this is a section that renders the experience data for a career page
 // ================== IMPORTS
-import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
+import CareerSectionFrame from "../frames/CareerSectionFrame";
 import { motion } from "framer-motion";
 import type { ExperienceData, Theme } from "../../../types/career";
 import SectionHeader from "../../reusables/others/SectionHeader";

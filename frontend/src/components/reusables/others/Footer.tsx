@@ -10,7 +10,6 @@ import {
 	footerLeft,
 	footerRight,
 	footerCenter,
-	headerUnderline,
 	homeCareerSpan,
 } from "../animations";
 
@@ -50,19 +49,16 @@ function Footer() {
 						viewport={viewportRepeat}
 					>
 						{/* =================== PARAGRAPH */}
-						<p className="text-md leading-relaxed text-white">
+						<p className="text-md font-semibold leading-relaxed text-white/80">
 							Get in touch:{" "}
 							<motion.a
 								href="mailto:contact@ebenezerking.com"
-								className="relative text-lg hover:text-[#00FF91] transition-colors"
+								className="relative text-xl tracking-tight text-[#00FF91] transition-colors"
 								initial="hidden"
 								whileHover="visible"
 							>
 								contact@ebenezerking.com
-								<motion.span
-									variants={headerUnderline}
-									className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-[#00FF91] rounded-full"
-								/>
+								<span className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-[#00FF91] rounded-full" />
 							</motion.a>
 						</p>
 					</motion.div>
@@ -80,7 +76,7 @@ function Footer() {
 								Career Paths
 								<span className="absolute w-[30%] left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] bg-orange-500 rounded-full" />
 							</h6>
-							<ul className="space-y-2">
+							<ul className="space-y-2 text-xl">
 								{footerCareerLinks.map((career) => (
 									<li key={career.href}>
 										<MotionLink
@@ -117,7 +113,7 @@ function Footer() {
 							Hire or recommend me
 							<span className="absolute left-1/2 -translate-x-1/2 bottom-[-0.2rem] h-[0.2rem] w-[40%] bg-red-500 rounded-full"></span>
 						</h6>
-						<p className="text-md font-semibold mb-1 text-white/80">
+						<p className="text-md font-semibold leading-relaxed mb-1 text-white/80">
 							Get in touch!
 						</p>
 						<a

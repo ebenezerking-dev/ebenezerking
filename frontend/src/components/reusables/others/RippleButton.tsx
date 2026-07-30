@@ -18,7 +18,7 @@ interface RippleButtonProps {
 const ButtonContent = ({ children }: { children: ReactNode }) => (
 	<>
 		{/* Expanding circle effect */}
-		<span className="absolute w-0 h-0 rounded-full bg-[#00ff91] transition-all duration-500 ease-out group-hover:h-56 group-hover:w-56" />
+		<span className="absolute w-0 h-0 rounded-full bg-[#00ff91] transition-all duration-500 ease-out group-hover/button:h-56 group-hover/button:w-56" />
 
 		{/* Left decorative wave */}
 		<span className="absolute bottom-0 left-0 -ml-2 h-full">
@@ -76,7 +76,7 @@ export default function RippleButton({
 		lg: "px-7 py-2 text-base",
 	};
 
-	const classes = `relative inline-flex items-center justify-center ${sizeClasses[size]} overflow-hidden rounded-md bg-[#000000] font-bold tracking-tighter text-white border-r-6 border-[#00ff91] group transition-all duration-300
+	const classes = `relative inline-flex items-center justify-center ${sizeClasses[size]} overflow-hidden rounded-md bg-[#000000] font-bold tracking-tighter text-white border-r-6 border-[#00ff91] group/button transition-all duration-300
 	hover:scale-105 hover:border-orange-500 hover:text-black active:scale-95 cursor-pointer ${className}`;
 
 	if (href) {

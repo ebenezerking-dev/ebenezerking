@@ -1,7 +1,7 @@
-// src/components/sections/developer/ProjectsSection.tsx
+// src/components/sections/shared/ProjectsSection.tsx
 // this is a section that renders the projects data for a career page
 // ================== IMPORTS
-import CareerSectionFrame from "../frames/shared/CareerSectionFrame";
+import CareerSectionFrame from "../frames/CareerSectionFrame";
 import ProjectBoard from "../../reusables/others/ProjectBoard";
 import { motion } from "framer-motion";
 import type { ProjectData, Theme } from "../../../types/career";
@@ -33,13 +33,7 @@ const ProjectsSection = ({ projects, theme }: ProjectsSectionProps) => {
 					<SectionHeader title={projects.title} theme={theme} />
 
 					{/* ============================== PROJECTS BODY */}
-					<motion.div
-						// variants={developerBody}
-						// initial="hidden"
-						// whileInView="visible"
-						// viewport={viewportRepeat}
-						className="body flex flex-col justify-center px-2 gap-4 lg:gap-3 w-full pb-20"
-					>
+					<motion.div className="body flex flex-col justify-center px-2 gap-4 lg:gap-3 w-full pb-20">
 						<ProjectBoard items={projects.items} theme={theme} />
 					</motion.div>
 				</motion.div>

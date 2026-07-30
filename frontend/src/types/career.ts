@@ -39,6 +39,7 @@ export interface Theme {
 	gradientTo: string;
 	divider: string;
 	underline: string;
+	borderHover: string;
 }
 
 export interface Hero {
@@ -119,6 +120,16 @@ export interface Service {
 	title: string;
 	description: string;
 	icon?: string;
+	appearance?: {
+		background?: HeroMedia;
+		overlayClassName?: string;
+		textClassName?: string;
+	};
+	preview?: {
+		buttonLabel?: string;
+		title?: string;
+		media: HeroMedia[];
+	};
 }
 
 export interface CertificationData {
