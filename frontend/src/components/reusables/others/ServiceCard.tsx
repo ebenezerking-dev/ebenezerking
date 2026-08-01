@@ -42,7 +42,7 @@ export default function ServiceCard({
 	};
 
 	const cardContent = (
-		<div className="relative z-10 flex h-full min-h-90 flex-col justify-between p-6 text-center">
+		<div className="relative z-10 flex h-full min-h-110 flex-col justify-between p-6 text-center">
 			<div>
 				<h4 className="mb-8">
 					<SectionSubtitle title={service.title} theme={theme} />
@@ -71,7 +71,7 @@ export default function ServiceCard({
 					src={background.src}
 					poster={background.poster}
 					scale={backgroundScale}
-					className="min-h-90"
+					className="min-h-110"
 					mediaClassName="transition-transform duration-700 group-hover:scale-105"
 					overlayClassName={
 						service.appearance?.overlayClassName ?? "bg-black/30"

@@ -49,7 +49,7 @@ export default function MediaBackground({
 						src={poster}
 						alt=""
 						aria-hidden="true"
-						className={`object-cover transition-opacity duration-700 border ${
+						className={`object-cover transition-opacity duration-700 ${
 							mediaReady ? "opacity-0" : "opacity-100"
 						}`}
 						style={{
