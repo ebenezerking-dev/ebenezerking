@@ -57,6 +57,26 @@ export const images = {
 				TechCrush:
 					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1783703883/TechCrush_Backend.jpg",
 			},
+
+			services: {
+				FrontendDevelopment:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785537979/frontendDevP_nyav4q.jpg",
+
+				BackendDevelopment:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785537428/backendDevP_meidmp.jpg",
+
+				FullstackSolutions:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785537428/fullstackSolutionsP_z5af3n.jpg",
+
+				CodeReviewOptimization:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785537979/codeReviewP_dlqhzm.jpg",
+
+				CodeRevampModernization:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785537979/codeModernP_tt1lag.jpg",
+
+				DeploymentMaintenance:
+					"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785537428/deploymentP_zlaj43.jpg",
+			},
 		},
 
 		fitness: {
@@ -140,6 +160,24 @@ export const images = {
 
 			heroVideo2Poster:
 				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1784442639/CSHeroVideo2_p72fql_poster.jpg",
+
+			CustomerSupport:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785542169/customerSupportP_g6hzjf.jpg",
+
+			FrontDeskReception:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785542171/frontDeskReceptionP_kokx6h.png",
+
+			AdministrativeSupport:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785542168/administrativeSupportP_u3jzji.jpg",
+
+			AppointmentManagement:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785542169/AppointmentManagementP_sluqk9.jpg",
+
+			CustomerRelationship:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785542168/customerRelationshipP_y5txto.jpg",
+
+			SalesSupport:
+				"https://res.cloudinary.com/zqrsa9rd/image/upload/f_auto,q_auto,w_1280/v1785542169/showroomPresentationP_qpitos.jpg",
 		},
 	},
 };

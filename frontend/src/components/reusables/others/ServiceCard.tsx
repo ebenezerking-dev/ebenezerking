@@ -42,9 +42,9 @@ export default function ServiceCard({
 	};
 
 	const cardContent = (
-		<div className="relative z-10 flex h-full min-h-[350px] flex-col justify-between p-6 text-center">
+		<div className="relative z-10 flex h-full min-h-90 flex-col justify-between p-6 text-center">
 			<div>
-				<h4 className="mb-4">
+				<h4 className="mb-8">
 					<SectionSubtitle title={service.title} theme={theme} />
 				</h4>
 
@@ -71,7 +71,7 @@ export default function ServiceCard({
 					src={background.src}
 					poster={background.poster}
 					scale={backgroundScale}
-					className="min-h-[350px]"
+					className="min-h-90"
 					mediaClassName="transition-transform duration-700 group-hover:scale-105"
 					overlayClassName={
 						service.appearance?.overlayClassName ?? "bg-black/30"
@@ -86,7 +86,7 @@ export default function ServiceCard({
 	return (
 		<div
 			{...wrapperProps}
-			className={`${wrapperProps.className} min-h-[350px] bg-black/20 hover:bg-black`}
+			className={`${wrapperProps.className} min-h-60 bg-black/20 hover:bg-black`}
 		>
 			{cardContent}
 		</div>

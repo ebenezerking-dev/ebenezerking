@@ -189,31 +189,103 @@ export const customerServiceData: CareerData = {
 				title: "Customer Support",
 				description:
 					"Professional customer support across phone, email, and face-to-face interactions. I handle enquiries, resolve issues, and ensure every customer receives a positive and efficient service experience.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.customerService.CustomerSupport,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Front Desk & Reception",
 				description:
 					"I provide welcoming front desk support by greeting visitors, managing appointments, answering calls, directing enquiries, and ensuring smooth day-to-day reception operations.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.customerService.FrontDeskReception,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Administrative Support",
 				description:
 					"Reliable administrative assistance including document management, data entry, scheduling, record keeping, calendar coordination, and general office organisation to keep business operations running efficiently.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.customerService.AdministrativeSupport,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Appointment & Calendar Management",
 				description:
 					"I coordinate appointments, bookings, and schedules while maintaining organised calendars, reducing scheduling conflicts, and ensuring clients and team members stay informed.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.customerService.AppointmentManagement,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Customer Relationship Management",
 				description:
 					"Focused on building long-term customer relationships through active listening, professional communication, timely follow-ups, and effective complaint resolution that promotes customer satisfaction and loyalty.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.customerService.CustomerRelationship,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Retail & Sales Support",
 				description:
 					"I assist customers with product enquiries, showroom presentation, payment processing, and sales support while delivering an engaging customer experience that contributes to business growth.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.customerService.SalesSupport,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 		],
 	},

@@ -253,31 +253,103 @@ export const developerData: CareerData = {
 				title: "Front-End Development",
 				description:
 					"Build responsive, modern React apps with reusable components and smooth animations.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.developer.services.FrontendDevelopment,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Back-End Development",
 				description:
 					"Create secure, scalable APIs and server logic using Node.js, Express, MongoDB or PostgreSQL.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.developer.services.BackendDevelopment,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Full-Stack Solutions",
 				description:
 					"Deliver end-to-end applications: e-commerce platforms, real-time apps, and CMS solutions.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.developer.services.FullstackSolutions,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Code Review & Optimization",
 				description:
 					"Audit existing code for performance, fix inefficiencies, and improve maintainability.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.developer.services.CodeReviewOptimization,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Code Revamp & Modernization",
 				description:
 					"Refactor or rebuild frontend and backend code for better structure, scalability, and maintainability.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.developer.services.CodeRevampModernization,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 			{
 				title: "Deployment & Maintenance",
 				description:
 					"Deploy on AWS, Vercel, Netlify, or custom domains, optimize performance, and maintain your apps.",
+				appearance: {
+					background: {
+						type: "image",
+						src: images.careers.developer.services.DeploymentMaintenance,
+						scale: {
+							mobile: 1.2,
+							tablet: 1.1,
+							desktop: 1,
+						},
+					},
+					overlayClassName: "bg-black/20",
+				},
 			},
 		],
 	},
