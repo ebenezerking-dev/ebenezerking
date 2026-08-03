@@ -134,7 +134,7 @@ function Footer() {
 						<ul className="flex gap-1">
 							{[
 								{
-									href: "https://x.com/a_devlin",
+									href: "https://x.com/ebenezerking_",
 									icon: RiTwitterXLine,
 									label: "Twitter",
 								},
